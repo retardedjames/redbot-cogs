@@ -279,3 +279,11 @@ class Anagrams(commands.Cog):
                 color=0x95a5a6,   # gray left border
             )
             await message.channel.send(embed=embed)
+
+        # ── Repost letters every 8 valid finds ───────────────────────────────
+        if len(game.found) % 8 == 0:
+            reminder = discord.Embed(
+                description=f"🔤  **Letters:** {' '.join(game.jumbled)}",
+                color=discord.Color.blurple(),
+            )
+            await message.channel.send(embed=reminder)
