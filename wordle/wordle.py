@@ -22,6 +22,22 @@ _CELL = 62   # px per cell (square)
 _GAP  = 6    # px gap between cells
 _PAD  = 20   # px outer padding
 
+# ── Keyboard geometry ─────────────────────────────────────────────────────────
+_KEY_W        = 30   # key width
+_KEY_H        = 36   # key height
+_KEY_GAP      = 4    # gap between keys in a row
+_KEY_ROW_GAP  = 6    # gap between keyboard rows
+_KBD_TOP      = 14   # space between bottom of board and top of keyboard
+
+_KEY_UNUSED   = (129, 131, 132)   # letter not yet guessed
+_KEY_ABSENT   = (58,  58,  60)    # guessed and not in word (same as _GRAY)
+_KEY_PRESENT  = (181, 159, 59)    # guessed, wrong position (same as _YELLOW)
+_KEY_CORRECT  = (83,  141, 78)    # guessed, correct position (same as _GREEN)
+
+_KEY_COLOR_MAP = {"green": _KEY_CORRECT, "yellow": _KEY_PRESENT, "gray": _KEY_ABSENT}
+
+_KEYBOARD_ROWS = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"]
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -44,6 +60,20 @@ def _load_font(size: int = 36) -> ImageFont.FreeTypeFont:
         return ImageFont.load_default(size=size)
     except TypeError:
         return ImageFont.load_default()
+
+
+def _letter_states(guesses: list) -> dict:
+    """
+    Return a dict mapping each guessed letter to its best colour state.
+    Priority: green > yellow > gray.
+    """
+    priority = {"green": 3, "yellow": 2, "gray": 1}
+    states: dict = {}
+    for word, colours in guesses:
+        for letter, colour in zip(word, colours):
+            if priority[colour] > priority.get(states.get(letter), 0):
+                states[letter] = colour
+    return states
 
 
 def _score_guess(guess: str, answer: str) -> list:
@@ -72,16 +102,22 @@ def _score_guess(guess: str, answer: str) -> list:
     return result
 
 
-def _draw_board(guesses: list, total_rows: int = 7) -> io.BytesIO:
-    """Render the Wordle grid and return it as a PNG byte-stream."""
+def _draw_board(guesses: list, total_rows: int = 6) -> io.BytesIO:
+    """Render the Wordle grid + alphabet keyboard and return it as a PNG byte-stream."""
     cols = 5
-    img_w = cols * _CELL + (cols - 1) * _GAP + 2 * _PAD
-    img_h = total_rows * _CELL + (total_rows - 1) * _GAP + 2 * _PAD
+
+    # ── Dimensions ────────────────────────────────────────────────────────────
+    img_w   = cols * _CELL + (cols - 1) * _GAP + 2 * _PAD
+    board_h = total_rows * _CELL + (total_rows - 1) * _GAP + 2 * _PAD
+    kbd_h   = len(_KEYBOARD_ROWS) * _KEY_H + (len(_KEYBOARD_ROWS) - 1) * _KEY_ROW_GAP
+    img_h   = board_h + _KBD_TOP + kbd_h + _PAD
 
     img  = Image.new("RGB", (img_w, img_h), _BG)
     draw = ImageDraw.Draw(img)
-    font = _load_font(36)
+    font     = _load_font(36)
+    key_font = _load_font(16)
 
+    # ── Guess grid ────────────────────────────────────────────────────────────
     for row in range(total_rows):
         for col in range(cols):
             x = _PAD + col * (_CELL + _GAP)
@@ -93,7 +129,6 @@ def _draw_board(guesses: list, total_rows: int = 7) -> io.BytesIO:
                 letter = word[col]
                 fill   = _COLOR_MAP[colours[col]]
                 draw.rectangle([x, y, x2, y2], fill=fill)
-                # Centre the letter inside the cell
                 bbox   = draw.textbbox((0, 0), letter, font=font)
                 tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
                 draw.text(
@@ -104,6 +139,30 @@ def _draw_board(guesses: list, total_rows: int = 7) -> io.BytesIO:
             else:
                 draw.rectangle([x, y, x2, y2], fill=_BG, outline=_BORDER, width=2)
 
+    # ── Keyboard ──────────────────────────────────────────────────────────────
+    letter_states = _letter_states(guesses)
+    kbd_y = board_h + _KBD_TOP
+
+    for row_keys in _KEYBOARD_ROWS:
+        row_w = len(row_keys) * _KEY_W + (len(row_keys) - 1) * _KEY_GAP
+        x     = (img_w - row_w) // 2   # centre each row
+
+        for letter in row_keys:
+            state = letter_states.get(letter)
+            fill  = _KEY_COLOR_MAP.get(state, _KEY_UNUSED)
+            x2, y2 = x + _KEY_W - 1, kbd_y + _KEY_H - 1
+            draw.rectangle([x, kbd_y, x2, y2], fill=fill)
+            bbox   = draw.textbbox((0, 0), letter, font=key_font)
+            tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+            draw.text(
+                (x + (_KEY_W - tw) // 2 - bbox[0],
+                 kbd_y + (_KEY_H - th) // 2 - bbox[1]),
+                letter, fill=_WHITE, font=key_font,
+            )
+            x += _KEY_W + _KEY_GAP
+
+        kbd_y += _KEY_H + _KEY_ROW_GAP
+
     buf = io.BytesIO()
     img.save(buf, format="PNG")
     buf.seek(0)
@@ -113,7 +172,7 @@ def _draw_board(guesses: list, total_rows: int = 7) -> io.BytesIO:
 # ── Game state ────────────────────────────────────────────────────────────────
 
 class WordleGame:
-    MAX_GUESSES = 7
+    MAX_GUESSES = 6
 
     def __init__(self, word: str):
         self.word    = word.upper()
