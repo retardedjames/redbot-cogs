@@ -1,7 +1,5 @@
 import asyncio
-import re
 import random
-import urllib.parse
 
 import aiohttp
 import discord
@@ -127,57 +125,33 @@ class AnimalGuesser(commands.Cog):
 
     # ── Image fetching ────────────────────────────────────────────────────────
 
-    async def _fetch_images(self, query: str, max_count: int = 35) -> list[str]:
-        """Return up to *max_count* image URLs from DuckDuckGo image search."""
-        headers = {
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/124.0.0.0 Safari/537.36"
-            ),
-            "Accept-Language": "en-US,en;q=0.9",
-        }
+    async def _fetch_images(self, animal: str, max_count: int = 35) -> list[str]:
+        """Return up to *max_count* photo URLs from the iNaturalist API."""
         timeout = aiohttp.ClientTimeout(total=15)
+        headers = {"User-Agent": "AnimalGuesserBot/1.0 (Discord Bot)"}
         try:
             async with aiohttp.ClientSession(headers=headers) as session:
-                # Step 1: load the search page to get the vqd token
                 async with session.get(
-                    "https://duckduckgo.com/",
-                    params={"q": query, "iax": "images", "ia": "images"},
-                    timeout=timeout,
-                ) as resp:
-                    html = await resp.text()
-
-                # vqd format varies across DDG updates — try a few patterns
-                vqd = None
-                for pat in [r'vqd="([^"]+)"', r"vqd='([^']+)'", r'vqd=([\d-]+)']:
-                    m = re.search(pat, html)
-                    if m:
-                        vqd = m.group(1)
-                        break
-                if not vqd:
-                    return []
-
-                # Step 2: fetch image results JSON
-                async with session.get(
-                    "https://duckduckgo.com/i.js",
+                    "https://api.inaturalist.org/v1/observations",
                     params={
-                        "l": "us-en",
-                        "o": "json",
-                        "q": query,
-                        "vqd": vqd,
-                        "f": ",,,,,",
-                        "p": "1",
+                        "taxon_name": animal,
+                        "photos": "true",
+                        "per_page": 35,
+                        "order_by": "votes",
                     },
                     timeout=timeout,
                 ) as resp:
-                    data = await resp.json(content_type=None)
+                    data = await resp.json()
 
-            return [
-                r["image"]
-                for r in data.get("results", [])[:max_count]
-                if isinstance(r.get("image"), str) and r["image"].startswith("http")
-            ]
+            photos = []
+            for obs in data.get("results", []):
+                for p in obs.get("photos", []):
+                    url = p.get("url", "").replace("square", "medium")
+                    if url.startswith("http"):
+                        photos.append(url)
+
+            random.shuffle(photos)
+            return photos[:max_count]
         except Exception:
             return []
 
@@ -216,7 +190,7 @@ class AnimalGuesser(commands.Cog):
         animal = random.choice(ANIMALS)
         loading = await ctx.send("Searching for images...")
 
-        images = await self._fetch_images(f"{animal} animal")
+        images = await self._fetch_images(animal)
         if not images:
             await loading.edit(content="Couldn't fetch images right now. Please try again!")
             return
