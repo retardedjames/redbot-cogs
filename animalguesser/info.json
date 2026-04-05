@@ -1,0 +1,12 @@
+{
+    "author": ["jamescvermont-cyber"],
+    "description": "Animal guessing game — the bot shows a photo of a mystery animal and players have 60 seconds to guess it. Type $hint for up to 3 extra images.",
+    "end_user_data_statement": "This cog does not store any end user data.",
+    "hidden": false,
+    "install_msg": "Load the cog with `[p]load animalguesser`, then start a game with `$animalguesser`.",
+    "name": "AnimalGuesser",
+    "required_cogs": {},
+    "requirements": [],
+    "short": "Animal photo guessing game",
+    "tags": ["game", "animals", "trivia", "fun", "images"]
+}
