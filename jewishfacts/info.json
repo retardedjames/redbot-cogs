@@ -1,0 +1,12 @@
+{
+    "author": ["jamescvermont-cyber"],
+    "description": "Silently monitors chat for antisemitic language and responds with a positive educational fact about Jewish contributions to science, technology, arts, civil rights, and culture.",
+    "end_user_data_statement": "This cog does not store any end user data.",
+    "hidden": false,
+    "install_msg": "Run `[p]load jewishfacts` to activate.",
+    "name": "JewishFacts",
+    "required_cogs": {},
+    "requirements": [],
+    "short": "Counter antisemitism with positive Jewish history facts",
+    "tags": ["education", "moderation", "history"]
+}
