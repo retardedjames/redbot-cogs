@@ -142,7 +142,7 @@ def _join_embed(game: WordRushGame) -> discord.Embed:
     else:
         plist = "*No one yet — be the first!*"
     embed = discord.Embed(
-        title="🔤  Word Rush",
+        title="Word Rush",
         description=(
             "Find a word containing the 3 displayed letters before time runs out!\n"
             "Click **Join Game** to play!\n\n"
@@ -150,15 +150,15 @@ def _join_embed(game: WordRushGame) -> discord.Embed:
         ),
         color=discord.Color.blurple(),
     )
-    # embed.add_field(
-    #     name="Settings",
-    #     value=(
-    #         f"⏱ **{game.round_time}s** per turn  ·  "
-    #         f"❤️ **{game.max_lives}** {'life' if game.max_lives == 1 else 'lives'}  ·  "
-    #         f"📚 SYLL **{game.syll}**"
-    #     ),
-    #     inline=False,
-    # )
+    embed.add_field(
+        name="Settings",
+        value=(
+            f"⏱ **{game.round_time}s** per turn  ·  "
+            f"❤️ **{game.max_lives}** {'life' if game.max_lives == 1 else 'lives'}  ·  "
+            f"📚 SYLL **{game.syll}**"
+        ),
+        inline=False,
+    )
     return embed
 
 
@@ -311,8 +311,10 @@ class WordRush(commands.Cog):
                     current.lives -= 1
                     if not current.alive:
                         await game.channel.send(embed=_eliminated_embed(current))
+                        await game.channel.send("https://tenor.com/view/house-explosion-explode-boom-kaboom-gif-19506150")
                     else:
                         await game.channel.send(embed=_lost_life_embed(current))
+                        await game.channel.send("https://tenor.com/view/cat-explosion-ellie-cat-explosion-cat-explode-meme-nuclear-explosion-nuclear-ellie-gif-11491440842155618054")
 
                 game.advance_to_next_alive()
 
