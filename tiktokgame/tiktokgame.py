@@ -18,9 +18,12 @@ from redbot.core import commands
 from redbot.core.bot import Red
 
 try:
-    from _dev import DEV_LABEL
-except ImportError:
-    DEV_LABEL = ""
+    import importlib.util as _ilu, pathlib as _pl
+    _spec = _ilu.spec_from_file_location("_dev", _pl.Path(__file__).parent.parent / "_dev.py")
+    _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+    DEV_MODE, DEV_LABEL = _mod.DEV_MODE, _mod.DEV_LABEL
+except Exception:
+    DEV_MODE, DEV_LABEL = False, ""
 
 
 # ---------------------------------------------------------------------------

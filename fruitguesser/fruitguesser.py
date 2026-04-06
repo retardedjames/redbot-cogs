@@ -9,9 +9,12 @@ from redbot.core import commands
 log = logging.getLogger("red.cogs.fruitguesser")
 
 try:
-    from _dev import DEV_LABEL
-except ImportError:
-    DEV_LABEL = ""
+    import importlib.util as _ilu, pathlib as _pl
+    _spec = _ilu.spec_from_file_location("_dev", _pl.Path(__file__).parent.parent / "_dev.py")
+    _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+    DEV_MODE, DEV_LABEL = _mod.DEV_MODE, _mod.DEV_LABEL
+except Exception:
+    DEV_MODE, DEV_LABEL = False, ""
 
 
 # ── Fruit list (~120 fruits) ──────────────────────────────────────────────────
@@ -294,7 +297,7 @@ class FruitGuesser(commands.Cog):
                     photos.append(url)
         return photos
 
-    async def _fetch_images(self, fruit: str, max_count: int = 35) -> list[str]:
+    async def _fetch_images(self, fruit: str, max_count: int = 35, dev_channel=None) -> list[str]:
         """Return up to *max_count* relevant photo URLs for *fruit*.
 
         Always combines Wikipedia article images (editor-curated) with a
@@ -312,12 +315,20 @@ class FruitGuesser(commands.Cog):
             wiki_photos, commons_photos = results
             if isinstance(wiki_photos, Exception):
                 log.error("Wikipedia fetch failed for %r: %s", fruit, wiki_photos)
+                if DEV_MODE and dev_channel:
+                    await dev_channel.send(f"🔴 **[DEV]** Wikipedia fetch failed for `{fruit}`:\n```{wiki_photos}```")
                 wiki_photos = []
             if isinstance(commons_photos, Exception):
                 log.error("Commons fetch failed for %r: %s", fruit, commons_photos)
+                if DEV_MODE and dev_channel:
+                    await dev_channel.send(f"🔴 **[DEV]** Commons fetch failed for `{fruit}`:\n```{commons_photos}```")
                 commons_photos = []
 
             log.debug("Fetched %d wiki + %d commons images for %r", len(wiki_photos), len(commons_photos), fruit)
+            if DEV_MODE and dev_channel:
+                await dev_channel.send(
+                    f"🟡 **[DEV]** `{fruit}`: {len(wiki_photos)} wiki + {len(commons_photos)} commons images fetched"
+                )
 
             # Merge, deduplicate, Wikipedia results first
             seen: set[str] = set()
@@ -329,10 +340,14 @@ class FruitGuesser(commands.Cog):
 
             if not photos:
                 log.warning("No images found for fruit %r", fruit)
+                if DEV_MODE and dev_channel:
+                    await dev_channel.send(f"⚠️ **[DEV]** No images found for `{fruit}` after merging.")
             random.shuffle(photos)
             return photos[:max_count]
-        except Exception:
+        except Exception as e:
             log.exception("Unexpected error fetching images for %r", fruit)
+            if DEV_MODE and dev_channel:
+                await dev_channel.send(f"🔴 **[DEV]** Unexpected error fetching images for `{fruit}`:\n```{e}```")
             return []
 
     # ── Timer ─────────────────────────────────────────────────────────────────
@@ -370,7 +385,7 @@ class FruitGuesser(commands.Cog):
         fruit = random.choice(FRUITS)
         loading = await ctx.send("Searching for images...")
 
-        images = await self._fetch_images(fruit)
+        images = await self._fetch_images(fruit, dev_channel=ctx.channel)
         if not images:
             await loading.edit(content="Couldn't fetch images right now. Please try again!")
             return
