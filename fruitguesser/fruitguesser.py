@@ -1,4 +1,5 @@
 import asyncio
+import io
 import logging
 import random
 
@@ -158,12 +159,22 @@ class FruitHintView(discord.ui.View):
                 description="Here's another look!",
                 color=discord.Color.gold(),
             )
-            embed.set_image(url=game.pop_image())
+            hint_url = game.pop_image()
+            img_data = await self.cog._download_image(hint_url)
             embed.set_footer(text=footer)
-            await interaction.followup.send(
-                embed=embed,
-                view=FruitHintView(self.cog, self.channel_id),
-            )
+            if img_data:
+                embed.set_image(url="attachment://hint.jpg")
+                await interaction.followup.send(
+                    embed=embed,
+                    file=discord.File(io.BytesIO(img_data), filename="hint.jpg"),
+                    view=FruitHintView(self.cog, self.channel_id),
+                )
+            else:
+                embed.set_image(url=hint_url)
+                await interaction.followup.send(
+                    embed=embed,
+                    view=FruitHintView(self.cog, self.channel_id),
+                )
 
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
@@ -362,6 +373,19 @@ class FruitGuesser(commands.Cog):
                 await dev_channel.send(f"🔴 **[DEV]** Unexpected error fetching images for `{fruit}`:\n```{e}```")
             return []
 
+    async def _download_image(self, url: str) -> bytes | None:
+        """Download an image URL and return its bytes, or None on failure."""
+        timeout = aiohttp.ClientTimeout(total=10)
+        headers = {"User-Agent": "FruitGuesserBot/1.0 (Discord Bot)"}
+        try:
+            async with aiohttp.ClientSession(headers=headers) as session:
+                async with session.get(url, timeout=timeout) as resp:
+                    if resp.status == 200:
+                        return await resp.read()
+        except Exception:
+            pass
+        return None
+
     # ── Timer ─────────────────────────────────────────────────────────────────
 
     async def _game_timer(self, channel: discord.TextChannel, fruit: str):
@@ -415,10 +439,21 @@ class FruitGuesser(commands.Cog):
             color=discord.Color.green(),
         )
         image_url = game.pop_image()
-        embed.set_image(url=image_url)
-        await loading.edit(content=None, embed=embed, view=FruitHintView(self, ctx.channel.id))
+        img_data = await self._download_image(image_url)
+        await loading.delete()
+        if img_data:
+            embed.set_image(url="attachment://fruit.jpg")
+            await ctx.send(
+                embed=embed,
+                file=discord.File(io.BytesIO(img_data), filename="fruit.jpg"),
+                view=FruitHintView(self, ctx.channel.id),
+            )
+        else:
+            embed.set_image(url=image_url)
+            await ctx.send(embed=embed, view=FruitHintView(self, ctx.channel.id))
         if DEV_MODE:
-            await ctx.send(f"🟡 **[DEV]** embed image URL:\n{image_url}")
+            status = "downloaded" if img_data else "URL fallback"
+            await ctx.send(f"🟡 **[DEV]** image: {status} — `{image_url}`")
 
     # ── Guess listener ────────────────────────────────────────────────────────
 
