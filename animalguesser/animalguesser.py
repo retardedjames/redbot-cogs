@@ -137,25 +137,47 @@ class AnimalGuesser(commands.Cog):
     # ── Image fetching ────────────────────────────────────────────────────────
 
     async def _fetch_images(self, animal: str, max_count: int = 35) -> list[str]:
-        """Return up to *max_count* photo URLs from the iNaturalist API."""
+        """Return up to *max_count* photo URLs from the iNaturalist API.
+
+        Two-step approach: first resolve the animal name to an exact taxon
+        ID, then fetch research-grade observations for that specific taxon.
+        This prevents mixing species when a common name maps to a broad
+        group (e.g. 'Eagle' covers 68 species) and eliminates misidentified
+        community observations.
+        """
         timeout = aiohttp.ClientTimeout(total=15)
         headers = {"User-Agent": "AnimalGuesserBot/1.0 (Discord Bot)"}
         try:
             async with aiohttp.ClientSession(headers=headers) as session:
+                # Step 1: resolve name → taxon_id
+                async with session.get(
+                    "https://api.inaturalist.org/v1/taxa",
+                    params={"q": animal, "per_page": 1},
+                    timeout=timeout,
+                ) as resp:
+                    taxa_data = await resp.json()
+
+                taxa_results = taxa_data.get("results", [])
+                if not taxa_results:
+                    return []
+                taxon_id = taxa_results[0]["id"]
+
+                # Step 2: fetch research-grade observations for that exact taxon
                 async with session.get(
                     "https://api.inaturalist.org/v1/observations",
                     params={
-                        "taxon_name": animal,
+                        "taxon_id": taxon_id,
                         "photos": "true",
                         "per_page": 35,
                         "order_by": "votes",
+                        "quality_grade": "research",
                     },
                     timeout=timeout,
                 ) as resp:
-                    data = await resp.json()
+                    obs_data = await resp.json()
 
             photos = []
-            for obs in data.get("results", []):
+            for obs in obs_data.get("results", []):
                 for p in obs.get("photos", []):
                     url = p.get("url", "").replace("square", "medium")
                     if url.startswith("http"):
