@@ -125,6 +125,71 @@ class AnimalGame:
         return self.images[idx]
 
 
+# ── Hint button ───────────────────────────────────────────────────────────────
+
+class AnimalHintView(discord.ui.View):
+    """Single-use green Hint button. Disables itself when clicked, then sends
+    the next hint as a followup (with a fresh button if hints remain)."""
+
+    def __init__(self, cog: "AnimalGuesser", channel_id: int):
+        super().__init__(timeout=70)   # slightly longer than the 60-s game timer
+        self.cog = cog
+        self.channel_id = channel_id
+        self._used = False
+
+    @discord.ui.button(label="Hint", style=discord.ButtonStyle.success)
+    async def hint_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self._used:
+            await interaction.response.send_message(
+                "Use the most recent Hint button!", ephemeral=True
+            )
+            return
+
+        game = self.cog.games.get(self.channel_id)
+        if not game:
+            await interaction.response.send_message(
+                "This game has already ended.", ephemeral=True
+            )
+            return
+        if game.hints_used >= AnimalGame.MAX_HINTS:
+            await interaction.response.send_message(
+                f"All **{AnimalGame.MAX_HINTS}** hints have been used — keep guessing!",
+                ephemeral=True,
+            )
+            return
+
+        self._used = True
+        button.disabled = True
+        game.hints_used += 1
+        remaining = AnimalGame.MAX_HINTS - game.hints_used
+        footer = f"{remaining} hint(s) remaining." if remaining else "No more hints after this!"
+        is_final = game.hints_used == AnimalGame.MAX_HINTS
+
+        # Disable this button on the current message first
+        await interaction.response.edit_message(view=self)
+
+        if is_final:
+            embed = discord.Embed(
+                title=f"Hint {game.hints_used}/{AnimalGame.MAX_HINTS} — Final Hint!",
+                description=f"The animal name scrambled: **{_scramble(game.animal)}**",
+                color=discord.Color.red(),
+            )
+            embed.set_footer(text=footer)
+            await interaction.followup.send(embed=embed)
+        else:
+            embed = discord.Embed(
+                title=f"Hint {game.hints_used}/{AnimalGame.MAX_HINTS}",
+                description="Here's another look!",
+                color=discord.Color.gold(),
+            )
+            embed.set_image(url=game.pop_image())
+            embed.set_footer(text=footer)
+            await interaction.followup.send(
+                embed=embed,
+                view=AnimalHintView(self.cog, self.channel_id),
+            )
+
+
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
 class AnimalGuesser(commands.Cog):
@@ -236,45 +301,12 @@ class AnimalGuesser(commands.Cog):
             title="What animal is this?",
             description=(
                 "Type your guess in chat — anyone can answer!\n"
-                "You have **60 seconds**. Type `$hint` for clues *(4 max, last hint scrambles the name)*."
+                "You have **60 seconds**. Use the **Hint** button below *(4 max, last hint scrambles the name)*."
             ),
             color=discord.Color.blurple(),
         )
         embed.set_image(url=game.pop_image())
-        await loading.edit(content=None, embed=embed)
-
-    @commands.command()
-    async def hint(self, ctx: commands.Context):
-        """Get a clue for the current animal guessing game (4 max; last hint scrambles the name)."""
-        game = self.games.get(ctx.channel.id)
-        if not game:
-            await ctx.send("No game is running here. Start one with `$animalguesser`!")
-            return
-        if game.hints_used >= AnimalGame.MAX_HINTS:
-            await ctx.send("All **4** hints have been used — keep guessing!")
-            return
-
-        game.hints_used += 1
-        remaining = AnimalGame.MAX_HINTS - game.hints_used
-        footer = f"{remaining} hint(s) remaining." if remaining else "No more hints after this!"
-
-        is_final = game.hints_used == AnimalGame.MAX_HINTS
-        if is_final:
-            embed = discord.Embed(
-                title=f"Hint {game.hints_used}/{AnimalGame.MAX_HINTS} — Final Hint!",
-                description=f"The animal name scrambled: **{_scramble(game.animal)}**",
-                color=discord.Color.red(),
-            )
-            embed.set_footer(text=footer)
-        else:
-            embed = discord.Embed(
-                title=f"Hint {game.hints_used}/{AnimalGame.MAX_HINTS}",
-                description="Here's another look!",
-                color=discord.Color.gold(),
-            )
-            embed.set_image(url=game.pop_image())
-            embed.set_footer(text=footer)
-        await ctx.send(embed=embed)
+        await loading.edit(content=None, embed=embed, view=AnimalHintView(self, ctx.channel.id))
 
     # ── Guess listener ────────────────────────────────────────────────────────
 
@@ -286,7 +318,7 @@ class AnimalGuesser(commands.Cog):
         if not game:
             return
 
-        # Ignore valid bot commands (e.g. $hint, $animalguesser)
+        # Ignore valid bot commands (e.g. $animalguesser)
         ctx = await self.bot.get_context(message)
         if ctx.valid:
             return
