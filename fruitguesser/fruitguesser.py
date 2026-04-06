@@ -1,9 +1,12 @@
 import asyncio
+import logging
 import random
 
 import aiohttp
 import discord
 from redbot.core import commands
+
+log = logging.getLogger("red.cogs.fruitguesser")
 
 
 # ── Fruit list (~120 fruits) ──────────────────────────────────────────────────
@@ -296,10 +299,21 @@ class FruitGuesser(commands.Cog):
         headers = {"User-Agent": "FruitGuesserBot/1.0 (Discord Bot)"}
         try:
             async with aiohttp.ClientSession(headers=headers) as session:
-                wiki_photos, commons_photos = await asyncio.gather(
+                results = await asyncio.gather(
                     self._fetch_from_wikipedia(session, fruit, timeout),
                     self._fetch_from_commons_search(session, fruit, timeout),
+                    return_exceptions=True,
                 )
+            wiki_photos, commons_photos = results
+            if isinstance(wiki_photos, Exception):
+                log.error("Wikipedia fetch failed for %r: %s", fruit, wiki_photos)
+                wiki_photos = []
+            if isinstance(commons_photos, Exception):
+                log.error("Commons fetch failed for %r: %s", fruit, commons_photos)
+                commons_photos = []
+
+            log.debug("Fetched %d wiki + %d commons images for %r", len(wiki_photos), len(commons_photos), fruit)
+
             # Merge, deduplicate, Wikipedia results first
             seen: set[str] = set()
             photos: list[str] = []
@@ -308,9 +322,12 @@ class FruitGuesser(commands.Cog):
                     seen.add(url)
                     photos.append(url)
 
+            if not photos:
+                log.warning("No images found for fruit %r", fruit)
             random.shuffle(photos)
             return photos[:max_count]
         except Exception:
+            log.exception("Unexpected error fetching images for %r", fruit)
             return []
 
     # ── Timer ─────────────────────────────────────────────────────────────────
