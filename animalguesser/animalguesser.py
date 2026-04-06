@@ -5,6 +5,11 @@ import aiohttp
 import discord
 from redbot.core import commands
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 
 # ── Animal list (~250 common animals) ────────────────────────────────────────
 
@@ -298,7 +303,7 @@ class AnimalGuesser(commands.Cog):
         self.games[ctx.channel.id] = game
 
         embed = discord.Embed(
-            title="What animal is this?",
+            title=f"What animal is this?{DEV_LABEL}",
             description=(
                 "Type your guess in chat — anyone can answer!\n"
                 "You have **60 seconds**. Use the **Hint** button below *(4 max, last hint scrambles the name)*."

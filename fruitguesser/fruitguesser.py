@@ -8,6 +8,11 @@ from redbot.core import commands
 
 log = logging.getLogger("red.cogs.fruitguesser")
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 
 # ── Fruit list (~120 fruits) ──────────────────────────────────────────────────
 
@@ -375,7 +380,7 @@ class FruitGuesser(commands.Cog):
         self.games[ctx.channel.id] = game
 
         embed = discord.Embed(
-            title="What fruit is this?",
+            title=f"What fruit is this?{DEV_LABEL}",
             description=(
                 "Type your guess in chat — anyone can answer!\n"
                 "You have **60 seconds**. Use the **Hint** button below *(3 max, last hint scrambles the name)*."

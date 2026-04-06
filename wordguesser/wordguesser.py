@@ -9,6 +9,11 @@ from redbot.core import commands
 
 from .words import WORD_DEFINITIONS
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 TIMEOUT = 60   # seconds before the answer is revealed
 HINT_AT = 30   # seconds before a letter-count + first-letter hint is shown
 
@@ -25,7 +30,7 @@ class WordGame:
 
 def _round_embed(definition: str) -> discord.Embed:
     return discord.Embed(
-        title="Word Guesser",
+        title=f"Word Guesser{DEV_LABEL}",
         description=definition,
         color=discord.Color.blurple(),
     ).set_footer(text="Type your guess in chat! A hint appears after 30 seconds.")

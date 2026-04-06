@@ -5,6 +5,11 @@ from collections import Counter
 import discord
 from redbot.core import commands
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 from .slang import SLANG_WORDS
 from .source_words import SOURCE_WORDS
 
@@ -186,7 +191,7 @@ class Anagrams(commands.Cog):
         self.games[ctx.channel.id] = game
 
         embed = discord.Embed(
-            title="🔤  Anagram Round!",
+            title=f"🔤  Anagram Round!{DEV_LABEL}",
             description=(
                 f"## {' '.join(game.jumbled)}\n\n"
                 f"Find words using these letters! You have **{duration} seconds**!\n\n"

@@ -7,6 +7,11 @@ from typing import Optional
 import discord
 from redbot.core import Config, commands
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 # ── Dictionary & Prefix Set ───────────────────────────────────────────────────
 
 def _load_dictionary() -> frozenset:
@@ -193,7 +198,7 @@ def _join_embed(game: GhostGameState) -> discord.Embed:
     else:
         plist = "*No one yet — be the first!*"
     return discord.Embed(
-        title="👻  Ghost",
+        title=f"👻  Ghost{DEV_LABEL}",
         description=(
             "Take turns adding **one letter** to a growing word fragment.\n"
             "Complete a real word and you earn a **GHOST** letter — spell it all and you're out! 💀\n"

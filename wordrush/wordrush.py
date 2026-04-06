@@ -10,6 +10,11 @@ from redbot.core import Config, commands
 from .slang import SLANG_WORDS
 from .proper_nouns import PROPER_NOUNS
 
+try:
+    from _dev import DEV_LABEL
+except ImportError:
+    DEV_LABEL = ""
+
 # ── Dictionary ────────────────────────────────────────────────────────────────
 
 def _load_dictionary() -> frozenset:
@@ -142,7 +147,7 @@ def _join_embed(game: WordRushGame) -> discord.Embed:
     else:
         plist = "*No one yet — be the first!*"
     embed = discord.Embed(
-        title="Word Rush",
+        title=f"Word Rush{DEV_LABEL}",
         description=(
             "Find a word containing the 3 displayed letters before time runs out!\n"
             "Click **Join Game** to play!\n\n"
