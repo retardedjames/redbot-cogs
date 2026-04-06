@@ -380,7 +380,7 @@ class FruitGuesser(commands.Cog):
         self.games[ctx.channel.id] = game
 
         embed = discord.Embed(
-            title=f"What fruit is this?{DEV_LABEL}",
+            title=f"What fruit is this??{DEV_LABEL}",
             description=(
                 "Type your guess in chat — anyone can answer!\n"
                 "You have **60 seconds**. Use the **Hint** button below *(3 max, last hint scrambles the name)*."
