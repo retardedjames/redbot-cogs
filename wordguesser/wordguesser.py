@@ -96,20 +96,6 @@ class WordGuesser(commands.Cog):
         await ctx.send(embed=_round_embed(definition))
         game.task = asyncio.create_task(self._run_round(ctx, game))
 
-    @commands.command(name="wgend")
-    async def wgend(self, ctx: commands.Context):
-        """Cancel the current Word Guesser round."""
-        game = self.games.pop(ctx.channel.id, None)
-        if game is None:
-            await ctx.send("No Word Guesser round is running in this channel.")
-            return
-        if game.task:
-            game.task.cancel()
-        await ctx.send(embed=discord.Embed(
-            description=f"🛑  Round cancelled. The word was **{game.word}**.",
-            color=discord.Color.red(),
-        ))
-
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in channel_id. Returns game name if stopped, else None."""
         game = self.games.pop(channel_id, None)

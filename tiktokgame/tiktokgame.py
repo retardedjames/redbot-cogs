@@ -251,10 +251,7 @@ class TikTokGameCog(commands.Cog):
     async def tiktok_game(self, ctx: commands.Context):
         """Start a TikTok Dance Tournament in this channel."""
         if ctx.channel.id in self.games:
-            await ctx.send(
-                "A tournament is already running here! "
-                "Use `$tiktokstop` to end it early."
-            )
+            await ctx.send("A tournament is already running here!")
             return
 
         lobby = LobbyView(ctx.author)
@@ -273,16 +270,6 @@ class TikTokGameCog(commands.Cog):
             await self._run_game(ctx, game, set(lobby.players))
         finally:
             self.games.pop(ctx.channel.id, None)
-
-    @commands.command(name="tiktokstop")
-    @commands.guild_only()
-    async def tiktok_stop(self, ctx: commands.Context):
-        """Stop the TikTok Dance Tournament running in this channel."""
-        if ctx.channel.id not in self.games:
-            await ctx.send("No tournament is running in this channel.")
-            return
-        self.games[ctx.channel.id].stop()
-        await ctx.send("🛑 Tournament stopped.")
 
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in channel_id. Returns game name if stopped, else None."""

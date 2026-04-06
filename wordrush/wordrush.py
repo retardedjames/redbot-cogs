@@ -256,21 +256,6 @@ class WordRush(commands.Cog):
 
         game.game_task = asyncio.create_task(self._run_game(ctx, game))
 
-    @commands.command(name="endwr")
-    async def endwr(self, ctx: commands.Context):
-        """End the current Word Rush game early."""
-        game = self.games.pop(ctx.channel.id, None)
-        if game is None:
-            await ctx.send("No Word Rush game is running in this channel.")
-            return
-        if game.game_task:
-            game.game_task.cancel()
-        game.phase = "ended"
-        await ctx.send(embed=discord.Embed(
-            description="🛑  Word Rush game has been ended.",
-            color=discord.Color.red(),
-        ))
-
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in channel_id. Returns game name if stopped, else None."""
         game = self.games.pop(channel_id, None)

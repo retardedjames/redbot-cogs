@@ -207,14 +207,11 @@ class Wordle(commands.Cog):
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
-    @commands.group(invoke_without_command=True)
+    @commands.command()
     async def wordle(self, ctx: commands.Context):
         """Start a multiplayer Wordle game in this channel."""
         if ctx.channel.id in self.games:
-            await ctx.send(
-                "A Wordle game is already running here. "
-                "Type `wordle stop` to end it early."
-            )
+            await ctx.send("A Wordle game is already running here.")
             return
 
         word = random.choice(WORDS).upper()
@@ -224,15 +221,6 @@ class Wordle(commands.Cog):
             f"You have **{WordleGame.MAX_GUESSES} guesses** — anyone can play!\n"
             "Just type any 5-letter word in chat."
         )
-
-    @wordle.command(name="stop")
-    async def wordle_stop(self, ctx: commands.Context):
-        """Stop the current Wordle game and reveal the answer."""
-        game = self.games.pop(ctx.channel.id, None)
-        if game is None:
-            await ctx.send("No Wordle game is running in this channel.")
-            return
-        await ctx.send(f"Game stopped. The word was **{game.word}**.")
 
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in channel_id. Returns game name if stopped, else None."""
