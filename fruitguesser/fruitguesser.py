@@ -335,8 +335,11 @@ class FruitGuesser(commands.Cog):
 
             log.debug("Fetched %d wiki + %d commons images for %r", len(wiki_photos), len(commons_photos), fruit)
             if DEV_MODE and dev_channel:
+                sample = (wiki_photos + commons_photos)[:3]
+                sample_str = "\n".join(sample) if sample else "none"
                 await dev_channel.send(
-                    f"🟡 **[DEV]** `{fruit}`: {len(wiki_photos)} wiki + {len(commons_photos)} commons images fetched"
+                    f"🟡 **[DEV]** `{fruit}`: {len(wiki_photos)} wiki + {len(commons_photos)} commons\n"
+                    f"First URLs:\n{sample_str}"
                 )
 
             # Merge, deduplicate, Wikipedia results first
