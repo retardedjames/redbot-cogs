@@ -346,9 +346,7 @@ class AnimalVerbChallenge(BaseChallenge):
     key = "animal_verb"
 
     def generate(self):
-        return {}, (
-            "Name an animal that is **also a verb** (e.g. duck, fish, badger)!"
-        )
+        return {}, "Name an animal that is **also a verb**!"
 
     def validate(self, answer, params):
         return answer.strip().lower() in ANIMAL_VERBS
@@ -375,10 +373,7 @@ class ThreeVowelsInRowChallenge(BaseChallenge):
     key = "three_vowels_row"
 
     def generate(self):
-        return {}, (
-            "Type any valid English word that contains **3 vowels in a row** "
-            "(e.g. queue, audio, beautiful)!"
-        )
+        return {}, "Type any valid English word that contains **3 vowels in a row**!"
 
     def validate(self, answer, params):
         w = answer.strip().lower()
@@ -403,10 +398,7 @@ class PalindromeChallenge(BaseChallenge):
     key = "palindrome"
 
     def generate(self):
-        return {}, (
-            "Type any word that is spelled the **same forwards and backwards** (a palindrome)!\n"
-            "Examples: racecar, level, civic, noon"
-        )
+        return {}, "Type any word that is spelled the **same forwards and backwards**!"
 
     def validate(self, answer, params):
         w = answer.strip().lower()
@@ -492,7 +484,7 @@ class EndsInFulChallenge(BaseChallenge):
     key = "ends_in_ful"
 
     def generate(self):
-        return {}, "Type any valid English **adjective ending in -ful** (e.g. beautiful, hopeful)!"
+        return {}, "Type any valid English **adjective ending in -ful**!"
 
     def validate(self, answer, params):
         w = answer.strip().lower()
@@ -518,10 +510,7 @@ class DoubleLettersChallenge(BaseChallenge):
     key = "double_letters"
 
     def generate(self):
-        return {}, (
-            "Type any valid English word that contains **double letters** "
-            "(e.g. coffee, balloon, happy)!"
-        )
+        return {}, "Type any valid English word that contains **double letters**!"
 
     def validate(self, answer, params):
         w = answer.strip().lower()
@@ -597,10 +586,7 @@ class HiddenAnimalChallenge(BaseChallenge):
     key = "hidden_animal"
 
     def generate(self):
-        return {}, (
-            "Type any valid English word that has an **animal hidden inside it**!\n"
-            "Examples: c**at**egory, un**bear**able, s**nail**, **crane**"
-        )
+        return {}, "Type any valid English word that has an **animal hidden inside it**!"
 
     def validate(self, answer, params):
         w = answer.strip().lower()
@@ -664,28 +650,26 @@ class RhymeChallenge(BaseChallenge):
 
 
 # ── Registry ──────────────────────────────────────────────────────────────────
+# Each entry is a list of challenge variants for one activity type.
+# A random group is picked first (equal weight per activity), then a random
+# variant within that group is picked — so animal×4 and fruit×4 each still
+# only count as one activity.
 
-CHALLENGES = [
-    LongWordChallenge(),
-    CountryByLetterChallenge(),
-    XLetterAnimalChallenge(4),
-    XLetterAnimalChallenge(5),
-    XLetterAnimalChallenge(6),
-    XLetterAnimalChallenge(7),
-    XLetterFruitChallenge(5),
-    XLetterFruitChallenge(6),
-    XLetterFruitChallenge(7),
-    XLetterFruitChallenge(8),
-    NoRepeatedLettersChallenge(),
-    CapitalCityChallenge(),
-    SameStartEndChallenge(),
-    AnimalVerbChallenge(),
-    ThreeVowelsInRowChallenge(),
-    PalindromeChallenge(),
-    CountryByContinentChallenge(),
-    EndsInFulChallenge(),
-    DoubleLettersChallenge(),
-    SpaceBodyChallenge(),
-    HiddenAnimalChallenge(),
-    RhymeChallenge(),
+CHALLENGE_GROUPS = [
+    [LongWordChallenge()],
+    [CountryByLetterChallenge()],
+    [XLetterAnimalChallenge(4), XLetterAnimalChallenge(5), XLetterAnimalChallenge(6), XLetterAnimalChallenge(7)],
+    [XLetterFruitChallenge(5), XLetterFruitChallenge(6), XLetterFruitChallenge(7), XLetterFruitChallenge(8)],
+    [NoRepeatedLettersChallenge()],
+    [CapitalCityChallenge()],
+    [SameStartEndChallenge()],
+    [AnimalVerbChallenge()],
+    [ThreeVowelsInRowChallenge()],
+    [PalindromeChallenge()],
+    [CountryByContinentChallenge()],
+    [EndsInFulChallenge()],
+    [DoubleLettersChallenge()],
+    [SpaceBodyChallenge()],
+    [HiddenAnimalChallenge()],
+    [RhymeChallenge()],
 ]

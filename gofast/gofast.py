@@ -4,7 +4,7 @@ import random
 import discord
 from redbot.core import commands, Config
 
-from .challenges import CHALLENGES
+from .challenges import CHALLENGE_GROUPS
 
 WIN_POINTS = 20
 
@@ -82,7 +82,7 @@ class GoFast(commands.Cog):
             await ctx.send("A GoFast session is already running in this channel!")
             return
 
-        if not CHALLENGES:
+        if not CHALLENGE_GROUPS:
             await ctx.send("No challenges are loaded. Please contact the bot owner.")
             return
 
@@ -150,7 +150,8 @@ class GoFast(commands.Cog):
         if not session.active:
             return
 
-        challenge = random.choice(CHALLENGES)
+        group = random.choice(CHALLENGE_GROUPS)
+        challenge = random.choice(group)
         params, prompt = await challenge.async_generate()
         session.current_challenge = challenge
         session.current_params = params
