@@ -4,7 +4,7 @@ import random
 from collections import deque
 
 import discord
-from redbot.core import commands
+from redbot.core import commands, Config
 
 # ── Dev mode — set DEV_MODE = False for production ───────────────────────────
 DEV_MODE = True
@@ -660,10 +660,14 @@ def _normalize(text: str) -> str:
 class FamousWords(commands.Cog):
     """Famous Words — fill in the missing word from a famous quote!"""
 
+    DEFAULT_DURATION = 30
+
     def __init__(self, bot):
         self.bot = bot
         self.games: dict = {}   # channel_id → game dict
         self._tasks: dict = {}  # channel_id → asyncio.Task
+        self.config = Config.get_conf(self, identifier=0x4661776F726473)
+        self.config.register_guild(duration=self.DEFAULT_DURATION)
 
     def cog_unload(self):
         for task in self._tasks.values():
@@ -673,19 +677,18 @@ class FamousWords(commands.Cog):
 
     # ── $famouswords ──────────────────────────────────────────────────────────
 
-    @commands.command(name="famouswords")
+    @commands.group(name="famouswords", invoke_without_command=True)
     @commands.guild_only()
-    async def famouswords(self, ctx: commands.Context, duration: int = 90):
+    async def famouswords(self, ctx: commands.Context):
         """
         Start a Famous Words round.
         A famous quote appears with one key word missing — first to type it wins!
-        Optionally set the time limit: `$famouswords 120`
         """
         if ctx.channel.id in self.games:
             await ctx.send("A Famous Words round is already running in this channel!")
             return
 
-        duration = max(15, min(duration, 300))
+        duration = await self.config.guild(ctx.guild).duration()
         quote_text, answer, attribution = _pick_quote()
 
         blank = _make_blank(answer)
@@ -713,6 +716,19 @@ class FamousWords(commands.Cog):
 
         task = asyncio.create_task(self._run_round(ctx.channel, game, duration))
         self._tasks[ctx.channel.id] = task
+
+    # ── $famouswords settime <seconds> ───────────────────────────────────────
+
+    @famouswords.command(name="settime")
+    @commands.guild_only()
+    @commands.admin_or_permissions(manage_guild=True)
+    async def famouswords_settime(self, ctx: commands.Context, seconds: int):
+        """Set the round duration for Famous Words (admins only).
+        Example: `$famouswords settime 20`
+        """
+        seconds = max(10, min(seconds, 300))
+        await self.config.guild(ctx.guild).duration.set(seconds)
+        await ctx.send(f"Famous Words round time set to **{seconds} seconds**.")
 
     # ── force_stop_game (called by $end / GameStop cog) ───────────────────────
 
