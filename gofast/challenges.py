@@ -658,8 +658,8 @@ class RhymeChallenge(BaseChallenge):
 CHALLENGE_GROUPS = [
     [LongWordChallenge()],
     [CountryByLetterChallenge()],
-    [XLetterAnimalChallenge(4), XLetterAnimalChallenge(5), XLetterAnimalChallenge(6), XLetterAnimalChallenge(7)],
-    [XLetterFruitChallenge(5), XLetterFruitChallenge(6), XLetterFruitChallenge(7), XLetterFruitChallenge(8)],
+    # [XLetterAnimalChallenge(4), XLetterAnimalChallenge(5), XLetterAnimalChallenge(6), XLetterAnimalChallenge(7)],
+    # [XLetterFruitChallenge(5), XLetterFruitChallenge(6), XLetterFruitChallenge(7), XLetterFruitChallenge(8)],
     [NoRepeatedLettersChallenge()],
     [CapitalCityChallenge()],
     [SameStartEndChallenge()],
