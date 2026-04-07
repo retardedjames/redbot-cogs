@@ -1,5 +1,6 @@
 {
     "author": ["jamescvermont-cyber"],
     "description": "Two-player rhyme duel — take turns rhyming a word before time runs out!",
+    "install_msg": "Thanks for installing Rhyme Duel!\n\nThis cog requires the 'pronouncing' package for accurate rhyme detection. Install it with:\n  [p]pipinstall pronouncing\n\nThen reload the cog:\n  [p]reload rhymeduel",
     "short": "Two-player rhyme battle cog"
 }
