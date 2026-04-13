@@ -1,7 +1,6 @@
 import asyncio
 import json
 import random
-import re
 from contextlib import suppress
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -19,17 +18,12 @@ INSULTS_FILE = DATA_PATH / "Random Insults.txt"
 DEFAULT_TIME = 26
 DEFAULT_QUESTIONS = 100
 
-# Build regex once at module load to match \_\_ blank sequences
-_BS = chr(92)   # backslash
-_US = chr(95)   # underscore
-_BLANK_RE = re.compile("(" + re.escape(_BS) + _US + ")+")
-
-
 def _format_blank(answer: str) -> str:
-    """Return `_ _ _ _` style blank matching the answer's character count.
+    """Return `\_ \_ \_ \_` style blank matching the answer's character count.
+    Underscores are backslash-escaped so Discord doesn't treat them as italic markdown.
     Multi-word answers get double-space between word blanks."""
     words = answer.split()
-    return "  ".join(" ".join("_" for _ in word) for word in words)
+    return "  ".join(" ".join(r"\_" for _ in word) for word in words)
 
 
 def _load_questions() -> list:
