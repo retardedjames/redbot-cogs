@@ -214,7 +214,7 @@ def _join_embed(game: GhostGameState) -> discord.Embed:
         description=(
             "Take turns adding **one letter** to a growing word fragment.\n"
             "Complete a real word and you earn a **GHOST** letter — spell it all and you're out! 💀\n"
-            "You can also **Challenge** the previous player — bluff busted = they get the letter; false challenge = you do!\n\n"
+            "You can also **Challenge** if you think the previous player's letter leads nowhere — bluff busted = they get the letter; false challenge = you do!\n\n"
             f"**Players ({len(game.players)}):**\n{plist}"
         ),
         color=discord.Color.blurple(),
