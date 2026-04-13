@@ -1,37 +1,76 @@
 I want you to generate 50 new trivia questions for my fill-in-the-blank trivia game.
 
-STEP 1 — Read all existing questions to avoid duplicates.
+STEP 1 — Check for existing questions to avoid duplicates.
 
-Read the file `trivia/questions.json`. Also read every .txt file inside `PotentialQuestions/` to see all previously generated questions. Note the full set of questions and answers so you don't repeat them.
+Read `trivia/questions.json`. Also read every .txt file in `PotentialQuestions/` to see all previously generated batches. Build a mental list of every question and answer so you don't repeat anything even if it's phrased differently.
 
-STEP 2 — Understand the question style.
+STEP 2 — Understand the exact question style.
 
-The questions follow this format: the missing word or short phrase is replaced with underscores, and the answer comes after a pipe character:
-  \_\_\_\_\_ can rotate their heads up to 270 degrees.|Owls
-  The novel \_\_\_\_\_\_\_\_\_\_\_ was written by Miguel de Cervantes.|Don Quixote
-  \_\_\_\_\_\_\_\_\_\_ are the only animals where males carry pregnancy.|Seahorses
+These are NOT standard trivia questions. Study these real examples carefully:
 
-Style guidelines:
-- Mix of categories: science, history, geography, pop culture, food, sports, language, movies/TV, weird facts, current technology, biology, psychology
-- Prioritize surprising, funny, or "wait really?" facts over dry textbook knowledge
-- Answers should almost always be a single word or short phrase (2–3 words max)
-- The blank should replace the most interesting/surprising word in the sentence
-- The number of underscores in the question should EXACTLY match the number of characters in the answer (use one \_ per character, no spaces between underscores)
-- Answers are case-insensitive when players guess, but store them in their natural capitalization
-- Avoid questions that are too obscure (things basically nobody would know) or too easy (things everyone knows instantly)
-- Do NOT generate questions that are essentially the same as an existing one, even if worded differently
+  \_\_\_\_\_\_\_\_\_\_ have a built-in "pocket" of skin under their forelegs where they store their favorite rock for cracking shells.|Sea otters
+  \_\_\_\_\_\_\_\_\_\_ was once attacked by a swarm of \_\_\_\_\_\_\_\_.|rabbits
+  The \_\_\_\_\_\_\_\_\_\_\_\_\_ killed millions in medieval Europe.|Black Death
+  Abraham Lincoln is in the \_\_\_\_\_\_\_\_\_ Hall of Fame (he only lost one match out of about 300).|Wrestling
+  Oxford \_\_\_\_\_\_\_\_\_\_ existed before the Aztec Empire.|University
+  \_\_\_\_\_\_\_\_ was originally built for a mobile MOBA game that failed; the developers realized the chat app was better than the game itself.|Discord
+  Major League Baseball umpires are required to wear \_\_\_\_\_ underwear in case their pants rip.|black
+  Mary Shelley kept her late husband's \_\_\_\_\_ in a silk wrap in her desk for nearly 30 years.|heart
+  Mantis \_\_\_\_\_ can punch with the speed of a .22 caliber bullet, generating enough heat to boil the surrounding water instantly.|Shrimp
+  \_\_\_\_\_\_\_\_\_\_\_ wrap their incredibly long tongues around their brains to act as a shock absorber while pecking.|Woodpeckers
+  Pythagoras (the triangle guy) headed a cult that was terrified of \_\_\_\_\_.|beans
+  In 1913, Hitler, Stalin, Trotsky, Tito, and Freud all lived within a few miles of each other in \_\_\_\_\_\_.|Vienna
+  Ancient Romans used crushed \_\_\_\_\_ brains as toothpaste.|mouse
+  \_\_\_\_\_ in most restaurants is just horseradish dyed green.|Wasabi
+  Some turtles can breathe through their \_\_\_\_\_\_.|butts
 
-STEP 3 — Generate 50 new questions.
+STYLE RULES:
 
-Output them in this exact format, one per line:
-  \_\_\_ question text here \_\_\_\_.|Answer
+1. THE ANSWER IS THE PAYOFF. The blank should hide the surprising, unexpected, or funny word — the one that makes you go "wait, really?" Once revealed, it should feel satisfying.
 
-Make sure the underscore count matches the character count of the answer.
+2. INCLUDE CONTEXT. Don't just state the dry fact. Add a parenthetical, a clause, or extra detail that makes the question more interesting even while guessing. The question itself should be fun to read.
+   BAD:  Mantis shrimp can punch very fast.|Shrimp
+   GOOD: Mantis \_\_\_\_\_ can punch with the speed of a .22 caliber bullet, generating enough heat to boil the surrounding water instantly.|Shrimp
+
+3. CATEGORY MIX. Roughly this distribution:
+   - Animal/biology weirdness (~15%): surprising animal facts, body weirdness, biological quirks
+   - Historical weirdness (~15%): bizarre historical facts, people, events
+   - Pop culture/tech (~15%): origins of apps/companies/games/memes, celebrity facts, movie/music trivia
+   - Science/physics (~10%): surprising science facts, not textbook definitions
+   - Human body (~10%): surprising things about the body, psychology, brain
+   - Geography/records (~10%): world records, country/city facts
+   - Food/drink (~10%): origins, surprising facts about everyday foods
+   - Language/words (~10%): etymology, word origins, surprising linguistic facts
+   - Sports oddities (~5%): weird rules, strange facts, unexpected records
+
+4. ANSWERS should be:
+   - Usually a single word (a noun, verb, animal, person, place, brand, number)
+   - Occasionally a short phrase (2–3 words max like "Sea otters", "Black Death", "Mandela Effect")
+   - Never a full sentence
+   - Case-insensitive at guess time, but store with natural capitalization
+
+5. UNDERSCORE COUNT must exactly match the character count of the answer. Count every letter in the answer (including spaces for multi-word answers... wait, actually: use ONE backslash-underscore pair per CHARACTER, and put them back-to-back with no gaps). For multi-word answers, the underscores should still all be run together (the display code handles word spacing automatically).
+   - "Owls" = 4 chars = \_\_\_\_ (four \_ pairs)
+   - "Sea otters" = 9 chars not counting the space = \_\_\_\_\_\_\_\_\_ (nine \_ pairs) — just count all non-space chars... actually count ALL chars including the space: "Sea otters" = 10 chars = \_\_\_\_\_\_\_\_\_\_ (ten \_ pairs)
+
+6. DIFFICULTY should be medium. Not so easy that everyone knows it immediately, not so obscure that nobody has a chance. The sweet spot is "I should have known that" or "oh wow I never knew that."
+
+7. AVOID:
+   - Questions that are essentially the same as an existing one even if different words
+   - Purely academic facts with no interesting angle (e.g., "Water is made of two \_\_\_\_\_\_\_ atoms.|hydrogen")
+   - Questions where the blank could have multiple valid-sounding answers
+   - Answers that are too long (4+ words)
+   - Topics that were already covered with a better version in the existing set
+
+STEP 3 — Generate 50 questions.
+
+Output them raw, one per line, in this format:
+  \_\_\_ question text here.|Answer
+
+No numbering, no commentary, just the questions.
 
 STEP 4 — Save to a new file.
 
-Determine what batch number to use by looking at existing files in PotentialQuestions/ (e.g., if batch_001.txt and batch_002.txt exist, save to batch_003.txt).
+Look at what files already exist in PotentialQuestions/ (e.g., batch_001.txt, batch_002.txt) and save to the next number (e.g., batch_003.txt). Write ONLY the raw question lines to that file — nothing else.
 
-Write the 50 questions to that new file in PotentialQuestions/. Do NOT write anything else to the file — just the raw question lines, one per line.
-
-Do not explain what you're doing. Just do it.
+Do not explain anything. Just do it.
