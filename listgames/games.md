@@ -1,13 +1,14 @@
-## $end, Stop any game early
+## $end
+Stop any game early
 
-## $an, Anagrams
-a longish word is scrambled and people rush to find words in the letters
+## $an - Anagrams
+A word is scrambled and people rush to find words in the letters
 
 ## $ag, Animal Guesser
-a picture of a random animal is shown and the first to guess the name wins. hints can help
+Random animal is shown and the first to guess it wins
 
 ## $cc, Caption Contest
-generates a random new yorker style cartoon. suggest a caption and ppl can vote on which ones the best.
+AI generated random new yorker style cartoon. Suggest a caption and ppl vote for the best
 
 ## $ec, Exquisite Corpse
 no winners in this one. you just take turns writing sentences to build a story, but you can only see the last 4 words of the previous one.
