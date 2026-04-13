@@ -301,17 +301,20 @@ class WordSpiral(commands.Cog):
                 f"🌀 **Word Spiral begins!**\n"
                 f"Starting word: **{start_word.upper()}**\n"
                 f"Last three letters: **{trigram}**\n"
-                f"{first_player.member.mention}, you're up first!"
+                f"{first_player.member.mention}, you're up first! "
+                f"Type a word containing **{trigram}**"
             )
 
             # ── Round loop ──────────────────────────────────────────────────
+            first_turn = True
             while len(game.alive_players()) > 1:
                 current = game.players[game.current_idx]
                 if not current.alive:
                     game.advance_to_next_alive()
                     continue
 
-                success, word = await self._run_turn(game, current)
+                success, word = await self._run_turn(game, current, skip_initial_send=first_turn)
+                first_turn = False
 
                 if not success:
                     current.lives -= 1
@@ -340,12 +343,15 @@ class WordSpiral(commands.Cog):
         finally:
             self.games.pop(ctx.channel.id, None)
 
-    async def _run_turn(self, game: WordSpiralGame, player: Player):
+    async def _run_turn(self, game: WordSpiralGame, player: Player, skip_initial_send: bool = False):
         """Post the turn prompt, count down the last 8 seconds. Return (True, word) or (False, None)."""
         game.turn_event.clear()
         game.last_word_submitted = None
 
-        msg = await game.channel.send(_turn_text(player, game.current_trigram))
+        if skip_initial_send:
+            msg = None
+        else:
+            msg = await game.channel.send(_turn_text(player, game.current_trigram))
 
         for remaining in range(game.round_time, 0, -1):
             if game.turn_event.is_set():
@@ -353,7 +359,10 @@ class WordSpiral(commands.Cog):
 
             if remaining <= 8:
                 with suppress(discord.HTTPException):
-                    await msg.edit(content=_turn_text(player, game.current_trigram, remaining))
+                    if msg is None:
+                        msg = await game.channel.send(_turn_text(player, game.current_trigram, remaining))
+                    else:
+                        await msg.edit(content=_turn_text(player, game.current_trigram, remaining))
 
             try:
                 await asyncio.wait_for(game.turn_event.wait(), timeout=1.0)
