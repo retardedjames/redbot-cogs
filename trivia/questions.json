@@ -1370,5 +1370,157 @@
   {
     "q": "The study of insects is called {BLANK}.",
     "a": "entomology"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} were considered such low-status \"trash food\" in colonial America that feeding them to prisoners was seen as cruel and unusual punishment; they weren't luxury food until the 1880s.",
+    "a": "Lobsters"
+  },
+  {
+    "q": "A group of crows is officially called a \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — a name they may have earned by their habit of gathering around dying animals.",
+    "a": "murder"
+  },
+  {
+    "q": "The word \"salary\" comes from \"\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\" — Roman soldiers were paid in it or given money specifically to buy it, which is also where \"not worth his salt\" comes from.",
+    "a": "salt"
+  },
+  {
+    "q": "The small dot above the letters 'i' and 'j' has an official name: the \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}.",
+    "a": "tittle"
+  },
+  {
+    "q": "The first actual computer \"bug\" was a real \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — Grace Hopper's team found one stuck in a relay of the Harvard Mark II in 1947 and literally taped it into their engineering logbook.",
+    "a": "moth"
+  },
+  {
+    "q": "The \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} salad was invented in Tijuana, Mexico — not ancient Rome — when a chef threw it together from whatever was left in the kitchen for a hungry holiday crowd in 1924.",
+    "a": "Caesar"
+  },
+  {
+    "q": "The word \"assassin\" traces back to the Arabic word for \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — a medieval Islamic sect was allegedly dosed with it before carrying out political killings.",
+    "a": "hashish"
+  },
+  {
+    "q": "Genetic testing confirmed that King Tut's parents were \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — his inbreeding left him with a clubfoot, bone disease, and malaria, and he likely needed a cane to walk.",
+    "a": "siblings"
+  },
+  {
+    "q": "The \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} was not invented in France — it originated in Vienna, Austria, where bakers shaped it like the Ottoman crescent to celebrate a military victory over a Turkish siege.",
+    "a": "croissant"
+  },
+  {
+    "q": "Starfish have no brain and no blood; instead they pump \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} through their bodies as a circulatory fluid, which means they die quickly if placed in fresh water.",
+    "a": "seawater"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} sleep with one half of their brain at a time, keeping one eye literally open so they can keep swimming and watching for predators while resting.",
+    "a": "Dolphins"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} actually have a memory of several months — the \"three-second memory\" is a myth; they can be trained to navigate mazes and still remember them days later.",
+    "a": "Goldfish"
+  },
+  {
+    "q": "The original 1891 patent for toilet paper clearly shows the paper going \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} the roll, not under — the inventor's own design settles the great debate.",
+    "a": "over"
+  },
+  {
+    "q": "Beethoven composed his Ninth Symphony — widely considered his greatest work — after going completely \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}, reportedly sawing the legs off his piano so he could feel vibrations through the floor.",
+    "a": "deaf"
+  },
+  {
+    "q": "In 1967, \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} switched from driving on the left to the right overnight in a single coordinated national changeover — one of the biggest logistical traffic operations in history.",
+    "a": "Sweden"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} sauce — a beloved British condiment — is made primarily from fermented anchovies; most people who pour it freely have no idea.",
+    "a": "Worcestershire"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} has the highest crime rate per capita of any country — because millions of tourists pass through while only a few hundred people officially live there.",
+    "a": "Vatican City"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} is one of the only inhabited countries in the world with no native mosquito population; the climate creates conditions they simply can't survive.",
+    "a": "Iceland"
+  },
+  {
+    "q": "Shaquille O'Neal was such a poor \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} shooter that opposing teams developed a strategy of deliberately fouling him to put him on the line, known as \"Hack-a-Shaq.\"",
+    "a": "free throw"
+  },
+  {
+    "q": "Eucalyptus leaves — the only food \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} will eat — are so low in nutrition and so toxic that the animals must sleep up to 22 hours a day just to conserve energy.",
+    "a": "koalas"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} cake gets its name from the original recipe, which calls for exactly one pound each of butter, sugar, eggs, and flour.",
+    "a": "Pound"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} produce a reddish, oily fluid that acts as both sunscreen and an antibiotic — for centuries, people assumed they were sweating actual blood.",
+    "a": "Hippos"
+  },
+  {
+    "q": "Fingernails grow faster on your \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} hand — scientists believe increased blood circulation to your more-used arm accelerates the growth rate.",
+    "a": "dominant"
+  },
+  {
+    "q": "Your \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} intestine is actually longer than your large intestine — roughly 20 feet versus 5 feet — it just has to coil more tightly to fit.",
+    "a": "small"
+  },
+  {
+    "q": "The word \"clue\" comes from \"\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\" — an old English word for a ball of yarn — from the Greek myth of Theseus using a thread to navigate his way out of the Minotaur's labyrinth.",
+    "a": "clew"
+  },
+  {
+    "q": "Cleopatra was ethnically \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}, not Egyptian — she was a descendant of one of Alexander the Great's generals, and was actually the first ruler of her dynasty to bother learning the Egyptian language.",
+    "a": "Greek"
+  },
+  {
+    "q": "London \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} drivers must memorize 25,000 streets and 20,000 landmarks before getting a license, and brain scans show they develop a measurably larger hippocampus than average people.",
+    "a": "taxi"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} Falls on the Argentina-Brazil border is nearly three times wider than Niagara Falls — yet most people outside South America have never heard of it.",
+    "a": "Iguazu"
+  },
+  {
+    "q": "Every human eye has a \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — a small zone with no photoreceptors where the optic nerve exits — but your brain fills it in so seamlessly you never notice it's there.",
+    "a": "blind spot"
+  },
+  {
+    "q": "Humans are the only animals known to cry \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} tears; all other species produce tears only to lubricate their eyes, never from sadness or joy.",
+    "a": "emotional"
+  },
+  {
+    "q": "The iconic \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} theme song is an arrangement of a Russian folk song called \"Korobeiniki,\" composed in 1861 — nearly 130 years before the game existed.",
+    "a": "Tetris"
+  },
+  {
+    "q": "Chicken tikka masala is Britain's most beloved dish, but it was almost certainly invented in \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} — a Glasgow chef reportedly improvised the sauce using tinned tomato soup to satisfy a customer who wanted \"something with gravy.\"",
+    "a": "Scotland"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} have eyes bigger than their brains — each eyeball is roughly the size of a billiard ball, making them the largest eyes of any land animal.",
+    "a": "Ostriches"
+  },
+  {
+    "q": "The idea that your \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} has separate zones for sweet, salty, sour, and bitter is completely false — it was based on a mistranslation of a German paper from 1901 that scientists have known was wrong for decades.",
+    "a": "tongue"
+  },
+  {
+    "q": "More than half of the world's \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} is produced not by trees but by ocean phytoplankton — tiny marine organisms floating near the surface that most people have never thought about.",
+    "a": "oxygen"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} was invented by a woman named Elizabeth Magie as a teaching tool to show how landlords exploit tenants — but a man named Charles Darrow later sold the concept to Parker Brothers and took all the credit.",
+    "a": "Monopoly"
+  },
+  {
+    "q": "The mechanical shark in \\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} broke down so often during filming that Spielberg had to hide it from view — accidentally making it far scarier, and turning him from a TV director into Hollywood's biggest filmmaker.",
+    "a": "Jaws"
+  },
+  {
+    "q": "\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK}\\{BLANK} started in 1889 as a company making handmade playing cards, and spent decades dabbling in taxis, food, and love hotels before finally pivoting to video games in the 1970s.",
+    "a": "Nintendo"
   }
 ]
