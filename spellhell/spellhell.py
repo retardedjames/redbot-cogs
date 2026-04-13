@@ -1,7 +1,7 @@
 import asyncio
 import random
 from contextlib import suppress
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 import discord
@@ -53,7 +53,7 @@ PREFIX_SET: frozenset = _build_prefix_set(DICTIONARY)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-GHOST_WORD = "GHOST"
+MAX_LIVES = 4
 EXPLOSION_GIF = "https://tenor.com/view/cat-explode-cat-meme-cat-exploding-explode-cat-meme-cat-meme-explosion-gif-9983525941267276580"
 
 # ── Word helpers ──────────────────────────────────────────────────────────────
@@ -81,8 +81,9 @@ def _valid_next_letters(fragment: str) -> list:
     return [c for c in "abcdefghijklmnopqrstuvwxyz" if (f + c) in PREFIX_SET]
 
 
-def _ghost_display(letters: int) -> str:
-    return "·".join(f"**{GHOST_WORD[i]}**" if i < letters else "‒" for i in range(len(GHOST_WORD)))
+def _lives_display(lives_lost: int) -> str:
+    remaining = MAX_LIVES - lives_lost
+    return "❤️" * remaining + "🖤" * lives_lost
 
 
 def _fragment_display(fragment: str) -> str:
@@ -93,26 +94,26 @@ def _fragment_display(fragment: str) -> str:
 # ── Player ────────────────────────────────────────────────────────────────────
 
 @dataclass
-class GhostPlayer:
+class SpellPlayer:
     member: Optional[discord.Member]
-    ghost_letters: int = 0
+    lives_lost: int = 0
     is_cpu: bool = False
 
     @property
     def alive(self) -> bool:
-        return self.ghost_letters < len(GHOST_WORD)
+        return self.lives_lost < MAX_LIVES
 
     @property
     def display_name(self) -> str:
-        return "Ghost Bot" if self.is_cpu else self.member.display_name
+        return "Spell Bot" if self.is_cpu else self.member.display_name
 
     @property
     def mention(self) -> str:
-        return "**Ghost Bot** 🤖" if self.is_cpu else self.member.mention
+        return "**Spell Bot** 🤖" if self.is_cpu else self.member.mention
 
 # ── Game State ────────────────────────────────────────────────────────────────
 
-class GhostGameState:
+class SpellHellState:
     def __init__(self, channel, turn_time: int, min_word_len: int):
         self.channel = channel
         self.turn_time = turn_time
@@ -152,7 +153,7 @@ class GhostGameState:
 # ── Views ─────────────────────────────────────────────────────────────────────
 
 class JoinView(discord.ui.View):
-    def __init__(self, game: GhostGameState):
+    def __init__(self, game: SpellHellState):
         super().__init__(timeout=None)
         self.game = game
 
@@ -164,14 +165,14 @@ class JoinView(discord.ui.View):
         if any(p.member and p.member.id == interaction.user.id for p in self.game.players):
             await interaction.response.send_message("You're already in!", ephemeral=True)
             return
-        self.game.players.append(GhostPlayer(member=interaction.user))
-        await interaction.response.send_message("You've joined Ghost! 👻", ephemeral=True)
+        self.game.players.append(SpellPlayer(member=interaction.user))
+        await interaction.response.send_message("You've joined Spell Hell! 🔥", ephemeral=True)
         with suppress(discord.HTTPException):
             await interaction.message.edit(embed=_join_embed(self.game))
 
 
 class TurnView(discord.ui.View):
-    def __init__(self, game: GhostGameState, current_player: GhostPlayer):
+    def __init__(self, game: SpellHellState, current_player: SpellPlayer):
         super().__init__(timeout=None)
         self.game = game
         self.current_player = current_player
@@ -204,20 +205,20 @@ class TurnView(discord.ui.View):
 
 # ── Embeds ────────────────────────────────────────────────────────────────────
 
-def _join_embed(game: GhostGameState) -> discord.Embed:
+def _join_embed(game: SpellHellState) -> discord.Embed:
     if game.players:
         plist = "\n".join(f"• {p.display_name}" for p in game.players)
     else:
         plist = "*No one yet — be the first!*"
     return discord.Embed(
-        title=f"👻  Ghost{DEV_LABEL}",
+        title=f"🔥  Spell Hell{DEV_LABEL}",
         description=(
             "Take turns adding **one letter** to a growing word fragment.\n"
-            "Complete a real word and you earn a **GHOST** letter — spell it all and you're out! 💀\n"
-            "You can also **Challenge** if you think the previous player's letter leads nowhere — bluff busted = they get the letter; false challenge = you do!\n\n"
+            "Complete a real word and you **lose a life** — lose all 4 and you're out! 💀\n"
+            "You can also **Challenge** the previous player — if their letter leads nowhere, they lose a life; false challenge and you do!\n\n"
             f"**Players ({len(game.players)}):**\n{plist}"
         ),
-        color=discord.Color.blurple(),
+        color=discord.Color.red(),
     ).add_field(
         name="Settings",
         value=(
@@ -228,7 +229,7 @@ def _join_embed(game: GhostGameState) -> discord.Embed:
     )
 
 
-def _turn_embed(game: GhostGameState, current: GhostPlayer, remaining: Optional[int] = None) -> discord.Embed:
+def _turn_embed(game: SpellHellState, current: SpellPlayer, remaining: Optional[int] = None) -> discord.Embed:
     countdown = f"\n⏳ **{remaining}s** remaining" if remaining is not None and remaining <= 10 else ""
     status_lines = []
     for p in game.players:
@@ -236,46 +237,45 @@ def _turn_embed(game: GhostGameState, current: GhostPlayer, remaining: Optional[
             status_lines.append(f"~~{p.display_name}~~ 💀")
         else:
             marker = "▶ " if p == current else "\u00a0\u00a0"
-            status_lines.append(f"{marker}{p.display_name}: {_ghost_display(p.ghost_letters)}")
+            status_lines.append(f"{marker}{p.display_name}: {_lives_display(p.lives_lost)}")
 
     challenge_hint = (
-        "\n*Click **Challenge!** if you think the previous player was bluffing.*"
+        "\n*Click **Challenge!** if you think the previous player's letter leads nowhere.*"
         if game.prev_idx is not None else ""
     )
 
     return discord.Embed(
-        title="👻  Ghost",
+        title="🔥  Spell Hell",
         description=(
             f"**Fragment:** {_fragment_display(game.fragment)}\n\n"
             f"{current.mention} — type a **single letter** to add to the fragment!"
             + challenge_hint
             + countdown
         ),
-        color=discord.Color.blurple(),
+        color=discord.Color.red(),
     ).add_field(name="Players", value="\n".join(status_lines) or "—", inline=False)
 
 
-def _ghost_letter_embed(player: GhostPlayer) -> discord.Embed:
-    new_letter = GHOST_WORD[player.ghost_letters - 1]
+def _lost_life_embed(player: SpellPlayer) -> discord.Embed:
     return discord.Embed(
         description=(
-            f"📝 **{player.display_name}** gets the letter **{new_letter}**!\n"
-            f"Progress: {_ghost_display(player.ghost_letters)}"
+            f"💔 **{player.display_name}** loses a life!\n"
+            f"Lives: {_lives_display(player.lives_lost)}"
         ),
         color=discord.Color.orange(),
     )
 
 
-def _eliminated_embed(player: GhostPlayer) -> discord.Embed:
+def _eliminated_embed(player: SpellPlayer) -> discord.Embed:
     return discord.Embed(
-        description=f"💀 **{player.display_name}** has spelled **G·H·O·S·T** and is **eliminated**!",
+        description=f"💀 **{player.display_name}** has lost all their lives and is **eliminated**!",
         color=discord.Color.red(),
     )
 
 
-def _winner_embed(winner: GhostPlayer, wins: int, games: int) -> discord.Embed:
+def _winner_embed(winner: SpellPlayer, wins: int, games: int) -> discord.Embed:
     return discord.Embed(
-        title=f"🎉  {winner.display_name} wins Ghost!",
+        title=f"🎉  {winner.display_name} wins Spell Hell!",
         description=(
             f"{winner.mention} is the last one standing!\n\n"
             f"They've won **{wins}** out of **{games}** game{'s' if games != 1 else ''}!"
@@ -284,17 +284,17 @@ def _winner_embed(winner: GhostPlayer, wins: int, games: int) -> discord.Embed:
     )
 
 
-def _word_completed_embed(player: GhostPlayer, word: str) -> discord.Embed:
+def _word_completed_embed(player: SpellPlayer, word: str) -> discord.Embed:
     return discord.Embed(
         description=(
             f"🔤 **{player.display_name}** completed the word **{word.upper()}**! "
-            "A GHOST letter is coming..."
+            "Losing a life..."
         ),
         color=discord.Color.orange(),
     )
 
 
-def _challenge_embed(challenger: GhostPlayer, challenged: GhostPlayer, fragment: str, min_word_len: int) -> discord.Embed:
+def _challenge_embed(challenger: SpellPlayer, challenged: SpellPlayer, fragment: str, min_word_len: int) -> discord.Embed:
     return discord.Embed(
         title="❓  Challenge!",
         description=(
@@ -306,29 +306,29 @@ def _challenge_embed(challenger: GhostPlayer, challenged: GhostPlayer, fragment:
     )
 
 
-def _challenge_result_embed(loser: GhostPlayer, fragment: str, word: Optional[str], challenger_won: bool) -> discord.Embed:
+def _challenge_result_embed(loser: SpellPlayer, fragment: str, word: Optional[str], challenger_won: bool) -> discord.Embed:
     if challenger_won:
         desc = (
             f"❌ **{loser.display_name}** couldn't name a valid word starting with **`{fragment.upper()}`**!\n"
-            "The bluff has been called! A GHOST letter is coming..."
+            "The bluff has been called! Losing a life..."
         )
     else:
         desc = (
             f"✅ **{loser.display_name}** issued a false challenge! "
             f"**{word.upper()}** is a valid word starting with **`{fragment.upper()}`**!\n"
-            "False challenge — a GHOST letter is coming for the challenger..."
+            "False challenge — losing a life..."
         )
     return discord.Embed(description=desc, color=discord.Color.orange())
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
-class GhostGame(commands.Cog):
-    """Ghost — add letters without completing a word, or earn G·H·O·S·T letters!"""
+class SpellHell(commands.Cog):
+    """Spell Hell — add letters without completing a word, or lose a life!"""
 
     def __init__(self, bot):
         self.bot = bot
         self.games: dict = {}
-        self.config = Config.get_conf(self, identifier=8472910384, force_registration=True)
+        self.config = Config.get_conf(self, identifier=9381047562, force_registration=True)
         self.config.register_guild(turn_time=45, min_word_len=4)
         self.config.register_member(wins=0, games_played=0)
 
@@ -340,15 +340,15 @@ class GhostGame(commands.Cog):
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
-    @commands.command(name="ghostgame")
-    async def ghostgame(self, ctx: commands.Context):
-        """Start a Ghost word game. Players have 20 seconds to join."""
+    @commands.command(name="spellhell")
+    async def spellhell(self, ctx: commands.Context):
+        """Start a Spell Hell word game. Players have 20 seconds to join."""
         if ctx.channel.id in self.games:
-            await ctx.send("A Ghost game is already running in this channel!")
+            await ctx.send("A Spell Hell game is already running in this channel!")
             return
 
         gc = self.config.guild(ctx.guild)
-        game = GhostGameState(
+        game = SpellHellState(
             channel=ctx.channel,
             turn_time=await gc.turn_time(),
             min_word_len=await gc.min_word_len(),
@@ -369,41 +369,41 @@ class GhostGame(commands.Cog):
         if game.game_task:
             game.game_task.cancel()
         game.phase = "ended"
-        return "Ghost Game"
+        return "Spell Hell"
 
-    @commands.command(name="ghosttime")
-    async def ghosttime(self, ctx: commands.Context, seconds: int):
-        """Set the turn time in seconds (15–120). Example: `$ghosttime 30`"""
+    @commands.command(name="spellhelltime")
+    async def spellhelltime(self, ctx: commands.Context, seconds: int):
+        """Set the turn time in seconds (15–120). Example: `$spellhelltime 30`"""
         seconds = max(15, min(seconds, 120))
         await self.config.guild(ctx.guild).turn_time.set(seconds)
         await ctx.send(f"Turn time set to **{seconds}** seconds.")
 
-    @commands.command(name="ghostmin")
-    async def ghostmin(self, ctx: commands.Context, length: int):
-        """Set the minimum word length that counts as losing (3–6). Example: `$ghostmin 4`"""
+    @commands.command(name="spellhellmin")
+    async def spellhellmin(self, ctx: commands.Context, length: int):
+        """Set the minimum word length that counts as losing (3–6). Example: `$spellhellmin 4`"""
         length = max(3, min(length, 6))
         await self.config.guild(ctx.guild).min_word_len.set(length)
         await ctx.send(f"Minimum word length set to **{length}** letters.")
 
-    @commands.command(name="ghoststats")
-    async def ghoststats(self, ctx: commands.Context, member: discord.Member = None):
-        """Show Ghost win stats for yourself or another player."""
+    @commands.command(name="spellhellstats")
+    async def spellhellstats(self, ctx: commands.Context, member: discord.Member = None):
+        """Show Spell Hell win stats for yourself or another player."""
         target = member or ctx.author
         wins = await self.config.member(target).wins()
         games = await self.config.member(target).games_played()
         await ctx.send(embed=discord.Embed(
-            title=f"👻  {target.display_name}'s Ghost Stats",
+            title=f"🔥  {target.display_name}'s Spell Hell Stats",
             description=(
                 f"**Wins:** {wins}\n"
                 f"**Games played:** {games}\n"
                 f"**Win rate:** {wins/games*100:.1f}%" if games else "No games played yet!"
             ),
-            color=discord.Color.blurple(),
+            color=discord.Color.red(),
         ))
 
     # ── Game Runner ───────────────────────────────────────────────────────────
 
-    async def _run_game(self, ctx: commands.Context, game: GhostGameState):
+    async def _run_game(self, ctx: commands.Context, game: SpellHellState):
         try:
             # Join phase (20 seconds)
             await asyncio.sleep(20)
@@ -413,17 +413,17 @@ class GhostGame(commands.Cog):
 
             if len(game.players) == 0:
                 await ctx.send(embed=discord.Embed(
-                    description="Nobody joined Ghost. Game cancelled.",
+                    description="Nobody joined Spell Hell. Game cancelled.",
                     color=discord.Color.orange(),
                 ))
                 return
 
             # Add CPU bot for solo testing
             if len(game.players) == 1:
-                game.players.append(GhostPlayer(member=None, is_cpu=True))
+                game.players.append(SpellPlayer(member=None, is_cpu=True))
                 await ctx.send(embed=discord.Embed(
-                    description="👻 Only one player — **Ghost Bot** has joined to keep you company!",
-                    color=discord.Color.blurple(),
+                    description="🔥 Only one player — **Spell Bot** has joined to keep you company!",
+                    color=discord.Color.red(),
                 ))
 
             game.phase = "playing"
@@ -432,17 +432,17 @@ class GhostGame(commands.Cog):
 
             order_str = " → ".join(p.display_name for p in game.players) + " → *(repeats)*"
             await ctx.send(embed=discord.Embed(
-                title="👻  Ghost — Game Start!",
+                title="🔥  Spell Hell — Game Start!",
                 description=(
                     f"**Turn order:** {order_str}\n\n"
                     f"First turn: **{game.players[0].display_name}**\n"
                     f"Min word: **{game.min_word_len}** letters  ·  Turn time: **{game.turn_time}s**\n\n"
                     "Type a **single letter** on your turn to add to the fragment.\n"
-                    "Complete a real word ≥ min length → you earn a **GHOST** letter!\n"
+                    f"Complete a real word ≥ min length → you **lose a life** (4 lives total)!\n"
                     "You can also **Challenge** if you think someone is bluffing!\n"
-                    "Spell G·H·O·S·T = eliminated. Last survivor wins!"
+                    "Lose all 4 lives = eliminated. Last survivor wins!"
                 ),
-                color=discord.Color.blurple(),
+                color=discord.Color.red(),
             ))
 
             # Main game loop
@@ -456,12 +456,12 @@ class GhostGame(commands.Cog):
 
                 if loser is not None:
                     loser_idx = game.players.index(loser)
-                    loser.ghost_letters += 1
+                    loser.lives_lost += 1
                     if not loser.alive:
                         await game.channel.send(embed=_eliminated_embed(loser))
                         await game.channel.send(EXPLOSION_GIF)
                     else:
-                        await game.channel.send(embed=_ghost_letter_embed(loser))
+                        await game.channel.send(embed=_lost_life_embed(loser))
                     game.fragment = ""
                     game.prev_idx = None
                     game.advance_from(loser_idx)
@@ -474,7 +474,7 @@ class GhostGame(commands.Cog):
                 winner = alive[0]
                 if winner.is_cpu:
                     await game.channel.send(embed=discord.Embed(
-                        title="👻  Ghost Bot wins!",
+                        title="🔥  Spell Bot wins!",
                         description="The bot outlasted everyone! Better luck next time!",
                         color=discord.Color.gold(),
                     ))
@@ -489,8 +489,8 @@ class GhostGame(commands.Cog):
         finally:
             self.games.pop(ctx.channel.id, None)
 
-    async def _do_turn(self, game: GhostGameState, current: GhostPlayer) -> Optional[GhostPlayer]:
-        """Run one turn. Returns the player who earns a GHOST letter, or None."""
+    async def _do_turn(self, game: SpellHellState, current: SpellPlayer) -> Optional[SpellPlayer]:
+        """Run one turn. Returns the player who loses a life, or None."""
         if current.is_cpu:
             return await self._do_cpu_turn(game, current)
 
@@ -537,7 +537,7 @@ class GhostGame(commands.Cog):
         game.prev_idx = game.current_idx
         return None
 
-    async def _do_cpu_turn(self, game: GhostGameState, current: GhostPlayer) -> Optional[GhostPlayer]:
+    async def _do_cpu_turn(self, game: SpellHellState, current: SpellPlayer) -> Optional[SpellPlayer]:
         """CPU player takes a turn."""
         await asyncio.sleep(random.uniform(1.5, 3.0))
 
@@ -551,7 +551,7 @@ class GhostGame(commands.Cog):
 
         new_fragment = game.fragment + letter
         await game.channel.send(
-            f"🤖 **Ghost Bot** adds **{letter.upper()}** → {_fragment_display(new_fragment)}"
+            f"🤖 **Spell Bot** adds **{letter.upper()}** → {_fragment_display(new_fragment)}"
         )
 
         if _is_complete_word(new_fragment, game.min_word_len):
@@ -562,8 +562,8 @@ class GhostGame(commands.Cog):
         game.prev_idx = game.current_idx
         return None
 
-    async def _resolve_challenge(self, game: GhostGameState, challenger: GhostPlayer) -> GhostPlayer:
-        """Handle a challenge. Returns the player who earns a GHOST letter."""
+    async def _resolve_challenge(self, game: SpellHellState, challenger: SpellPlayer) -> SpellPlayer:
+        """Handle a challenge. Returns the player who loses a life."""
         challenged = game.players[game.prev_idx]
         fragment = game.fragment
 
@@ -598,7 +598,7 @@ class GhostGame(commands.Cog):
             await game.channel.send(embed=_challenge_result_embed(challenged, fragment, None, challenger_won=True))
             return challenged
 
-    async def _cpu_respond_to_challenge(self, game: GhostGameState, fragment: str):
+    async def _cpu_respond_to_challenge(self, game: SpellHellState, fragment: str):
         """CPU finds a word starting with fragment to defend against a challenge."""
         await asyncio.sleep(random.uniform(1.5, 2.5))
         f = fragment.lower()
@@ -609,13 +609,13 @@ class GhostGame(commands.Cog):
         if candidates:
             word = random.choice(candidates[:20])
             game.challenge_response = word
-            await game.channel.send(f"🤖 **Ghost Bot** responds: **{word.upper()}**")
+            await game.channel.send(f"🤖 **Spell Bot** responds: **{word.upper()}**")
         else:
             game.challenge_response = None
-            await game.channel.send("🤖 **Ghost Bot** has no response...")
+            await game.channel.send("🤖 **Spell Bot** has no response...")
         game.challenge_event.set()
 
-    async def _record_result(self, human_players: list, winner: GhostPlayer):
+    async def _record_result(self, human_players: list, winner: SpellPlayer):
         """Record games played for all humans, win for winner. Returns (wins, games_played)."""
         for p in human_players:
             gp = await self.config.member(p.member).games_played()

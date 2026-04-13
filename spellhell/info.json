@@ -1,0 +1,12 @@
+{
+    "author": ["jamescvermont-cyber"],
+    "description": "Multiplayer Spell Hell word game. Players take turns adding one letter to a growing fragment without completing a real word. Complete a word and lose a life — lose all 4 and you're eliminated! Includes bluffing and challenge mechanics.",
+    "end_user_data_statement": "This cog stores win/game statistics per user per guild.",
+    "hidden": false,
+    "install_msg": "Run `[p]pipinstall english-words` then `[p]load spellhell`.",
+    "name": "SpellHell",
+    "required_cogs": {},
+    "requirements": ["english-words"],
+    "short": "Strategic letter-adding bluffing word game",
+    "tags": ["game", "words", "multiplayer", "fun", "bluffing", "competitive"]
+}

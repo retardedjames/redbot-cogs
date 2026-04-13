@@ -2,6 +2,15 @@ Any game can be stopped by typing $end
 
 Anagrams - [$an] - a 7-11 letter word is scrambled and people rush to find words in the letters
 
+Animal Guesser - [$an] - a 7-11 letter word is scrambled and people rush to find words in the letters
+
+Caption Contest - [$cc] - generates a random new yorker style cartoon. suggest a caption and ppl can vote on which ones the best.
+
+Exquisite Corpse [$ec] - no winners in this one. you just take turns writing sentences to build a story, but you can only see the last 4 words of the previous one.
+
+Famous Words [$fw] - famous quotes or sayings with one word missing. first to guess the word wins.
+
+Spell Hell - [$sh] - take turns adding one letter to a growing word fragment — complete a real word (of minimum length) and you lose a life. You can also challenge people if you think they aren't headed towards a real word. Hard game!
 
 
 Word Guesser - [$wg] - a definition of a somewhat common word is shown and first to guess the word wins.
