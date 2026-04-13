@@ -117,24 +117,38 @@ class SelfTime(commands.Cog):
             )
             self._pending_restores[member.id] = task
 
-        # --- Confirmation ---
-        role_note = (
-            f"\nYour admin role(s) ({', '.join(r.name for r in admin_roles)}) have been "
-            f"temporarily removed and will be restored automatically when the timeout expires."
-            if admin_roles else ""
+        # --- Channel embed ---
+        hours, mins = divmod(minutes, 60)
+        duration_str = (
+            f"{hours}h {mins}m" if hours and mins
+            else f"{hours}h" if hours
+            else f"{mins}m"
         )
-        warning = (
-            "\n\n**Warning:** if the bot restarts before your timeout expires your admin "
-            "roles will not be restored automatically — ask someone to re-add them."
-            if admin_roles else ""
+        embed = discord.Embed(
+            title="Self-Timeout",
+            description=f"{member.mention} has timed themselves out for **{duration_str}**.",
+            color=discord.Color.orange(),
         )
-        message = (
-            f"You have timed yourself out for **{minutes} minute(s)**. "
-            f"Your timeout will expire <t:{int(until.timestamp())}:R>."
-            f"{role_note}{warning}"
-        )
+        embed.add_field(name="Expires", value=f"<t:{int(until.timestamp())}:R>", inline=True)
+        embed.set_thumbnail(url=member.display_avatar.url)
+        embed.set_footer(text=f"Requested by {member.display_name}")
+        await ctx.send(embed=embed)
 
+        # --- DM confirmation (includes role/restart warnings if applicable) ---
+        dm_parts = [
+            f"You have timed yourself out for **{duration_str}**.",
+            f"Your timeout will expire <t:{int(until.timestamp())}:R>.",
+        ]
+        if admin_roles:
+            dm_parts.append(
+                f"Your admin role(s) ({', '.join(r.name for r in admin_roles)}) have been "
+                f"temporarily removed and will be restored automatically when the timeout expires."
+            )
+            dm_parts.append(
+                "**Warning:** if the bot restarts before your timeout expires your admin "
+                "roles will not be restored automatically — ask someone to re-add them."
+            )
         try:
-            await member.send(message)
+            await member.send("\n\n".join(dm_parts))
         except discord.Forbidden:
-            await ctx.send(f"{member.mention} {message}")
+            pass
