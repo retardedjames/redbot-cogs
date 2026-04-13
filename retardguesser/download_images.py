@@ -40,7 +40,7 @@ LIST_FILE  = SCRIPT_DIR / "list.txt"
 # ── Config ─────────────────────────────────────────────────────────────────────
 IMAGES_PER_PERSON  = 6        # target images per person
 SKIP_THRESHOLD     = 4        # skip folder if already has >= this many images
-DELAY_BETWEEN      = 5        # seconds between people
+DELAY_BETWEEN      = 2        # seconds between people
 DOWNLOAD_WORKERS   = 6        # parallel downloads per person
 DOWNLOAD_TIMEOUT   = 20       # seconds per request
 MIN_DIMENSION      = 150      # pixels — both width and height must meet this
