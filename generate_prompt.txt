@@ -32,16 +32,8 @@ STYLE RULES:
    BAD:  Mantis shrimp can punch very fast.|Shrimp
    GOOD: Mantis \_\_\_\_\_ can punch with the speed of a .22 caliber bullet, generating enough heat to boil the surrounding water instantly.|Shrimp
 
-3. CATEGORY MIX. Roughly this distribution:
-   - Animal/biology weirdness (~15%): surprising animal facts, body weirdness, biological quirks
-   - Historical weirdness (~15%): bizarre historical facts, people, events
-   - Pop culture/tech (~15%): origins of apps/companies/games/memes, celebrity facts, movie/music trivia
-   - Science/physics (~10%): surprising science facts, not textbook definitions
-   - Human body (~10%): surprising things about the body, psychology, brain
-   - Geography/records (~10%): world records, country/city facts
-   - Food/drink (~10%): origins, surprising facts about everyday foods
-   - Language/words (~10%): etymology, word origins, surprising linguistic facts
-   - Sports oddities (~5%): weird rules, strange facts, unexpected records
+3. some examples of potential subject areas of questions for inspiration: Animal/biology weirdness,Food/drink,Geography/records,Historical weirdness,Human body,Language/words,Pop culture/tech,Science/physics 
+
 
 4. ANSWERS should be:
    - Usually a single word (a noun, verb, animal, person, place, brand, number)

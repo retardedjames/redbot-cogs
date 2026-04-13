@@ -21,6 +21,7 @@ After the run, browse images/<Animal Name>/ and delete any bad photos.
 
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -115,7 +116,8 @@ ANIMALS = [
 IMAGES_PER_ANIMAL = 15
 SKIP_THRESHOLD = 5        # skip folder if already has >= this many images
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
-DELAY_BETWEEN_ANIMALS = 5  # seconds between animals to avoid rate limits
+DELAY_BETWEEN_ANIMALS = 2  # seconds between animals
+DOWNLOAD_WORKERS = 8       # parallel image downloads per animal
 DOWNLOAD_TIMEOUT = 20      # seconds per image download
 
 HEADERS = {
@@ -216,14 +218,35 @@ def process_animal(animal: str, idx: int, total: int) -> int:
 
     print(f" found {len(urls)} URLs, downloading...", end="", flush=True)
 
-    saved = 0
-    for url in urls:
-        if saved >= IMAGES_PER_ANIMAL:
-            break
+    # Download images in parallel, capping at IMAGES_PER_ANIMAL successes
+    import threading
+    save_lock = threading.Lock()
+    saved_paths = []
+
+    def try_download(url):
+        """Download url; return saved Path on success or None."""
         ext = ext_from_url(url)
-        dest = folder / f"img-{saved + 1:03d}{ext}"
-        if download_image(url, dest):
-            saved += 1
+        with save_lock:
+            if len(saved_paths) >= IMAGES_PER_ANIMAL:
+                return None
+            idx = len(saved_paths) + 1
+            dest = folder / f"img-{idx:03d}{ext}"
+            saved_paths.append(dest)  # reserve the slot
+        ok = download_image(url, dest)
+        if not ok:
+            with save_lock:
+                if dest in saved_paths:
+                    saved_paths.remove(dest)
+            try:
+                dest.unlink(missing_ok=True)
+            except Exception:
+                pass
+        return dest if ok else None
+
+    with ThreadPoolExecutor(max_workers=DOWNLOAD_WORKERS) as pool:
+        list(pool.map(try_download, urls))
+
+    saved = sum(1 for p in saved_paths if p.exists())
 
     note = "  *** NO IMAGES ***" if saved == 0 else ""
     print(f" {saved} saved{note}")
