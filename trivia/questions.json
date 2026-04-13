@@ -1,0 +1,1374 @@
+[
+  {
+    "q": "{BLANK} is the first artist in history to claim all top 10 spots on the Billboard Hot 100 at the same time.",
+    "a": "Taylor Swift"
+  },
+  {
+    "q": "{BLANK} can rotate their heads up to 270 degrees.",
+    "a": "Owls"
+  },
+  {
+    "q": "{BLANK} travels faster in water than in air.",
+    "a": "sound"
+  },
+  {
+    "q": "The novel {BLANK} was written by Miguel de Cervantes.",
+    "a": "Don Quixote"
+  },
+  {
+    "q": "{BLANK} is the capital of Canada.",
+    "a": "Ottawa"
+  },
+  {
+    "q": "A {BLANK} speeds up a chemical reaction without being consumed.",
+    "a": "catalyst"
+  },
+  {
+    "q": "Spectroscopy analyzes light from {BLANK}.",
+    "a": "stars"
+  },
+  {
+    "q": "There's a {BLANK} court inside the U.S. Supreme Court Building.",
+    "a": "basketball"
+  },
+  {
+    "q": "The human {BLANK} operates on about 20 watts of power (roughly the same as a dim lightbulb).",
+    "a": "brain"
+  },
+  {
+    "q": "Ants never {BLANK}.",
+    "a": "sleep"
+  },
+  {
+    "q": "{BLANK} has the most native speakers of any language.",
+    "a": "Mandarin Chinese"
+  },
+  {
+    "q": "{BLANK} is the coldest continent.",
+    "a": "Antarctica"
+  },
+  {
+    "q": "Wolves live in social groups called {BLANK}.",
+    "a": "packs"
+  },
+  {
+    "q": "Alan {BLANK} contributed to early computer science and codebreaking.",
+    "a": "Turing"
+  },
+  {
+    "q": "{BLANK} sometimes contains tiny desert dust from other continents.",
+    "a": "rain"
+  },
+  {
+    "q": "The longest river in South America is the {BLANK} River.",
+    "a": "Amazon"
+  },
+  {
+    "q": "Cosmic microwave background {BLANK} is leftover from the early universe.",
+    "a": "radiation"
+  },
+  {
+    "q": "Angkor {BLANK} is the largest religious monument in the world.",
+    "a": "Wat"
+  },
+  {
+    "q": "The {BLANK} was once called a Persian apple.",
+    "a": "peach"
+  },
+  {
+    "q": "The {BLANK} effect warms Earth’s atmosphere.",
+    "a": "greenhouse"
+  },
+  {
+    "q": "The island of {BLANK} lies off the southeastern coast of Africa.",
+    "a": "Madagascar"
+  },
+  {
+    "q": "The human eye can distinguish about 10 million different {BLANK}.",
+    "a": "colors"
+  },
+  {
+    "q": "Frogs are amphibians that begin life as {BLANK}.",
+    "a": "tadpoles"
+  },
+  {
+    "q": "{BLANK} was originally a \"life-streaming\" site called Justin.tv where one guy streamed his life 24/7.",
+    "a": "Twitch"
+  },
+  {
+    "q": "{BLANK} have a built-in \"pocket\" of skin under their forelegs where they store their favorite rock for cracking shells.",
+    "a": "Sea otters"
+  },
+  {
+    "q": "{BLANK} are \"ghost particles\" that pass through everything. Billions of them are passing through your fingertip right now without you feeling it.",
+    "a": "Neutrinos"
+  },
+  {
+    "q": "A {BLANK} can survive radiation better than humans.",
+    "a": "cockroach"
+  },
+  {
+    "q": "There are more {BLANK} on Earth (approx. 3 trillion) than there are stars in the Milky Way (approx. 100-400 billion).",
+    "a": "trees"
+  },
+  {
+    "q": "Mount {BLANK} is covered in high-speed Wi-Fi.",
+    "a": "Everest"
+  },
+  {
+    "q": "Switzerland is famous for political {BLANK}.",
+    "a": "neutrality"
+  },
+  {
+    "q": "{BLANK} wrestlers eat a special stew called Chanko Nabe to gain weight; a single bowl can be 10,000 calories.",
+    "a": "Sumo"
+  },
+  {
+    "q": "{BLANK} are responsible for planting thousands of trees every year because they forget where they hid their nuts.",
+    "a": "Squirrels"
+  },
+  {
+    "q": "Istanbul was formerly known as {BLANK}.",
+    "a": "Constantinople"
+  },
+  {
+    "q": "Bluetooth technology was named after a 10th-century {BLANK} king, Harald \"Bluetooth\" Gormsson.",
+    "a": "Viking"
+  },
+  {
+    "q": "Batman is from the fictional city of {BLANK}.",
+    "a": "Gotham"
+  },
+  {
+    "q": "The Earth's {BLANK} is as hot as the surface of the sun (roughly 10,000�F or 5,500�C).",
+    "a": "core"
+  },
+  {
+    "q": "Octopuses have {BLANK} pupils.",
+    "a": "rectangular"
+  },
+  {
+    "q": "The {BLANK} Galaxy is the Milky Way’s nearest large neighbor.",
+    "a": "Andromeda"
+  },
+  {
+    "q": "Water boils at {BLANK} degrees Celsius.",
+    "a": "100"
+  },
+  {
+    "q": "Ancient {BLANK} used water clocks to measure time.",
+    "a": "Greeks"
+  },
+  {
+    "q": "{BLANK} foxes change fur color seasonally.",
+    "a": "Arctic"
+  },
+  {
+    "q": "{BLANK} forms from cooled lava.",
+    "a": "Basalt"
+  },
+  {
+    "q": "The pyramids were once covered in smooth white {BLANK}.",
+    "a": "limestone"
+  },
+  {
+    "q": "{BLANK} can taste with their feet.",
+    "a": "Butterflies"
+  },
+  {
+    "q": "The footprints on the Moon will likely stay there for millions of years because there is no {BLANK} to erode them.",
+    "a": "wind"
+  },
+  {
+    "q": "Johannes {BLANK} invented the printing press.",
+    "a": "Gutenberg"
+  },
+  {
+    "q": "{BLANK} is played on ice with stones and brooms.",
+    "a": "Curling"
+  },
+  {
+    "q": "The {BLANK} Cup is awarded in the National Hockey League.",
+    "a": "Stanley"
+  },
+  {
+    "q": "The speed of {BLANK} is approximately 299,792 kilometers per second.",
+    "a": "light"
+  },
+  {
+    "q": "NATO was formed in {BLANK}.",
+    "a": "1949"
+  },
+  {
+    "q": "{BLANK} are nocturnal birds of prey.",
+    "a": "Owls"
+  },
+  {
+    "q": "Kangaroos can't walk {BLANK}.",
+    "a": "backward"
+  },
+  {
+    "q": "Hawaii moves 7.5cm closer to Alaska every year due to {BLANK} plates.",
+    "a": "tectonic"
+  },
+  {
+    "q": "The FIFA World Cup is held every {BLANK} years.",
+    "a": "four"
+  },
+  {
+    "q": "The {BLANK} accounts for 99.86% of the total mass of the entire Solar System.",
+    "a": "Sun"
+  },
+  {
+    "q": "The brightest star in Earth’s night sky is {BLANK}.",
+    "a": "Sirius"
+  },
+  {
+    "q": "{BLANK} is the highest-grossing media franchise of all time, beating out Star Wars and Marvel.",
+    "a": "Pokemon"
+  },
+  {
+    "q": "Elephants are the only animals that can't {BLANK}.",
+    "a": "jump"
+  },
+  {
+    "q": "World War II ended in {BLANK}.",
+    "a": "1945"
+  },
+  {
+    "q": "In the 18th century, you could pay your admission to the London Zoo by bringing a cat or dog to feed the {BLANK}.",
+    "a": "lions"
+  },
+  {
+    "q": "Earths atmosphere is mostly {BLANK}.",
+    "a": "nitrogen"
+  },
+  {
+    "q": "Jazz originated in New {BLANK}.",
+    "a": "Orleans"
+  },
+  {
+    "q": "The Weeknd's \"{BLANK} Lights\" is the most streamed song in Spotify history.",
+    "a": "Blinding"
+  },
+  {
+    "q": "Ancient {BLANK} invented concrete.",
+    "a": "Romans"
+  },
+  {
+    "q": "The {BLANK} scale measures earthquake magnitude.",
+    "a": "Richter"
+  },
+  {
+    "q": "{BLANK} Mons on Mars is the largest volcano in the solar system.",
+    "a": "Olympus"
+  },
+  {
+    "q": "Helium can work against gravity. When cooled to near absolute zero, it becomes a {BLANK} and can climb up and over the sides of a container.",
+    "a": "superfluid"
+  },
+  {
+    "q": "The \"{BLANK} Tax\" refers to the fact that products marketed to women often cost more than identical ones for men.",
+    "a": "Pink"
+  },
+  {
+    "q": "{BLANK} (EW) is so intense in modern conflicts that GPS is now frequently unreliable across entire regions of Eastern Europe and the Middle East.",
+    "a": "Electronic Warfare"
+  },
+  {
+    "q": "Turritopsis dohrnii is a species of {BLANK} that is biologically immortal; it can revert back to its juvenile polyp stage after reaching maturity.",
+    "a": "jellyfish"
+  },
+  {
+    "q": "Humans shed about 600,000 particles of {BLANK} every hour - that's about 1.5 pounds of skin per year.",
+    "a": "skin"
+  },
+  {
+    "q": "Your brain is more active when you are {BLANK} than when you are watching television.",
+    "a": "sleeping"
+  },
+  {
+    "q": "Mike {BLANK} once made $30 million for a fight that lasted only 91 seconds (vs. Michael Spinks).",
+    "a": "Tyson"
+  },
+  {
+    "q": "The Code of {BLANK} is one of the oldest legal codes.",
+    "a": "Hammurabi"
+  },
+  {
+    "q": "A {BLANK} is a rapidly rotating neutron star emitting beams of radiation.",
+    "a": "pulsar"
+  },
+  {
+    "q": "The \"Great Pacific {BLANK} Patch\" is now three times the size of France.",
+    "a": "Garbage"
+  },
+  {
+    "q": "Music uses rhythm, melody, and {BLANK}.",
+    "a": "harmony"
+  },
+  {
+    "q": "Ancient {BLANK} shaved their eyebrows to mourn cats.",
+    "a": "Egyptians"
+  },
+  {
+    "q": "{BLANK} is a condition where senses overlap - some people can \"taste\" words or \"hear\" colors.",
+    "a": "Synesthesia"
+  },
+  {
+    "q": "During WWII, the USS Indianapolis survivors suffered the worst mass {BLANK} attack in history; hundreds of men were eaten over four days.",
+    "a": "shark"
+  },
+  {
+    "q": "{BLANK} is the world’s largest island.",
+    "a": "Greenland"
+  },
+  {
+    "q": "The {BLANK} lays eggs despite being a mammal.",
+    "a": "platypus"
+  },
+  {
+    "q": "There are more {BLANK} in the human brain than stars in the Milky Way.",
+    "a": "neurons"
+  },
+  {
+    "q": "{BLANK} gifted the Statue of Liberty to the United States.",
+    "a": "France"
+  },
+  {
+    "q": "We are moving through {BLANK} at a rate of 530 kilometers per second.",
+    "a": "space"
+  },
+  {
+    "q": "Mount {BLANK} is Japans most famous volcano.",
+    "a": "Fuji"
+  },
+  {
+    "q": "{BLANK} is the most abundant element in the universe.",
+    "a": "Hydrogen"
+  },
+  {
+    "q": "Sea otters hold {BLANK} while sleeping.",
+    "a": "hands"
+  },
+  {
+    "q": "Dung beetles use the Milky {BLANK} to navigate in a straight line while rolling their balls of waste.",
+    "a": "Way"
+  },
+  {
+    "q": "Ancient Romans used crushed {BLANK} brains as toothpaste.",
+    "a": "mouse"
+  },
+  {
+    "q": "Kamikaze {BLANK} costing only $500 are regularly destroying tanks worth $10 million.",
+    "a": "Drones"
+  },
+  {
+    "q": "{BLANK} was originally marketed as a way to quit smoking, but has led to a new generation of nicotine addiction.",
+    "a": "Vaping"
+  },
+  {
+    "q": "Gravity attracts objects with {BLANK} toward each other.",
+    "a": "mass"
+  },
+  {
+    "q": "Humanoid Robots (like Tesla's {BLANK} or Figure 01) are already being deployed in real factories to move boxes and sort parts.",
+    "a": "Optimus"
+  },
+  {
+    "q": "{BLANK} is the basis of organic chemistry.",
+    "a": "Carbon"
+  },
+  {
+    "q": "Mary Shelley kept her late husband's {BLANK} in a silk wrap in her desk for nearly 30 years.",
+    "a": "heart"
+  },
+  {
+    "q": "The human brain contains roughly 86 billion {BLANK}.",
+    "a": "neurons"
+  },
+  {
+    "q": "SpongeBob SquarePants lives in a {BLANK} under the sea.",
+    "a": "pineapple"
+  },
+  {
+    "q": "{BLANK} writing originated in Mesopotamia.",
+    "a": "Cuneiform"
+  },
+  {
+    "q": "Albert Einstein was offered the presidency of {BLANK} in 1952 but turned it down.",
+    "a": "Israel"
+  },
+  {
+    "q": "Matcha is just ground-up {BLANK} leaves; you're eating the whole leaf.",
+    "a": "green tea"
+  },
+  {
+    "q": "{BLANK} is the sense most strongly linked to memory.",
+    "a": "Smell"
+  },
+  {
+    "q": "The Hollywood sign originally said \"{BLANK}\" and was an advertisement for a housing development.",
+    "a": "Hollywoodland"
+  },
+  {
+    "q": "The {BLANK} Sea is the largest inland body of water on Earth.",
+    "a": "Caspian"
+  },
+  {
+    "q": "The study of fungi is called {BLANK}.",
+    "a": "mycology"
+  },
+  {
+    "q": "Abraham Lincoln is in the {BLANK} Hall of Fame (he only lost one match out of about 300).",
+    "a": "Wrestling"
+  },
+  {
+    "q": "{BLANK} have fingerprints that are so similar to humans that they have confused crime scene investigators.",
+    "a": "Koalas"
+  },
+  {
+    "q": "The Library of {BLANK} was one of the largest libraries of the ancient world.",
+    "a": "Alexandria"
+  },
+  {
+    "q": "Some {BLANK} freeze solid in winter and thaw back to life.",
+    "a": "frogs"
+  },
+  {
+    "q": "The composer Ludwig van Beethoven wrote {BLANK} symphonies.",
+    "a": "nine"
+  },
+  {
+    "q": "The colossal {BLANK} has the largest eyes in the animal kingdom.",
+    "a": "squid"
+  },
+  {
+    "q": "{BLANK} in most restaurants is just horseradish dyed green.",
+    "a": "Wasabi"
+  },
+  {
+    "q": "Napoleon Bonaparte was once attacked by a swarm of {BLANK}.",
+    "a": "rabbits"
+  },
+  {
+    "q": "{BLANK} share about 60% of their DNA with bananas.",
+    "a": "Humans"
+  },
+  {
+    "q": "Elvis Presley was naturally a {BLANK}; he started dyeing his hair black in high school.",
+    "a": "blonde"
+  },
+  {
+    "q": "{BLANK} drinks the most coffee per capita.",
+    "a": "Finland"
+  },
+  {
+    "q": "{BLANK} is the largest organ in the human body.",
+    "a": "Skin"
+  },
+  {
+    "q": "Graphene is a material made of a single layer of {BLANK} atoms. It is 200 times stronger than steel but lighter than paper.",
+    "a": "carbon"
+  },
+  {
+    "q": "The \"{BLANK} Scream\" is a sound effect used in over 400 movies, including Star Wars and every Indiana Jones film.",
+    "a": "Wilhelm"
+  },
+  {
+    "q": "Cillian Murphy had to smoke over 3,000 herbal cigarettes while filming {BLANK}.",
+    "a": "Peaky Blinders"
+  },
+  {
+    "q": "Carrots were originally {BLANK} in color.",
+    "a": "purple"
+  },
+  {
+    "q": "{BLANK} is the world's lightest solid material, composed of 99.8% air, yet it can withstand intense heat and support thousands of times its own weight.",
+    "a": "Aerogel"
+  },
+  {
+    "q": "Mountains often form at {BLANK} boundaries.",
+    "a": "plate"
+  },
+  {
+    "q": "{BLANK} is the main character in The Matrix.",
+    "a": "Neo"
+  },
+  {
+    "q": "Crows can recognize human faces and hold {BLANK} against specific people for years.",
+    "a": "grudges"
+  },
+  {
+    "q": "Major League Baseball umpires are required to wear {BLANK} underwear in case their pants rip.",
+    "a": "black"
+  },
+  {
+    "q": "Napoleon’s final place of exile was Saint {BLANK}.",
+    "a": "Helena"
+  },
+  {
+    "q": "{BLANK} regulates blood sugar levels.",
+    "a": "Insulin"
+  },
+  {
+    "q": "The {BLANK} boson was experimentally confirmed in 2012.",
+    "a": "Higgs"
+  },
+  {
+    "q": "The human {BLANK} is the only organ capable of complete regeneration; you can regrow a whole liver from just 25% of the original tissue.",
+    "a": "liver"
+  },
+  {
+    "q": "Earth is not a perfect {BLANK}—it’s slightly squished.",
+    "a": "sphere"
+  },
+  {
+    "q": "The British Royal Family changed their name from \"Saxe-Coburg and Gotha\" to \"{BLANK}\" in 1917 because the original name sounded too German during WWI.",
+    "a": "Windsor"
+  },
+  {
+    "q": "Ocean tides are caused by the Moon’s {BLANK}.",
+    "a": "gravity"
+  },
+  {
+    "q": "{BLANK} is the only continent on Earth without any indigenous ants or snakes.",
+    "a": "Antarctica"
+  },
+  {
+    "q": "Vanilla flavor comes from {BLANK}.",
+    "a": "orchids"
+  },
+  {
+    "q": "Fear of long words is called {BLANK}.",
+    "a": "Hippopotomonstrosesquippedaliophobia"
+  },
+  {
+    "q": "Sweden imports {BLANK} from other countries because they are so good at recycling it into energy.",
+    "a": "trash"
+  },
+  {
+    "q": "The Dead Sea is extremely {BLANK}.",
+    "a": "salty"
+  },
+  {
+    "q": "The Battle of {BLANK} resulted in William the Conqueror becoming king of England.",
+    "a": "Hastings"
+  },
+  {
+    "q": "Dams control rivers and generate {BLANK}.",
+    "a": "electricity"
+  },
+  {
+    "q": "Human {BLANK} are, ounce for ounce, stronger than steel.",
+    "a": "bones"
+  },
+  {
+    "q": "The phrase 'wild goose chase' comes from {BLANK}.",
+    "a": "Shakespeare"
+  },
+  {
+    "q": "{BLANK} is the most stolen food in the world.",
+    "a": "Cheese"
+  },
+  {
+    "q": "{BLANK} was used as writing material in ancient Egypt.",
+    "a": "Papyrus"
+  },
+  {
+    "q": "Camels store {BLANK}, not water.",
+    "a": "fat"
+  },
+  {
+    "q": "{BLANK} was known as the Maid of Orléans.",
+    "a": "Joan of Arc"
+  },
+  {
+    "q": "Algebra developed in the medieval {BLANK} world.",
+    "a": "Islamic"
+  },
+  {
+    "q": "Chocolate comes from the {BLANK} bean.",
+    "a": "cacao"
+  },
+  {
+    "q": "{BLANK} wrap their incredibly long tongues around their brains to act as a shock absorber while pecking.",
+    "a": "Woodpeckers"
+  },
+  {
+    "q": "\"English is the new coding language\" - AI has become so good at writing code that the primary skill for engineers is now \"{BLANK}\" in plain English.",
+    "a": "prompting"
+  },
+  {
+    "q": "The {BLANK} is the largest animal to have ever lived (larger than dinosaurs). Its heart is the size of a small car.",
+    "a": "Blue Whale"
+  },
+  {
+    "q": "{BLANK} takes 8 minutes and 19 seconds to travel from the Sun to the Earth.",
+    "a": "Light"
+  },
+  {
+    "q": "{BLANK} Cups (the tumblers) became a billion-dollar trend largely through marketing to women on TikTok.",
+    "a": "Stanley"
+  },
+  {
+    "q": "{BLANK} impulses travel to and from the brain at speeds of up to 270 mph (435 km/h).",
+    "a": "Nerve"
+  },
+  {
+    "q": "Water can exist in three states at once ({BLANK}, liquid, gas) at a specific temperature and pressure called the Triple Point.",
+    "a": "solid"
+  },
+  {
+    "q": "The shortest player in NBA history was {BLANK} at 5'3\".",
+    "a": "Muggsy Bogues"
+  },
+  {
+    "q": "The saltwater {BLANK} has the strongest bite of any animal.",
+    "a": "crocodile"
+  },
+  {
+    "q": "Ice cream originated in {BLANK}.",
+    "a": "China"
+  },
+  {
+    "q": "Calculus was developed independently by Newton and {BLANK}.",
+    "a": "Leibniz"
+  },
+  {
+    "q": "The \"Save\" icon on most computers is a {BLANK} disk, an object many Gen Z users have never actually seen in person.",
+    "a": "floppy"
+  },
+  {
+    "q": "The entire {BLANK} weighs about the same as a strawberry (in terms of the mass of the electrons required to store the data).",
+    "a": "internet"
+  },
+  {
+    "q": "Bats are the only flying {BLANK}.",
+    "a": "mammal"
+  },
+  {
+    "q": "Ulaanbaatar is the {BLANK} capital city in the world.",
+    "a": "coldest"
+  },
+  {
+    "q": "{BLANK} never actually wore horned helmets; that was an invention by 19th-century costume designers.",
+    "a": "Vikings"
+  },
+  {
+    "q": "Pringles aren't technically {BLANK} chips; the government ruled they are \"savory snacks\" because they are made from dough.",
+    "a": "potato"
+  },
+  {
+    "q": "Machu Picchu was built by the {BLANK} civilization.",
+    "a": "Inca"
+  },
+  {
+    "q": "{BLANK} cultivation spread globally from Ethiopia.",
+    "a": "Coffee"
+  },
+  {
+    "q": "{BLANK} is the fastest-growing plant on Earth; some species can grow nearly 3 feet in 24 hours.",
+    "a": "Bamboo"
+  },
+  {
+    "q": "Mantis {BLANK} can punch with the speed of a .22 caliber bullet, generating enough heat to boil the surrounding water instantly.",
+    "a": "Shrimp"
+  },
+  {
+    "q": "{BLANK} hasn't released an album since 2016, yet she remains one of the wealthiest musicians due to her makeup brand, Fenty.",
+    "a": "Rihanna"
+  },
+  {
+    "q": "As explained by the theory of General {BLANK}, time passes slower near massive objects (like Earth) compared to deep space. This is why GPS satellites have to adjust their clocks to match Earth time.",
+    "a": "Relativity"
+  },
+  {
+    "q": "\"{BLANK}\" is the new term for low-quality, AI-generated content that is flooding social media.",
+    "a": "Slop"
+  },
+  {
+    "q": "Humans get vitamin {BLANK} from sunlight.",
+    "a": "D"
+  },
+  {
+    "q": "The {BLANK} is the longest-running Broadway show.",
+    "a": "Phantom of the Opera"
+  },
+  {
+    "q": "A {BLANK} time machine appears in Back to the Future.",
+    "a": "DeLorean"
+  },
+  {
+    "q": "Radio communication was pioneered by Guglielmo {BLANK}.",
+    "a": "Marconi"
+  },
+  {
+    "q": "Dominoes originated in {BLANK}.",
+    "a": "China"
+  },
+  {
+    "q": "The Statue of Liberty was a gift from {BLANK} to the United States.",
+    "a": "France"
+  },
+  {
+    "q": "The Baroque composer Johann Sebastian {BLANK} wrote the Brandenburg Concertos.",
+    "a": "Bach"
+  },
+  {
+    "q": "{BLANK} is the smallest country in the world.",
+    "a": "Vatican City"
+  },
+  {
+    "q": "Mount {BLANK} is an active volcano in Sicily.",
+    "a": "Etna"
+  },
+  {
+    "q": "The {BLANK} was originally intended as an architecture simulator; the \"people\" were just there to judge the houses.",
+    "a": "Sims"
+  },
+  {
+    "q": "Oxford University existed before the {BLANK} Empire.",
+    "a": "aztec"
+  },
+  {
+    "q": "If two pieces of the same type of {BLANK} touch in space, they will bond and be permanently stuck together.",
+    "a": "metal"
+  },
+  {
+    "q": "The {BLANK} is the saltiest body of water on Earth.",
+    "a": "Dead Sea"
+  },
+  {
+    "q": "Humans {BLANK} about 20,000 times a day.",
+    "a": "blink"
+  },
+  {
+    "q": "The letter \"{BLANK}\" is the only letter that does not appear on the Periodic Table of Elements.",
+    "a": "J"
+  },
+  {
+    "q": "{BLANK} makes up most of Earth’s atmosphere.",
+    "a": "Nitrogen"
+  },
+  {
+    "q": "{BLANK} is the only food that doesn't spoil. It has been found still edible in ancient Egyptian tombs.",
+    "a": "Honey"
+  },
+  {
+    "q": "Hot water can freeze faster than cold water. This is known as the {BLANK} effect.",
+    "a": "Mpemba"
+  },
+  {
+    "q": "{BLANK} is the most common name in the world.",
+    "a": "Muhammad"
+  },
+  {
+    "q": "If uncoiled, the {BLANK} in all the cells in your body would stretch 10 billion miles - from Earth to Pluto and back.",
+    "a": "DNA"
+  },
+  {
+    "q": "{BLANK} are only pink because of the carotenoid pigments in the shrimp and algae they eat.",
+    "a": "Flamingos"
+  },
+  {
+    "q": "{BLANK} is the most populous country in the world.",
+    "a": "India"
+  },
+  {
+    "q": "A {BLANK}’s heart can beat over 1,200 times per minute.",
+    "a": "hummingbird"
+  },
+  {
+    "q": "The prime {BLANK} passes through Greenwich.",
+    "a": "meridian"
+  },
+  {
+    "q": "Pluto was reclassified as a {BLANK} planet in 2006.",
+    "a": "dwarf"
+  },
+  {
+    "q": "The {BLANK} is the smallest unit of life.",
+    "a": "cell"
+  },
+  {
+    "q": "Absolute Zero (C) is the theoretical temperature where all {BLANK} motion stops.",
+    "a": "molecular"
+  },
+  {
+    "q": "Eisoptrophobia is the fear of {BLANK}.",
+    "a": "mirrors"
+  },
+  {
+    "q": "{BLANK} was the first Roman emperor.",
+    "a": "Augustus"
+  },
+  {
+    "q": "The first oranges were {BLANK} in color.",
+    "a": "green"
+  },
+  {
+    "q": "Ninjas didn't actually wear all-black suits; they usually dressed as {BLANK} to blend in.",
+    "a": "farmers"
+  },
+  {
+    "q": "{BLANK} University is older than the Aztec Empire.",
+    "a": "Oxford"
+  },
+  {
+    "q": "{BLANK} was originally built for a mobile MOBA game that failed; the developers realized the chat app was better than the game itself.",
+    "a": "Discord"
+  },
+  {
+    "q": "The first {BLANK} video was uploaded on April 23, 2005, titled \"Me at the zoo.\"",
+    "a": "YouTube"
+  },
+  {
+    "q": "{BLANK} is the most popular favorite color worldwide.",
+    "a": "Blue"
+  },
+  {
+    "q": "Switzerland is a European country with no {BLANK}.",
+    "a": "coastline"
+  },
+  {
+    "q": "The first microprocessor was the Intel 4004 released in {BLANK}.",
+    "a": "1971"
+  },
+  {
+    "q": "{BLANK} was originally two separate apps: Douyin (in China) and Musical.ly (in the West).",
+    "a": "TikTok"
+  },
+  {
+    "q": "Triskaidekaphobia is the fear of the number {BLANK}.",
+    "a": "13"
+  },
+  {
+    "q": "Peregrine {BLANK} can hit speeds of over 240 mph during a hunting dive.",
+    "a": "falcons"
+  },
+  {
+    "q": "{BLANK} are more closely related to animals than they are to plants.",
+    "a": "Fungi"
+  },
+  {
+    "q": "{BLANK} has the longest coastline of any country.",
+    "a": "Canada"
+  },
+  {
+    "q": "Ed Sheeran lived as a {BLANK} person in London for two years before he became famous.",
+    "a": "homeless"
+  },
+  {
+    "q": "The epic poem The Divine Comedy was written by {BLANK} Alighieri.",
+    "a": "Dante"
+  },
+  {
+    "q": "The \"{BLANK}\" is a phenomenon where a large group of people remembers something differently than how it occurred (like the Monopoly man having a monocle - he doesn't).",
+    "a": "Mandela Effect"
+  },
+  {
+    "q": "Space Force is no longer just a joke; nations are currently developing \"grappler\" {BLANK} designed to pull enemy satellites out of orbit.",
+    "a": "satellites"
+  },
+  {
+    "q": "Some turtles can breathe through their {BLANK}.",
+    "a": "butts"
+  },
+  {
+    "q": "Phobophobia is the fear of having a {BLANK}.",
+    "a": "phobia"
+  },
+  {
+    "q": "{BLANK} originated in the Andes region.",
+    "a": "Potatoes"
+  },
+  {
+    "q": "{BLANK} is an ancient city carved into rock in Jordan.",
+    "a": "Petra"
+  },
+  {
+    "q": "Horseshoe crabs have {BLANK} blood.",
+    "a": "blue"
+  },
+  {
+    "q": "Elephants can recognize themselves in {BLANK}.",
+    "a": "mirrors"
+  },
+  {
+    "q": "Aurora {BLANK} occurs near polar regions.",
+    "a": "borealis"
+  },
+  {
+    "q": "The Roman calendar named months after {BLANK} and rulers.",
+    "a": "gods"
+  },
+  {
+    "q": "The {BLANK} killed millions in medieval Europe.",
+    "a": "Black Death"
+  },
+  {
+    "q": "It takes approximately 20 minutes for your {BLANK} to signal to your brain that it is full.",
+    "a": "stomach"
+  },
+  {
+    "q": "Sloths can sometimes mistake their own {BLANK} for a tree branch and fall.",
+    "a": "arm"
+  },
+  {
+    "q": "The phrase 'pull out all the stops' comes from {BLANK}.",
+    "a": "organs"
+  },
+  {
+    "q": "{BLANK} painted the ceiling of the Sistine Chapel.",
+    "a": "Michelangelo"
+  },
+  {
+    "q": "{BLANK} are the only part of the human body that cannot repair themselves because they aren't made of living tissue.",
+    "a": "Teeth"
+  },
+  {
+    "q": "The {BLANK} Empire lasted from the late 1200s until 1922.",
+    "a": "Ottoman"
+  },
+  {
+    "q": "Bananas are biologically classified as {BLANK}, while strawberries are not.",
+    "a": "berries"
+  },
+  {
+    "q": "Pythagoras (the triangle guy) headed a cult that was terrified of {BLANK}.",
+    "a": "beans"
+  },
+  {
+    "q": "There is a {BLANK} on the CIA campus, but the baristas aren't allowed to ask for names for the cups.",
+    "a": "Starbucks"
+  },
+  {
+    "q": "The {BLANK} alphabet is the most widely used writing system globally.",
+    "a": "Latin"
+  },
+  {
+    "q": "Roman {BLANK} are still used today.",
+    "a": "roads"
+  },
+  {
+    "q": "{BLANK} are marine mammals adapted to cold water.",
+    "a": "Seals"
+  },
+  {
+    "q": "The {BLANK} is the largest ocean.",
+    "a": "Pacific"
+  },
+  {
+    "q": "Medieval Europeans believed {BLANK} was unhealthy.",
+    "a": "bathing"
+  },
+  {
+    "q": "{BLANK} strikes the Earth about 100 times every single second.",
+    "a": "Lightning"
+  },
+  {
+    "q": "The {BLANK} helped scholars decipher Egyptian hieroglyphs.",
+    "a": "Rosetta Stone"
+  },
+  {
+    "q": "{BLANK} has the most native speakers in the world.",
+    "a": "Mandarin Chinese"
+  },
+  {
+    "q": "The Gobi Desert lies in {BLANK} and China.",
+    "a": "Mongolia"
+  },
+  {
+    "q": "The Roman Empire had public {BLANK} with shared sponges.",
+    "a": "toilets"
+  },
+  {
+    "q": "Pervitin, a form of {BLANK}, was mass-distributed to Nazi soldiers to keep them awake for days during the \"Blitzkrieg.\"",
+    "a": "methamphetamine"
+  },
+  {
+    "q": "The first clocks were powered by falling {BLANK}.",
+    "a": "water"
+  },
+  {
+    "q": "The equator divides Earth into northern and southern {BLANK}.",
+    "a": "hemispheres"
+  },
+  {
+    "q": "Paper was invented in {BLANK}.",
+    "a": "China"
+  },
+  {
+    "q": "Your stomach acid ({BLANK} acid) is strong enough to dissolve razor blades.",
+    "a": "hydrochloric"
+  },
+  {
+    "q": "The smell of {BLANK} is called petrichor.",
+    "a": "rain"
+  },
+  {
+    "q": "Art {BLANK} became popular in the 1920s and 1930s.",
+    "a": "Deco"
+  },
+  {
+    "q": "The hashtag symbol is technically called an {BLANK}.",
+    "a": "octothorpe"
+  },
+  {
+    "q": "Reptiles lay eggs with {BLANK} shells.",
+    "a": "leathery"
+  },
+  {
+    "q": "You are taller in the morning than at night because gravity compresses the {BLANK} in your spine throughout the day.",
+    "a": "cartilage"
+  },
+  {
+    "q": "A single {BLANK} search uses the same amount of computing power as the entire Apollo program used to launch the shuttle.",
+    "a": "Google"
+  },
+  {
+    "q": "Mount {BLANK} is the tallest freestanding mountain on Earth.",
+    "a": "Kilimanjaro"
+  },
+  {
+    "q": "Samurai followed a strict moral code called {BLANK}.",
+    "a": "Bushido"
+  },
+  {
+    "q": "New York City is nicknamed 'The City That Never {BLANK}.'",
+    "a": "Sleeps"
+  },
+  {
+    "q": "Sloths take up to two {BLANK} to digest a single meal.",
+    "a": "weeks"
+  },
+  {
+    "q": "{BLANK} is technically the world's largest desert because it receives very little precipitation.",
+    "a": "Antarctica"
+  },
+  {
+    "q": "{BLANK} survived over 600 assassination attempts by the CIA, including an exploding cigar and a poison diving suit.",
+    "a": "Fidel Castro"
+  },
+  {
+    "q": "Genghis Khan ruled the {BLANK} Empire.",
+    "a": "Mongol"
+  },
+  {
+    "q": "Vikings kept {BLANK} as pets.",
+    "a": "cats"
+  },
+  {
+    "q": "Trees can communicate through underground {BLANK} networks.",
+    "a": "fungal"
+  },
+  {
+    "q": "Peanut butter can be turned into {BLANK} under extremely high pressure.",
+    "a": "diamonds"
+  },
+  {
+    "q": "{BLANK} was invented during WWII when cocoa was scarce; hazelnuts were used to stretch the supply.",
+    "a": "Nutella"
+  },
+  {
+    "q": "{BLANK} are the only species where the male carries and gives birth to the young.",
+    "a": "Seahorses"
+  },
+  {
+    "q": "The cerebellum controls {BLANK}.",
+    "a": "balance"
+  },
+  {
+    "q": "{BLANK} is the largest continent on Earth.",
+    "a": "Asia"
+  },
+  {
+    "q": "{BLANK} have three hearts, nine brains, and blue blood.",
+    "a": "Octopuses"
+  },
+  {
+    "q": "The human body replaces most cells every {BLANK} years.",
+    "a": "seven"
+  },
+  {
+    "q": "The cornea is the only part of the body with no blood supply; it gets {BLANK} directly from the air.",
+    "a": "oxygen"
+  },
+  {
+    "q": "The island of New Guinea is divided between {BLANK} and Papua New Guinea.",
+    "a": "Indonesia"
+  },
+  {
+    "q": "The Aztecs valued {BLANK} beans (chocolate) so much they used them as currency.",
+    "a": "cocoa"
+  },
+  {
+    "q": "The internet grew out of a network called {BLANK}.",
+    "a": "ARPANET"
+  },
+  {
+    "q": "The {BLANK} countries (Denmark, Norway, Sweden) consistently rank as the happiest in the world.",
+    "a": "Nordic"
+  },
+  {
+    "q": "The {BLANK} always shows the same face to Earth.",
+    "a": "Moon"
+  },
+  {
+    "q": "{BLANK} is the study of earthquakes.",
+    "a": "Seismology"
+  },
+  {
+    "q": "{BLANK} stars are so dense that a single teaspoon would weigh about 6 billion tons on Earth.",
+    "a": "Neutron"
+  },
+  {
+    "q": "The Baltic states are Estonia, Latvia, and {BLANK}.",
+    "a": "Lithuania"
+  },
+  {
+    "q": "The Indianapolis {BLANK} is one of the most famous motor races in the world.",
+    "a": "500"
+  },
+  {
+    "q": "The \"Greektown\" area in Assassin's Creed {BLANK} is so accurate that historians have used it to visualize ancient ruins.",
+    "a": "Odyssey"
+  },
+  {
+    "q": "{BLANK} killed so many people (roughly 40 million) that he actually cooled the Earth's climate by reforestation.",
+    "a": "Genghis Khan"
+  },
+  {
+    "q": "{BLANK} travels roughly four times faster in water than it does in air.",
+    "a": "Sound"
+  },
+  {
+    "q": "The Amazon {BLANK} produces about 20% of the Earth's oxygen.",
+    "a": "Rainforest"
+  },
+  {
+    "q": "Fast {BLANK} (like Shein) produces so much clothing that a truckload of clothes is burned or buried every second.",
+    "a": "Fashion"
+  },
+  {
+    "q": "{BLANK} puzzles use a 9×9 grid.",
+    "a": "Sudoku"
+  },
+  {
+    "q": "Claude Monet painted many studies of water {BLANK}.",
+    "a": "lilies"
+  },
+  {
+    "q": "{BLANK} rotates in the opposite direction of most planets.",
+    "a": "Venus"
+  },
+  {
+    "q": "Earth’s magnetic field protects against solar {BLANK}.",
+    "a": "wind"
+  },
+  {
+    "q": "The {BLANK} contain the most bones in the human body.",
+    "a": "hands"
+  },
+  {
+    "q": "The phrase 'turn a blind eye' comes from Admiral {BLANK}.",
+    "a": "Nelson"
+  },
+  {
+    "q": "The QWERTY layout is not the most efficient; the {BLANK} layout allows you to type much faster, but we are too used to QWERTY to switch.",
+    "a": "Dvorak"
+  },
+  {
+    "q": "{BLANK} is a single layer of carbon atoms.",
+    "a": "Graphene"
+  },
+  {
+    "q": "Penguins live mainly in the {BLANK} Hemisphere.",
+    "a": "Southern"
+  },
+  {
+    "q": "{BLANK} is the only major city spanning two continents.",
+    "a": "Istanbul"
+  },
+  {
+    "q": "Snoop Dogg has a full-time \"professional {BLANK} roller\" on his staff.",
+    "a": "blunt"
+  },
+  {
+    "q": "{BLANK} (water bears) are microscopic animals that can survive the vacuum of space, extreme radiation, and boiling liquids.",
+    "a": "Tardigrades"
+  },
+  {
+    "q": "Basketball was invented by James {BLANK} in 1891.",
+    "a": "Naismith"
+  },
+  {
+    "q": "Peanuts are not nuts—they're {BLANK}.",
+    "a": "legumes"
+  },
+  {
+    "q": "A human {BLANK} can travel at speeds of 100 mph and send 100,000 germs into the air.",
+    "a": "sneeze"
+  },
+  {
+    "q": "Water freezes at {BLANK}°C under standard pressure.",
+    "a": "0"
+  },
+  {
+    "q": "Ancient Egyptians used slabs of stone as {BLANK}.",
+    "a": "pillows"
+  },
+  {
+    "q": "The tallest player in NBA history was {BLANK} Bol at 7'7\" (he once killed a lion with a spear).",
+    "a": "Manute"
+  },
+  {
+    "q": "Table tennis is also called {BLANK}.",
+    "a": "ping-pong"
+  },
+  {
+    "q": "Cows have {BLANK} stomach compartments to help them digest tough grass and grains.",
+    "a": "four"
+  },
+  {
+    "q": "{BLANK} is the largest planet in the solar system.",
+    "a": "Jupiter"
+  },
+  {
+    "q": "The American Civil War ended in {BLANK}.",
+    "a": "1865"
+  },
+  {
+    "q": "{BLANK} is the coldest place on Earth.",
+    "a": "Antarctica"
+  },
+  {
+    "q": "The first postal system was created in ancient {BLANK}.",
+    "a": "Persia"
+  },
+  {
+    "q": "Asteroids mostly orbit in a belt between {BLANK} and Jupiter.",
+    "a": "Mars"
+  },
+  {
+    "q": "'{BLANK}' is the most common password.",
+    "a": "123456"
+  },
+  {
+    "q": "In 1913, Hitler, Stalin, Trotsky, Tito, and Freud all lived within a few miles of each other in {BLANK}.",
+    "a": "Vienna"
+  },
+  {
+    "q": "{BLANK} has officially overtaken China as the world's most populous country.",
+    "a": "India"
+  },
+  {
+    "q": "{BLANK} is the most eaten food in the world.",
+    "a": "Rice"
+  },
+  {
+    "q": "{BLANK} is the universal donor blood type.",
+    "a": "O negative"
+  },
+  {
+    "q": "{BLANK} are the only animals where males carry pregnancy.",
+    "a": "Seahorses"
+  },
+  {
+    "q": "{BLANK} converts carbon dioxide and water into glucose and oxygen.",
+    "a": "Photosynthesis"
+  },
+  {
+    "q": "Nintendo owns the rights to two Super {BLANK} porn parodies just so they can keep them out of circulation.",
+    "a": "Mario"
+  },
+  {
+    "q": "Olympus Mons on {BLANK} is the tallest volcano in the solar system, standing nearly three times the height of Mount Everest.",
+    "a": "Mars"
+  },
+  {
+    "q": "{BLANK} started his career as an actor on the teen drama Degrassi.",
+    "a": "Drake"
+  },
+  {
+    "q": "The piano has {BLANK} keys in its standard modern form.",
+    "a": "88"
+  },
+  {
+    "q": "Muscles {BLANK} to produce movement.",
+    "a": "contract"
+  },
+  {
+    "q": "The term \"{BLANK}\" comes from a 1938 play about a husband trying to convince his wife she's going insane.",
+    "a": "Gaslighting"
+  },
+  {
+    "q": "{BLANK} birds can mimic almost any sound, including chainsaws, camera shutters, and car alarms.",
+    "a": "Lyre"
+  },
+  {
+    "q": "Space is completely silent. Sound waves need a medium to travel through, and space is a {BLANK}.",
+    "a": "vacuum"
+  },
+  {
+    "q": "A light-year measures {BLANK}, not time.",
+    "a": "distance"
+  },
+  {
+    "q": "{BLANK} can regrow not just limbs, but also their spinal cords, hearts, and parts of their brains.",
+    "a": "Axolotls"
+  },
+  {
+    "q": "The Milky Way is a barred {BLANK} galaxy.",
+    "a": "spiral"
+  },
+  {
+    "q": "High {BLANK} were originally worn by men (Persian soldiers) to help them stay in their stirrups.",
+    "a": "heels"
+  },
+  {
+    "q": "{BLANK} has the most volcanoes in the world.",
+    "a": "Indonesia"
+  },
+  {
+    "q": "The {BLANK} was signed in 1215 by King John of England.",
+    "a": "Magna Carta"
+  },
+  {
+    "q": "A \"{BLANK}\" is the group name for a bunch of cats.",
+    "a": "Clowder"
+  },
+  {
+    "q": "The periodic table currently has {BLANK} confirmed elements.",
+    "a": "118"
+  },
+  {
+    "q": "Some mushrooms {BLANK} in the dark.",
+    "a": "glow"
+  },
+  {
+    "q": "{BLANK} gives plants their green color.",
+    "a": "Chlorophyll"
+  },
+  {
+    "q": "The {BLANK} is often considered the longest river in the world.",
+    "a": "Nile"
+  },
+  {
+    "q": "{BLANK} is the highest-grossing film of all time.",
+    "a": "Avatar"
+  },
+  {
+    "q": "{BLANK} fur is actually transparent, not white. Their skin underneath is black to absorb heat from the sun.",
+    "a": "Polar bear"
+  },
+  {
+    "q": "The {BLANK} flu killed more people than World War I.",
+    "a": "Spanish"
+  },
+  {
+    "q": "The study of insects is called {BLANK}.",
+    "a": "entomology"
+  }
+]

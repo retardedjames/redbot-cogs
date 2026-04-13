@@ -1,0 +1,35 @@
+I want you to add questions from my GOOD QUESTIONS file into the trivia database.
+
+STEP 1 — Read the source file.
+
+Read `PotentialQuestions/GOOD QUESTIONS.txt`. Each line is a question in this format:
+  \_\_\_ question text here \_\_\_\_.|Answer
+
+Skip any blank lines or lines that don't contain a `|` character.
+
+STEP 2 — Read the existing database.
+
+Read `trivia/questions.json`. It is a JSON array of objects like:
+  {"q": "question text with {BLANK} placeholder", "a": "Answer"}
+
+STEP 3 — Parse and validate each new question.
+
+For each line from GOOD QUESTIONS.txt:
+1. Split on `|` to get the question text and the answer.
+2. In the question text, find the sequence of `\_` characters (one backslash + one underscore per character). Replace the entire run of `\_` chars with the literal string `{BLANK}`.
+3. Verify the answer is not empty.
+4. Check for duplicates: skip any question where the normalized question text AND answer already exist in the database (case-insensitive comparison).
+
+STEP 4 — Append to the database.
+
+Add all valid, non-duplicate questions to the end of the `questions.json` array. Write the updated array back to `trivia/questions.json` with 2-space indentation.
+
+STEP 5 — Reset the shuffle state.
+
+Delete the file `trivia/state.json` if it exists. The trivia cog will automatically create a new shuffled order on the next game start, which will include all the new questions.
+
+STEP 6 — Report results.
+
+Print how many questions were in GOOD QUESTIONS.txt, how many were skipped as duplicates, and how many were added. Then print the new total count in questions.json.
+
+Do not explain what you're doing. Just do it.

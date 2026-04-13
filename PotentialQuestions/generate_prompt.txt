@@ -1,0 +1,37 @@
+I want you to generate 50 new trivia questions for my fill-in-the-blank trivia game.
+
+STEP 1 — Read all existing questions to avoid duplicates.
+
+Read the file `trivia/questions.json`. Also read every .txt file inside `PotentialQuestions/` to see all previously generated questions. Note the full set of questions and answers so you don't repeat them.
+
+STEP 2 — Understand the question style.
+
+The questions follow this format: the missing word or short phrase is replaced with underscores, and the answer comes after a pipe character:
+  \_\_\_\_\_ can rotate their heads up to 270 degrees.|Owls
+  The novel \_\_\_\_\_\_\_\_\_\_\_ was written by Miguel de Cervantes.|Don Quixote
+  \_\_\_\_\_\_\_\_\_\_ are the only animals where males carry pregnancy.|Seahorses
+
+Style guidelines:
+- Mix of categories: science, history, geography, pop culture, food, sports, language, movies/TV, weird facts, current technology, biology, psychology
+- Prioritize surprising, funny, or "wait really?" facts over dry textbook knowledge
+- Answers should almost always be a single word or short phrase (2–3 words max)
+- The blank should replace the most interesting/surprising word in the sentence
+- The number of underscores in the question should EXACTLY match the number of characters in the answer (use one \_ per character, no spaces between underscores)
+- Answers are case-insensitive when players guess, but store them in their natural capitalization
+- Avoid questions that are too obscure (things basically nobody would know) or too easy (things everyone knows instantly)
+- Do NOT generate questions that are essentially the same as an existing one, even if worded differently
+
+STEP 3 — Generate 50 new questions.
+
+Output them in this exact format, one per line:
+  \_\_\_ question text here \_\_\_\_.|Answer
+
+Make sure the underscore count matches the character count of the answer.
+
+STEP 4 — Save to a new file.
+
+Determine what batch number to use by looking at existing files in PotentialQuestions/ (e.g., if batch_001.txt and batch_002.txt exist, save to batch_003.txt).
+
+Write the 50 questions to that new file in PotentialQuestions/. Do NOT write anything else to the file — just the raw question lines, one per line.
+
+Do not explain what you're doing. Just do it.
