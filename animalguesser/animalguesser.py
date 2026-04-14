@@ -438,7 +438,7 @@ class AnimalGameView(discord.ui.View):
     async def _enable_hint_after_delay(self):
         await asyncio.sleep(20)
         game = self.cog.games.get(self.channel_id)
-        if not game or self.hint_stage >= 2 or not self.message:
+        if not game or self.hint_stage >= 3 or not self.message:
             return
         self.hint_btn.disabled = False
         try:
@@ -508,20 +508,31 @@ class AnimalGameView(discord.ui.View):
         self.hint_stage += 1
 
         if self.hint_stage == 1:
+            fact = ANIMAL_FACTS.get(game.animal, "")
             embed = discord.Embed(
-                title="Hint 1 of 2",
-                description=_build_first_hint(game.animal),
-                color=discord.Color.gold(),
+                title="Hint 1 of 3 — Where in the world?",
+                description=f"📍 {fact}" if fact else "No location hint available.",
+                color=discord.Color.green(),
             )
             embed.set_footer(text="Hint 2 unlocks in 20 seconds...")
             await interaction.response.edit_message(view=self)
             await interaction.followup.send(embed=embed)
-            # Schedule unlock for second hint
             self._hint_task = asyncio.create_task(self._enable_hint_after_delay())
 
-        else:  # hint_stage == 2 — final hint
+        elif self.hint_stage == 2:
             embed = discord.Embed(
-                title="Hint 2 of 2 — Final Hint!",
+                title="Hint 2 of 3",
+                description=_build_first_hint(game.animal),
+                color=discord.Color.gold(),
+            )
+            embed.set_footer(text="Hint 3 unlocks in 20 seconds...")
+            await interaction.response.edit_message(view=self)
+            await interaction.followup.send(embed=embed)
+            self._hint_task = asyncio.create_task(self._enable_hint_after_delay())
+
+        else:  # hint_stage == 3 — final hint
+            embed = discord.Embed(
+                title="Hint 3 of 3 — Final Hint!",
                 description=f"Scrambled: **{_scramble(game.animal)}**",
                 color=discord.Color.orange(),
             )
@@ -591,14 +602,11 @@ class AnimalGuesser(commands.Cog):
         tp = self.bot.get_cog("TrackPoints")
         if tp:
             await tp.record_game_result(None, game.participants)
-        fact = ANIMAL_FACTS.get(animal, "")
         embed = discord.Embed(
             title="Time's up!",
             description=f"Nobody guessed it. The animal was **{animal}**.",
             color=discord.Color(0x99aab5),
         )
-        if fact:
-            embed.set_footer(text=f"📍 {fact}")
         await channel.send(embed=embed, view=AnimalPlayAgainView(self, channel.id))
 
     # ── Start game ────────────────────────────────────────────────────────────
@@ -632,7 +640,7 @@ class AnimalGuesser(commands.Cog):
             ),
             color=discord.Color.blurple(),
         )
-        embed.set_footer(text="Next Image: up to 3 extra photos  |  Hint unlocks after 20 seconds")
+        embed.set_footer(text="Next Image: up to 3 extra photos  |  Hint unlocks after 20 seconds  |  3 hints available")
         embed.set_image(url="attachment://animal.jpg")
 
         first_image = game.pop_image()
@@ -684,7 +692,6 @@ class AnimalGuesser(commands.Cog):
             await tp.record_game_result(message.author, game.participants)
             total_pts = await tp.get_points(message.author)
         pts_line = f"\nYou now have **{total_pts:,}** total points!" if total_pts is not None else ""
-        fact = ANIMAL_FACTS.get(game.animal, "")
         embed = discord.Embed(
             title="Correct!",
             description=(
@@ -693,8 +700,7 @@ class AnimalGuesser(commands.Cog):
             ),
             color=discord.Color.blurple(),
         )
-        footer = f"📍 {fact}" if fact else "Start a new game any time with $animalguesser!"
-        embed.set_footer(text=footer)
+        embed.set_footer(text="Start a new game any time with $animalguesser!")
         await message.channel.send(embed=embed, view=AnimalPlayAgainView(self, message.channel.id))
 
     # ── Cleanup on unload ─────────────────────────────────────────────────────
