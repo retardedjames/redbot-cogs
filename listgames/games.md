@@ -5,7 +5,7 @@ A word is scrambled and people rush to find words in the letters
 Random animal is shown and the first to guess it wins
 
 ## $arg, Art Guesser
-Like animal guesser but with famous or influential visual artists, from a pool of 545.
+Like animal guesser but with famous or influential visual artists, from a pool of 550
 
 ## $bg, Brand Guesser
 Wow james is addicted to making guessing games. These ones get blurred and shuffled and stuff
@@ -31,10 +31,8 @@ Gives you premise of a famous movie and first to guess it wins
 ## $mw, Multiplayer Wordle
 Regular wordle except anyone can guess the word. dont be a dick.
 
-
 ## $rg, Retard Guesser
-Like animal guesser but with famous people, from a pool of 607.
-
+Like animal guesser but with famous people, from a pool of 600+
 
 ## $rd @user, Rhyme Duel
 A word is posted and game goes back and forth until someone cant think of a rhyme
