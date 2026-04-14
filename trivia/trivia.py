@@ -18,6 +18,11 @@ INSULTS_FILE = DATA_PATH / "Random Insults.txt"
 DEFAULT_TIME = 30
 DEFAULT_QUESTIONS = 100
 
+async def _find_emoji(guild: discord.Guild, name: str, fallback: str):
+    emoji = discord.utils.get(guild.emojis, name=name)
+    return emoji if emoji else fallback
+
+
 def _format_blank(answer: str) -> str:
     """Return `\_ \_ \_ \_` style blank matching the answer's character count.
     Underscores are backslash-escaped so Discord doesn't treat them as italic markdown.
@@ -256,3 +261,6 @@ class Trivia(commands.Cog):
         if message.content.strip().lower() == q_data["a"].strip().lower():
             game.correct_guesser = message.author
             game.answer_event.set()
+            check = await _find_emoji(message.guild, "check", "✅")
+            with suppress(discord.HTTPException):
+                await message.add_reaction(check)
