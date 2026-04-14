@@ -35,7 +35,6 @@ import imagehash
 # ── Paths ──────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent
 IMAGES_DIR = SCRIPT_DIR / "images"
-LIST_FILE  = SCRIPT_DIR / "list.txt"
 
 # ── Config ─────────────────────────────────────────────────────────────────────
 IMAGES_PER_PERSON  = 6        # target images per person
@@ -61,24 +60,25 @@ HEADERS = {
 
 # ── Person list ────────────────────────────────────────────────────────────────
 def load_people() -> list[str]:
-    if not LIST_FILE.exists():
-        print(f"ERROR: {LIST_FILE} not found.")
-        sys.exit(1)
-
-    names = []
-    for line in LIST_FILE.read_text(encoding="utf-8", errors="replace").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        # Skip markdown/formatting artifacts
-        if line.startswith(("*", "#", "`", "-", "\\", "!", "|")):
-            continue
-        if "**" in line or line == "--":
-            continue
-        # Must start with an uppercase letter (all real names do; junk lines don't)
-        if not line[0].isupper():
-            continue
-        names.append(line)
+    """Load person names from the database modules (people_data + csv_people_data)."""
+    try:
+        from people_data import PEOPLE as _P1
+    except ImportError:
+        try:
+            sys.path.insert(0, str(SCRIPT_DIR))
+            from people_data import PEOPLE as _P1
+        except ImportError:
+            _P1 = {}
+    try:
+        from csv_people_data import CSV_PEOPLE as _P2
+    except ImportError:
+        try:
+            from csv_people_data import CSV_PEOPLE as _P2
+        except ImportError:
+            _P2 = {}
+    combined = {**_P1, **_P2}
+    names = list(combined.keys())
+    print(f"Loaded {len(names)} people from database ({len(_P1)} from people_data, {len(_P2)} from csv_people_data)")
     return names
 
 

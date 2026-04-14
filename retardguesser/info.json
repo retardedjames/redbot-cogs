@@ -1,0 +1,10 @@
+{
+    "name": "RetardGuesser",
+    "short": "Guess the famous person from their photo!",
+    "description": "A guessing game where players identify famous people from photos. Type n for more photos, h for hints. 90-second timer.",
+    "tags": ["game", "trivia", "guessing"],
+    "requirements": [],
+    "install_msg": "Use `$rg` to start a game! Type guesses in chat, `n` for more photos, `h` for hints.",
+    "author": ["james"],
+    "min_bot_permissions": ["send_messages", "attach_files", "embed_links"]
+}
