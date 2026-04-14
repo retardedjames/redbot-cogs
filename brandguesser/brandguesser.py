@@ -1,8 +1,12 @@
 """
 brandguesser.py — BrandGuesser Discord cog.
 
-Pick a random brand → pick a random image (img-001/002/003) → show
+Pick a random brand → pick a random image style (img-001/002/003) → show
 progressive reveal stages every 10 s → reveal original on win or timeout.
+
+Commands during game:
+  n — swap to a different image style (max 2 times)
+  s — skip: reveal answer + original, start new game immediately
 
 Command : $bg
 """
@@ -56,11 +60,8 @@ def _normalize(text: str) -> str:
 def _build_display(name: str) -> tuple:
     """
     Returns (display_str, letter_count).
-    Each letter → escaped underscore, word boundaries shown with a dot separator,
+    Each letter → escaped underscore, word boundaries shown with · separator,
     non-letter non-space chars shown as-is inline.
-
-    e.g. "McDonald's"  → r"\_ \_ \_ \_ \_ \_ \_ \_ ' \_", 10
-         "Burger King" → r"\_ \_ \_ \_ \_ \_  ·  \_ \_ \_ \_", 10
     """
     letter_count = 0
     words = name.split(" ")
@@ -72,10 +73,32 @@ def _build_display(name: str) -> tuple:
                 parts.append(r"\_")
                 letter_count += 1
             else:
-                parts.append(ch)   # apostrophe, hyphen, dot, etc. shown literally
+                parts.append(ch)
         word_displays.append(" ".join(parts))
     display = "  ·  ".join(word_displays)
     return display, letter_count
+
+
+def _game_embed(game: "BrandGame") -> discord.Embed:
+    """Build the standard in-game embed (used for initial send and stage edits)."""
+    swaps_left = len(game.remaining_stems)
+    embed = discord.Embed(
+        title="Guess the Brand!",
+        description=(
+            f"## {game.display}\n"
+            f"**{game.letter_count} letters** · {TIMEOUT_SECONDS}s to guess · "
+            f"new stage every {STAGE_INTERVAL}s"
+        ),
+        color=discord.Color.blurple(),
+    )
+    embed.set_footer(
+        text=(
+            f"n — swap image style ({swaps_left} swap{'s' if swaps_left != 1 else ''} left)  ·  "
+            f"s — skip & reveal answer"
+        )
+    )
+    embed.set_image(url="attachment://brand.jpg")
+    return embed
 
 
 # ── Play Again button ─────────────────────────────────────────────────────────
@@ -108,33 +131,31 @@ class BrandGame:
     def __init__(
         self,
         brand_name: str,
-        accepted: list,        # normalised accepted answers (name + aliases)
-        display: str,          # underscore display string
+        accepted: list,           # normalised accepted answers (name + aliases)
+        display: str,             # underscore display string
         letter_count: int,
-        img_stem: str,         # e.g. "img-002"
+        img_stem: str,            # currently active stem, e.g. "img-002"
+        remaining_stems: list,    # other available stems not yet shown
         brand_dir: pathlib.Path,
         task: asyncio.Task,
     ):
-        self.brand_name   = brand_name
-        self.accepted     = accepted
-        self.display      = display
-        self.letter_count = letter_count
-        self.img_stem     = img_stem
-        self.brand_dir    = brand_dir
-        self.task         = task
+        self.brand_name      = brand_name
+        self.accepted        = accepted
+        self.display         = display
+        self.letter_count    = letter_count
+        self.img_stem        = img_stem
+        self.remaining_stems = remaining_stems   # mutable list; shrinks as n is pressed
+        self.brand_dir       = brand_dir
+        self.task            = task
         self.participants: set = set()
         self.msg: "discord.Message | None" = None   # set after initial send
-
-    @property
-    def stages_dir(self) -> pathlib.Path:
-        return self.brand_dir / "stages"
 
     @property
     def original_path(self) -> pathlib.Path:
         return self.brand_dir / f"{self.img_stem}.jpg"
 
     def stage_path(self, n: int) -> pathlib.Path:
-        return self.stages_dir / f"{self.img_stem}_s{n}.jpg"
+        return self.brand_dir / "stages" / f"{self.img_stem}_s{n}.jpg"
 
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
@@ -173,15 +194,15 @@ class BrandGuesser(commands.Cog):
 
         return None
 
-    def _pick_image(self, brand_dir: pathlib.Path) -> "str | None":
-        """Pick a random img stem (from img-001/002/003) that has stages ready."""
+    def _available_stems(self, brand_dir: pathlib.Path) -> list:
+        """Return all img stems (img-001/002/003) that have an original + s1 stage."""
         candidates = []
         for n in range(1, 4):
             stem = f"img-{n:03d}"
             if (brand_dir / f"{stem}.jpg").exists() and \
                (brand_dir / "stages" / f"{stem}_s1.jpg").exists():
                 candidates.append(stem)
-        return random.choice(candidates) if candidates else None
+        return candidates
 
     # ── Game runner ───────────────────────────────────────────────────────────
 
@@ -195,18 +216,8 @@ class BrandGuesser(commands.Cog):
                     return
                 path = game.stage_path(stage_num)
                 if path.exists() and game.msg is not None:
-                    embed = discord.Embed(
-                        title="Guess the Brand!",
-                        description=(
-                            f"## {game.display}\n"
-                            f"**{game.letter_count} letters** · {TIMEOUT_SECONDS}s to guess · "
-                            f"new stage every {STAGE_INTERVAL}s"
-                        ),
-                        color=discord.Color.blurple(),
-                    )
-                    embed.set_image(url="attachment://brand.jpg")
                     await game.msg.edit(
-                        embed=embed,
+                        embed=_game_embed(game),
                         attachments=[discord.File(path, filename="brand.jpg")],
                     )
             await asyncio.sleep(GRACE_SECONDS)
@@ -254,12 +265,16 @@ class BrandGuesser(commands.Cog):
 
         brand_name, brand_data = result
         brand_dir = IMAGES_DIR / brand_name
-        img_stem  = self._pick_image(brand_dir)
-        if img_stem is None:
+        stems = self._available_stems(brand_dir)
+        if not stems:
             await channel.send(
                 f"No ready stage images for **{brand_name}**. Try `$bg` again."
             )
             return
+
+        random.shuffle(stems)
+        img_stem        = stems[0]
+        remaining_stems = stems[1:]   # the other styles available via n
 
         # Accepted answers (full name + aliases, normalised)
         accepted = [_normalize(brand_name)]
@@ -271,27 +286,20 @@ class BrandGuesser(commands.Cog):
         display, letter_count = _build_display(brand_name)
 
         task = asyncio.create_task(self._game_runner(channel, brand_name))
-        game = BrandGame(brand_name, accepted, display, letter_count, img_stem, brand_dir, task)
+        game = BrandGame(
+            brand_name, accepted, display, letter_count,
+            img_stem, remaining_stems, brand_dir, task,
+        )
         self.games[channel.id] = game
 
         stage1 = game.stage_path(1)
-        embed = discord.Embed(
-            title="Guess the Brand!",
-            description=(
-                f"## {display}\n"
-                f"**{letter_count} letters** · {TIMEOUT_SECONDS}s to guess · "
-                f"new stage every {STAGE_INTERVAL}s"
-            ),
-            color=discord.Color.blurple(),
-        )
         if stage1.exists():
-            embed.set_image(url="attachment://brand.jpg")
             msg = await channel.send(
-                embed=embed,
+                embed=_game_embed(game),
                 file=discord.File(stage1, filename="brand.jpg"),
             )
         else:
-            msg = await channel.send(embed=embed)
+            msg = await channel.send(embed=_game_embed(game))
         game.msg = msg
 
     # ── $bg command ──────────────────────────────────────────────────────────
@@ -336,7 +344,30 @@ class BrandGuesser(commands.Cog):
         content = message.content.strip()
         lower   = content.lower()
 
-        # ── s: skip ──────────────────────────────────────────────────────────
+        # ── n: swap to a different image style ───────────────────────────────
+        if lower == "n":
+            if not game.remaining_stems:
+                await message.channel.send(
+                    "No more image styles available!", delete_after=5
+                )
+                return
+            # Pick next stem, cancel current runner, restart timer from scratch
+            game.task.cancel()
+            game.img_stem = game.remaining_stems.pop(
+                random.randrange(len(game.remaining_stems))
+            )
+            stage1 = game.stage_path(1)
+            if stage1.exists() and game.msg is not None:
+                await game.msg.edit(
+                    embed=_game_embed(game),
+                    attachments=[discord.File(stage1, filename="brand.jpg")],
+                )
+            game.task = asyncio.create_task(
+                self._game_runner(message.channel, game.brand_name)
+            )
+            return
+
+        # ── s: skip — reveal answer + original, start new game immediately ───
         if lower == "s":
             old = self.games.pop(message.channel.id)
             old.task.cancel()
