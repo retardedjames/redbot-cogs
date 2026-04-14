@@ -1,0 +1,12 @@
+{
+    "author": ["jamescvermont-cyber"],
+    "description": "Art guessing game — the bot shows artwork images and players guess the artist. Use $img for more images and $hint for clues.",
+    "end_user_data_statement": "This cog does not store any end user data.",
+    "hidden": false,
+    "install_msg": "Load the cog with `[p]load artguesser`, then start a game with `$art`.",
+    "name": "ArtGuesser",
+    "required_cogs": {},
+    "requirements": [],
+    "short": "Guess the artist from their artwork",
+    "tags": ["game", "art", "trivia", "fun", "images"]
+}

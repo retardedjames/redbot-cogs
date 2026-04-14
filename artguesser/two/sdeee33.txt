@@ -1,0 +1,51 @@
+Perfect — here comes **Batch 1 of 2** for your 80 photographers.  
+All are correctly tagged **modern** (1900s–now).  
+Same structure, same formatting, same tone as your previous CSVs.
+
+---
+
+# **CSV — Photographers Batch 1 (40 artists)**
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+Robert Doisneau,French,1912,1994,"photography","French humanist photographer known for poetic, humorous street scenes of Paris.","c.1935–1980","Humanist Photography","Street photography",modern,"Robert Doisneau photographs"
+Willy Ronis,French,1910,2009,"photography","French humanist photographer capturing everyday life with warmth and social awareness.","c.1935–1990","Humanist Photography","Street photography",modern,"Willy Ronis photographs"
+Marc Riboud,French,1923,2016,"photography","Magnum photographer known for lyrical reportage across Asia, Europe, and the U.S.","c.1950–2000","Photojournalism","Documentary photography",modern,"Marc Riboud photographs"
+René Burri,Swiss,1933,2014,"photography","Magnum photographer known for iconic portraits of Che Guevara and global reportage.","c.1955–2000","Photojournalism","Documentary photography",modern,"René Burri photographs"
+David 'Chim' Seymour,Polish-American,1911,1956,"photography","Co-founder of Magnum, known for compassionate images of children and postwar Europe.","c.1933–1956","Photojournalism","Humanist photography",modern,"David Chim Seymour photographs"
+George Rodger,British,1908,1995,"photography","Magnum co-founder known for WWII coverage and later African ethnographic work.","c.1935–1980","Photojournalism","Documentary photography",modern,"George Rodger photographs"
+Werner Bischof,Swiss,1916,1954,"photography","Magnum photographer known for elegant, humanistic postwar reportage.","c.1940–1954","Photojournalism","Humanist photography",modern,"Werner Bischof photographs"
+Eve Arnold,American-British,1912,2012,"photography","Magnum photographer known for intimate portraits, especially of Marilyn Monroe.","c.1950–2000","Photojournalism","Portrait photography",modern,"Eve Arnold portraits"
+Inge Morath,Austrian-American,1923,2002,"photography","Magnum photographer known for sensitive portraits and global reportage.","c.1950–1995","Photojournalism","Portrait photography",modern,"Inge Morath photographs"
+Dennis Stock,American,1928,2010,"photography","Magnum photographer known for iconic portraits of James Dean and jazz musicians.","c.1950–2000","Photojournalism","Portrait photography",modern,"Dennis Stock photographs"
+Bruce Davidson,American,1933,, "photography","Magnum photographer known for empathetic long-term projects like Brooklyn Gang and Subway.","c.1955–present","Documentary Photography","Street photography",modern,"Bruce Davidson photographs"
+Danny Lyon,American,1942,, "photography","Documentary photographer known for immersive projects on civil rights and biker culture.","c.1962–present","Documentary Photography","New Journalism",modern,"Danny Lyon photographs"
+Susan Meiselas,American,1948,, "photography","Magnum photographer known for politically engaged work in Central America.","c.1970–present","Documentary Photography","Conflict photography",modern,"Susan Meiselas photographs"
+James Nachtwey,American,1948,, "photography","One of the most influential war photographers of the late 20th century.","c.1980–present","Photojournalism","Conflict photography",modern,"James Nachtwey war photographs"
+Eugene Richards,American,1944,, "photography","Documentary photographer known for intimate, socially engaged projects.","c.1970–present","Documentary Photography","Social realism",modern,"Eugene Richards photographs"
+Alex Webb,American,1952,, "photography","Magnum photographer known for complex, color-rich street scenes.","c.1975–present","Street Photography","Documentary photography",modern,"Alex Webb street photography"
+Martin Parr,British,1952,, "photography","Magnum photographer known for satirical, brightly colored images of contemporary life.","c.1975–present","Documentary Photography","Social documentary",modern,"Martin Parr photographs"
+Josef Koudelka,Czech-French,1938,, "photography","Magnum photographer known for Gypsies, Invasion 68, and panoramic landscapes.","c.1960–present","Documentary Photography","Photojournalism",modern,"Josef Koudelka photographs"
+Raymond Depardon,French,1942,, "photography, film","Photographer-filmmaker known for reportage, portraiture, and institutional studies.","c.1960–present","Documentary Photography","Cinema vérité",modern,"Raymond Depardon photographs"
+Martine Franck,Belgian-British,1938,2012,"photography","Magnum photographer known for elegant, humanistic portraits and social reportage.","c.1965–2010","Humanist Photography","Portrait photography",modern,"Martine Franck photographs"
+Abbas,Iranian,1944,2018,"photography","Magnum photographer known for long-term projects on religion and political conflict.","c.1970–2015","Documentary Photography","Conflict photography",modern,"Abbas photographs"
+Bruno Barbey,French-Moroccan,1941,2020,"photography","Magnum photographer known for vibrant color reportage across the world.","c.1960–2015","Photojournalism","Documentary photography",modern,"Bruno Barbey photographs"
+Harry Gruyaert,Belgian,1941,, "photography","Magnum photographer known for bold, cinematic color work.","c.1970–present","Street Photography","Color photography",modern,"Harry Gruyaert photographs"
+Thomas Hoepker,German,1936,, "photography","Magnum photographer known for iconic images of America and boxing.","c.1960–present","Photojournalism","Documentary photography",modern,"Thomas Hoepker photographs"
+Carl de Keyzer,Belgian,1958,, "photography","Magnum photographer known for large-scale projects on institutions and power.","c.1985–present","Documentary Photography","Social documentary",modern,"Carl de Keyzer photographs"
+Paolo Pellegrin,Italian,1964,, "photography","Magnum photographer known for dramatic, atmospheric conflict photography.","c.1990–present","Photojournalism","Conflict photography",modern,"Paolo Pellegrin photographs"
+Jonas Bendiksen,Norwegian,1977,, "photography","Magnum photographer known for poetic documentary projects on isolated communities.","c.2000–present","Documentary Photography","Contemporary documentary",modern,"Jonas Bendiksen photographs"
+David Alan Harvey,American,1944,, "photography","Magnum photographer known for vibrant, intimate essays on culture and place.","c.1965–present","Documentary Photography","Street photography",modern,"David Alan Harvey photographs"
+Gilles Peress,French,1946,, "photography","Magnum photographer known for intense, politically charged projects like Telex Iran.","c.1970–present","Documentary Photography","Conflict photography",modern,"Gilles Peress photographs"
+Luc Delahaye,French,1962,, "photography","Photographer known for large-scale, coolly detached images of war and geopolitics.","c.1985–present","Documentary Photography","Conflict photography",modern,"Luc Delahaye photographs"
+Tim Hetherington,British,1970,2011,"photography, film","Photojournalist and filmmaker known for intimate war reporting.","c.1995–2011","Photojournalism","Conflict photography",modern,"Tim Hetherington photographs"
+Lynsey Addario,American,1973,, "photography","Pulitzer-winning photojournalist covering conflict and humanitarian crises.","c.2000–present","Photojournalism","Conflict photography",modern,"Lynsey Addario photographs"
+Nick Ut,Vietnamese-American,1951,, "photography","AP photographer known for the iconic 'Napalm Girl' image.","c.1970–2015","Photojournalism","Conflict photography",modern,"Nick Ut photographs"
+Eddie Adams,American,1933,2004,"photography","Pulitzer-winning photographer known for the Saigon execution image.","c.1955–2000","Photojournalism","Conflict photography",modern,"Eddie Adams photographs"
+Larry Burrows,British,1926,1971,"photography","Life magazine photographer known for powerful Vietnam War coverage.","c.1945–1971","Photojournalism","Conflict photography",modern,"Larry Burrows photographs"
+Joe Rosenthal,American,1911,2006,"photography","AP photographer known for the Iwo Jima flag-raising image.","c.1935–1980","Photojournalism","War photography",modern,"Joe Rosenthal photographs"
+Alfred Eisenstaedt,German-American,1898,1995,"photography","Life magazine photographer known for V-J Day in Times Square.","c.1928–1970","Photojournalism","Editorial photography",modern,"Alfred Eisenstaedt photographs"
+Carl Mydans,American,1907,2004,"photography","Life photographer known for WWII and Depression-era reportage.","c.1935–1970","Photojournalism","Documentary photography",modern,"Carl Mydans photographs"
+Cecil Beaton,British,1904,1980,"photography","British photographer known for glamorous portraits and wartime reportage.","c.1925–1975","Portrait Photography","Fashion photography",modern,"Cecil Beaton portraits"
+Horst P. Horst,German-American,1906,1999,"photography","Iconic fashion photographer known for elegant, sculptural compositions.","c.1930–1980","Fashion Photography","Studio portraiture",modern,"Horst P. Horst fashion photography"
+```

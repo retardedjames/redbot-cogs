@@ -1,3 +1,4 @@
 - if user ends message with ! exclamation just make changes with no explanations
 - after making changes always commit and push to github, no confirmation needed
 - VPS access: ssh -i ~/.ssh/id_rsa ubuntu@150.136.40.239 (use this whenever the user asks to do something on the server/VPS)
+- if user does double exclamation marks in a message like "GIVE ME STATUS!!" when i have been thinking for a while, immediately pause thinking and give user update on why it is taking so long, so that bottleneck can be corrected

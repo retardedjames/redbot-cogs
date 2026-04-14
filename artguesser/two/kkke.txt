@@ -1,0 +1,79 @@
+Great — rolling straight into **Batch 3**, continuing the exact same CSV structure and formatting.  
+This batch covers **Annie Leibovitz ? Rineke Dijkstra**.
+
+If you want even larger batches per message, I can scale up.
+
+---
+
+# **CSV — Batch 3**
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+Annie Leibovitz,American,1949,, "photography","American portrait photographer known for theatrical, iconic images of cultural figures.","c.1970–present","Contemporary Photography","Editorial portraiture",modern,"Annie Leibovitz portraits"
+Sebastião Salgado,Brazilian,1944,, "photography","Brazilian photographer acclaimed for large-scale documentary projects on labor, migration, and the environment.","c.1975–present","Documentary Photography","Humanist photography",modern,"Sebastião Salgado photographs"
+Steve McCurry,American,1950,, "photography","American photojournalist best known for vivid global reportage including the Afghan Girl portrait.","c.1978–present","Documentary Photography","Photojournalism",modern,"Steve McCurry photographs"
+Weegee (Arthur Fellig),American,1899,1968,"photography","American photographer famous for stark flash-lit images of New York crime scenes and street life.","c.1935–1968","Photojournalism","Street photography",modern,"Weegee crime scene photos"
+Yousuf Karsh,Armenian-Canadian,1908,2002,"photography","Master portrait photographer known for dramatic lighting and iconic images of world leaders.","c.1930–1990","Portrait Photography","Studio portraiture",modern,"Yousuf Karsh portraits"
+Margaret Bourke-White,American,1904,1971,"photography","Trailblazing photojournalist and first female LIFE photographer, documenting industry, war, and social change.","c.1928–1960","Documentary Photography","Photojournalism",modern,"Margaret Bourke-White photographs"
+August Sander,German,1876,1964,"photography","German photographer whose People of the 20th Century project systematically documented social types.","c.1900–1964","New Objectivity","Documentary portraiture",modern,"August Sander portraits"
+Lisette Model,Austrian-American,1901,1983,"photography","Influential street photographer known for bold, candid images of urban life.","c.1934–1980","Street Photography","Documentary photography",modern,"Lisette Model street photography"
+Gregory Crewdson,American,1962,, "photography","American photographer known for cinematic, elaborately staged suburban scenes.","c.1990–present","Contemporary Photography","Staged photography",modern,"Gregory Crewdson photographs"
+Sally Mann,American,1951,, "photography","American photographer whose intimate family portraits and Southern landscapes explore memory and mortality.","c.1980–present","Contemporary Photography","Fine art photography",modern,"Sally Mann photographs"
+Larry Clark,American,1943,, "photography, film","Photographer and filmmaker whose raw depictions of youth culture sparked controversy and acclaim.","c.1963–present","Documentary Photography","Youth culture",modern,"Larry Clark photographs"
+Robert Frank,Swiss-American,1924,2019,"photography","Swiss-American photographer whose book The Americans reshaped documentary photography with its poetic realism.","c.1947–2000","Documentary Photography","Street photography",modern,"Robert Frank photographs"
+Joel Meyerowitz,American,1938,, "photography","Pioneer of color street photography known for lyrical urban and landscape work.","c.1962–present","Street Photography","Color photography",modern,"Joel Meyerowitz street photography"
+Vivian Maier,American,1926,2009,"photography","Reclusive nanny whose vast archive of street photographs was discovered posthumously, revealing extraordinary talent.","c.1950–1990","Street Photography","Documentary photography",modern,"Vivian Maier street photography"
+Marsden Hartley,American,1877,1943,"painting","American modernist whose bold forms and symbolic abstractions bridged European avant-garde and American themes.","c.1908–1943","Modernism","American Modernism",modern,"Marsden Hartley paintings"
+Arthur Dove,American,1880,1946,"painting","Early American abstractionist exploring organic forms and color harmonies.","c.1908–1946","Modernism","American Abstraction",modern,"Arthur Dove paintings"
+Charles Burchfield,American,1893,1967,"painting","American painter known for visionary landscapes infused with emotional and spiritual intensity.","c.1915–1967","American Modernism","Watercolor modernism",modern,"Charles Burchfield paintings"
+Milton Avery,American,1885,1965,"painting","American painter whose simplified forms and color fields influenced later Abstract Expressionists.","c.1920–1965","Modernism","Color field precursor",modern,"Milton Avery paintings"
+Alice Neel,American,1900,1984,"painting","American portraitist celebrated for psychologically incisive, expressive depictions of friends, family, and cultural figures.","c.1930–1984","Expressionism","Figurative Expressionism",modern,"Alice Neel portraits"
+Fairfield Porter,American,1907,1975,"painting","American painter blending realism and painterly color in domestic and landscape scenes.","c.1930–1975","American Realism","Modern figurative painting",modern,"Fairfield Porter paintings"
+Remedios Varo,Spanish-Mexican,1908,1963,"painting","Surrealist painter whose intricate, mystical scenes explore science, magic, and transformation.","c.1930–1963","Surrealism","Esoteric Surrealism",modern,"Remedios Varo paintings"
+Aaron Douglas,American,1899,1979,"painting, illustration","Key Harlem Renaissance artist whose stylized silhouettes depicted Black history and identity.","c.1925–1970","Harlem Renaissance","Modernism",modern,"Aaron Douglas paintings"
+Betye Saar,American,1926,, "assemblage, mixed media","American artist known for politically charged assemblages addressing race, spirituality, and gender.","c.1960–present","Contemporary Art","Black Arts Movement",modern,"Betye Saar assemblage"
+Faith Ringgold,American,1930,, "painting, quilting","Artist and activist known for narrative story quilts exploring race, feminism, and history.","c.1960–present","Contemporary Art","Feminist art",modern,"Faith Ringgold quilts"
+Katsushika Hokusai,Japanese,1760,1849,"woodblock printing, painting","Master of ukiyo-e whose Thirty-Six Views of Mount Fuji includes the iconic Great Wave.","c.1780–1849","Ukiyo-e","Edo-period printmaking",1800s,"Hokusai woodblock prints"
+Utagawa Hiroshige,Japanese,1797,1858,"woodblock printing","Ukiyo-e landscape master known for poetic travel series such as The Fifty-Three Stations of the T?kaid?.","c.1810–1858","Ukiyo-e","Edo-period printmaking",1800s,"Hiroshige woodblock prints"
+Kitagawa Utamaro,Japanese,1753,1806,"woodblock printing","Ukiyo-e artist celebrated for elegant portraits of women (bijin-ga).","c.1775–1806","Ukiyo-e","Bijin-ga",1800s,"Utamaro woodblock prints"
+Sessh? T?y?,Japanese,1420,1506,"ink painting","Zen monk and master of suiboku-ga ink painting, influential in Japanese and Chinese-inspired aesthetics.","c.1440–1506","Muromachi ink painting","Zen painting",old,"Sesshu Toyo ink paintings"
+Ilya Repin,Russian,1844,1930,"painting","Foremost Russian realist whose psychologically rich scenes depict social and historical subjects.","c.1870–1920","Realism","Russian Realism",modern,"Ilya Repin paintings"
+Pavel Filonov,Russian,1883,1941,"painting","Russian avant-garde painter known for meticulous, analytical compositions.","c.1910–1941","Russian Avant-Garde","Analytical Realism",modern,"Pavel Filonov paintings"
+Vasyl Krychevsky,Ukrainian,1873,1952,"painting, architecture, design","Ukrainian modernist who shaped national visual identity through architecture, graphics, and set design.","c.1895–1950","Ukrainian Modernism","Art Nouveau, National style",modern,"Vasyl Krychevsky works"
+Henry Darger,American,1892,1973,"drawing, writing","Self-taught outsider artist known for vast illustrated epics featuring the Vivian Girls.","c.1930–1973","Outsider Art","Visionary art",modern,"Henry Darger drawings"
+Bill Traylor,American,1853,1949,"drawing","Self-taught African American artist who created bold, symbolic drawings late in life.","c.1939–1949","Outsider Art","Folk art",modern,"Bill Traylor drawings"
+Howard Finster,American,1916,2001,"painting, sculpture","Prolific folk artist whose visionary works blend religion, pop culture, and text.","c.1976–2001","Outsider Art","Visionary art",modern,"Howard Finster paintings"
+Grandma Moses (Anna Mary Robertson Moses),American,1860,1961,"painting","Beloved folk painter known for nostalgic rural scenes created late in life.","c.1938–1961","Folk Art","American Naïve art",modern,"Grandma Moses paintings"
+Adolf Wölfli,Swiss,1864,1930,"drawing, writing","Swiss outsider artist whose dense, fantastical works formed an immense autobiographical universe.","c.1895–1930","Outsider Art","Art Brut",modern,"Adolf Wölfli drawings"
+Martín Ramírez,Mexican-American,1895,1963,"drawing","Self-taught artist who created intricate, rhythmic drawings while institutionalized.","c.1930–1963","Outsider Art","Art Brut",modern,"Martín Ramírez drawings"
+James Castle,American,1899,1977,"drawing, assemblage","Self-taught Idaho artist who used found materials to create quiet, atmospheric images.","c.1910–1977","Outsider Art","Folk art",modern,"James Castle drawings"
+Shepard Fairey,American,1970,, "street art, graphic design","Street artist and designer known for bold political graphics including the OBEY campaign.","c.1990–present","Street Art","Graphic activism",modern,"Shepard Fairey street art"
+Os Gemeos,Brazilian,1974,, "street art, painting","Twin brothers whose vibrant murals blend folklore, fantasy, and hip-hop culture.","c.1990–present","Street Art","Brazilian graffiti",modern,"Os Gemeos murals"
+Swoon (Caledonia Curry),American,1977,, "street art, installation","Artist known for intricate wheatpaste portraits and socially engaged installations.","c.2000–present","Street Art","Social practice art",modern,"Swoon street art"
+Invader,French,1969,, "street art, mosaic","French street artist known for pixel-style mosaics inspired by retro video games.","c.1998–present","Street Art","Urban intervention",modern,"Invader mosaics"
+Matthew Barney,American,1967,, "film, sculpture, performance","Multimedia artist known for the Cremaster Cycle and mythic, body-centered narratives.","c.1990–present","Contemporary Art","Performance art",modern,"Matthew Barney works"
+James Turrell,American,1943,, "installation, light art","Artist exploring perception through immersive light and space environments.","c.1965–present","Light and Space","Contemporary Art",modern,"James Turrell installations"
+Doug Aitken,American,1968,, "installation, film","Artist creating multimedia environments exploring movement, landscape, and technology.","c.1995–present","Contemporary Art","Video installation",modern,"Doug Aitken installations"
+Lucian Freud,British,1922,2011,"painting","British painter known for psychologically intense, thickly painted portraits.","c.1940–2011","Figurative Painting","Expressionism",modern,"Lucian Freud portraits"
+Francis Bacon,Irish-British,1909,1992,"painting","Painter of raw, existential imagery featuring distorted figures and emotional intensity.","c.1930–1992","Expressionism","Figurative Expressionism",modern,"Francis Bacon paintings"
+Paula Rego,Portuguese-British,1935,2022,"painting, drawing","Narrative painter whose psychologically charged scenes explore gender, power, and folklore.","c.1960–2022","Contemporary Art","Figurative art",modern,"Paula Rego paintings"
+Balthus (Balthasar Klossowski),French-Polish,1908,2001,"painting","Painter known for enigmatic, classical compositions with unsettling psychological undertones.","c.1930–2000","Modernism","Figurative painting",modern,"Balthus paintings"
+Eric Ravilious,British,1903,1942,"painting, illustration","British artist known for crisp watercolors of landscapes and wartime subjects.","c.1925–1942","Modernism","British landscape",modern,"Eric Ravilious watercolors"
+David Bomberg,British,1890,1957,"painting","British modernist whose bold early abstraction evolved into expressive landscapes.","c.1910–1957","Modernism","Vorticism",modern,"David Bomberg paintings"
+L.S. Lowry,British,1887,1976,"painting","British painter famous for industrial scenes populated by 'matchstick' figures.","c.1910–1976","Modernism","Naïve modernism",modern,"L.S. Lowry paintings"
+Stanley Spencer,British,1891,1959,"painting","British painter whose visionary, often biblical scenes are set in everyday English settings.","c.1910–1959","Modernism","Neo-Romanticism",modern,"Stanley Spencer paintings"
+Hundertwasser (Friedensreich Hundertwasser),Austrian,1928,2000,"painting, architecture","Austrian artist-architect known for organic forms, vivid color, and ecological ideals.","c.1950–2000","Modernism","Environmental art",modern,"Hundertwasser paintings"
+Chuck Close,American,1940,2021,"painting, photography","Artist known for monumental portraits built from grids and optical patterns.","c.1967–2020","Photorealism","Process art",modern,"Chuck Close portraits"
+Alex Katz,American,1927,, "painting","Painter of cool, flat portraits and landscapes that bridge modernism and pop.","c.1950–present","Modernism","Pop-adjacent",modern,"Alex Katz paintings"
+Robert Indiana,American,1928,2018,"painting, sculpture","Pop artist best known for the LOVE motif and bold typographic works.","c.1955–2018","Pop Art","Hard-edge painting",modern,"Robert Indiana works"
+Jim Dine,American,1935,, "painting, sculpture, drawing","Artist associated with Pop and Neo-Dada, known for hearts, robes, and tool motifs.","c.1960–present","Pop Art","Neo-Dada",modern,"Jim Dine paintings"
+Cy Twombly,American,1928,2011,"painting, drawing","Artist whose gestural, calligraphic works merge abstraction, myth, and poetry.","c.1950–2011","Abstract Expressionism","Post-Minimalism",modern,"Cy Twombly paintings"
+Brice Marden,American,1938,, "painting","Minimalist-turned-lyrical abstractionist known for elegant, calligraphic lines.","c.1965–present","Minimalism","Lyrical abstraction",modern,"Brice Marden paintings"
+Sean Scully,Irish-American,1945,, "painting","Abstract painter known for layered stripes and blocks of color.","c.1970–present","Abstract Art","Geometric abstraction",modern,"Sean Scully paintings"
+Cecily Brown,British,1969,, "painting","Painter blending abstraction and figuration in energetic, sensual compositions.","c.1995–present","Contemporary Art","Neo-Expressionism",modern,"Cecily Brown paintings"
+Jenny Saville,British,1970,, "painting","British painter known for monumental, visceral depictions of the human body.","c.1992–present","Contemporary Art","Figurative Expressionism",modern,"Jenny Saville paintings"
+```
+
+---
+
+If you want, I can immediately continue with **Batch 4** (starting with Andrea Mantegna).

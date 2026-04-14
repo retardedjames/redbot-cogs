@@ -1,0 +1,96 @@
+Perfect — we’re back to **normal bios with names allowed**, and we’re moving forward.  
+No redoing Batch #1.  
+No more detours.  
+Here comes **CSV Batch #2 (next 50 artists)**.
+
+### **Batch #2 covers artists #77–126**  
+Starting with:
+
+**Correggio**  
+and ending with:
+
+**George Stubbs**
+
+Same structure as before:
+
+- name  
+- nationality  
+- year_born  
+- year_died  
+- medium  
+- short_bio (names allowed again)  
+- years_active  
+- main_movement  
+- sub_movements  
+- era_category  
+- image_search_term  
+
+---
+
+# ✅ **CSV Batch #2 (Artists #77–126)**  
+**Correggio → George Stubbs**  
+**Header row included**  
+**50 artists**  
+**Bios include names again**
+
+```csv
+name,nationality,year_born,year_died,medium,short_bio,years_active,main_movement,sub_movements,era_category,image_search_term
+Correggio,Italian,1489,1534,painting,"Correggio was an Italian Renaissance painter known for dynamic compositions, sensual mythologies, and pioneering illusionistic ceilings. His soft modeling and dramatic foreshortening influenced Baroque artists.",1510-1534,High Renaissance,"Mannerism (proto)",old,"Correggio paintings"
+Bronzino,Italian,1503,1572,painting,"Bronzino was a leading Mannerist painter celebrated for elegant, coolly refined portraits of the Medici court. His precise technique defined Florentine Mannerism.",1525-1572,Mannerism,"Florentine Mannerism",old,"Bronzino paintings"
+Pontormo,Italian,1494,1557,painting,"Pontormo was an early Mannerist painter whose expressive figures and unusual color harmonies broke from High Renaissance balance. His work helped define the movement’s emotional intensity.",1510-1557,Mannerism,"Florentine Mannerism",old,"Pontormo paintings"
+Parmigianino,Italian,1503,1540,painting,"Parmigianino was a key Mannerist painter known for elongated forms and elegant distortions, exemplified by works like the Madonna of the Long Neck.",1520-1540,Mannerism,"Italian Mannerism",old,"Parmigianino paintings"
+Tintoretto,Italian,1518,1594,painting,"Tintoretto was a Venetian painter famed for dramatic lighting, rapid brushwork, and large-scale religious scenes. His energetic style bridged Renaissance and Baroque.",1539-1594,Venetian Renaissance,"Mannerism;Proto-Baroque",old,"Tintoretto paintings"
+Paolo Veronese,Italian,1528,1588,painting,"Veronese was a Venetian master known for opulent color and grand architectural settings. His lavish banquet scenes epitomize Venetian splendor.",1550-1588,Venetian Renaissance,"Mannerism",old,"Paolo Veronese paintings"
+Artemisia Gentileschi,Italian,1593,1656,painting,"Artemisia Gentileschi was a Baroque painter celebrated for powerful depictions of biblical heroines. Influenced by Caravaggio, she brought emotional intensity and realism to her subjects.",1610-1656,Baroque,"Caravaggism",old,"Artemisia Gentileschi paintings"
+Judith Leyster,Dutch,1609,1660,painting,"Judith Leyster was a Dutch Golden Age painter known for lively genre scenes and portraits. Her work was long misattributed to male contemporaries before being rediscovered.",1629-1660,Baroque,"Dutch Golden Age",old,"Judith Leyster paintings"
+Georges de La Tour,French,1593,1652,painting,"Georges de La Tour was a French Baroque painter known for candlelit scenes and serene, contemplative figures. His controlled light effects became his signature.",1615-1652,Baroque,"Caravaggism",old,"Georges de La Tour paintings"
+Johann Liss,German,1597,1631,painting,"Johann Liss was a German Baroque painter active in Italy, known for dynamic compositions and dramatic color. His style blended Venetian and Caravaggesque influences.",1615-1631,Baroque,"Caravaggism;Venetian Baroque",old,"Johann Liss paintings"
+Guido Reni,Italian,1575,1642,painting,"Guido Reni was a leading Baroque painter whose graceful, idealized figures shaped Bolognese classicism. His serene religious works were widely admired.",1595-1642,Baroque,"Bolognese School",old,"Guido Reni paintings"
+Annibale Carracci,Italian,1560,1609,painting,"Annibale Carracci helped launch the Baroque through a return to naturalism and classical harmony. His frescoes in the Farnese Gallery are landmarks of the style.",1580-1609,Baroque,"Bolognese School",old,"Annibale Carracci paintings"
+Nicolas de Largillière,French,1656,1746,painting,"Largillière was a French portraitist known for elegant depictions of aristocracy and civic leaders. His refined style bridged Baroque and Rococo.",1675-1746,Baroque,"French Baroque;Rococo (early)",old,"Nicolas de Largilliere portraits"
+Elisabeth Vigée Le Brun,French,1755,1842,painting,"Vigée Le Brun was a prominent portraitist of European royalty, especially Marie Antoinette. Her graceful style blended Rococo softness with Neoclassical clarity.",1770-1842,Neoclassicism,"Rococo (late)",1800s,"Elisabeth Vigee Le Brun portraits"
+Francisco de Zurbarán,Spanish,1598,1664,painting,"Zurbarán was a Spanish Baroque painter known for stark, contemplative religious scenes and masterful still lifes. His austere style influenced Spanish art deeply.",1620-1664,Baroque,"Spanish Golden Age",old,"Zurbaran paintings"
+Bartolomé Esteban Murillo,Spanish,1617,1682,painting,"Murillo was a Spanish Baroque painter known for warm, gentle religious scenes and genre subjects. His soft style made him widely popular.",1640-1682,Baroque,"Spanish Golden Age",old,"Murillo paintings"
+Jean-Baptiste-Siméon Chardin,French,1699,1779,painting,"Chardin was a French painter celebrated for intimate still lifes and domestic scenes. His quiet realism influenced later modern artists.",1720-1779,Rococo,"Realism (proto)",old,"Chardin paintings"
+Thomas Gainsborough,British,1727,1788,painting,"Gainsborough was a leading British portrait and landscape painter whose elegant style shaped 18th‑century English art.",1740-1788,Rococo,"British portraiture",old,"Thomas Gainsborough paintings"
+Joshua Reynolds,British,1723,1792,painting,"Reynolds was the first president of the Royal Academy and a major theorist of British art. His portraits promoted a 'Grand Style' rooted in classical ideals.",1740-1792,Neoclassicism,"British portraiture",old,"Joshua Reynolds paintings"
+Henry Fuseli,Swiss-British,1741,1825,painting,"Fuseli was a Romantic painter known for dramatic, supernatural subjects and expressive distortions. His work influenced Gothic and Romantic art.",1765-1825,Romanticism,"Gothic Romanticism",1800s,"Henry Fuseli paintings"
+John Flaxman,British,1755,1826,sculpture,"Flaxman was a Neoclassical sculptor and illustrator known for linear clarity and classical themes. His outline drawings influenced European art.",1775-1826,Neoclassicism,"British Neoclassicism",1800s,"John Flaxman sculptures"
+Antonio Canova,Italian,1757,1822,sculpture,"Canova was the leading Neoclassical sculptor, famed for marble works that revived classical ideals of beauty. His influence spread across Europe.",1775-1822,Neoclassicism,"Italian Neoclassicism",1800s,"Antonio Canova sculptures"
+Lorenzo Ghiberti,Italian,1378,1455,sculpture,"Ghiberti was an early Renaissance sculptor best known for the bronze doors of Florence’s Baptistery, called the Gates of Paradise. His work helped define Florentine art.",1400-1455,Early Renaissance,"Italian Renaissance",old,"Lorenzo Ghiberti sculptures"
+Filippo Brunelleschi,Italian,1377,1446,architecture,"Brunelleschi was a founding architect of the Renaissance, known for engineering Florence Cathedral’s dome and pioneering linear perspective.",1400-1446,Early Renaissance,"Italian Renaissance",old,"Brunelleschi architecture"
+Andrea del Verrocchio,Italian,1435,1488,sculpture,"Verrocchio was a sculptor and painter whose workshop trained major artists including Leonardo da Vinci. His refined style shaped Florentine art.",1460-1488,Early Renaissance,"Italian Renaissance",old,"Verrocchio sculptures"
+Benvenuto Cellini,Italian,1500,1571,sculpture,"Cellini was a Mannerist sculptor and goldsmith known for virtuosic metalwork and dramatic mythological subjects.",1520-1571,Mannerism,"Italian Mannerism",old,"Benvenuto Cellini sculptures"
+Gian Lorenzo Bernini,Italian,1598,1680,sculpture,"Bernini was the preeminent Baroque sculptor and architect, known for dynamic, emotionally charged works and major contributions to St. Peter’s Basilica.",1615-1680,Baroque,"Italian Baroque",old,"Bernini sculptures"
+Donato Bramante,Italian,1444,1514,architecture,"Bramante was a High Renaissance architect whose designs, including the original plan for St. Peter’s Basilica, shaped classical architectural revival.",1470-1514,High Renaissance,"Italian Renaissance",old,"Bramante architecture"
+Pisanello,Italian,1395,1455,painting,"Pisanello was a late Gothic and early Renaissance painter and medalist known for detailed portraits and courtly scenes.",1415-1455,Early Renaissance,"International Gothic",old,"Pisanello paintings"
+Duccio di Buoninsegna,Italian,1255,1319,painting,"Duccio was a major Sienese painter whose elegant, Byzantine-influenced style shaped early Italian painting.",1275-1319,Proto-Renaissance,"Sienese School",ancient,"Duccio paintings"
+Cimabue,Italian,1240,1302,painting,"Cimabue was a pivotal medieval painter whose move toward naturalism influenced Giotto and early Renaissance art.",1260-1302,Proto-Renaissance,"Italo-Byzantine",ancient,"Cimabue paintings"
+Simone Martini,Italian,1284,1344,painting,"Simone Martini was a leading Sienese painter whose refined Gothic style spread across Europe. His work blended elegance with expressive detail.",1300-1344,International Gothic,"Sienese School",ancient,"Simone Martini paintings"
+Ambrogio Lorenzetti,Italian,1290,1348,painting,"Ambrogio Lorenzetti was a Sienese painter known for innovative allegories and early naturalism, especially in The Allegory of Good and Bad Government.",1315-1348,Proto-Renaissance,"Sienese School",ancient,"Ambrogio Lorenzetti paintings"
+Pietro Lorenzetti,Italian,1280,1348,painting,"Pietro Lorenzetti was a Sienese painter whose emotional realism and spatial innovations influenced early Renaissance developments.",1306-1348,Proto-Renaissance,"Sienese School",ancient,"Pietro Lorenzetti paintings"
+Nicola Pisano,Italian,1220,1284,sculpture,"Nicola Pisano was a medieval sculptor whose classical-inspired reliefs helped spark the Italian Renaissance.",1240-1284,Proto-Renaissance,"Pisan School",ancient,"Nicola Pisano sculptures"
+Giovanni Pisano,Italian,1250,1315,sculpture,"Giovanni Pisano was a Gothic sculptor known for expressive figures and dynamic compositions. His work advanced Italian sculpture.",1270-1315,Proto-Renaissance,"Pisan School",ancient,"Giovanni Pisano sculptures"
+Limbourg brothers,French-Dutch,1385,1416,painting,"The Limbourg brothers were manuscript illuminators whose Très Riches Heures is a masterpiece of medieval art.",1400-1416,International Gothic,"Manuscript illumination",old,"Limbourg brothers illuminated manuscripts"
+Martin Schongauer,German,1450,1491,printmaking,"Schongauer was a German engraver whose detailed prints influenced artists across Europe, including the young Dürer.",1470-1491,Northern Renaissance,"German engraving",old,"Martin Schongauer engravings"
+Tilman Riemenschneider,German,1460,1531,sculpture,"Riemenschneider was a German sculptor known for expressive limewood altarpieces. His work blended Gothic detail with Renaissance naturalism.",1485-1531,Northern Renaissance,"German Gothic",old,"Tilman Riemenschneider sculptures"
+Konrad Witz,Swiss,1400,1446,painting,"Witz was a Swiss painter known for early use of naturalistic landscapes, especially in the Miraculous Draft of Fishes.",1420-1446,Northern Renaissance,"Swiss Gothic",old,"Konrad Witz paintings"
+Stefan Lochner,German,1400,1451,painting,"Lochner was a German painter whose delicate color and devotional imagery bridged Gothic and Renaissance styles.",1420-1451,Northern Renaissance,"German Gothic",old,"Stefan Lochner paintings"
+Domenico Ghirlandaio,Italian,1448,1494,painting,"Ghirlandaio was a Florentine painter known for detailed fresco cycles and for training Michelangelo. His work captured contemporary life with clarity.",1470-1494,Early Renaissance,"Italian Renaissance",old,"Domenico Ghirlandaio paintings"
+Perugino,Italian,1446,1523,painting,"Perugino was a Renaissance painter known for serene compositions and harmonious color. He taught Raphael and influenced High Renaissance style.",1475-1523,High Renaissance,"Umbrian School",old,"Perugino paintings"
+Luca Signorelli,Italian,1445,1523,painting,"Signorelli was an Italian painter known for dramatic anatomical studies and apocalyptic frescoes. His work anticipated Michelangelo.",1470-1523,Early Renaissance,"Italian Renaissance",old,"Luca Signorelli paintings"
+Hans Memling,Flemish,1430,1494,painting,"Memling was a leading Early Netherlandish painter known for serene portraits and devotional works.",1460-1494,Early Netherlandish,"Northern Renaissance",old,"Hans Memling paintings"
+Petrus Christus,Flemish,1410,1475,painting,"Christus was an Early Netherlandish painter whose innovations in perspective and realism advanced Northern art.",1440-1475,Early Netherlandish,"Northern Renaissance",old,"Petrus Christus paintings"
+Hugo van der Goes,Flemish,1440,1482,painting,"Van der Goes was a Flemish painter known for emotional intensity and monumental altarpieces, including the Portinari Triptych.",1460-1482,Early Netherlandish,"Northern Renaissance",old,"Hugo van der Goes paintings"
+Dirk Bouts,Flemish,1415,1475,painting,"Bouts was an Early Netherlandish painter known for calm, structured compositions and early use of linear perspective in the North.",1440-1475,Early Netherlandish,"Northern Renaissance",old,"Dirk Bouts paintings"
+Gerard David,Flemish,1460,1523,painting,"David was a Flemish painter whose refined technique and serene devotional scenes marked the transition to the 16th century.",1480-1523,Early Netherlandish,"Northern Renaissance",old,"Gerard David paintings"
+Matthias Grünewald,German,1470,1528,painting,"Grünewald was a German painter known for intense, emotional religious imagery, especially the Isenheim Altarpiece.",1500-1528,Northern Renaissance,"German Expressionist (proto)",old,"Matthias Grunewald paintings"
+Albrecht Altdorfer,German,1480,1538,painting,"Altdorfer was a German painter and printmaker known for expressive landscapes and historical scenes. He was a key figure of the Danube School.",1505-1538,Northern Renaissance,"Danube School",old,"Albrecht Altdorfer paintings"
+Lucas Cranach the Elder,German,1472,1553,painting,"Cranach was a German Renaissance painter known for portraits of Reformation leaders and distinctive mythological scenes.",1500-1553,Northern Renaissance,"German Renaissance",old,"Lucas Cranach the Elder paintings"
+Carlo Crivelli,Italian,1430,1495,painting,"Crivelli was an Italian painter known for ornate altarpieces with sharp detail and rich textures. His style blended Gothic and Renaissance elements.",1450-1495,Early Renaissance,"Italian Renaissance",old,"Carlo Crivelli paintings"
+Andrea del Sarto,Italian,1486,1530,painting,"Del Sarto was a Florentine painter admired for balanced compositions and technical mastery. His work bridged High Renaissance and Mannerism.",1506-1530,High Renaissance,"Mannerism",old,"Andrea del Sarto paintings"
+Rosso Fiorentino,Italian,1494,1540,painting,"Rosso was a Mannerist painter known for expressive distortions and dramatic color. He helped spread Mannerism to France.",1510-1540,Mannerism,"French Mannerism",old,"Rosso Fiorentino paintings"
+Francesco Primaticcio,Italian,1504,1570,painting,"Primaticcio was a Mannerist painter and architect who helped establish the School of Fontainebleau in France.",1525-1570,Mannerism,"Fontainebleau School",old,"Francesco Primaticcio paintings"
+Guercino,Italian,1591,1666,painting,"Guercino was a Baroque painter known for dynamic compositions and expressive chiaroscuro. His work influenced Italian Baroque painting.",1615-1666,Baroque,"Bolognese School",old,"Guercino paintings"
+Claude Gillot,French,1673,1722,painting,"Gillot was a French painter and designer whose theatrical subjects influenced the Rococo style and artists like Watteau.",1695-1722,Rococo,"French Rococo",old,"Claude Gillot paintings"
+Canaletto,Italian,1697,1768,painting,"Canaletto was a Venetian painter known for precise, luminous cityscapes. His views of Venice became highly sought after across Europe.",172

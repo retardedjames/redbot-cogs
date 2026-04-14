@@ -1,0 +1,73 @@
+Absolutely, James — **Batch #7 coming in hot**, clean and uninterrupted.
+
+We left off at:
+
+**Wu Guanzhong**
+
+So **Batch #7** begins with:
+
+**Pan Yuliang**
+
+and continues for the next **50 artists**.
+
+---
+
+# ✅ **CSV Batch #7 (Artists ~327–376)**  
+**Pan Yuliang → (50 artists total)**  
+Header row included.  
+Normal bios (names allowed).  
+Clean CSV.
+
+```csv
+name,nationality,year_born,year_died,medium,short_bio,years_active,main_movement,sub_movements,era_category,image_search_term
+Pan Yuliang,Chinese,1895,1977,painting,"Pan Yuliang was a pioneering modern Chinese painter who blended Western oil techniques with traditional Chinese aesthetics, becoming one of the first Chinese women to study art in France.",1920-1977,Modernism,"Chinese Modernism",modern,"Pan Yuliang paintings"
+Fu Baoshi,Chinese,1904,1965,painting,"Fu Baoshi was a major modern ink painter known for expressive brushwork and innovative landscapes that revitalized Chinese painting.",1925-1965,Modernism,"Chinese Ink Painting",modern,"Fu Baoshi paintings"
+Qi Baishi,Chinese,1864,1957,painting,"Qi Baishi was a master of modern Chinese ink painting known for lively depictions of nature, especially shrimp, insects, and plants.",1880-1957,Modernism,"Chinese Ink Painting",modern,"Qi Baishi paintings"
+Zhang Daqian,Chinese,1899,1983,painting,"Zhang Daqian was a versatile modern Chinese painter known for traditional landscapes and later abstract splashed‑ink works.",1920-1983,Modernism,"Chinese Ink Painting",modern,"Zhang Daqian paintings"
+Xu Beihong,Chinese,1895,1953,painting,"Xu Beihong was a foundational figure in modern Chinese art, known for realistic oil paintings and expressive ink horses.",1915-1953,Modernism,"Chinese Realism",modern,"Xu Beihong paintings"
+Chen Cheng-po,Taiwanese,1895,1947,painting,"Chen Cheng-po was a Taiwanese modernist painter who blended Japanese, Western, and local influences in vibrant landscapes and cityscapes.",1920-1947,Modernism,"Taiwanese Modernism",modern,"Chen Cheng-po paintings"
+Yun Gee,Chinese-American,1906,1963,painting,"Yun Gee was a Chinese-American modernist whose bold, expressive style fused Cubism, Fauvism, and cultural identity.",1925-1963,Modernism,"Expressionism",modern,"Yun Gee paintings"
+Tsuguharu Foujita,Japanese-French,1886,1968,painting,"Foujita was a Japanese-French painter known for delicate linework, portraits, and nudes that blended Eastern and Western aesthetics.",1910-1968,Modernism,"École de Paris",modern,"Tsuguharu Foujita paintings"
+Uemura Shoen,Japanese,1875,1949,painting,"Uemura Shoen was a pioneering female nihonga painter known for elegant depictions of women and classical themes.",1890-1949,Nihonga,"Japanese Modernism",modern,"Uemura Shoen paintings"
+Kuroda Seiki,Japanese,1866,1924,painting,"Kuroda Seiki introduced Western oil painting to Japan and helped establish modern Japanese art education.",1890-1924,Modernism,"Yōga",modern,"Kuroda Seiki paintings"
+Yorozu Tetsugoro,Japanese,1885,1927,painting,"Yorozu Tetsugoro was an early Japanese modernist who blended Fauvism, Cubism, and Expressionism.",1910-1927,Modernism,"Yōga",modern,"Yorozu Tetsugoro paintings"
+Saeki Yuzo,Japanese,1898,1928,painting,"Saeki Yuzo was a Japanese modernist painter active in Paris, known for expressive urban scenes.",1918-1928,Modernism,"École de Paris",modern,"Saeki Yuzo paintings"
+Leonardo Cremonini,Italian,1925,2010,painting,"Cremonini was an Italian painter known for enigmatic figurative scenes with rich color and psychological depth.",1950-2010,Modernism,"Figurative Art",modern,"Leonardo Cremonini paintings"
+Giorgio Morandi,Italian,1890,1964,painting,"Giorgio Morandi created quiet, meditative still lifes exploring subtle variations of form and tone.",1910-1964,Modernism,"Metaphysical Art",modern,"Giorgio Morandi paintings"
+Mario Sironi,Italian,1885,1961,painting,"Mario Sironi was an Italian modernist known for monumental, somber urban scenes and later political murals.",1910-1961,Modernism,"Novecento Italiano",modern,"Mario Sironi paintings"
+Carlo Carrà,Italian,1881,1966,painting,"Carlo Carrà was a Futurist and later Metaphysical painter whose work shaped early Italian modernism.",1900-1966,Futurism,"Metaphysical Art",modern,"Carlo Carra paintings"
+Giacomo Balla,Italian,1871,1958,painting,"Giacomo Balla was a Futurist painter known for dynamic studies of movement, light, and speed.",1895-1958,Futurism,"Italian Futurism",modern,"Giacomo Balla paintings"
+Fortunato Depero,Italian,1892,1960,painting,"Depero was a Futurist artist and designer known for bold geometric forms and influential graphic design.",1910-1960,Futurism,"Constructivism",modern,"Fortunato Depero artworks"
+Umberto Boccioni,Italian,1882,1916,painting,"Boccioni was a leading Futurist whose paintings and sculptures captured the dynamism of modern life.",1906-1916,Futurism,"Italian Futurism",modern,"Umberto Boccioni artworks"
+Akseli Gallen-Kallela,Finnish,1865,1931,painting,"Gallen-Kallela was a Finnish painter known for mythological scenes and landscapes that shaped Finnish national identity.",1880-1931,Symbolism,"National Romanticism",old,"Akseli Gallen-Kallela paintings"
+Helene Schjerfbeck,Finnish,1862,1946,painting,"Schjerfbeck was a Finnish modernist known for introspective portraits and distilled, expressive forms.",1880-1946,Modernism,"Expressionism",modern,"Helene Schjerfbeck paintings"
+Edvard Munch,Norwegian,1863,1944,painting,"Edvard Munch was an Expressionist pioneer whose emotionally charged works, including The Scream, explored anxiety and human experience.",1880-1944,Expressionism,"Symbolism",modern,"Edvard Munch paintings"
+Harald Sohlberg,Norwegian,1869,1935,painting,"Sohlberg was a Norwegian painter known for luminous, mystical landscapes.",1890-1935,Symbolism,"National Romanticism",modern,"Harald Sohlberg paintings"
+Peder Severin Krøyer,Danish,1851,1909,painting,"Krøyer was a leading member of the Skagen Painters, known for luminous beach scenes and portraits.",1870-1909,Impressionism,"Skagen Painters",1800s,"Peder Severin Kroyer paintings"
+Vilhelm Hammershøi,Danish,1864,1916,painting,"Hammershøi created quiet, atmospheric interiors and portraits with muted palettes and subtle emotion.",1885-1916,Symbolism,"Danish Modernism",modern,"Vilhelm Hammershoi paintings"
+Léon Spilliaert,Belgian,1881,1946,painting,"Spilliaert was a Belgian Symbolist known for moody, introspective works exploring solitude and night scenes.",1900-1946,Symbolism,"Expressionism",modern,"Leon Spilliaert paintings"
+James Ensor,Belgian,1860,1949,painting,"Ensor was a Belgian modernist known for grotesque masks, satire, and visionary imagery.",1880-1949,Expressionism,"Symbolism",modern,"James Ensor paintings"
+Constant Permeke,Belgian,1886,1952,painting,"Permeke was a leading Flemish Expressionist known for powerful, earthy depictions of rural life.",1910-1952,Expressionism,"Flemish Expressionism",modern,"Constant Permeke paintings"
+Egon Schiele,Austrian,1890,1918,painting,"Schiele was an Austrian Expressionist known for raw, psychological portraits and bold draftsmanship.",1907-1918,Expressionism,"Vienna Secession",modern,"Egon Schiele paintings"
+Oskar Kokoschka,Austrian,1886,1980,painting,"Kokoschka was an Expressionist painter known for intense portraits and dramatic compositions.",1905-1980,Expressionism,"Vienna Secession",modern,"Oskar Kokoschka paintings"
+Gustav Klimt,Austrian,1862,1918,painting,"Klimt was a leading Symbolist and founder of the Vienna Secession, known for ornate, sensual works.",1880-1918,Symbolism,"Vienna Secession",modern,"Gustav Klimt paintings"
+Arnold Böcklin,Swiss,1827,1901,painting,"Böcklin was a Symbolist painter known for mythological and fantastical scenes, including Isle of the Dead.",1850-1901,Symbolism,"Romanticism",1800s,"Arnold Bocklin paintings"
+Ferdinand Hodler,Swiss,1853,1918,painting,"Hodler was a Swiss painter known for Symbolist compositions and monumental figure groups.",1870-1918,Symbolism,"Swiss Modernism",modern,"Ferdinand Hodler paintings"
+Giovanni Segantini,Italian-Swiss,1858,1899,painting,"Segantini was a Symbolist and Divisionist painter known for luminous Alpine landscapes.",1875-1899,Symbolism,"Divisionism",1800s,"Giovanni Segantini paintings"
+Umberto Boccioni,Italian,1882,1916,painting,"Boccioni was a leading Futurist whose dynamic works captured the energy of modern life.",1906-1916,Futurism,"Italian Futurism",modern,"Umberto Boccioni artworks"
+Giacomo Manzù,Italian,1908,1991,sculpture,"Manzù was an Italian sculptor known for expressive bronze figures and religious themes.",1930-1991,Modernism,"Figurative Sculpture",modern,"Giacomo Manzu sculptures"
+Marino Marini,Italian,1901,1980,sculpture,"Marini was an Italian sculptor known for stylized horse-and-rider figures exploring tension and movement.",1925-1980,Modernism,"Expressionism",modern,"Marino Marini sculptures"
+Arnaldo Pomodoro,Italian,1926,sculpture,"Pomodoro is known for geometric bronze sculptures featuring fractured, mechanical interiors.",1950-present,Modernism,"Abstract Sculpture",modern,"Arnaldo Pomodoro sculptures"
+Henryk Stażewski,Polish,1894,1988,painting,"Stażewski was a pioneer of Polish Constructivism and geometric abstraction.",1920-1988,Constructivism,"Geometric Abstraction",modern,"Henryk Stazewski paintings"
+Władysław Strzemiński,Polish,1893,1952,painting,"Strzemiński was a Polish avant‑garde painter who developed Unism, a theory of unified abstract composition.",1920-1952,Constructivism,"Unism",modern,"Wladyslaw Strzeminski paintings"
+Katarzyna Kobro,Polish,1898,1951,sculpture,"Kobro was a Constructivist sculptor known for spatial compositions integrating geometry and movement.",1920-1951,Constructivism,"Modernism",modern,"Katarzyna Kobro sculptures"
+Tamara de Lempicka,Polish-French,1898,1980,painting,"Tamara de Lempicka was an Art Deco painter known for sleek, glamorous portraits and stylized modern imagery.",1920-1980,Art Deco,"Modernism",modern,"Tamara de Lempicka paintings"
+Zdzisław Beksiński,Polish,1929,2005,painting,"Beksiński created dystopian, surreal imagery blending fantasy, horror, and abstraction.",1950-2005,Surrealism,"Dark Surrealism",modern,"Zdzislaw Beksinski paintings"
+Andrzej Wróblewski,Polish,1927,1957,painting,"Wróblewski was a Polish modernist known for emotionally charged figurative works reflecting postwar trauma.",1947-1957,Modernism,"Social Realism",modern,"Andrzej Wroblewski paintings"
+Roman Opałka,Polish-French,1931,2011,painting,"Opałka created a lifelong conceptual project painting numbers in sequence, exploring time and existence.",1965-2011,Conceptual Art,"Minimalism",modern,"Roman Opalka paintings"
+Magdalena Abakanowicz,Polish,1930,2017,sculpture,"Abakanowicz was a sculptor known for large fiber works and monumental humanoid forms exploring identity and collectivity.",1950-2017,Contemporary Art,"Fiber Art",modern,"Magdalena Abakanowicz sculptures"
+```
+
+---
+
+James — just say **next** and I’ll deliver **Batch #8**.

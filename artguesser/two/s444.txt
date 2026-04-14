@@ -1,0 +1,59 @@
+Absolutely — here comes **Batch 4**, continuing seamlessly from the previous CSV.  
+This batch covers **Andrea Mantegna ? Jacques Lipchitz**.
+
+---
+
+# **CSV — Batch 4**
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+Andrea Mantegna,Italian,1431,1506,"painting, engraving","Italian Early Renaissance painter known for sculptural forms, dramatic perspective, and classical themes.","c.1450–1506","Early Renaissance","Paduan school",old,"Andrea Mantegna paintings"
+Giovanni Bellini,Italian,1430,1516,"painting","Venetian Renaissance master whose luminous color and atmospheric landscapes shaped Venetian painting.","c.1450–1516","High Renaissance","Venetian school",old,"Giovanni Bellini paintings"
+Pontormo (Jacopo Carucci),Italian,1494,1557,"painting","Florentine Mannerist known for expressive color, elongated figures, and emotional intensity.","c.1510–1557","Mannerism","Florentine Mannerism",old,"Pontormo paintings"
+Bronzino (Agnolo di Cosimo),Italian,1503,1572,"painting","Court painter of the Medici known for refined, elegant portraits and allegories.","c.1525–1572","Mannerism","Florentine Mannerism",old,"Bronzino portraits"
+Parmigianino (Francesco Mazzola),Italian,1503,1540,"painting, drawing","Mannerist painter known for graceful elongation and refined elegance, exemplified by Madonna of the Long Neck.","c.1520–1540","Mannerism","Italian Mannerism",old,"Parmigianino paintings"
+Lucas Cranach the Elder,German,1472,1553,"painting, printmaking","German Renaissance painter known for court portraits and Reformation imagery.","c.1500–1553","Northern Renaissance","German Renaissance",old,"Lucas Cranach the Elder paintings"
+Hans Holbein the Younger,German-Swiss,1497,1543,"painting, drawing","Renowned portraitist of the Northern Renaissance, especially active in Tudor England.","c.1515–1543","Northern Renaissance","Tudor court art",old,"Hans Holbein the Younger portraits"
+Rogier van der Weyden,Flemish,1399,1464,"painting","Early Netherlandish master known for emotional religious scenes and refined detail.","c.1435–1464","Early Netherlandish","Northern Renaissance",old,"Rogier van der Weyden paintings"
+Hugo van der Goes,Flemish,1440,1482,"painting","Early Netherlandish painter whose expressive altarpieces influenced Northern European art.","c.1460–1482","Early Netherlandish","Northern Renaissance",old,"Hugo van der Goes paintings"
+Gerard David,Flemish,1460,1523,"painting","Netherlandish painter known for serene, meticulously detailed religious scenes.","c.1480–1523","Northern Renaissance","Early Netherlandish",old,"Gerard David paintings"
+Nicolas de Largillière,French,1656,1746,"painting","French Baroque portraitist known for elegant depictions of aristocracy and bourgeois society.","c.1680–1746","Baroque","French portraiture",old,"Nicolas de Largillière portraits"
+Jean-Honoré Fragonard,French,1732,1806,"painting","Rococo painter celebrated for playful, sensuous scenes of leisure and romance.","c.1750–1800","Rococo","French Rococo",1800s,"Jean-Honoré Fragonard paintings"
+François Boucher,French,1703,1770,"painting","Leading Rococo painter known for idyllic, decorative mythologies and pastoral scenes.","c.1720–1770","Rococo","French Rococo",old,"François Boucher paintings"
+Antoine Watteau,French,1684,1721,"painting","French painter whose fêtes galantes defined early Rococo with poetic, theatrical elegance.","c.1700–1721","Rococo","Fêtes galantes",old,"Antoine Watteau paintings"
+Artemisia Gentileschi,Italian,1593,1653,"painting","Baroque painter known for dramatic, emotionally powerful depictions of biblical heroines.","c.1610–1653","Baroque","Caravaggism",old,"Artemisia Gentileschi paintings"
+Judith Leyster,Dutch,1609,1660,"painting","Dutch Golden Age painter known for lively genre scenes and portraits.","c.1625–1660","Baroque","Dutch Golden Age",old,"Judith Leyster paintings"
+Gerard ter Borch,Dutch,1617,1681,"painting","Dutch Golden Age painter known for refined interior scenes and portraits.","c.1635–1681","Baroque","Dutch Golden Age",old,"Gerard ter Borch paintings"
+Jan Steen,Dutch,1626,1679,"painting","Dutch Golden Age painter famous for humorous, chaotic domestic scenes.","c.1650–1679","Baroque","Dutch Golden Age",old,"Jan Steen paintings"
+Gustave Caillebotte,French,1848,1894,"painting","Impressionist known for modern urban scenes and innovative perspectives.","c.1875–1894","Impressionism","French Impressionism",modern,"Gustave Caillebotte paintings"
+James Tissot,French,1836,1902,"painting","French painter known for elegant, detailed scenes of modern life.","c.1860–1902","Realism","Aesthetic Movement",modern,"James Tissot paintings"
+Lawrence Alma-Tadema,Dutch-British,1836,1912,"painting","Victorian painter known for highly detailed scenes of ancient Rome and Greece.","c.1860–1912","Academic Classicism","Victorian classicism",modern,"Lawrence Alma-Tadema paintings"
+Frederic Leighton,British,1830,1896,"painting, sculpture","Leading Victorian academic artist known for idealized classical subjects.","c.1850–1896","Academic Classicism","Aesthetic Movement",1800s,"Frederic Leighton paintings"
+John Everett Millais,British,1829,1896,"painting","Founding member of the Pre-Raphaelite Brotherhood, known for vivid detail and emotional intensity.","c.1848–1896","Pre-Raphaelite","Victorian art",1800s,"John Everett Millais paintings"
+Dante Gabriel Rossetti,British,1828,1882,"painting, poetry","Pre-Raphaelite founder whose sensual, symbolic works shaped Victorian aesthetics.","c.1848–1882","Pre-Raphaelite","Aesthetic Movement",1800s,"Dante Gabriel Rossetti paintings"
+Edward Burne-Jones,British,1833,1898,"painting, stained glass","British artist whose dreamlike medievalism defined late Pre-Raphaelite art.","c.1855–1898","Pre-Raphaelite","Aesthetic Movement",1800s,"Edward Burne-Jones paintings"
+William Holman Hunt,British,1827,1910,"painting","Pre-Raphaelite painter known for moral symbolism and meticulous detail.","c.1848–1900","Pre-Raphaelite","Victorian art",modern,"William Holman Hunt paintings"
+Vasily Surikov,Russian,1848,1916,"painting","Russian realist known for monumental historical scenes.","c.1870–1916","Realism","Russian Realism",modern,"Vasily Surikov paintings"
+Ivan Aivazovsky,Russian-Armenian,1817,1900,"painting","Marine painter famed for dramatic seascapes and mastery of light.","c.1835–1900","Romanticism","Marine painting",1800s,"Ivan Aivazovsky seascapes"
+Albert Bierstadt,American,1830,1902,"painting","Hudson River School painter known for grand, luminous landscapes of the American West.","c.1855–1900","Hudson River School","American Romanticism",1800s,"Albert Bierstadt landscapes"
+Frederic Edwin Church,American,1826,1900,"painting","Hudson River School painter whose vast landscapes explored nature’s sublime power.","c.1845–1900","Hudson River School","Luminism",1800s,"Frederic Edwin Church landscapes"
+Thomas Eakins,American,1844,1916,"painting, photography","American realist known for anatomically precise portraits and rowing scenes.","c.1865–1916","Realism","American Realism",modern,"Thomas Eakins paintings"
+Cecilia Beaux,American,1855,1942,"painting","American portraitist praised for elegant, psychologically sensitive works.","c.1880–1940","Realism","American Impressionism",modern,"Cecilia Beaux portraits"
+Joaquín Sorolla,Spanish,1863,1923,"painting","Spanish painter known for radiant beach scenes and luminous plein-air technique.","c.1880–1923","Impressionism","Luminism",modern,"Joaquín Sorolla paintings"
+Richard Gerstl,Austrian,1883,1908,"painting","Austrian Expressionist whose emotionally charged works anticipated modernism.","c.1900–1908","Expressionism","Viennese modernism",modern,"Richard Gerstl paintings"
+Alexej von Jawlensky,Russian-German,1864,1941,"painting","Expressionist painter known for abstracted, spiritual portraits.","c.1900–1941","Expressionism","Der Blaue Reiter",modern,"Alexej von Jawlensky paintings"
+August Macke,German,1887,1914,"painting","Expressionist known for vibrant color and harmonious compositions.","c.1907–1914","Expressionism","Der Blaue Reiter",modern,"August Macke paintings"
+Heinrich Campendonk,German,1889,1957,"painting, stained glass","Expressionist associated with Der Blaue Reiter, known for symbolic, colorful forms.","c.1910–1957","Expressionism","Der Blaue Reiter",modern,"Heinrich Campendonk paintings"
+Christian Rohlfs,German,1849,1938,"painting","German Expressionist whose late work embraced bold color and abstraction.","c.1870–1938","Expressionism","German Modernism",modern,"Christian Rohlfs paintings"
+Lovis Corinth,German,1858,1925,"painting","German painter blending Impressionism and Expressionism with vigorous brushwork.","c.1880–1925","Expressionism","German Impressionism",modern,"Lovis Corinth paintings"
+Max Slevogt,German,1868,1932,"painting","German Impressionist known for lively color and theatrical subjects.","c.1890–1932","Impressionism","German Impressionism",modern,"Max Slevogt paintings"
+Lesser Ury,German,1861,1931,"painting, pastel","German Impressionist known for moody urban scenes and dramatic lighting.","c.1880–1931","Impressionism","German Impressionism",modern,"Lesser Ury paintings"
+Aristide Maillol,French,1861,1944,"sculpture","French sculptor known for serene, classical female figures.","c.1890–1944","Modern Sculpture","Classical modernism",modern,"Aristide Maillol sculptures"
+Antoine Bourdelle,French,1861,1929,"sculpture","French sculptor whose dynamic forms bridged Rodin and modernism.","c.1885–1929","Modern Sculpture","Expressionist sculpture",modern,"Antoine Bourdelle sculptures"
+Ossip Zadkine,French-Russian,1890,1967,"sculpture","Modernist sculptor known for angular, Cubist-influenced forms.","c.1910–1967","Modernism","Cubism",modern,"Ossip Zadkine sculptures"
+Jacques Lipchitz,Lithuanian-French,1891,1973,"sculpture","Major Cubist sculptor whose work evolved toward expressive, symbolic forms.","c.1910–1973","Cubism","Modern Sculpture",modern,"Jacques Lipchitz sculptures"
+```
+
+---
+
+If you want, I can continue immediately with **Batch 5** (starting with John De Andrea).

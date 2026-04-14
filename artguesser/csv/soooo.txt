@@ -1,0 +1,90 @@
+Rolling right into it, James — **Batch #4 coming up now**, clean, consistent, and continuing exactly where Batch #3 ended.
+
+We left off at:
+
+**Elaine de Kooning**
+
+So **Batch #4** begins with:
+
+**Cy Twombly**
+
+and runs for the next **50 artists**.
+
+No questions, no interruptions — just the CSV.
+
+---
+
+# ✅ **CSV Batch #4 (Artists ~177–226)**  
+**Cy Twombly → Raymond Pettibon**  
+**Header row included**  
+**50 artists**  
+**Normal bios (names allowed)**
+
+```csv
+name,nationality,year_born,year_died,medium,short_bio,years_active,main_movement,sub_movements,era_category,image_search_term
+Cy Twombly,American,1928,2011,painting,"Cy Twombly created gestural, calligraphic abstractions blending drawing and painting. His poetic, myth‑infused works became central to postwar art.",1950-2011,Abstract Expressionism,"Postminimalism",modern,"Cy Twombly paintings"
+Jasper Johns,American,1930,painting,"Jasper Johns redefined modern art with iconic images of flags, targets, and numbers. His work bridged Abstract Expressionism and Pop Art.",1950-present,Pop Art,"Neo-Dada",modern,"Jasper Johns paintings"
+Robert Rauschenberg,American,1925,2008,mixed media,"Robert Rauschenberg pioneered Neo‑Dada and early Pop Art through his 'Combines,' merging painting and sculpture with everyday objects.",1950-2008,Neo-Dada,"Pop Art;Conceptual Art",modern,"Robert Rauschenberg artworks"
+Andy Warhol,American,1928,1987,painting,"Andy Warhol was a leading Pop artist whose images of celebrities and consumer goods transformed visual culture. His studio, The Factory, became a cultural hub.",1950-1987,Pop Art,"Conceptual Art",modern,"Andy Warhol paintings"
+Roy Lichtenstein,American,1923,1997,painting,"Roy Lichtenstein used comic‑book imagery and Ben‑Day dots to create bold Pop Art paintings that questioned mass media and authorship.",1950-1997,Pop Art,"Modernism",modern,"Roy Lichtenstein paintings"
+James Rosenquist,American,1933,2017,painting,"James Rosenquist was a Pop artist known for billboard‑scale paintings that fused advertising imagery with surreal juxtapositions.",1955-2017,Pop Art,"Modernism",modern,"James Rosenquist paintings"
+Claes Oldenburg,American,1929,2022,sculpture,"Claes Oldenburg created monumental sculptures of everyday objects, transforming Pop Art into large‑scale public works.",1955-2022,Pop Art,"Installation Art",modern,"Claes Oldenburg sculptures"
+Tom Wesselmann,American,1931,2004,painting,"Tom Wesselmann was a Pop artist known for bold, stylized depictions of the female figure and domestic interiors.",1958-2004,Pop Art,"Modernism",modern,"Tom Wesselmann paintings"
+David Hockney,British,1937,painting,"David Hockney is a major British modernist known for vibrant portraits, landscapes, and innovative digital works.",1960-present,Pop Art,"Modernism",modern,"David Hockney paintings"
+Lucian Freud,British,1922,2011,painting,"Lucian Freud was a leading figurative painter known for psychologically intense portraits rendered with thick, tactile brushwork.",1940-2011,Figurative Art,"Expressionism",modern,"Lucian Freud paintings"
+Francis Bacon,British-Irish,1909,1992,painting,"Francis Bacon created raw, visceral paintings exploring the human condition through distorted figures and dramatic space.",1930-1992,Expressionism,"Figurative Expressionism",modern,"Francis Bacon paintings"
+Frank Auerbach,British,1931,painting,"Frank Auerbach is known for heavily worked, impasto portraits and cityscapes that push painting toward sculptural density.",1950-present,Expressionism,"School of London",modern,"Frank Auerbach paintings"
+Anselm Kiefer,German,1945,painting,"Anselm Kiefer creates monumental works exploring history, memory, and mythology through layered materials and symbolic imagery.",1969-present,Neo-Expressionism,"Conceptual Art",modern,"Anselm Kiefer paintings"
+Gerhard Richter,German,1932,painting,"Gerhard Richter is a leading contemporary painter whose work spans photorealism, abstraction, and conceptual investigations of perception.",1960-present,Contemporary Art,"Abstract Art;Photorealism",modern,"Gerhard Richter paintings"
+Sigmar Polke,German,1941,2010,painting,"Sigmar Polke experimented with materials, imagery, and humor to critique culture and media. He co‑founded Capitalist Realism.",1960-2010,Contemporary Art,"Capitalist Realism",modern,"Sigmar Polke paintings"
+Georg Baselitz,German,1938,painting,"Georg Baselitz is known for expressive, inverted figures that challenge conventions of representation. He helped define postwar German art.",1960-present,Neo-Expressionism,"German Expressionism",modern,"Georg Baselitz paintings"
+Joseph Beuys,German,1921,1986,mixed media,"Joseph Beuys was a conceptual artist whose performances, installations, and theories reshaped contemporary art. He emphasized social sculpture and activism.",1950-1986,Conceptual Art,"Fluxus",modern,"Joseph Beuys artworks"
+Yves Klein,French,1928,1962,painting,"Yves Klein pioneered monochrome painting and performance‑based works, best known for his International Klein Blue. His art bridged Nouveau Réalisme and conceptualism.",1954-1962,Nouveau Réalisme,"Performance Art",modern,"Yves Klein paintings"
+Piero Manzoni,Italian,1933,1963,conceptual art,"Piero Manzoni created provocative conceptual works challenging authorship and the art object, including his iconic 'Artist’s Shit.'",1956-1963,Conceptual Art,"Avant-garde",modern,"Piero Manzoni artworks"
+Lucio Fontana,Italian-Argentine,1899,1968,sculpture,"Lucio Fontana founded Spatialism, known for slashed canvases that explored space, gesture, and materiality.",1930-1968,Spatialism,"Modernism",modern,"Lucio Fontana artworks"
+Alighiero Boetti,Italian,1940,1994,mixed media,"Alighiero Boetti was a key figure in Arte Povera, creating conceptual works involving maps, systems, and collaborative embroidery.",1965-1994,Arte Povera,"Conceptual Art",modern,"Alighiero Boetti artworks"
+Mario Merz,Italian,1925,2003,installation,"Mario Merz was an Arte Povera artist known for igloo structures and neon Fibonacci sequences exploring nature and systems.",1950-2003,Arte Povera,"Conceptual Art",modern,"Mario Merz installations"
+Bruce Nauman,American,1941,mixed media,"Bruce Nauman is a leading conceptual artist whose work spans video, sculpture, performance, and neon text. His art probes perception and psychology.",1965-present,Conceptual Art,"Performance Art;Video Art",modern,"Bruce Nauman artworks"
+Eva Hesse,German-American,1936,1970,sculpture,"Eva Hesse created pioneering postminimalist sculptures using latex, fiberglass, and rope. Her organic forms reshaped contemporary sculpture.",1960-1970,Postminimalism,"Process Art",modern,"Eva Hesse sculptures"
+Richard Serra,American,1938,2024,sculpture,"Richard Serra was a monumental sculptor known for massive steel installations that transformed space and viewer experience.",1965-2024,Minimalism,"Process Art",modern,"Richard Serra sculptures"
+Donald Judd,American,1928,1994,sculpture,"Donald Judd was a central Minimalist known for precise, industrially fabricated forms emphasizing clarity and space.",1960-1994,Minimalism,"Conceptual Art",modern,"Donald Judd sculptures"
+Carl Andre,American,1935,sculpture,"Carl Andre is a Minimalist sculptor known for floor‑based works using simple, repeated units. His art emphasizes material and arrangement.",1960-present,Minimalism,"Process Art",modern,"Carl Andre sculptures"
+Dan Flavin,American,1933,1996,installation,"Dan Flavin created minimalist installations using fluorescent light tubes, transforming architecture with color and illumination.",1960-1996,Minimalism,"Light Art",modern,"Dan Flavin light installations"
+Sol LeWitt,American,1928,2007,conceptual art,"Sol LeWitt was a pioneer of Conceptual and Minimalist art, known for wall drawings and modular structures based on simple rules.",1960-2007,Conceptual Art,"Minimalism",modern,"Sol LeWitt artworks"
+Agnes Martin,American-Canadian,1912,2004,painting,"Agnes Martin created serene, grid‑based abstractions exploring subtlety, calm, and perception. Her work is central to Minimalism.",1950-2004,Minimalism,"Abstract Art",modern,"Agnes Martin paintings"
+Robert Morris,American,1931,2018,sculpture,"Robert Morris was a key Minimalist and postminimalist artist whose works explored process, perception, and materiality.",1960-2018,Minimalism,"Postminimalism",modern,"Robert Morris sculptures"
+Tony Smith,American,1912,1980,sculpture,"Tony Smith was a Minimalist sculptor known for large geometric forms that emphasized scale and spatial experience.",1950-1980,Minimalism,"Abstract sculpture",modern,"Tony Smith sculptures"
+Isamu Noguchi,American-Japanese,1904,1988,sculpture,"Isamu Noguchi created elegant sculptures and designs blending modernism with organic form. His work spans public art, furniture, and landscape design.",1925-1988,Modernism,"Biomorphic sculpture",modern,"Isamu Noguchi sculptures"
+Louise Bourgeois,French-American,1911,2010,sculpture,"Louise Bourgeois explored memory, sexuality, and the body through sculpture and installation. Her spider works became iconic.",1940-2010,Contemporary Art,"Feminist Art",modern,"Louise Bourgeois sculptures"
+Louise Nevelson,American,1899,1988,sculpture,"Louise Nevelson created monumental assemblages from found wood, painted in monochrome. Her work helped define American sculpture.",1930-1988,Modernism,"Assemblage",modern,"Louise Nevelson sculptures"
+Niki de Saint Phalle,French-American,1930,2002,sculpture,"Niki de Saint Phalle created colorful, exuberant sculptures and installations, including her famous Nanas. She was associated with Nouveau Réalisme.",1955-2002,Nouveau Réalisme,"Feminist Art",modern,"Niki de Saint Phalle sculptures"
+Christo,Bulgarian-American,1935,2020,installation,"Christo created monumental environmental installations, often wrapping buildings or landscapes. His projects were completed with Jeanne‑Claude.",1958-2020,Environmental Art,"Conceptual Art",modern,"Christo installations"
+Jeanne-Claude,French,1935,2009,installation,"Jeanne‑Claude collaborated with Christo on large‑scale environmental installations that transformed public spaces.",1958-2009,Environmental Art,"Conceptual Art",modern,"Jeanne-Claude installations"
+Robert Smithson,American,1938,1973,land art,"Robert Smithson was a pioneer of Land Art, known for Spiral Jetty and works exploring entropy and geology.",1960-1973,Land Art,"Conceptual Art",modern,"Robert Smithson land art"
+Walter De Maria,American,1935,2013,land art,"Walter De Maria created large‑scale Land Art and Minimalist installations, including The Lightning Field.",1960-2013,Land Art,"Minimalism",modern,"Walter De Maria land art"
+James Turrell,American,1943,installation,"James Turrell explores perception and light through immersive installations and architectural environments.",1965-present,Light Art,"Minimalism",modern,"James Turrell light installations"
+Olafur Eliasson,Danish-Icelandic,1967,installation,"Olafur Eliasson creates large‑scale installations using light, water, and natural phenomena to explore perception and environment.",1990-present,Contemporary Art,"Environmental Art",modern,"Olafur Eliasson installations"
+Antony Gormley,British,1950,sculpture,"Antony Gormley is known for sculptural explorations of the human body, often using casts of his own form.",1979-present,Contemporary Art,"Public Art",modern,"Antony Gormley sculptures"
+Rachel Whiteread,British,1963,sculpture,"Rachel Whiteread creates casts of negative space, transforming everyday interiors and objects into monumental forms.",1988-present,Contemporary Art,"Minimalism",modern,"Rachel Whiteread sculptures"
+Anish Kapoor,British-Indian,1954,sculpture,"Anish Kapoor creates monumental sculptures exploring voids, reflection, and material transformation. His public works are internationally recognized.",1980-present,Contemporary Art,"Public Art",modern,"Anish Kapoor sculptures"
+Damien Hirst,British,1965,conceptual art,"Damien Hirst is a leading YBA known for provocative works involving animals, pharmaceuticals, and mortality.",1988-present,Contemporary Art,"Young British Artists",modern,"Damien Hirst artworks"
+Tracey Emin,British,1963,conceptual art,"Tracey Emin creates confessional, autobiographical works across installation, drawing, and neon. She emerged as a key YBA figure.",1990-present,Contemporary Art,"Young British Artists",modern,"Tracey Emin artworks"
+Sarah Lucas,British,1962,conceptual art,"Sarah Lucas uses everyday materials to explore gender, sexuality, and humor. She is a central member of the YBAs.",1990-present,Contemporary Art,"Young British Artists",modern,"Sarah Lucas artworks"
+Jenny Holzer,American,1950,installation,"Jenny Holzer uses text‑based installations to address power, violence, and public discourse. Her LED works are widely recognized.",1977-present,Conceptual Art,"Public Art",modern,"Jenny Holzer installations"
+Barbara Kruger,American,1945,conceptual art,"Barbara Kruger creates bold text‑and‑image works critiquing consumerism, gender, and power structures.",1977-present,Conceptual Art,"Feminist Art",modern,"Barbara Kruger artworks"
+Cindy Sherman,American,1954,photography,"Cindy Sherman uses staged photography to explore identity, gender, and representation. Her Untitled Film Stills became iconic.",1975-present,Contemporary Art,"Feminist Art",modern,"Cindy Sherman photographs"
+Sherrie Levine,American,1947,conceptual art,"Sherrie Levine critiques authorship and originality through appropriation‑based works. She is associated with the Pictures Generation.",1980-present,Conceptual Art,"Appropriation Art",modern,"Sherrie Levine artworks"
+Louise Lawler,American,1947,photography,"Louise Lawler photographs artworks in situ to examine context, display, and the art market. She is part of the Pictures Generation.",1978-present,Conceptual Art,"Appropriation Art",modern,"Louise Lawler photographs"
+Martha Rosler,American,1943,photography,"Martha Rosler creates politically engaged works addressing war, gender, and urban space through photography, video, and text.",1965-present,Conceptual Art,"Feminist Art",modern,"Martha Rosler artworks"
+Adrian Piper,American,1948,conceptual art,"Adrian Piper creates conceptual works addressing identity, race, and philosophy. She is a major figure in socially engaged art.",1970-present,Conceptual Art,"Performance Art",modern,"Adrian Piper artworks"
+Kara Walker,American,1969,installation,"Kara Walker creates powerful silhouettes and installations exploring race, history, and violence in America.",1994-present,Contemporary Art,"Feminist Art;Political Art",modern,"Kara Walker artworks"
+Lorna Simpson,American,1960,photography,"Lorna Simpson uses photography and text to explore identity, memory, and representation, especially concerning Black womanhood.",1985-present,Contemporary Art,"Conceptual Photography",modern,"Lorna Simpson photographs"
+Glenn Ligon,American,1960,painting,"Glenn Ligon creates text‑based works exploring race, identity, and American history. His art draws on literature and cultural critique.",1985-present,Contemporary Art,"Conceptual Art",modern,"Glenn Ligon artworks"
+David Hammons,American,1943,mixed media,"David Hammons creates conceptual works addressing race, politics, and the art world through found materials and performance.",1965-present,Contemporary Art,"Performance Art",modern,"David Hammons artworks"
+Jean-Michel Basquiat,American,1960,1988,painting,"Jean‑Michel Basquiat fused graffiti, symbolism, and expressive figuration to explore race, power, and identity. He became a defining voice of 1980s art.",1978-1988,Neo-Expressionism,"Street Art",modern,"Jean-Michel Basquiat paintings"
+Keith Haring,American,1958,1990,painting,"Keith Haring created bold, graphic imagery rooted in street culture and activism. His symbols became global icons.",1980-1990,Street Art,"Pop Art",modern,"Keith Haring artworks"
+Julian Schnabel,American,1951,painting,"Julian Schnabel is a Neo‑Expressionist known for large, textured paintings and later for acclaimed filmmaking.",1975-present,Neo-Expressionism,"Contemporary Art",modern,"Julian Schnabel paintings"
+Eric Fischl,American,1948,painting,"Eric Fischl is a figurative painter known for psychologically charged suburban scenes. His work helped revive figurative painting in the 1980s.",1975-present,Neo-Expressionism,"Contemporary Art",modern,"Eric Fischl paintings"
+Jean Dubuffet,French,1901,1985,painting,"Jean Dubuffet founded Art Brut, championing raw, outsider‑inspired aesthetics. His textured surfaces and unconventional materials reshaped postwar art.",1940-1985,Art Brut,"Abstract Art",modern,"Jean Dubuffet paintings"
+Alberto Burri,Italian,1915,1995,painting,"Alberto Burri created abstract works using burlap, plastic, and burned materials, pioneering postwar material experimentation.",1945-1995,Abstract Art,"Art Informel",modern,"Alberto Burri paintings"
+Antoni Tàpies,Spanish,1923,2012,painting,"Antoni Tàpies was a leading Art Informel painter known for textured, symbolic surfaces. His work explored materiality and spirituality.",1945-2012,Abstract Art,"Art Informel",modern,"Antoni Tapies paintings"

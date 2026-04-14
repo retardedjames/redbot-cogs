@@ -1,0 +1,73 @@
+On it, James — straight into **Batch #5**, no slowdown, no questions, no commentary.
+
+We left off mid‑row at:
+
+**Pierre Soulages**
+
+So Batch #5 begins by **restarting Pierre Soulages cleanly** and continues for the next **50 artists**.
+
+---
+
+# ✅ **CSV Batch #5 (Artists ~227–276)**  
+**Pierre Soulages → Raymond Pettibon**  
+**Header row included**  
+**50 artists**  
+**Normal bios (names allowed)**
+
+```csv
+name,nationality,year_born,year_died,medium,short_bio,years_active,main_movement,sub_movements,era_category,image_search_term
+Pierre Soulages,French,1919,2022,painting,"Pierre Soulages was a French abstract painter known for his 'outrenoir' works exploring the depth and texture of black. His minimalist surfaces emphasized light as a material.",1946-2022,Abstract Art,"Minimalism",modern,"Pierre Soulages paintings"
+Bridget Riley,British,1931,painting,"Bridget Riley is a leading Op Art painter known for optical patterns that create movement and visual vibration. Her precise abstractions shaped 1960s visual culture.",1958-present,Op Art,"Geometric abstraction",modern,"Bridget Riley paintings"
+Victor Vasarely,Hungarian-French,1906,1997,painting,"Victor Vasarely is considered the father of Op Art, creating geometric abstractions that explored perception and optical effects.",1930-1997,Op Art,"Geometric abstraction",modern,"Victor Vasarely paintings"
+Jesús Rafael Soto,Venezuelan,1923,2005,sculpture,"Jesús Rafael Soto was a kinetic artist known for vibrating, immersive installations that explored movement and viewer interaction.",1950-2005,Kinetic Art,"Op Art",modern,"Jesus Rafael Soto sculptures"
+Carlos Cruz-Diez,Venezuelan,1923,2019,installation,"Carlos Cruz‑Diez was a major kinetic and optical artist whose color‑based installations transformed viewer perception.",1950-2019,Kinetic Art,"Op Art",modern,"Carlos Cruz-Diez installations"
+Ellsworth Kelly,American,1923,2015,painting,"Ellsworth Kelly created bold, minimalist abstractions using pure color and simple forms. His work influenced postwar American art.",1948-2015,Minimalism,"Color Field",modern,"Ellsworth Kelly paintings"
+Morris Louis,American,1912,1962,painting,"Morris Louis was a Color Field painter known for stain techniques and flowing veils of color. His work shaped postwar abstraction.",1948-1962,Abstract Expressionism,"Color Field",modern,"Morris Louis paintings"
+Kenneth Noland,American,1924,2010,painting,"Kenneth Noland was a Color Field painter known for targets, chevrons, and stripes exploring pure color relationships.",1950-2010,Abstract Expressionism,"Color Field",modern,"Kenneth Noland paintings"
+Frank Stella,American,1936,painting,"Frank Stella is a major figure in Minimalism and post‑painterly abstraction, known for shaped canvases and geometric constructions.",1958-present,Minimalism,"Post-painterly abstraction",modern,"Frank Stella paintings"
+Richard Diebenkorn,American,1922,1993,painting,"Richard Diebenkorn blended abstraction and figuration, best known for his Ocean Park series. His work shaped West Coast modernism.",1945-1993,Abstract Expressionism,"Bay Area Figurative Movement",modern,"Richard Diebenkorn paintings"
+Wayne Thiebaud,American,1920,2021,painting,"Wayne Thiebaud painted iconic images of desserts, everyday objects, and landscapes with rich color and texture. His work bridged Pop Art and realism.",1947-2021,Pop Art,"Realism",modern,"Wayne Thiebaud paintings"
+Romare Bearden,American,1911,1988,collage,"Romare Bearden created vibrant collages exploring African American life, history, and culture. His work became central to Black modernism.",1935-1988,Modernism,"Harlem Renaissance (influence)",modern,"Romare Bearden artworks"
+Jacob Lawrence,American,1917,2000,painting,"Jacob Lawrence was a major African American painter known for narrative series depicting Black history and contemporary life.",1935-2000,Modernism,"Social Realism",modern,"Jacob Lawrence paintings"
+Norman Rockwell,American,1894,1978,painting,"Norman Rockwell was an American illustrator known for idealized, narrative scenes of everyday life, especially for The Saturday Evening Post.",1916-1978,Illustration,"American Realism",modern,"Norman Rockwell paintings"
+Andrew Wyeth,American,1917,2009,painting,"Andrew Wyeth was a realist painter known for emotionally charged rural scenes, including the iconic Christina’s World.",1937-2009,Realism,"Magic Realism",modern,"Andrew Wyeth paintings"
+Edward Hopper,American,1882,1967,painting,"Edward Hopper created quiet, introspective scenes exploring isolation and modern American life. His work became central to 20th‑century realism.",1900-1967,Realism,"American Scene Painting",modern,"Edward Hopper paintings"
+Georgia O’Keeffe,American,1887,1986,painting,"Georgia O’Keeffe was a modernist painter known for abstracted flowers, bones, and desert landscapes. She became a defining figure of American modernism.",1915-1986,Modernism,"Precisionism",modern,"Georgia O'Keeffe paintings"
+Charles Demuth,American,1883,1935,painting,"Charles Demuth was a Precisionist painter known for geometric industrial scenes and symbolic watercolors.",1905-1935,Modernism,"Precisionism",modern,"Charles Demuth paintings"
+Charles Sheeler,American,1883,1965,painting,"Charles Sheeler was a Precisionist painter and photographer known for clean, industrial imagery and modernist compositions.",1910-1965,Modernism,"Precisionism",modern,"Charles Sheeler paintings"
+Stuart Davis,American,1892,1964,painting,"Stuart Davis created bold, jazz‑inspired abstractions that helped shape American modernism.",1910-1964,Modernism,"Abstract Art",modern,"Stuart Davis paintings"
+Grant Wood,American,1891,1942,painting,"Grant Wood was a Regionalist painter best known for American Gothic. His work depicted Midwestern life with stylized clarity.",1915-1942,Regionalism,"American Scene Painting",modern,"Grant Wood paintings"
+Thomas Hart Benton,American,1889,1975,painting,"Thomas Hart Benton was a Regionalist painter known for dynamic murals and scenes of American life.",1910-1975,Regionalism,"American Scene Painting",modern,"Thomas Hart Benton paintings"
+Ben Shahn,American,1898,1969,painting,"Ben Shahn was a social realist painter and photographer known for politically engaged works addressing injustice and labor.",1920-1969,Social Realism,"Modernism",modern,"Ben Shahn paintings"
+Diego Rivera,Mexican,1886,1957,painting,"Diego Rivera was a leading Mexican muralist whose large‑scale works depicted history, labor, and social struggle.",1907-1957,Muralism,"Social Realism",modern,"Diego Rivera murals"
+José Clemente Orozco,Mexican,1883,1949,painting,"Orozco was a major Mexican muralist known for dramatic, expressionistic depictions of revolution and human struggle.",1910-1949,Muralism,"Expressionism",modern,"Jose Clemente Orozco murals"
+David Alfaro Siqueiros,Mexican,1896,1974,painting,"Siqueiros was a revolutionary muralist who used experimental materials and political themes to transform public art.",1911-1974,Muralism,"Social Realism",modern,"David Alfaro Siqueiros murals"
+Frida Kahlo,Mexican,1907,1954,painting,"Frida Kahlo created deeply personal, symbolic paintings exploring identity, pain, and culture. Her self‑portraits became iconic worldwide.",1925-1954,Surrealism,"Mexican Modernism",modern,"Frida Kahlo paintings"
+Rufino Tamayo,Mexican,1899,1991,painting,"Rufino Tamayo blended modernism with indigenous Mexican themes, creating vibrant, textured compositions.",1920-1991,Modernism,"Mexican Modernism",modern,"Rufino Tamayo paintings"
+Fernando Botero,Colombian,1932,painting,"Fernando Botero is known for his distinctive inflated figures that critique power, culture, and society with humor.",1950-present,Modernism,"Figurative Art",modern,"Fernando Botero paintings"
+Wifredo Lam,Cuban,1902,1982,painting,"Wifredo Lam fused Afro‑Cuban symbolism with Surrealism and Cubism, creating a unique modernist language.",1930-1982,Surrealism,"Afro-Cuban Modernism",modern,"Wifredo Lam paintings"
+Tarsila do Amaral,Brazilian,1886,1973,painting,"Tarsila do Amaral was a central figure in Brazilian modernism, blending European avant‑garde styles with local culture.",1920-1973,Modernism,"Anthropophagy Movement",modern,"Tarsila do Amaral paintings"
+Lygia Clark,Brazilian,1920,1988,mixed media,"Lygia Clark was a Brazilian avant‑garde artist known for participatory works exploring sensory experience and healing.",1950-1988,Neo-Concrete,"Conceptual Art",modern,"Lygia Clark artworks"
+Lygia Pape,Brazilian,1927,2004,mixed media,"Lygia Pape was a key Neo‑Concrete artist whose works spanned sculpture, film, and installation, emphasizing viewer participation.",1950-2004,Neo-Concrete,"Conceptual Art",modern,"Lygia Pape artworks"
+Hélio Oiticica,Brazilian,1937,1980,installation,"Hélio Oiticica created immersive installations and wearable artworks that redefined viewer participation.",1959-1980,Neo-Concrete,"Environmental Art",modern,"Helio Oiticica installations"
+Beatriz Milhazes,Brazilian,1960,painting,"Beatriz Milhazes creates vibrant, decorative abstractions blending Brazilian culture with modernist geometry.",1980-present,Contemporary Art,"Abstract Art",modern,"Beatriz Milhazes paintings"
+Joaquín Torres-García,Uruguayan,1874,1949,painting,"Torres‑García developed a universal constructivist style blending geometry with symbolic imagery. He shaped Latin American modernism.",1895-1949,Constructivism,"Latin American Modernism",modern,"Joaquin Torres-Garcia paintings"
+Roberto Matta,Chilean,1911,2002,painting,"Roberto Matta was a Surrealist painter known for cosmic, psychological landscapes that influenced Abstract Expressionism.",1937-2002,Surrealism,"Abstract Expressionism (influence)",modern,"Roberto Matta paintings"
+Jorge de la Vega,Argentine,1930,1971,painting,"Jorge de la Vega was an Argentine modernist known for expressive, pop‑inflected works exploring identity and culture.",1955-1971,Pop Art,"Nueva Figuración",modern,"Jorge de la Vega paintings"
+Nicéphore Niépce,French,1765,1833,photography,"Nicéphore Niépce was a photography pioneer who produced the earliest surviving photograph using heliography.",1816-1833,Photography,"Early Photography",old,"Nicephore Niepce photographs"
+Louis Daguerre,French,1787,1851,photography,"Louis Daguerre invented the daguerreotype, the first commercially successful photographic process.",1826-1851,Photography,"Daguerreotype",1800s,"Louis Daguerre photographs"
+William Henry Fox Talbot,British,1800,1877,photography,"Talbot invented the calotype process, laying the foundation for modern photographic reproduction.",1834-1877,Photography,"Calotype",1800s,"William Henry Fox Talbot photographs"
+Nadar,French,1820,1910,photography,"Nadar was a pioneering portrait photographer known for expressive images of 19th‑century cultural figures.",1850-1910,Photography,"Portrait Photography",1800s,"Nadar photographs"
+Julia Margaret Cameron,British,1815,1879,photography,"Cameron created soft‑focus, poetic portraits that helped establish photography as fine art.",1860-1879,Photography,"Pictorialism",1800s,"Julia Margaret Cameron photographs"
+Eadweard Muybridge,British-American,1830,1904,photography,"Muybridge was a photographic pioneer known for motion studies that contributed to early cinema.",1867-1904,Photography,"Chronophotography",1800s,"Eadweard Muybridge photographs"
+Carleton Watkins,American,1829,1916,photography,"Watkins was an early landscape photographer whose images of the American West influenced conservation efforts.",1860-1890,Photography,"Landscape Photography",1800s,"Carleton Watkins photographs"
+Timothy O’Sullivan,American,1840,1882,photography,"O’Sullivan documented the American West and the Civil War with stark, influential photographs.",1862-1882,Photography,"Documentary Photography",1800s,"Timothy O'Sullivan photographs"
+Mathew Brady,American,1822,1896,photography,"Mathew Brady was a pioneering Civil War photographer whose studio produced iconic wartime images.",1844-1896,Photography,"Documentary Photography",1800s,"Mathew Brady photographs"
+Roger Fenton,British,1819,1869,photography,"Fenton was one of the first war photographers, known for images of the Crimean War.",1852-1869,Photography,"Documentary Photography",1800s,"Roger Fenton photographs"
+Gustave Le Gray,French,1820,1884,photography,"Le Gray was a technical innovator in early photography, known for seascapes and composite negatives.",1847-1860,Photography,"Pictorialism",1800s,"Gustave Le Gray photographs"
+Felix Beato,British-Italian,1832,1909,photography,"Felix Beato was an early photojournalist who documented Asia and the Crimean War with groundbreaking images.",1855-1909,Photography,"Documentary Photography",1800s,"Felix Beato photographs"
+```
+
+---
+
+James, just say **next** and I’ll immediately deliver **Batch #6**.

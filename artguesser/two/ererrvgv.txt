@@ -1,0 +1,49 @@
+Here comes **Batch 2 of 2**, completing your 80?photographer list.  
+Same structure, same formatting, all categorized as **modern**.
+
+---
+
+# **CSV — Photographers Batch 2 (final 40 artists)**
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+George Hurrell,American,1904,1992,"photography","Hollywood portrait photographer known for glamorous, dramatic studio lighting.","c.1925–1970","Portrait Photography","Hollywood glamour",modern,"George Hurrell portraits"
+Philippe Halsman,Latvian-American,1906,1979,"photography","Portrait photographer known for surreal collaborations with Dalí and LIFE magazine covers.","c.1930–1975","Portrait Photography","Surreal portraiture",modern,"Philippe Halsman portraits"
+Arnold Newman,American,1918,2006,"photography","Pioneer of environmental portraiture, photographing artists and world leaders in meaningful settings.","c.1940–2000","Portrait Photography","Environmental portraiture",modern,"Arnold Newman portraits"
+Herb Ritts,American,1952,2002,"photography","Fashion and portrait photographer known for clean, sculptural black?and?white imagery.","c.1975–2002","Fashion Photography","Celebrity portraiture",modern,"Herb Ritts fashion photography"
+Peter Lindbergh,German,1944,2019,"photography","Fashion photographer known for cinematic, naturalistic portraits and the rise of the supermodel era.","c.1980–2019","Fashion Photography","Minimalist portraiture",modern,"Peter Lindbergh fashion photography"
+David LaChapelle,American,1963,, "photography","Photographer known for hyper-saturated, surreal, pop-culture-infused imagery.","c.1985–present","Contemporary Photography","Pop surrealism",modern,"David LaChapelle photographs"
+Juergen Teller,German,1964,, "photography","Fashion photographer known for raw, flash-lit, anti-glamour aesthetics.","c.1990–present","Fashion Photography","Contemporary portraiture",modern,"Juergen Teller fashion photography"
+Ryan McGinley,American,1977,, "photography","Photographer known for intimate, youthful, and dreamlike images of freedom and nature.","c.2000–present","Contemporary Photography","Youth culture",modern,"Ryan McGinley photographs"
+Platon (Platon Antoniou),British-Greek,1968,, "photography","Portrait photographer known for stark, close-up images of world leaders and cultural icons.","c.1995–present","Portrait Photography","Political portraiture",modern,"Platon portraits"
+Nadav Kander,British-Israeli,1961,, "photography","Photographer known for atmospheric landscapes and psychologically charged portraits.","c.1990–present","Contemporary Photography","Environmental portraiture",modern,"Nadav Kander photographs"
+Simon Norfolk,British,1963,, "photography","Photographer exploring war, ruins, and climate change through large-format landscapes.","c.1995–present","Documentary Photography","Landscape reportage",modern,"Simon Norfolk photographs"
+Edward Burtynsky,Canadian,1955,, "photography","Photographer known for large-scale images of industrial landscapes and environmental transformation.","c.1980–present","Contemporary Photography","Environmental photography",modern,"Edward Burtynsky photographs"
+Richard Misrach,American,1949,, "photography","Key figure in the New Topographics movement, known for desert and environmental imagery.","c.1970–present","New Topographics","Environmental photography",modern,"Richard Misrach photographs"
+Robert Adams,American,1937,, "photography","New Topographics photographer documenting human-altered Western landscapes.","c.1965–present","New Topographics","Landscape photography",modern,"Robert Adams photographs"
+Lewis Baltz,American,1945,2014,"photography","New Topographics photographer known for stark images of industrial parks and suburban sprawl.","c.1970–2000","New Topographics","Minimalist photography",modern,"Lewis Baltz photographs"
+Stephen Shore,American,1947,, "photography","Pioneer of color photography known for documenting everyday American scenes.","c.1965–present","Contemporary Photography","New Color photography",modern,"Stephen Shore photographs"
+Nicholas Nixon,American,1947,, "photography","Photographer known for The Brown Sisters series and intimate large-format portraits.","c.1975–present","Contemporary Photography","Documentary portraiture",modern,"Nicholas Nixon portraits"
+Emmet Gowin,American,1941,, "photography","Photographer known for intimate family portraits and aerial landscapes.","c.1965–present","Contemporary Photography","Environmental photography",modern,"Emmet Gowin photographs"
+Harry Callahan,American,1912,1999,"photography","Modernist photographer known for experimental approaches to form, light, and everyday subjects.","c.1940–1980","Modernist Photography","Experimental photography",modern,"Harry Callahan photographs"
+Aaron Siskind,American,1903,1991,"photography","Abstract photographer whose close-up textures bridged photography and Abstract Expressionism.","c.1930–1985","Abstract Photography","Modernism",modern,"Aaron Siskind photographs"
+Minor White,American,1908,1976,"photography","Photographer and teacher known for spiritual, symbolic, and abstract imagery.","c.1940–1976","Modernist Photography","Spiritual abstraction",modern,"Minor White photographs"
+Frederick Sommer,American,1905,1999,"photography","Photographer known for surreal, philosophical images and experimental processes.","c.1935–1985","Surrealist Photography","Experimental photography",modern,"Frederick Sommer photographs"
+Ralph Eugene Meatyard,American,1925,1972,"photography","Photographer known for eerie, mask-filled family scenes blending surrealism and Southern Gothic.","c.1955–1972","Surrealist Photography","Southern Gothic",modern,"Ralph Eugene Meatyard photographs"
+Jerry Uelsmann,American,1934,2022,"photography","Darkroom pioneer known for surreal composite images created before digital tools.","c.1960–2010","Surrealist Photography","Photomontage",modern,"Jerry Uelsmann photographs"
+Duane Michals,American,1932,, "photography","Photographer known for narrative sequences and handwritten text exploring identity and emotion.","c.1960–present","Conceptual Photography","Narrative photography",modern,"Duane Michals photographs"
+Jacob Riis,Danish-American,1849,1914,"photography","Social reformer whose flash-lit images exposed New York tenement conditions.","c.1888–1914","Documentary Photography","Social reform photography",modern,"Jacob Riis photographs"
+Lewis Hine,American,1874,1940,"photography","Photographer whose images of child labor helped drive U.S. labor reform.","c.1905–1939","Documentary Photography","Social reform photography",modern,"Lewis Hine photographs"
+Edward S. Curtis,American,1868,1952,"photography","Photographer known for extensive documentation of Native American cultures.","c.1895–1930","Ethnographic Photography","Pictorialism",modern,"Edward S. Curtis photographs"
+Gertrude Käsebier,American,1852,1934,"photography","Pictorialist photographer known for expressive portraits and motherhood themes.","c.1895–1930","Pictorialism","Portrait photography",modern,"Gertrude Kasebier photographs"
+James Van Der Zee,American,1886,1983,"photography","Harlem Renaissance photographer known for elegant studio portraits.","c.1915–1975","Portrait Photography","Harlem Renaissance",modern,"James Van Der Zee portraits"
+Roy DeCarava,American,1919,2009,"photography","Photographer known for poetic, low-light images of Black life in Harlem.","c.1945–2000","Documentary Photography","Jazz photography",modern,"Roy DeCarava photographs"
+Carrie Mae Weems,American,1953,, "photography, installation","Artist exploring race, gender, and power through staged and archival imagery.","c.1980–present","Contemporary Photography","Conceptual art",modern,"Carrie Mae Weems photographs"
+Dawoud Bey,American,1953,, "photography","Photographer known for powerful portraits of Black communities and youth.","c.1975–present","Contemporary Photography","Social portraiture",modern,"Dawoud Bey portraits"
+LaToya Ruby Frazier,American,1982,, "photography","Photographer whose work documents family, labor, and environmental injustice.","c.2005–present","Contemporary Photography","Social documentary",modern,"LaToya Ruby Frazier photographs"
+David Goldblatt,South African,1930,2018,"photography","Photographer documenting apartheid and post-apartheid South Africa with quiet rigor.","c.1950–2015","Documentary Photography","Social documentary",modern,"David Goldblatt photographs"
+Roger Ballen,American-South African,1950,, "photography","Photographer known for psychologically charged, surreal images blending documentary and fiction.","c.1980–present","Surrealist Photography","Psychological portraiture",modern,"Roger Ballen photographs"
+Pieter Hugo,South African,1976,, "photography","Photographer known for stark portraits exploring identity, postcolonialism, and community.","c.2000–present","Contemporary Photography","Documentary portraiture",modern,"Pieter Hugo portraits"
+Zwelethu Mthethwa,South African,1960,, "photography","Photographer known for vibrant portraits of Black South Africans in domestic and working environments.","c.1990–present","Contemporary Photography","Environmental portraiture",modern,"Zwelethu Mthethwa photographs"
+Robert Polidori,Canadian-American,1951,, "photography","Photographer known for large-format architectural and interior studies of places in transition.","c.1980–present","Contemporary Photography","Architectural photography",modern,"Robert Polidori photographs"
+Larry Fink,American,1941,2023,"photography","Photographer known for intimate, flash-lit images of social gatherings and class divides.","c.1960–2015","Documentary Photography","Social portraiture",modern,"Larry Fink photographs"

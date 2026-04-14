@@ -1,0 +1,37 @@
+On it — here comes **Batch 5**, continuing the CSV seamlessly.  
+This batch covers **John De Andrea ? Christian Boltanski**.
+
+---
+
+# **CSV — Batch 5**
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+John De Andrea,American,1941,, "sculpture","Hyperrealist sculptor known for life-cast nude figures with uncanny realism.","c.1970–present","Hyperrealism","Realism",modern,"John De Andrea sculptures"
+George Segal,American,1924,2000,"sculpture, installation","Artist known for white plaster life-cast figures placed in everyday environments.","c.1960–2000","Pop Art","Installation art",modern,"George Segal sculptures"
+Mark di Suvero,American,1933,, "sculpture","Abstract sculptor known for monumental steel structures emphasizing movement and balance.","c.1957–present","Abstract Expressionism","Constructivism",modern,"Mark di Suvero sculptures"
+Tony Smith,American,1912,1980,"sculpture, architecture","Minimalist sculptor known for large geometric forms exploring space and perception.","c.1960–1980","Minimalism","Geometric abstraction",modern,"Tony Smith sculptures"
+John Chamberlain,American,1927,2011,"sculpture","Sculptor famed for dynamic works made from crushed automobile metal.","c.1955–2011","Abstract Expressionism","Assemblage",modern,"John Chamberlain sculptures"
+Eduardo Chillida,Spanish,1924,2002,"sculpture","Basque sculptor known for monumental abstract works in steel and stone.","c.1950–2000","Modern Sculpture","Abstract art",modern,"Eduardo Chillida sculptures"
+Brassaï (Gyula Halász),Hungarian-French,1899,1984,"photography","Photographer celebrated for atmospheric images of Parisian nightlife.","c.1930–1970","Documentary Photography","Street photography",modern,"Brassaï photographs"
+André Kertész,Hungarian-American,1894,1985,"photography","Influential photographer known for lyrical compositions and pioneering photojournalism.","c.1912–1980","Modern Photography","Street photography",modern,"André Kertész photographs"
+Jacques Henri Lartigue,French,1894,1986,"photography","French photographer known for joyful images capturing early 20th-century leisure and motion.","c.1905–1980","Modern Photography","Snapshot aesthetic",modern,"Jacques Henri Lartigue photographs"
+Bill Brandt,British,1904,1983,"photography","British photographer known for stark social documentary and surreal nudes.","c.1930–1980","Modern Photography","Documentary, Surrealism",modern,"Bill Brandt photographs"
+Don McCullin,British,1935,, "photography","British photojournalist renowned for powerful war and conflict photography.","c.1958–present","Photojournalism","Documentary photography",modern,"Don McCullin war photographs"
+Ernst Haas,Austrian-American,1921,1986,"photography","Pioneer of color photography known for poetic, abstracted images.","c.1945–1986","Color Photography","Photojournalism",modern,"Ernst Haas color photography"
+Elliot Erwitt,American-French,1928,2023,"photography","Magnum photographer known for witty, humanistic street images.","c.1950–2020","Street Photography","Documentary photography",modern,"Elliot Erwitt photographs"
+Mary Ellen Mark,American,1940,2015,"photography","Documentary photographer known for empathetic portraits of marginalized communities.","c.1965–2015","Documentary Photography","Photojournalism",modern,"Mary Ellen Mark photographs"
+Joel-Peter Witkin,American,1939,, "photography","Photographer known for dark, staged tableaux exploring mortality and taboo.","c.1970–present","Fine Art Photography","Gothic surrealism",modern,"Joel-Peter Witkin photographs"
+Francesca Woodman,American,1958,1981,"photography","Photographer whose haunting self-portraits explore identity, body, and space.","c.1975–1981","Fine Art Photography","Surrealism",modern,"Francesca Woodman photographs"
+Rineke Dijkstra,Dutch,1959,, "photography","Dutch photographer known for direct, psychologically rich portraits of adolescents and soldiers.","c.1990–present","Contemporary Photography","Portrait photography",modern,"Rineke Dijkstra portraits"
+Philip-Lorca diCorcia,American,1951,, "photography","Photographer blending staged and documentary approaches to explore modern life.","c.1980–present","Contemporary Photography","Staged photography",modern,"Philip-Lorca diCorcia photographs"
+Alec Soth,American,1969,, "photography","American photographer known for lyrical large-format portraits and landscapes of American life.","c.2000–present","Contemporary Photography","Documentary photography",modern,"Alec Soth photographs"
+Lawrence Weiner,American,1942,2021,"conceptual art","Conceptual artist known for text-based works that redefine the nature of sculpture.","c.1968–2021","Conceptual Art","Language art",modern,"Lawrence Weiner text works"
+Robert Barry,American,1936,, "conceptual art","Conceptual artist exploring invisibility, perception, and immateriality.","c.1967–present","Conceptual Art","Minimalism",modern,"Robert Barry conceptual works"
+Hans Haacke,German-American,1936,, "installation, conceptual art","Artist known for institutional critique and politically engaged installations.","c.1965–present","Conceptual Art","Institutional critique",modern,"Hans Haacke installations"
+Christian Boltanski,French,1944,2021,"installation, photography","Artist whose memory-based installations explore loss, archives, and collective history.","c.1968–2021","Contemporary Art","Conceptual art",modern,"Christian Boltanski installations"
+```
+
+---
+
+Ready for **Batch 6** (starting with Ilya Kabakov) whenever you are.

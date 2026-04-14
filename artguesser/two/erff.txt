@@ -1,0 +1,66 @@
+Perfect — I’ll continue exactly where the previous CSV batch ended.  
+To keep this clean and usable, I’ll produce **Batch 2** now (the next ~40 artists), in the **same CSV structure**.
+
+If at any point you want me to adjust columns, shorten bios, or split into smaller batches, just say so.
+
+---
+
+# **CSV — Batch 2 (continuing the list)**  
+**Artists covered:** Toulouse-Lautrec ? Khnopff (the next block after Batch 1)
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+Ernst Ludwig Kirchner,German,1880,1938,"painting, printmaking","German Expressionist and co-founder of Die Brücke, known for raw color and angular forms capturing modern urban anxiety.","c.1905–1938","Expressionism","Die Brücke",modern,"Ernst Ludwig Kirchner paintings"
+Emil Nolde,German-Danish,1867,1956,"painting, printmaking","Expressionist painter noted for intense color and spiritual, often primitivist imagery.","c.1900–1950","Expressionism","Die Brücke",modern,"Emil Nolde paintings"
+Ernst Barlach,German,1870,1938,"sculpture, drawing","German Expressionist sculptor whose simplified, emotive figures reflect spiritual and social themes.","c.1900–1938","Expressionism","German Expressionism",modern,"Ernst Barlach sculptures"
+Käthe Kollwitz,German,1867,1945,"printmaking, drawing, sculpture","German artist whose powerful depictions of poverty, grief, and war made her a leading voice of socially engaged art.","c.1890–1945","Expressionism","Social Realism",modern,"Käthe Kollwitz prints"
+Max Beckmann,German,1884,1950,"painting, printmaking","German painter whose bold, psychologically charged works bridge Expressionism and New Objectivity.","c.1905–1950","New Objectivity","Expressionism",modern,"Max Beckmann paintings"
+Otto Dix,German,1891,1969,"painting, printmaking","German artist known for unflinching depictions of war and Weimar society.","c.1914–1969","New Objectivity","Expressionism",modern,"Otto Dix paintings"
+George Grosz,German-American,1893,1959,"painting, drawing","German satirist whose biting caricatures exposed corruption and brutality in Weimar Germany.","c.1910–1959","New Objectivity","Dada",modern,"George Grosz drawings"
+Franz Marc,German,1880,1916,"painting","Key Expressionist known for symbolic, brightly colored animals representing spiritual harmony.","c.1905–1916","Expressionism","Der Blaue Reiter",modern,"Franz Marc paintings"
+Leonora Carrington,British-Mexican,1917,2011,"painting, sculpture, writing","Surrealist artist whose visionary, myth-infused imagery explores transformation and the occult.","c.1938–2011","Surrealism","Feminist Surrealism",modern,"Leonora Carrington paintings"
+Meret Oppenheim,Swiss,1913,1985,"sculpture, objects, painting","Swiss Surrealist known for provocative, dreamlike objects such as the fur-lined teacup.","c.1933–1985","Surrealism","Object art",modern,"Meret Oppenheim works"
+Walter Gropius,German,1883,1969,"architecture, design","Founder of the Bauhaus, whose functional, modernist designs shaped 20th-century architecture.","c.1910–1969","Modernism","Bauhaus",modern,"Walter Gropius buildings"
+Herbert Bayer,Austrian-American,1900,1985,"graphic design, typography, painting","Bauhaus-trained designer who pioneered modern graphic design and visual communication.","c.1920–1985","Modernism","Bauhaus",modern,"Herbert Bayer graphic design"
+Arshile Gorky,Armenian-American,1904,1948,"painting, drawing","Key figure linking Surrealism and Abstract Expressionism, known for biomorphic abstraction.","c.1925–1948","Abstract Expressionism","Surrealism",modern,"Arshile Gorky paintings"
+Andy Warhol,American,1928,1987,"painting, printmaking, film","Pop Art pioneer whose images of celebrities and consumer goods redefined art and mass culture.","c.1950–1987","Pop Art","Conceptual art",modern,"Andy Warhol artworks"
+Roy Lichtenstein,American,1923,1997,"painting, printmaking","Pop artist known for comic-inspired imagery and Ben-Day dots.","c.1950–1997","Pop Art","Postmodernism",modern,"Roy Lichtenstein paintings"
+Jasper Johns,American,1930,, "painting, sculpture, printmaking","American artist whose flags, targets, and numbers helped launch Pop and Conceptual art.","c.1954–present","Neo-Dada","Pop Art",modern,"Jasper Johns works"
+Robert Rauschenberg,American,1925,2008,"painting, assemblage","Neo-Dada innovator whose Combines fused painting and sculpture.","c.1950–2008","Neo-Dada","Pop Art, Conceptual art",modern,"Robert Rauschenberg combines"
+Richard Hamilton,British,1922,2011,"painting, collage","British Pop Art pioneer exploring consumer culture and media imagery.","c.1950–2011","Pop Art","Conceptual art",modern,"Richard Hamilton works"
+Claes Oldenburg,American,1929,2022,"sculpture, installation","Pop sculptor known for monumental soft sculptures of everyday objects.","c.1955–2020","Pop Art","Installation art",modern,"Claes Oldenburg sculptures"
+David Hockney,British,1937,, "painting, photography","British artist whose vibrant portraits and landscapes helped define Pop-inflected modern painting.","c.1960–present","Pop Art","Contemporary painting",modern,"David Hockney paintings"
+Tom Wesselmann,American,1931,2004,"painting, collage","Pop artist known for bold, graphic nudes and still lifes.","c.1960–2004","Pop Art","New Realism",modern,"Tom Wesselmann paintings"
+James Rosenquist,American,1933,2017,"painting","Pop artist who used billboard-scale imagery to critique consumer culture.","c.1955–2017","Pop Art","Postmodernism",modern,"James Rosenquist paintings"
+Eduardo Paolozzi,British,1924,2005,"sculpture, collage","Scottish sculptor and Pop precursor known for machine-age imagery.","c.1947–2005","Pop Art","Independent Group",modern,"Eduardo Paolozzi sculptures"
+Donald Judd,American,1928,1994,"sculpture, installation","Minimalist pioneer whose precise, industrial forms emphasized material and space.","c.1960–1994","Minimalism","Conceptual art",modern,"Donald Judd sculptures"
+Dan Flavin,American,1933,1996,"light installation","Minimalist known for fluorescent light installations.","c.1960–1996","Minimalism","Light art",modern,"Dan Flavin light installations"
+Carl Andre,American,1935,, "sculpture","Minimalist sculptor known for floor-based works using raw materials.","c.1960–present","Minimalism","Process art",modern,"Carl Andre sculptures"
+Sol LeWitt,American,1928,2007,"drawing, sculpture, conceptual art","Conceptual art pioneer known for wall drawings and modular structures.","c.1960–2007","Conceptual Art","Minimalism",modern,"Sol LeWitt wall drawings"
+Agnes Martin,Canadian-American,1912,2004,"painting, drawing","Minimalist painter whose serene grids explore subtle perception.","c.1950–2004","Minimalism","Abstract Expressionism",modern,"Agnes Martin paintings"
+Ad Reinhardt,American,1913,1967,"painting","Abstract painter known for near-monochrome black paintings.","c.1935–1967","Abstract Expressionism","Minimalism",modern,"Ad Reinhardt paintings"
+Joseph Kosuth,American,1945,, "conceptual art","Conceptual artist exploring language and meaning through text-based works.","c.1965–present","Conceptual Art","Post-Conceptual art",modern,"Joseph Kosuth works"
+Auguste Rodin,French,1840,1917,"sculpture","Revolutionary sculptor whose expressive modeling modernized the medium.","c.1860–1917","Modern Sculpture","Symbolism",modern,"Auguste Rodin sculptures"
+David Smith,American,1906,1965,"sculpture","Abstract sculptor known for welded steel constructions.","c.1930–1965","Abstract Expressionism","Constructivism",modern,"David Smith sculptures"
+Antony Gormley,British,1950,, "sculpture","British sculptor exploring the human body in space through cast forms.","c.1980–present","Contemporary Art","Installation art",modern,"Antony Gormley sculptures"
+Jeff Koons,American,1955,, "sculpture, installation","Contemporary artist known for glossy, monumental works referencing pop culture.","c.1980–present","Contemporary Art","Neo-Pop",modern,"Jeff Koons sculptures"
+Richard Serra,American,1938,2024,"sculpture","Monumental sculptor known for massive steel installations altering spatial perception.","c.1965–2024","Minimalism","Process art",modern,"Richard Serra sculptures"
+Anish Kapoor,British-Indian,1954,, "sculpture, installation","British-Indian sculptor known for reflective surfaces and monumental forms.","c.1980–present","Contemporary Art","Public sculpture",modern,"Anish Kapoor sculptures"
+Damien Hirst,British,1965,, "installation, sculpture, painting","Leading YBA figure known for provocative works involving animals, medicine, and mortality.","c.1988–present","Contemporary Art","YBA",modern,"Damien Hirst works"
+Duane Hanson,American,1925,1996,"sculpture","American sculptor known for hyperrealistic life-size figures of everyday people.","c.1960–1996","Hyperrealism","Realism",modern,"Duane Hanson sculptures"
+Jean-Michel Basquiat,American,1960,1988,"painting, drawing","Neo-Expressionist whose raw, symbolic imagery addressed race, power, and identity.","c.1978–1988","Neo-Expressionism","Street art",modern,"Jean-Michel Basquiat paintings"
+Keith Haring,American,1958,1990,"painting, drawing, murals","Artist whose bold, graphic imagery emerged from New York street culture.","c.1980–1990","Street Art","Pop Art",modern,"Keith Haring murals"
+Julian Schnabel,American,1951,, "painting, film","Neo-Expressionist known for broken-plate paintings and later filmmaking.","c.1975–present","Neo-Expressionism","Contemporary Art",modern,"Julian Schnabel paintings"
+Francesco Clemente,Italian,1952,, "painting, drawing","Italian Neo-Expressionist exploring spirituality, myth, and the body.","c.1975–present","Neo-Expressionism","Transavantgarde",modern,"Francesco Clemente paintings"
+Eric Fischl,American,1948,, "painting","American painter known for psychologically charged suburban scenes.","c.1975–present","Neo-Expressionism","Contemporary Realism",modern,"Eric Fischl paintings"
+Barbara Kruger,American,1945,, "photomontage, text art","Conceptual artist known for bold text-image critiques of power and consumerism.","c.1977–present","Conceptual Art","Postmodernism",modern,"Barbara Kruger works"
+Jenny Holzer,American,1950,, "text installation","Artist known for LED installations presenting provocative aphorisms.","c.1977–present","Conceptual Art","Public art",modern,"Jenny Holzer LED installations"
+Kara Walker,American,1969,, "installation, drawing","American artist whose silhouettes confront race, violence, and historical memory.","c.1994–present","Contemporary Art","Conceptual art",modern,"Kara Walker silhouettes"
+Banksy,British,1970s?,,"street art, stencil art","Anonymous street artist known for politically charged stenciled imagery.","c.1990s–present","Street Art","Political art",modern,"Banksy street art"
+KAWS (Brian Donnelly),American,1974,, "painting, sculpture, design","Artist blending street art, pop culture, and collectible design.","c.1999–present","Contemporary Art","Pop Art",modern,"KAWS sculptures"
+Olafur Eliasson,Danish-Icelandic,1967,, "installation, sculpture","Artist known for immersive works exploring perception, light, and environment.","c.1995–present","Contemporary Art","Environmental art",modern,"Olafur Eliasson installations"
+```
+
+---
+
+If you want, I can immediately continue with **Batch 3** (starting with Annie Leibovitz).

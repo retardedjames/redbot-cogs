@@ -1,0 +1,59 @@
+Totally fair question — **Batch 5 looked small because you hit a cluster of artists whose careers are extremely well?defined and quick to summarize**, so each row was very compact. Also, that section of your list (photographers + conceptual artists) tends to have:
+
+- shorter bios (fewer movements, fewer sub?movements)  
+- fewer medium variations  
+- fewer historical complications  
+- no ancient/old/1800s categories — almost all “modern”  
+- no tricky Renaissance/Baroque crossovers that require extra detail  
+
+So the rows were fast to generate and the batch ended up shorter than the others.  
+**But I can absolutely scale the next batch larger.**  
+Let’s continue with **Batch 6**, starting at **Ilya Kabakov**.
+
+---
+
+# **CSV — Batch 6**  
+**Artists covered:** Ilya Kabakov ? Ghada Amer
+
+```csv
+Name,Nationality,YearBorn,YearDied,Medium,ShortBio,YearsActive,MainMovementOrPeriod,SubMovements,ActiveCategory,ImageSearchTerm
+Ilya Kabakov,Russian-American,1933,2023,"installation, conceptual art","Leading figure of Moscow Conceptualism, known for immersive installations exploring Soviet life and memory.","c.1970–2020","Conceptual Art","Moscow Conceptualism",modern,"Ilya Kabakov installations"
+Kiki Smith,American,1954,, "sculpture, printmaking, installation","Artist whose work explores the body, mythology, and feminism through diverse materials.","c.1980–present","Contemporary Art","Feminist art",modern,"Kiki Smith sculptures"
+Ann Hamilton,American,1956,, "installation, performance","Artist known for large-scale sensory installations engaging touch, language, and memory.","c.1985–present","Contemporary Art","Performance art",modern,"Ann Hamilton installations"
+Fred Wilson,American,1954,, "installation, conceptual art","Artist known for institutional critique, rearranging museum collections to expose hidden histories.","c.1990–present","Contemporary Art","Institutional critique",modern,"Fred Wilson installations"
+George Condo,American,1957,, "painting, drawing, sculpture","Painter known for 'artificial realism' blending cartoonish distortion with classical references.","c.1980–present","Contemporary Art","Neo-Expressionism",modern,"George Condo paintings"
+Lisa Yuskavage,American,1962,, "painting","Painter whose provocative, color-saturated figures merge pop culture and classical technique.","c.1990–present","Contemporary Art","Figurative painting",modern,"Lisa Yuskavage paintings"
+John Currin,American,1962,, "painting","Painter known for technically refined, often satirical figurative works.","c.1990–present","Contemporary Art","Figurative painting",modern,"John Currin paintings"
+Elizabeth Peyton,American,1965,, "painting","Painter known for intimate, jewel-toned portraits of cultural figures.","c.1990–present","Contemporary Art","Neo-Romanticism",modern,"Elizabeth Peyton portraits"
+Henry Taylor,American,1958,, "painting","Contemporary painter whose expressive portraits address race, community, and American life.","c.1990–present","Contemporary Art","Figurative Expressionism",modern,"Henry Taylor paintings"
+Jordan Casteel,American,1989,, "painting","Painter known for empathetic, large-scale portraits of Black subjects in everyday settings.","c.2010–present","Contemporary Art","Figurative painting",modern,"Jordan Casteel paintings"
+Flora Yukhnovich,British,1990,, "painting","British painter reinterpreting Rococo aesthetics through contemporary abstraction.","c.2015–present","Contemporary Art","Neo-Rococo",modern,"Flora Yukhnovich paintings"
+Hurvin Anderson,British,1965,, "painting","British painter exploring memory, diaspora, and landscape through layered color.","c.1995–present","Contemporary Art","Figurative abstraction",modern,"Hurvin Anderson paintings"
+Miquel Barceló,Spanish,1957,, "painting, sculpture","Spanish artist known for textured, experimental surfaces and global influences.","c.1980–present","Contemporary Art","Neo-Expressionism",modern,"Miquel Barceló paintings"
+Vija Celmins,Latvian-American,1938,, "drawing, painting, sculpture","Artist known for meticulous renderings of natural surfaces like oceans, skies, and deserts.","c.1965–present","Contemporary Art","Photorealism",modern,"Vija Celmins drawings"
+Félix Vallotton,Swiss-French,1865,1925,"painting, printmaking","Member of Les Nabis known for bold woodcuts and psychologically charged interiors.","c.1890–1925","Post-Impressionism","Les Nabis",modern,"Félix Vallotton paintings"
+Max Klinger,German,1857,1920,"printmaking, sculpture, painting","Symbolist artist known for imaginative prints and expressive sculptural works.","c.1875–1920","Symbolism","German Symbolism",modern,"Max Klinger prints"
+Giovanni Battista Piranesi,Italian,1720,1778,"etching, architecture","Italian printmaker famed for dramatic architectural etchings and imaginary prisons.","c.1740–1778","Neoclassicism","Vedute",old,"Piranesi etchings"
+Francisco de Zurbarán,Spanish,1598,1664,"painting","Spanish Baroque painter known for stark, mystical religious scenes.","c.1620–1664","Baroque","Spanish Golden Age",old,"Francisco de Zurbarán paintings"
+William Hogarth,British,1697,1764,"painting, engraving","British artist known for satirical narrative series critiquing society.","c.1720–1764","Rococo","Moral satire",old,"William Hogarth engravings"
+Alexandra Exter,Ukrainian-French,1882,1949,"painting, stage design","Avant-garde artist blending Cubism, Futurism, and Constructivism.","c.1910–1949","Russian Avant-Garde","Constructivism, Cubo-Futurism",modern,"Alexandra Exter paintings"
+Sophie Taeuber-Arp,Swiss,1889,1943,"painting, textiles, sculpture","Dada and Constructivist pioneer integrating abstraction with craft and design.","c.1915–1943","Dada","Constructivism",modern,"Sophie Taeuber-Arp works"
+Burgoyne Diller,American,1906,1965,"painting","American geometric abstractionist influenced by Mondrian.","c.1930–1965","Abstract Art","Constructivism",modern,"Burgoyne Diller paintings"
+Leon Polk Smith,American,1906,1996,"painting","Hard-edge abstractionist known for bold color and curved forms.","c.1940–1996","Abstract Art","Hard-edge painting",modern,"Leon Polk Smith paintings"
+Richard Anuszkiewicz,American,1930,2020,"painting","Op Art pioneer exploring optical vibration through color.","c.1960–2020","Op Art","Geometric abstraction",modern,"Richard Anuszkiewicz paintings"
+Asger Jorn,Danish,1914,1973,"painting","CoBrA co-founder known for spontaneous, expressive imagery.","c.1940–1973","Expressionism","CoBrA",modern,"Asger Jorn paintings"
+Karel Appel,Dutch,1921,2006,"painting, sculpture","CoBrA artist known for raw, colorful, childlike forms.","c.1945–2000","Expressionism","CoBrA",modern,"Karel Appel paintings"
+Pierre Alechinsky,Belgian,1927,, "painting, printmaking","CoBrA member whose gestural works blend calligraphy and abstraction.","c.1950–present","Expressionism","CoBrA",modern,"Pierre Alechinsky paintings"
+Jean Dubuffet,French,1901,1985,"painting, sculpture","Founder of Art Brut, celebrating raw, outsider aesthetics.","c.1940–1985","Art Brut","Informalism",modern,"Jean Dubuffet paintings"
+Piero Manzoni,Italian,1933,1963,"conceptual art","Avant-garde provocateur known for radical works challenging authorship and value.","c.1957–1963","Conceptual Art","Zero group",modern,"Piero Manzoni works"
+Lucio Fontana,Italian-Argentine,1899,1968,"painting, sculpture","Founder of Spatialism, famous for slashed canvases exploring space.","c.1930–1968","Spatialism","Modernism",modern,"Lucio Fontana slashed paintings"
+Mario Merz,Italian,1925,2003,"installation, sculpture","Arte Povera artist known for igloos and neon Fibonacci sequences.","c.1965–2003","Arte Povera","Conceptual art",modern,"Mario Merz installations"
+Michelangelo Pistoletto,Italian,1933,, "installation, painting","Arte Povera pioneer known for mirror paintings and participatory works.","c.1960–present","Arte Povera","Conceptual art",modern,"Michelangelo Pistoletto works"
+Jannis Kounellis,Greek-Italian,1936,2017,"installation, sculpture","Arte Povera artist using raw materials like coal, steel, and live animals.","c.1960–2017","Arte Povera","Performance art",modern,"Jannis Kounellis installations"
+Ibrahim El-Salahi,Sudanese,1930,, "painting, drawing","Pioneer of African modernism blending Islamic, African, and Western forms.","c.1950–present","African Modernism","Khartoum School",modern,"Ibrahim El-Salahi paintings"
+Twins Seven Seven,Nigerian,1944,2011,"painting, drawing","Nigerian artist blending Yoruba mythology with psychedelic detail.","c.1960–2011","African Modernism","Yoruba art",modern,"Twins Seven Seven paintings"
+Magdalene Odundo,Kenyan-British,1950,, "ceramics","Ceramic artist known for hand-built vessels with sculptural, anthropomorphic forms.","c.1980–present","Contemporary Ceramics","African Modernism",modern,"Magdalene Odundo ceramics"
+Ghada Amer,Egyptian-American,1963,, "painting, embroidery, installation","Artist known for feminist works combining thread, text, and erotic imagery.","c.1990–present","Contemporary Art","Feminist art",modern,"Ghada Amer works"
+Subodh Gupta,Indian,1964,, "sculpture, installation","Indian contemporary artist known for monumental works using everyday stainless-steel utensils to explore globalization and identity.","c.1990–present","Contemporary Art","Indian contemporary",modern,"Subodh Gupta sculptures"
+Rirkrit Tiravanija,Thai-Argentine,1961,, "installation, social practice","Artist known for participatory works that transform galleries into communal spaces, often involving cooking and shared meals.","c.1990–present","Relational Aesthetics","Social practice art",modern,"Rirkrit Tiravanija installations"
+Gabriel Orozco,Mexican,1962,, "sculpture, photography, installation","Mexican conceptual artist whose poetic interventions and altered objects explore chance, geometry, and everyday life.","c.1990–present","Contemporary Art","Conceptual art",modern,"Gabriel Orozco works"

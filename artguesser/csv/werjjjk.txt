@@ -1,0 +1,76 @@
+Absolutely, James — **Batch #6 coming in clean**, no slowdown, no questions, no commentary.
+
+We left off at:
+
+**Felix Beato**
+
+So **Batch #6** begins with:
+
+**Émile Zola**  
+(and continues for the next 50 artists)
+
+---
+
+# ✅ **CSV Batch #6 (Artists ~277–326)**  
+**Émile Zola → (50 artists total)**  
+Header row included.  
+Normal bios (names allowed).  
+Clean CSV.
+
+```csv
+name,nationality,year_born,year_died,medium,short_bio,years_active,main_movement,sub_movements,era_category,image_search_term
+Émile Zola,French,1840,1902,photography,"Émile Zola, better known as a novelist, was also an avid photographer who documented daily life, landscapes, and family scenes with a naturalistic eye.",1870-1902,Photography,"Documentary Photography",1800s,"Emile Zola photographs"
+Alfred Stieglitz,American,1864,1946,photography,"Alfred Stieglitz was a pioneering photographer and modern art promoter whose images and galleries helped establish photography as fine art.",1885-1946,Photography,"Pictorialism;Modernism",modern,"Alfred Stieglitz photographs"
+Edward Steichen,Luxembourgish-American,1879,1973,photography,"Edward Steichen was a major photographer known for fashion, portraiture, and later for directing MoMA’s influential photography department.",1895-1973,Photography,"Pictorialism;Modernism",modern,"Edward Steichen photographs"
+Paul Strand,American,1890,1976,photography,"Paul Strand helped define modern photography with sharp-focus images exploring abstraction, portraiture, and social themes.",1910-1976,Photography,"Modernism;Straight Photography",modern,"Paul Strand photographs"
+Dorothea Lange,American,1895,1965,photography,"Dorothea Lange was a documentary photographer whose images of the Great Depression, including Migrant Mother, became iconic.",1918-1965,Photography,"Documentary Photography",modern,"Dorothea Lange photographs"
+Walker Evans,American,1903,1975,photography,"Walker Evans documented American life with precise, understated images that shaped documentary photography.",1928-1975,Photography,"Documentary Photography",modern,"Walker Evans photographs"
+Gordon Parks,American,1912,2006,photography,"Gordon Parks was a groundbreaking photographer, filmmaker, and writer whose work addressed race, poverty, and social justice.",1935-2006,Photography,"Documentary Photography",modern,"Gordon Parks photographs"
+Henri Cartier-Bresson,French,1908,2004,photography,"Henri Cartier-Bresson was a pioneer of street photography and co-founder of Magnum Photos, known for capturing the 'decisive moment.'",1930-2000,Photography,"Photojournalism",modern,"Henri Cartier-Bresson photographs"
+Robert Capa,Hungarian-American,1913,1954,photography,"Robert Capa was a legendary war photographer who documented conflicts from the Spanish Civil War to World War II.",1932-1954,Photography,"Photojournalism",modern,"Robert Capa photographs"
+W. Eugene Smith,American,1918,1978,photography,"W. Eugene Smith was a photojournalist known for powerful essays on war, industry, and human suffering.",1936-1978,Photography,"Photojournalism",modern,"W. Eugene Smith photographs"
+Diane Arbus,American,1923,1971,photography,"Diane Arbus photographed marginalized individuals with stark intimacy, reshaping portrait photography.",1945-1971,Photography,"Documentary Photography",modern,"Diane Arbus photographs"
+Richard Avedon,American,1923,2004,photography,"Richard Avedon was a leading fashion and portrait photographer known for crisp, minimalist images of celebrities and models.",1945-2004,Photography,"Fashion Photography",modern,"Richard Avedon photographs"
+Irving Penn,American,1917,2009,photography,"Irving Penn was a master of fashion and still-life photography, known for elegant compositions and technical precision.",1943-2000,Photography,"Fashion Photography",modern,"Irving Penn photographs"
+Helmut Newton,German-Australian,1920,2004,photography,"Helmut Newton was a provocative fashion photographer known for stylized, erotic imagery.",1950-2004,Photography,"Fashion Photography",modern,"Helmut Newton photographs"
+Ansel Adams,American,1902,1984,photography,"Ansel Adams was a landscape photographer whose black‑and‑white images of the American West became iconic.",1920-1984,Photography,"Landscape Photography",modern,"Ansel Adams photographs"
+Edward Weston,American,1886,1958,photography,"Edward Weston created sharply focused images of natural forms, nudes, and landscapes, helping define modern photography.",1910-1958,Photography,"Modernism;Straight Photography",modern,"Edward Weston photographs"
+Imogen Cunningham,American,1883,1976,photography,"Imogen Cunningham was a modernist photographer known for botanical studies, portraits, and industrial forms.",1901-1976,Photography,"Modernism;Group f/64",modern,"Imogen Cunningham photographs"
+Berenice Abbott,American,1898,1991,photography,"Berenice Abbott documented New York City with clarity and precision, creating a landmark record of urban transformation.",1925-1991,Photography,"Documentary Photography",modern,"Berenice Abbott photographs"
+Lee Friedlander,American,1934,photography,"Lee Friedlander is known for complex street photographs exploring reflections, signage, and visual structure.",1955-present,Photography,"Street Photography",modern,"Lee Friedlander photographs"
+Garry Winogrand,American,1928,1984,photography,"Garry Winogrand captured spontaneous scenes of American life with energetic street photography.",1950-1984,Photography,"Street Photography",modern,"Garry Winogrand photographs"
+William Eggleston,American,1939,photography,"William Eggleston pioneered color photography as fine art, capturing everyday scenes with vivid, democratic vision.",1965-present,Photography,"Color Photography",modern,"William Eggleston photographs"
+Nan Goldin,American,1953,photography,"Nan Goldin documented intimate, raw moments of LGBTQ+ communities, nightlife, and relationships with emotional honesty.",1978-present,Photography,"Documentary Photography",modern,"Nan Goldin photographs"
+Andreas Gursky,German,1955,photography,"Andreas Gursky creates large‑scale photographs exploring globalization, architecture, and mass culture.",1980-present,Photography,"Contemporary Photography",modern,"Andreas Gursky photographs"
+Thomas Struth,German,1954,photography,"Thomas Struth is known for precise photographs of cities, museums, and family portraits.",1977-present,Photography,"Contemporary Photography",modern,"Thomas Struth photographs"
+Thomas Ruff,German,1958,photography,"Thomas Ruff experiments with digital manipulation, portraiture, and internet imagery to question photographic truth.",1980-present,Photography,"Contemporary Photography",modern,"Thomas Ruff photographs"
+Bernd and Hilla Becher,German,1931,2007,1934,2015,photography,"Bernd and Hilla Becher documented industrial structures with systematic clarity, founding the Düsseldorf School.",1959-2007,Photography,"Conceptual Photography",modern,"Becher industrial photography"
+Jeff Wall,Canadian,1946,photography,"Jeff Wall creates large, staged photographs presented as lightboxes, blending cinema and documentary aesthetics.",1978-present,Photography,"Conceptual Photography",modern,"Jeff Wall photographs"
+Cindy Sherman,American,1954,photography,"Cindy Sherman uses staged self‑portraiture to explore identity, gender, and representation. Her Film Stills became iconic.",1975-present,Contemporary Art,"Feminist Art",modern,"Cindy Sherman photographs"
+Hiroshi Sugimoto,Japanese,1948,photography,"Hiroshi Sugimoto creates meditative photographs exploring time, memory, and perception through seascapes, theaters, and dioramas.",1976-present,Photography,"Minimalism",modern,"Hiroshi Sugimoto photographs"
+Daido Moriyama,Japanese,1938,photography,"Daido Moriyama is a leading Japanese photographer known for gritty, high‑contrast street images.",1960-present,Photography,"Street Photography;Provoke",modern,"Daido Moriyama photographs"
+Shomei Tomatsu,Japanese,1930,2012,photography,"Shomei Tomatsu documented postwar Japan with powerful, symbolic imagery.",1950-2012,Photography,"Documentary Photography",modern,"Shomei Tomatsu photographs"
+Nobuyoshi Araki,Japanese,1940,photography,"Nobuyoshi Araki is known for prolific, provocative photography exploring intimacy, urban life, and mortality.",1965-present,Photography,"Contemporary Photography",modern,"Nobuyoshi Araki photographs"
+Yayoi Kusama,Japanese,1929,installation,"Yayoi Kusama creates immersive installations, polka‑dot environments, and infinity rooms exploring repetition and psychological space.",1950-present,Contemporary Art,"Pop Art;Performance Art",modern,"Yayoi Kusama installations"
+Takashi Murakami,Japanese,1962,painting,"Takashi Murakami blends pop culture, anime aesthetics, and fine art in his Superflat movement.",1990-present,Contemporary Art,"Superflat",modern,"Takashi Murakami paintings"
+Yoshitomo Nara,Japanese,1959,painting,"Yoshitomo Nara is known for stylized, emotionally charged portraits of children influenced by pop culture and punk.",1984-present,Contemporary Art,"Superflat",modern,"Yoshitomo Nara paintings"
+On Kawara,Japanese,1932,2014,conceptual art,"On Kawara created conceptual works marking time, existence, and daily routine, including his famous Date Paintings.",1964-2014,Conceptual Art,"Minimalism",modern,"On Kawara artworks"
+Lee Ufan,Korean-Japanese,1936,painting,"Lee Ufan is a founder of the Mono‑ha movement, creating minimalist works emphasizing material and perception.",1960-present,Minimalism,"Mono-ha",modern,"Lee Ufan paintings"
+Nam June Paik,Korean-American,1932,2006,video,"Nam June Paik was the father of video art, creating pioneering works using televisions, robotics, and performance.",1960-2006,Video Art,"Fluxus",modern,"Nam June Paik video art"
+Do Ho Suh,Korean,1962,installation,"Do Ho Suh creates architectural fabric installations exploring memory, migration, and personal space.",1990-present,Contemporary Art,"Installation Art",modern,"Do Ho Suh installations"
+Ai Weiwei,Chinese,1957,installation,"Ai Weiwei is a leading contemporary artist and activist whose works critique power, history, and human rights.",1980-present,Contemporary Art,"Political Art",modern,"Ai Weiwei installations"
+Cai Guo-Qiang,Chinese,1957,installation,"Cai Guo‑Qiang creates explosive gunpowder drawings and large‑scale installations exploring culture, nature, and transformation.",1985-present,Contemporary Art,"Environmental Art",modern,"Cai Guo-Qiang gunpowder art"
+Zhang Xiaogang,Chinese,1958,painting,"Zhang Xiaogang is known for surreal, stylized portraits exploring memory and Chinese identity.",1980-present,Contemporary Art,"Political Pop",modern,"Zhang Xiaogang paintings"
+Yue Minjun,Chinese,1962,painting,"Yue Minjun creates satirical self‑portraits featuring laughing figures, critiquing politics and society.",1990-present,Contemporary Art,"Cynical Realism",modern,"Yue Minjun paintings"
+Fang Lijun,Chinese,1963,painting,"Fang Lijun is a leading Cynical Realist painter known for bald, expressionless figures reflecting post‑Tiananmen disillusionment.",1988-present,Contemporary Art,"Cynical Realism",modern,"Fang Lijun paintings"
+Liu Xiaodong,Chinese,1963,painting,"Liu Xiaodong creates large‑scale figurative paintings documenting contemporary life with cinematic realism.",1990-present,Contemporary Art,"Figurative Art",modern,"Liu Xiaodong paintings"
+Xu Bing,Chinese,1955,installation,"Xu Bing creates conceptual works exploring language, culture, and communication through books, installations, and invented scripts.",1980-present,Contemporary Art,"Conceptual Art",modern,"Xu Bing artworks"
+Huang Yong Ping,Chinese-French,1954,2019,installation,"Huang Yong Ping blended Chinese and Western avant‑garde ideas, creating large installations exploring history and belief.",1980-2019,Contemporary Art,"Conceptual Art",modern,"Huang Yong Ping installations"
+Zhao Wuji (Zao Wou-Ki),Chinese-French,1920,2013,painting,"Zao Wou‑Ki created lyrical abstract paintings blending Chinese calligraphy with Western abstraction.",1948-2013,Abstract Art,"Lyrical Abstraction",modern,"Zao Wou-Ki paintings"
+Lin Fengmian,Chinese,1900,1991,painting,"Lin Fengmian fused Chinese ink traditions with Western modernism, becoming a pioneer of modern Chinese art.",1920-1991,Modernism,"Chinese Modernism",modern,"Lin Fengmian paintings"
+Wu Guanzhong,Chinese,1919,2010,painting,"Wu Guanzhong blended ink painting with modern abstraction, becoming a major figure in 20th‑century Chinese art.",1940-2010,Modernism,"Chinese Modernism",modern,"Wu Guanzhong paintings"
+```
+
+---
+
+James, just say **next** and I’ll immediately deliver **Batch #7**.
