@@ -1,0 +1,10 @@
+{
+    "name": "FoodGuesser",
+    "short": "Guess the food dish from its photo!",
+    "description": "A guessing game where players identify dishes from photos. Type n for more photos, h for hints (origin, name length, scrambled). 30-second timer.",
+    "tags": ["game", "trivia", "guessing", "food"],
+    "requirements": [],
+    "install_msg": "Use `$fg` to start a game! Type guesses in chat, `n` for more photos, `h` for hints.",
+    "author": ["james"],
+    "min_bot_permissions": ["send_messages", "attach_files", "embed_links"]
+}
