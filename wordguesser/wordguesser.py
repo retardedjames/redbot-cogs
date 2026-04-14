@@ -64,6 +64,30 @@ def _timeout_embed(word: str, definition: str) -> discord.Embed:
     )
 
 
+# ── Play Again button ─────────────────────────────────────────────────────────
+
+class WordPlayAgainView(discord.ui.View):
+    def __init__(self, cog: "WordGuesser", channel_id: int):
+        super().__init__(timeout=300)
+        self.cog = cog
+        self.channel_id = channel_id
+
+    @discord.ui.button(label="Play Again", style=discord.ButtonStyle.green, emoji="🎮")
+    async def play_again(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.channel_id in self.cog.games:
+            await interaction.response.send_message(
+                "A game is already running here!", ephemeral=True
+            )
+            return
+        button.disabled = True
+        await interaction.response.edit_message(view=self)
+        await self.cog._start_game(interaction.channel)
+
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+
+
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
 class WordGuesser(commands.Cog):
@@ -81,20 +105,22 @@ class WordGuesser(commands.Cog):
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
-    @commands.command(name="wordguesser")
-    async def wordguesser(self, ctx: commands.Context):
-        """Start a Word Guesser round. First to type the correct word wins!"""
-        # Cancel any running game in this channel and start fresh
-        existing = self.games.pop(ctx.channel.id, None)
+    async def _start_game(self, channel: discord.TextChannel):
+        existing = self.games.pop(channel.id, None)
         if existing and existing.task:
             existing.task.cancel()
 
         word, definition = random.choice(WORD_DEFINITIONS)
-        game = WordGame(channel=ctx.channel, word=word, definition=definition)
-        self.games[ctx.channel.id] = game
+        game = WordGame(channel=channel, word=word, definition=definition)
+        self.games[channel.id] = game
 
-        await ctx.send(embed=_round_embed(definition))
-        game.task = asyncio.create_task(self._run_round(ctx, game))
+        await channel.send(embed=_round_embed(definition))
+        game.task = asyncio.create_task(self._run_round(channel, game))
+
+    @commands.command(name="wordguesser")
+    async def wordguesser(self, ctx: commands.Context):
+        """Start a Word Guesser round. First to type the correct word wins!"""
+        await self._start_game(ctx.channel)
 
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in channel_id. Returns game name if stopped, else None."""
@@ -107,22 +133,23 @@ class WordGuesser(commands.Cog):
 
     # ── Game Runner ───────────────────────────────────────────────────────────
 
-    async def _run_round(self, ctx: commands.Context, game: WordGame):
+    async def _run_round(self, channel: discord.TextChannel, game: WordGame):
         try:
-            # Hint after HINT_AT seconds
             await asyncio.sleep(HINT_AT)
-            if self.games.get(ctx.channel.id) is game:
+            if self.games.get(channel.id) is game:
                 hint = (
                     f"💡  Hint: **{len(game.word)}** letters, "
                     f"starts with **{game.word[0].upper()}**"
                 )
-                await ctx.send(hint)
+                await channel.send(hint)
 
-            # Timeout for the remaining time
             await asyncio.sleep(TIMEOUT - HINT_AT)
-            if self.games.get(ctx.channel.id) is game:
-                self.games.pop(ctx.channel.id, None)
-                await ctx.send(embed=_timeout_embed(game.word, game.definition))
+            if self.games.get(channel.id) is game:
+                self.games.pop(channel.id, None)
+                await channel.send(
+                    embed=_timeout_embed(game.word, game.definition),
+                    view=WordPlayAgainView(self, channel.id),
+                )
 
         except asyncio.CancelledError:
             pass
@@ -147,5 +174,6 @@ class WordGuesser(commands.Cog):
             if game.task:
                 game.task.cancel()
             await message.channel.send(
-                embed=_winner_embed(message.author, game.word, game.definition)
+                embed=_winner_embed(message.author, game.word, game.definition),
+                view=WordPlayAgainView(self, message.channel.id),
             )

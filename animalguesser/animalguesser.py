@@ -277,6 +277,30 @@ class AnimalGameView(discord.ui.View):
             # Button stays disabled; no further timer needed
 
 
+# ── Play Again button ─────────────────────────────────────────────────────────
+
+class AnimalPlayAgainView(discord.ui.View):
+    def __init__(self, cog: "AnimalGuesser", channel_id: int):
+        super().__init__(timeout=300)
+        self.cog = cog
+        self.channel_id = channel_id
+
+    @discord.ui.button(label="Play Again", style=discord.ButtonStyle.green, emoji="🎮")
+    async def play_again(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.channel_id in self.cog.games:
+            await interaction.response.send_message(
+                "A game is already running here!", ephemeral=True
+            )
+            return
+        button.disabled = True
+        await interaction.response.edit_message(view=self)
+        await self.cog._start_game(interaction.channel)
+
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+
+
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
 class AnimalGuesser(commands.Cog):
@@ -315,18 +339,11 @@ class AnimalGuesser(commands.Cog):
             description=f"Nobody guessed it. The animal was **{animal}**.",
             color=discord.Color(0x99aab5),
         )
-        await channel.send(embed=embed)
+        await channel.send(embed=embed, view=AnimalPlayAgainView(self, channel.id))
 
-    # ── Commands ──────────────────────────────────────────────────────────────
+    # ── Start game ────────────────────────────────────────────────────────────
 
-    @commands.command()
-    async def animalguesser(self, ctx: commands.Context):
-        """Start an animal guessing game. 60 seconds — can you name it?"""
-        if ctx.channel.id in self.games:
-            await ctx.send("A game is already running here! Type your guess in chat.")
-            return
-
-        # Pick a random animal that has local images downloaded
+    async def _start_game(self, channel: discord.TextChannel):
         animal, images = None, []
         for candidate in random.sample(ANIMALS, len(ANIMALS)):
             imgs = self._load_images(candidate)
@@ -335,17 +352,17 @@ class AnimalGuesser(commands.Cog):
                 break
 
         if animal is None:
-            await ctx.send(
+            await channel.send(
                 "No animal images found on disk. "
                 "Run `python animalguesser/download_images.py` to download the image library first."
             )
             return
 
-        task = asyncio.create_task(self._game_timer(ctx.channel, animal))
+        task = asyncio.create_task(self._game_timer(channel, animal))
         game = AnimalGame(animal, images, task)
-        self.games[ctx.channel.id] = game
+        self.games[channel.id] = game
 
-        game_view = AnimalGameView(self, ctx.channel.id)
+        game_view = AnimalGameView(self, channel.id)
 
         embed = discord.Embed(
             title=f"What animal is this?{DEV_LABEL}",
@@ -359,13 +376,23 @@ class AnimalGuesser(commands.Cog):
         embed.set_image(url="attachment://animal.jpg")
 
         first_image = game.pop_image()
-        msg = await ctx.send(
+        msg = await channel.send(
             embed=embed,
             file=discord.File(first_image, filename="animal.jpg"),
             view=game_view,
         )
         game_view.message = msg
         game_view.start_hint_timer()
+
+    # ── Commands ──────────────────────────────────────────────────────────────
+
+    @commands.command()
+    async def animalguesser(self, ctx: commands.Context):
+        """Start an animal guessing game. 60 seconds — can you name it?"""
+        if ctx.channel.id in self.games:
+            await ctx.send("A game is already running here! Type your guess in chat.")
+            return
+        await self._start_game(ctx.channel)
 
     # ── Guess listener ────────────────────────────────────────────────────────
 
@@ -398,7 +425,7 @@ class AnimalGuesser(commands.Cog):
             color=discord.Color.blurple(),
         )
         embed.set_footer(text="Start a new game any time with $animalguesser!")
-        await message.channel.send(embed=embed)
+        await message.channel.send(embed=embed, view=AnimalPlayAgainView(self, message.channel.id))
 
     # ── Cleanup on unload ─────────────────────────────────────────────────────
 

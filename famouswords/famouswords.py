@@ -655,6 +655,30 @@ def _normalize(text: str) -> str:
     return re.sub(r"^[^a-z0-9]+|[^a-z0-9]+$", "", text.lower())
 
 
+# ── Play Again button ─────────────────────────────────────────────────────────
+
+class FamousPlayAgainView(discord.ui.View):
+    def __init__(self, cog: "FamousWords", channel_id: int):
+        super().__init__(timeout=300)
+        self.cog = cog
+        self.channel_id = channel_id
+
+    @discord.ui.button(label="Play Again", style=discord.ButtonStyle.green, emoji="🎮")
+    async def play_again(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.channel_id in self.cog.games:
+            await interaction.response.send_message(
+                "A game is already running here!", ephemeral=True
+            )
+            return
+        button.disabled = True
+        await interaction.response.edit_message(view=self)
+        await self.cog._start_game(interaction.channel)
+
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+
+
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
 class FamousWords(commands.Cog):
@@ -675,6 +699,38 @@ class FamousWords(commands.Cog):
         self.games.clear()
         self._tasks.clear()
 
+    # ── Start game ────────────────────────────────────────────────────────────
+
+    async def _start_game(self, channel: discord.TextChannel):
+        duration = await self.config.guild(channel.guild).duration()
+        quote_text, answer, attribution = _pick_quote()
+
+        blank = _make_blank(answer)
+        display = quote_text.replace("{BLANK}", blank)
+
+        game = {
+            "answer": _normalize(answer),
+            "raw_answer": answer,
+            "attribution": attribution,
+            "quote_text": quote_text,
+        }
+        self.games[channel.id] = game
+
+        embed = discord.Embed(
+            title=f"📜  Famous Words!{DEV_LABEL}",
+            description=(
+                f"*\"{display}\"*\n"
+                f"— {attribution}\n\n"
+                f"Type the missing word! You have **{duration} seconds**."
+            ),
+            color=discord.Color.gold(),
+        )
+        embed.set_footer(text=f"Missing word: {len(answer)} letter{'s' if len(answer) != 1 else ''}")
+        await channel.send(embed=embed)
+
+        task = asyncio.create_task(self._run_round(channel, game, duration))
+        self._tasks[channel.id] = task
+
     # ── $famouswords ──────────────────────────────────────────────────────────
 
     @commands.group(name="famouswords", invoke_without_command=True)
@@ -687,35 +743,7 @@ class FamousWords(commands.Cog):
         if ctx.channel.id in self.games:
             await ctx.send("A Famous Words round is already running in this channel!")
             return
-
-        duration = await self.config.guild(ctx.guild).duration()
-        quote_text, answer, attribution = _pick_quote()
-
-        blank = _make_blank(answer)
-        display = quote_text.replace("{BLANK}", blank)
-
-        game = {
-            "answer": _normalize(answer),
-            "raw_answer": answer,
-            "attribution": attribution,
-            "quote_text": quote_text,
-        }
-        self.games[ctx.channel.id] = game
-
-        embed = discord.Embed(
-            title=f"📜  Famous Words!{DEV_LABEL}",
-            description=(
-                f"*\"{display}\"*\n"
-                f"— {attribution}\n\n"
-                f"Type the missing word! You have **{duration} seconds**."
-            ),
-            color=discord.Color.gold(),
-        )
-        embed.set_footer(text=f"Missing word: {len(answer)} letter{'s' if len(answer) != 1 else ''}")
-        await ctx.send(embed=embed)
-
-        task = asyncio.create_task(self._run_round(ctx.channel, game, duration))
-        self._tasks[ctx.channel.id] = task
+        await self._start_game(ctx.channel)
 
     # ── $famouswords settime <seconds> ───────────────────────────────────────
 
@@ -759,7 +787,7 @@ class FamousWords(commands.Cog):
             ),
             color=discord.Color.orange(),
         )
-        await channel.send(embed=embed)
+        await channel.send(embed=embed, view=FamousPlayAgainView(self, channel.id))
 
     # ── Message listener ──────────────────────────────────────────────────────
 
@@ -798,4 +826,4 @@ class FamousWords(commands.Cog):
             ),
             color=discord.Color.green(),
         )
-        await message.channel.send(embed=embed)
+        await message.channel.send(embed=embed, view=FamousPlayAgainView(self, message.channel.id))

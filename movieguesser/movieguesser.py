@@ -113,6 +113,30 @@ def _timeout_embed(game: MovieGame) -> discord.Embed:
     )
 
 
+# ── Play Again button ─────────────────────────────────────────────────────────
+
+class MoviePlayAgainView(discord.ui.View):
+    def __init__(self, cog: "MovieGuesser", channel_id: int):
+        super().__init__(timeout=300)
+        self.cog = cog
+        self.channel_id = channel_id
+
+    @discord.ui.button(label="Play Again", style=discord.ButtonStyle.green, emoji="🎮")
+    async def play_again(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.channel_id in self.cog.games:
+            await interaction.response.send_message(
+                "A game is already running here!", ephemeral=True
+            )
+            return
+        button.disabled = True
+        await interaction.response.edit_message(view=self)
+        await self.cog._start_game(interaction.channel)
+
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+
+
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
 class MovieGuesser(commands.Cog):
@@ -130,24 +154,26 @@ class MovieGuesser(commands.Cog):
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
+    async def _start_game(self, channel: discord.TextChannel):
+        data = random.choice(MOVIES)
+        game = MovieGame(
+            channel=channel,
+            title=data["title"],
+            year=data["year"],
+            synopsis=data["synopsis"],
+            cast=data["cast"],
+        )
+        self.games[channel.id] = game
+        await channel.send(embed=_round_embed(game))
+        game.task = asyncio.create_task(self._run_round(channel, game))
+
     @commands.command(name="movieguesser", aliases=["mg", "movie"])
     async def movieguesser(self, ctx: commands.Context):
         """Start a Movie Guesser round. First to type the correct movie title wins!"""
         if ctx.channel.id in self.games:
             await ctx.send("A game is already in progress in this channel!")
             return
-
-        data = random.choice(MOVIES)
-        game = MovieGame(
-            channel=ctx.channel,
-            title=data["title"],
-            year=data["year"],
-            synopsis=data["synopsis"],
-            cast=data["cast"],
-        )
-        self.games[ctx.channel.id] = game
-        await ctx.send(embed=_round_embed(game))
-        game.task = asyncio.create_task(self._run_round(ctx, game))
+        await self._start_game(ctx.channel)
 
     async def force_stop_game(self, channel_id: int):
         """Stop any active game in this channel. Returns cog name if stopped, else None."""
@@ -160,20 +186,23 @@ class MovieGuesser(commands.Cog):
 
     # ── Game Runner ───────────────────────────────────────────────────────────
 
-    async def _run_round(self, ctx: commands.Context, game: MovieGame):
+    async def _run_round(self, channel: discord.TextChannel, game: MovieGame):
         try:
             await asyncio.sleep(CAST_HINT_AT)
-            if self.games.get(ctx.channel.id) is game:
-                await ctx.send(embed=_cast_hint_embed(game))
+            if self.games.get(channel.id) is game:
+                await channel.send(embed=_cast_hint_embed(game))
 
             await asyncio.sleep(SCRAMBLE_HINT_AT - CAST_HINT_AT)
-            if self.games.get(ctx.channel.id) is game:
-                await ctx.send(embed=_scramble_hint_embed(game))
+            if self.games.get(channel.id) is game:
+                await channel.send(embed=_scramble_hint_embed(game))
 
             await asyncio.sleep(TIMEOUT - SCRAMBLE_HINT_AT)
-            if self.games.get(ctx.channel.id) is game:
-                self.games.pop(ctx.channel.id, None)
-                await ctx.send(embed=_timeout_embed(game))
+            if self.games.get(channel.id) is game:
+                self.games.pop(channel.id, None)
+                await channel.send(
+                    embed=_timeout_embed(game),
+                    view=MoviePlayAgainView(self, channel.id),
+                )
 
         except asyncio.CancelledError:
             pass
@@ -196,4 +225,7 @@ class MovieGuesser(commands.Cog):
             self.games.pop(message.channel.id, None)
             if game.task:
                 game.task.cancel()
-            await message.channel.send(embed=_winner_embed(message.author, game))
+            await message.channel.send(
+                embed=_winner_embed(message.author, game),
+                view=MoviePlayAgainView(self, message.channel.id),
+            )
