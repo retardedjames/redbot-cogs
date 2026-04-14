@@ -104,7 +104,10 @@ def _new_ddgs():
 
 
 def search_images(search_term: str, want: int) -> list:
-    """Search DDG images (general + clipart) and return up to `want` image URLs."""
+    """
+    Search DDG with transparent/clipart filters first, then fall back to general.
+    Returns a deduplicated list of up to `want` image URLs.
+    """
     urls_seen = set()
     urls = []
 
@@ -122,13 +125,20 @@ def search_images(search_term: str, want: int) -> list:
                 time.sleep(wait)
         return []
 
-    # Pass 1: clipart (biases toward clean logo images)
-    for url in _fetch(search_term, type_image="clipart", max_results=want):
+    # Pass 1: transparent PNGs (best for logos)
+    for url in _fetch(search_term, type_image="transparent", max_results=want):
         if url not in urls_seen:
             urls_seen.add(url)
             urls.append(url)
 
-    # Pass 2: general (no filter) — fill remaining slots
+    # Pass 2: clipart type
+    if len(urls) < want:
+        for url in _fetch(search_term, type_image="clipart", max_results=want):
+            if url not in urls_seen:
+                urls_seen.add(url)
+                urls.append(url)
+
+    # Pass 3: general (no filter) — more candidates
     if len(urls) < want:
         for url in _fetch(search_term, max_results=want * 2):
             if url not in urls_seen:
@@ -179,14 +189,13 @@ def score_logo(img: Image.Image, had_alpha: bool) -> float:
     Higher = better candidate. Below PHOTO_REJECT_SCORE = reject.
 
     Scoring components:
-      +10   squareness (aspect ratio close to 1:1)
+      +25   squareness (aspect ratio close to 1:1)
       +35   solid/uniform border (likely plain background)
       +15   simple color palette (few distinct colors)
       +10   large light/white region (transparent-origin logo)
       +10   was RGBA with transparency (clean logo source)
       -40   photographic detail everywhere (all tiles high-variance)
       -20   high overall unique-color count (photo-like)
-      -8/-15   color fragmentation (many isolated color blobs = multi-logo collage)
     """
     img_rgb = img.convert("RGB")
     w, h = img_rgb.size
@@ -196,7 +205,7 @@ def score_logo(img: Image.Image, had_alpha: bool) -> float:
 
     # 1. Squareness bonus
     squareness = min(w, h) / max(w, h)
-    score += squareness * 10
+    score += squareness * 25
 
     # 2. Solid background: check border ring uniformity
     bw = max(2, min(w, h) // 10)
@@ -250,22 +259,6 @@ def score_logo(img: Image.Image, had_alpha: bool) -> float:
     unique_colors = len(np.unique(small_arr))
     if unique_colors > 200:
         score -= 20
-
-    # 8. Color fragmentation: many isolated color blobs = multi-logo collage.
-    # Quantize to 8 colors, count neighbor mismatches. A solid-background logo
-    # has large coherent regions (low mismatch); a collage has many boundaries.
-    try:
-        small_frag = img_rgb.resize((64, 64), Image.LANCZOS)
-        q_arr = np.array(small_frag.quantize(colors=8))
-        h_mismatch = float((q_arr[:, :-1] != q_arr[:, 1:]).mean())
-        v_mismatch = float((q_arr[:-1, :] != q_arr[1:, :]).mean())
-        fragmentation = (h_mismatch + v_mismatch) / 2
-        if fragmentation > 0.45:
-            score -= 15
-        elif fragmentation > 0.30:
-            score -= 8
-    except Exception:
-        pass
 
     return score
 
@@ -414,7 +407,7 @@ def main() -> None:
     print(f"  Candidates   : up to {MAX_IMAGES * CANDIDATES_MUL} URLs per brand")
     print(f"  Dedup        : phash distance ≤ {HASH_DISTANCE}")
     print(f"  Skip if      : folder already has ≥ {SKIP_THRESHOLD} images")
-    print(f"  Search order : clipart → general")
+    print(f"  Search order : transparent → clipart → general")
     print("-" * 68)
 
     for i, (name, term) in enumerate(brands, 1):
