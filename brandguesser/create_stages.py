@@ -59,7 +59,7 @@ NUM_STAGES   = 5
 PIXEL_SIZES = [8, 14, 24, 42, 72]
 
 # blur: Gaussian radius (geometric ~1.5× decrease: 45→30→20→13→9)
-BLUR_RADII = [45, 30, 20, 13, 9]
+BLUR_RADII = [45, 30, 20, 13, 5]
 
 # shuffle: fraction of blocks that are back in their correct position
 # 0.0 = fully shuffled chaos; 0.85 = 15% still wrong at final stage
