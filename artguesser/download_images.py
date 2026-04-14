@@ -54,7 +54,7 @@ MIN_IMAGES       = 13    # skip artist folder if already has >= this many
 SKIP_THRESHOLD   = MIN_IMAGES
 
 CANDIDATES_MUL   = 5     # fetch MAX_IMAGES * this many candidate URLs
-DELAY_BETWEEN    = 3     # seconds between artists (be polite to DDG)
+DELAY_BETWEEN    = 5     # seconds between artists (be polite to DDG)
 DOWNLOAD_WORKERS = 10    # parallel download threads per artist
 DOWNLOAD_TIMEOUT = 20    # seconds per HTTP request
 
