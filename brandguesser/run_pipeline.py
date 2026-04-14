@@ -39,18 +39,20 @@ def log(msg: str) -> None:
 
 
 def write_preview(brand_name: str, brand_index: int) -> None:
-    """Copy a random stage image to _preview/ for the external monitor to pick up."""
+    """Copy all 5 stages for a random image to _preview/ for external monitoring."""
     stages_dir = IMAGES_DIR / brand_name / "stages"
     if not stages_dir.is_dir():
         return
-    stage_files = sorted(stages_dir.glob("img-*_s*.jpg"))
-    if not stage_files:
+    # Pick a random source image (img-001 … img-005) that has stages
+    img_stems = sorted({p.name.split("_s")[0] for p in stages_dir.glob("img-*_s*.jpg")})
+    if not img_stems:
         return
-    chosen  = random.choice(stage_files)
-    safe    = brand_name.replace("/", "-").replace(" ", "_")
-    dest    = PREVIEW_DIR / f"preview_{brand_index:03d}_{safe}__{chosen.name}"
-    shutil.copy2(chosen, dest)
-    log(f"  [preview] {dest.name}")
+    chosen_stem = random.choice(img_stems)
+    safe = brand_name.replace("/", "-").replace(" ", "_")
+    for stage_file in sorted(stages_dir.glob(f"{chosen_stem}_s*.jpg")):
+        dest = PREVIEW_DIR / f"preview_{brand_index:03d}_{safe}__{stage_file.name}"
+        shutil.copy2(stage_file, dest)
+    log(f"  [preview] {brand_index:03d} {brand_name} — all stages for {chosen_stem}")
 
 
 def main() -> None:
