@@ -29,6 +29,37 @@ else:
 
 # ── Dictionary ────────────────────────────────────────────────────────────────
 
+def _expand_word_forms(words: set) -> set:
+    """
+    Generate common English inflections (plurals, past tense, -ing, -er/-ers)
+    for a curated word set.  Skips abbreviations (words with no vowels) and
+    words that already carry one of these suffixes to avoid double-suffixing.
+    Applied to SLANG_WORDS so that e.g. "mix" → "mixes", "yolo" → "yoloed".
+    """
+    VOWELS = set("aeiou")
+    SKIP_ENDINGS = ("ing", "ed", "er", "ers", "est", "ness", "tion", "ment",
+                    "ism", "ist", "ists", "ous", "ful", "less")
+    expanded: set = set(words)
+    for word in words:
+        w = word.lower()
+        if not w.isalpha() or len(w) < 4:
+            continue
+        if not any(c in VOWELS for c in w):   # abbreviation — skip
+            continue
+        if any(w.endswith(e) for e in SKIP_ENDINGS):
+            continue
+
+        if w.endswith(("x", "ch", "sh", "ss", "zz", "z")):
+            expanded.update({w + "es", w + "ed", w + "ing", w + "er", w + "ers"})
+        elif w.endswith("e"):
+            expanded.update({w + "s", w + "d", w[:-1] + "ing", w + "r", w + "rs"})
+        elif w.endswith("y") and len(w) > 1 and w[-2] not in VOWELS:
+            expanded.update({w[:-1] + "ies", w[:-1] + "ied", w + "ing", w + "ers"})
+        else:
+            expanded.update({w + "s", w + "ed", w + "ing", w + "er", w + "ers"})
+    return expanded
+
+
 def _load_dictionary() -> frozenset:
     base: set = set()
     try:
@@ -40,7 +71,13 @@ def _load_dictionary() -> frozenset:
             base = english_words_lower_set
         except ImportError:
             pass
-    return frozenset(base | {w.lower() for w in SLANG_WORDS} | PROPER_NOUNS)
+
+    slang_expanded = _expand_word_forms({w.lower() for w in SLANG_WORDS})
+    # Add plural forms for proper nouns (e.g. "italian" → "italians")
+    proper_expanded = PROPER_NOUNS | {
+        w + "s" for w in PROPER_NOUNS if not w.endswith("s")
+    }
+    return frozenset(base | slang_expanded | proper_expanded)
 
 
 def _build_trigram_list(dictionary: frozenset) -> list:
