@@ -18,16 +18,16 @@ _WHITE  = (255, 255, 255)
 _COLOR_MAP = {"green": _GREEN, "yellow": _YELLOW, "gray": _GRAY}
 
 # ── Board geometry ────────────────────────────────────────────────────────────
-_CELL = 62   # px per cell (square)
-_GAP  = 6    # px gap between cells
-_PAD  = 20   # px outer padding
+_CELL = 81   # px per cell (square)
+_GAP  = 8    # px gap between cells
+_PAD  = 26   # px outer padding
 
 # ── Keyboard geometry ─────────────────────────────────────────────────────────
-_KEY_W        = 30   # key width
-_KEY_H        = 36   # key height
-_KEY_GAP      = 4    # gap between keys in a row
-_KEY_ROW_GAP  = 6    # gap between keyboard rows
-_KBD_TOP      = 14   # space between bottom of board and top of keyboard
+_KEY_W        = 39   # key width
+_KEY_H        = 47   # key height
+_KEY_GAP      = 5    # gap between keys in a row
+_KEY_ROW_GAP  = 8    # gap between keyboard rows
+_KBD_TOP      = 18   # space between bottom of board and top of keyboard
 
 _KEY_UNUSED   = (58,  58,  60)    # letter not yet guessed
 _KEY_ABSENT   = (129, 131, 132)   # guessed and not in word
@@ -117,8 +117,8 @@ def _draw_board(guesses: list, total_rows: int) -> io.BytesIO:
 
     img  = Image.new("RGB", (img_w, img_h), _BG)
     draw = ImageDraw.Draw(img)
-    font     = _load_font(36)
-    key_font = _load_font(16)
+    font     = _load_font(47)
+    key_font = _load_font(21)
 
     # ── Guess grid ────────────────────────────────────────────────────────────
     for row in range(total_rows):
