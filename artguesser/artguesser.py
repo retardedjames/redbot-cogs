@@ -189,19 +189,13 @@ class ArtGuesser(commands.Cog):
     # ── Image sending helper ──────────────────────────────────────────────────
 
     async def _send_images(self, target, game: ArtGame, paths: list, info_first: bool = False):
-        """Send up to 4 images as Discord file attachments."""
-        embeds = []
-        files = []
-        for i, path in enumerate(paths):
-            fname = f"art{i}.jpg"
-            files.append(discord.File(path, filename=fname))
-            if i == 0 and info_first:
-                e = self._build_info_embed(game, image_url=f"attachment://{fname}")
-            else:
-                e = discord.Embed(color=discord.Color.blurple())
-                e.set_image(url=f"attachment://{fname}")
-            embeds.append(e)
-        await target.send(embeds=embeds, files=files)
+        """Send images as Discord file attachments (triggers gallery view for multiple images)."""
+        files = [discord.File(path, filename=f"art{i}.jpg") for i, path in enumerate(paths)]
+        if info_first:
+            embed = self._build_info_embed(game)  # no image_url — files appear as gallery below
+            await target.send(embed=embed, files=files)
+        else:
+            await target.send(files=files)
 
     # ── Game start (shared by $arg and Play Again) ────────────────────────────
 
