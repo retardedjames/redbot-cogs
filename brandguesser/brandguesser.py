@@ -79,15 +79,22 @@ def _build_display(name: str) -> tuple:
     return display, letter_count
 
 
-def _game_embed(game: "BrandGame") -> discord.Embed:
-    """Build the standard in-game embed (used for initial send and stage edits)."""
+def _game_embed(game: "BrandGame", next_stage_in: "int | None" = STAGE_INTERVAL) -> discord.Embed:
+    """Build the standard in-game embed.
+
+    next_stage_in: seconds until next stage (counts down each second),
+                   or None when stage 5 is showing (no more stages).
+    """
     swaps_left = len(game.remaining_stems)
+    if next_stage_in is not None:
+        stage_text = f"new stage in **{next_stage_in}s**"
+    else:
+        stage_text = "final stage!"
     embed = discord.Embed(
         title="Guess the Brand!",
         description=(
             f"## {game.display}\n"
-            f"**{game.letter_count} letters** · {TIMEOUT_SECONDS}s to guess · "
-            f"new stage every {STAGE_INTERVAL}s"
+            f"**{game.letter_count} letters** · {stage_text}"
         ),
         color=discord.Color.blurple(),
     )
@@ -207,17 +214,28 @@ class BrandGuesser(commands.Cog):
     # ── Game runner ───────────────────────────────────────────────────────────
 
     async def _game_runner(self, channel: discord.TextChannel, brand_name: str):
-        """Edits the game message with each new stage every 10 s, then times out."""
+        """Counts down to each new stage (editing the message every second),
+        then times out after the grace period."""
         try:
             for stage_num in range(2, NUM_STAGES + 1):
-                await asyncio.sleep(STAGE_INTERVAL)
+                # Countdown: edit embed every second (image stays, only text changes)
+                for secs_left in range(STAGE_INTERVAL - 1, 0, -1):
+                    await asyncio.sleep(1)
+                    game = self.games.get(channel.id)
+                    if game is None:
+                        return
+                    if game.msg is not None:
+                        await game.msg.edit(embed=_game_embed(game, next_stage_in=secs_left))
+                # Final second — swap in the new stage image
+                await asyncio.sleep(1)
                 game = self.games.get(channel.id)
                 if game is None:
                     return
                 path = game.stage_path(stage_num)
+                is_last = (stage_num == NUM_STAGES)
                 if path.exists() and game.msg is not None:
                     await game.msg.edit(
-                        embed=_game_embed(game),
+                        embed=_game_embed(game, next_stage_in=None if is_last else STAGE_INTERVAL),
                         attachments=[discord.File(path, filename="brand.jpg")],
                     )
             await asyncio.sleep(GRACE_SECONDS)
