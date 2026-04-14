@@ -16,15 +16,17 @@ For each processed image images/{brand}/img-NNN.jpg, generates 5 stages:
   images/{brand}/stages/img-NNN_s4.jpg                    (t=30s)
   images/{brand}/stages/img-NNN_s5.jpg   ← final stage    (t=40s–60s)
 
-Five styles, randomly assigned per image:
+Three styles. Assignment per image (5 images per brand):
+  img-001 → shuffle   (guaranteed one of each style)
+  img-002 → pixel
+  img-003 → blur
+  img-004 → random choice from the 3
+  img-005 → random choice from the 3
 
-  pixel   — hard block pixelation (downscale + NEAREST upscale)
-  blur    — smooth Gaussian blur
-  blob    — soft pixelation (downscale + LANCZOS) — watercolor look
   shuffle — image divided into 40px blocks, randomly shuffled; blocks
             progressively snap back to correct positions (stage 5: 85% correct)
-  blackout— image divided into 20px blocks; random blocks blacked out;
-            progressively revealed (stage 5: 80% visible, 20% still black)
+  pixel   — hard block pixelation (downscale + NEAREST upscale)
+  blur    — smooth Gaussian blur
 
 Usage:
     python create_stages.py                  # all brands, styles assigned randomly
@@ -47,7 +49,8 @@ IMAGES_DIR  = Path(os.environ.get("IMAGES_DIR", str(SCRIPT_DIR / "images")))
 DISPLAY_SIZE = (400, 400)   # all stage images standardized to this — 400 divides
                              # evenly by 20 and 40, keeping block grids clean
 IMAGE_EXTS   = {".jpg", ".jpeg", ".png", ".webp"}
-STYLES       = ["pixel", "blur", "blob", "shuffle", "blackout"]
+STYLES       = ["shuffle", "pixel", "blur"]
+FIXED_STYLES = ["shuffle", "pixel", "blur"]   # assigned in order to images 1-3
 NUM_STAGES   = 5
 
 # ── Style parameters ───────────────────────────────────────────────────────────
@@ -237,8 +240,9 @@ def process_brand(brand_name: str, regen: bool = False) -> int:
         return 0
 
     done = 0
-    for img_path in img_files:
-        style = random.choice(STYLES)
+    for i, img_path in enumerate(img_files):
+        # First 3 images get one guaranteed style each; remainder are random
+        style = FIXED_STYLES[i] if i < len(FIXED_STYLES) else random.choice(STYLES)
         generated = generate_stages_for_image(img_path, style, regen=regen)
         marker = f" {img_path.name}[{style[:2]}]" if generated else f" {img_path.name}[skip]"
         print(marker, end="", flush=True)
@@ -340,7 +344,7 @@ def main() -> None:
     print(f"  Brands  : {len(targets)}")
     print(f"  Output  : {IMAGES_DIR}")
     print(f"  Stages  : {NUM_STAGES} per image (t=0s … t=40s, every 10s)")
-    print(f"  Styles  : {', '.join(STYLES)} (random per image)")
+    print(f"  Styles  : img-001=shuffle, img-002=pixel, img-003=blur, img-004/005=random")
     print(f"  Regen   : {'yes' if regen else f'no (skip if {NUM_STAGES} stages exist)'}")
     print("-" * 60)
 
