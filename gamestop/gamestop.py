@@ -27,3 +27,23 @@ class GameStop(commands.Cog):
                 description=f"🛑 Stopped: {games_str}",
                 color=discord.Color.red(),
             ))
+
+    @commands.command(name="clearmemory")
+    @commands.guild_only()
+    async def clearmemory(self, ctx: commands.Context):
+        """Clear the recent-item memory for all games so nothing is excluded from the next round."""
+        cleared = []
+        for cog in self.bot.cogs.values():
+            if hasattr(cog, "clear_recent_memory"):
+                name = await cog.clear_recent_memory(guild=ctx.guild)
+                if name:
+                    cleared.append(name)
+
+        if not cleared:
+            await ctx.send("No games have recent memory to clear.")
+        else:
+            games_str = ", ".join(cleared)
+            await ctx.send(embed=discord.Embed(
+                description=f"🧹 Memory cleared: {games_str}",
+                color=discord.Color.green(),
+            ))

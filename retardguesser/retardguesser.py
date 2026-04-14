@@ -355,6 +355,11 @@ class RetardGuesser(commands.Cog):
 
     # ── Gamestop integration ──────────────────────────────────────────────────
 
+    async def clear_recent_memory(self, guild=None) -> str:
+        """Clear the 24-hour repeat-prevention memory. Returns cog display name."""
+        RetardGuesser._used_recently.clear()
+        return "Retard Guesser"
+
     async def force_stop_game(self, channel_id: int):
         """Called by the $end (gamestop) command. Returns cog name if stopped."""
         game = self.games.pop(channel_id, None)

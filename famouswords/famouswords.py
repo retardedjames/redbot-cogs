@@ -761,6 +761,11 @@ class FamousWords(commands.Cog):
 
     # ── force_stop_game (called by $end / GameStop cog) ───────────────────────
 
+    async def clear_recent_memory(self, guild=None) -> str:
+        """Clear the recent-quotes exclusion window. Returns cog display name."""
+        _recent_indices.clear()
+        return "Famous Words"
+
     async def force_stop_game(self, channel_id: int):
         game = self.games.pop(channel_id, None)
         task = self._tasks.pop(channel_id, None)

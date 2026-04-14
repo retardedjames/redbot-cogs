@@ -659,3 +659,9 @@ class CaptionContest(commands.Cog):
             await ctx.send(f"{n} caption{'s' if n != 1 else ''} submitted so far.")
         else:
             await ctx.send("Voting is in progress.")
+
+    async def clear_recent_memory(self, guild=None) -> str:
+        """Clear the 24-hour scenario repeat-prevention memory for this guild."""
+        if guild is not None:
+            await self.config.guild(guild).used_scenarios.set([])
+        return "Caption Contest"

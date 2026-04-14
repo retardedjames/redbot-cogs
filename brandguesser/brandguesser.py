@@ -454,6 +454,11 @@ class BrandGuesser(commands.Cog):
 
     # ── Gamestop / $end integration ───────────────────────────────────────────
 
+    async def clear_recent_memory(self, guild=None) -> str:
+        """Clear the 24-hour repeat-prevention memory. Returns cog display name."""
+        BrandGuesser._used_recently.clear()
+        return "Brand Guesser"
+
     async def force_stop_game(self, channel_id: int) -> "str | None":
         """Cancel any active game, revealing the answer. Returns cog name if stopped."""
         game = self.games.pop(channel_id, None)

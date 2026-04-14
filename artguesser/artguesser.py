@@ -392,6 +392,11 @@ class ArtGuesser(commands.Cog):
 
     # ── Gamestop / $end integration ───────────────────────────────────────────
 
+    async def clear_recent_memory(self, guild=None) -> str:
+        """Clear the 24-hour repeat-prevention memory. Returns cog display name."""
+        _used_artists.clear()
+        return "Art Guesser"
+
     async def force_stop_game(self, channel_id: int) -> Optional[str]:
         """Cancel any active game in this channel, revealing the answer. Returns 'Art Guesser' if stopped."""
         game = self.games.pop(channel_id, None)
