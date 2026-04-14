@@ -11,7 +11,7 @@ from redbot.core import Config, commands
 from .wordbank import RHYME_WORDS
 
 # ── Dev mode — set DEV_MODE = False for production ───────────────────────────
-DEV_MODE = True
+DEV_MODE = False
 
 if DEV_MODE:
     import subprocess as _sp, pathlib as _pl

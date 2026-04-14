@@ -10,7 +10,7 @@ from redbot.core import commands
 from .words import WORD_DEFINITIONS
 
 # ── Dev mode — set DEV_MODE = False for production ───────────────────────────
-DEV_MODE = True
+DEV_MODE = False
 
 if DEV_MODE:
     import subprocess as _sp, pathlib as _pl

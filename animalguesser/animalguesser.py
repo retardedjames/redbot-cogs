@@ -6,7 +6,7 @@ import discord
 from redbot.core import commands
 
 # ── Dev mode — set DEV_MODE = False for production ───────────────────────────
-DEV_MODE = True
+DEV_MODE = False
 
 if DEV_MODE:
     import subprocess as _sp, pathlib as _pl
