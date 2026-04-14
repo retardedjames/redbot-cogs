@@ -187,6 +187,9 @@ class Trivia(commands.Cog):
                     game.scores[uid] = game.scores.get(uid, 0) + 1
                     game.names[uid] = member.display_name
                     pts = game.scores[uid]
+                    tp = self.bot.get_cog("TrackPoints")
+                    if tp:
+                        await tp.add_points(member, 0.25)
                     compliment = _random_line(COMPLIMENTS_FILE, "Nice one!")
                     result_embed = discord.Embed(
                         description=(
@@ -229,13 +232,24 @@ class Trivia(commands.Cog):
         winner_id, _ = sorted_scores[0]
         winner_name = game.names.get(winner_id, "???")
 
+        # Award 1 bonus point for winning the game; track games_played for scorers
+        tp = self.bot.get_cog("TrackPoints")
+        total_pts = None
+        winner_member = ctx.guild.get_member(winner_id)
+        if tp and winner_member:
+            participants = {m for uid in game.scores if (m := ctx.guild.get_member(uid))}
+            await tp.record_game_result(winner_member, participants)
+            raw = await tp.get_points(winner_member)
+            total_pts = f"{raw:.2f}".rstrip("0").rstrip(".")
+
         rows = "\n".join(
             f"**{rank + 1}.** {game.names.get(uid, '???')} — {pts} pts"
             for rank, (uid, pts) in enumerate(sorted_scores)
         )
+        pts_line = f"\n\n{winner_name} now has **{total_pts}** total points!" if total_pts is not None else ""
         embed = discord.Embed(
             title=f"🎉  {winner_name} WINS! 🎉",
-            description=f"**Final Scores:**\n{rows}",
+            description=f"**Final Scores:**\n{rows}{pts_line}",
             color=discord.Color.gold(),
         )
         await ctx.send(embed=embed)

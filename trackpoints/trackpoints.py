@@ -2,6 +2,11 @@ import discord
 from redbot.core import commands, Config
 
 
+def _fmt_pts(pts: float) -> str:
+    """Format a point total cleanly — whole numbers show no decimal, fractions show up to 2 places."""
+    return f"{pts:.2f}".rstrip("0").rstrip(".")
+
+
 class TrackPoints(commands.Cog):
     """Persistent points leaderboard — win games to earn points!"""
 
@@ -38,9 +43,17 @@ class TrackPoints(commands.Cog):
             except Exception:
                 pass
 
-    async def get_points(self, member: "discord.Member") -> int:
+    async def get_points(self, member: "discord.Member") -> float:
         """Return the current point total for a guild member."""
         return await self.config.member(member).points()
+
+    async def add_points(self, member: "discord.Member", amount: float) -> None:
+        """Add an arbitrary point amount (supports fractions) to a member's total."""
+        try:
+            pts = await self.config.member(member).points()
+            await self.config.member(member).points.set(pts + amount)
+        except Exception:
+            pass
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
@@ -53,7 +66,7 @@ class TrackPoints(commands.Cog):
         embed = discord.Embed(
             title=f"{ctx.author.display_name}'s Stats",
             description=(
-                f"**Points:** {pts:,}\n"
+                f"**Points:** {_fmt_pts(pts)}\n"
                 f"**Games Played:** {gp:,}"
             ),
             color=discord.Color.blurple(),
@@ -81,7 +94,7 @@ class TrackPoints(commands.Cog):
             name = member.display_name if member else f"User #{user_id}"
             pts = data.get("points", 0)
             gp = data.get("games_played", 0)
-            lines.append(f"**{i}.** {name} — **{pts:,}** pts ({gp:,} games)")
+            lines.append(f"**{i}.** {name} — **{_fmt_pts(pts)}** pts ({gp:,} games)")
 
         embed = discord.Embed(
             title="Points Leaderboard",
