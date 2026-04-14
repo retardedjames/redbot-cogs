@@ -1,12 +1,11 @@
 import asyncio
+import pathlib
 import random
 import re
 import time
 import unicodedata
 from typing import Optional
-from urllib.parse import quote
 
-import aiohttp
 import discord
 from redbot.core import commands
 
@@ -18,10 +17,10 @@ except ImportError:
 # Convert dict-format ARTISTS to list of dicts with 'name' key
 ARTISTS_LIST = [{"name": name, **data} for name, data in ARTISTS.items()]
 
-# VPS image server — images live at /var/www/html/artimages/{artist_name}/
-VPS_IMAGES_URL = "http://150.136.40.239:8888/artimages/"
+# Images live at /var/www/html/artimages/{artist_name}/ on the VPS
+IMAGES_BASE_DIR = pathlib.Path("/var/www/html/artimages")
 
-_IMAGE_EXTS = {"jpg", "jpeg", "png", "gif", "webp"}
+_IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 _USED_EXPIRY = 86400  # 24 hours in seconds
 
 # Global 24-hour usage tracker: {artist_name: unix_timestamp}
@@ -40,18 +39,21 @@ def _normalize(text: str) -> str:
 def _get_answer_and_display(name: str) -> tuple:
     """
     Returns (answer, display_name):
-    - Multi-word artist: last word is the answer, shown as underscores.
-    - Single-word artist: last half of chars is the answer, shown as underscores.
+    - Multi-word artist: last word is the answer, shown as escaped underscores.
+    - Single-word artist: last half of chars is the answer, shown as escaped underscores.
+    Underscores are escaped with \\ so Discord renders them literally.
     """
     words = name.split()
     if len(words) > 1:
         answer = words[-1]
         prefix = " ".join(words[:-1])
-        return answer, f"{prefix} {'_' * len(answer)}"
+        blanks = r"\_" * len(answer)
+        return answer, f"{prefix} {blanks}"
     else:
         mid = len(name) // 2
         answer = name[mid:]
-        return answer, f"{name[:mid]}{'_' * len(answer)}"
+        blanks = r"\_" * len(answer)
+        return answer, f"{name[:mid]}{blanks}"
 
 
 def _scramble(text: str) -> str:
@@ -64,26 +66,19 @@ def _scramble(text: str) -> str:
     return " ".join(result)
 
 
-# ── VPS image fetching ────────────────────────────────────────────────────────
+# ── Local image loading ───────────────────────────────────────────────────────
 
-async def _fetch_artist_images(artist_name: str) -> list:
-    """Fetch image URLs for an artist from the VPS nginx autoindex."""
-    folder_url = VPS_IMAGES_URL + quote(artist_name, safe="") + "/"
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(folder_url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
-                if resp.status != 200:
-                    return []
-                html = await resp.text()
-    except Exception:
+def _load_artist_images(artist_name: str) -> list:
+    """Return a shuffled list of image Paths from the artist's local folder."""
+    folder = IMAGES_BASE_DIR / artist_name
+    if not folder.is_dir():
         return []
-
-    # nginx autoindex HTML: href="filename.jpg"
-    matches = re.findall(
-        r'href="([^"?/]+\.(' + "|".join(_IMAGE_EXTS) + r'))"',
-        html, re.IGNORECASE
+    paths = sorted(
+        p for p in folder.iterdir()
+        if p.suffix.lower() in _IMAGE_EXTS and p.is_file()
     )
-    return [folder_url + quote(fname, safe="") for fname, _ in matches]
+    random.shuffle(paths)
+    return paths
 
 
 # ── Play Again button ─────────────────────────────────────────────────────────
@@ -108,29 +103,29 @@ class ArtPlayAgainView(discord.ui.View):
 # ── Game state ────────────────────────────────────────────────────────────────
 
 class ArtGame:
-    def __init__(self, artist: dict, image_urls: list, task: asyncio.Task,
+    def __init__(self, artist: dict, image_paths: list, task: asyncio.Task,
                  answer: str, display_name: str):
         self.artist = artist
-        self.image_urls = image_urls         # all available URLs
+        self.image_paths = image_paths       # list[pathlib.Path]
         self.used_indices: set = set()        # indices already shown
         self.task = task
         self.answer = answer                  # hidden part to guess
-        self.display_name = display_name      # e.g. "Vincent van ____"
+        self.display_name = display_name      # e.g. "Vincent van \_\_\_\_"
         self.hint_count = 0                   # 0=none, 1=bio+movements, 2=scramble
         self.participants: set = set()
 
     def pick_images(self, count: int = 4) -> list:
-        """Pick `count` not-yet-shown image URLs, cycling if all exhausted."""
-        available = [i for i in range(len(self.image_urls)) if i not in self.used_indices]
+        """Pick `count` not-yet-shown image Paths, cycling if all exhausted."""
+        available = [i for i in range(len(self.image_paths)) if i not in self.used_indices]
         if len(available) < count:
             # Cycle: clear used set and pull from all
             self.used_indices.clear()
-            available = list(range(len(self.image_urls)))
+            available = list(range(len(self.image_paths)))
         if not available:
             return []
         chosen = random.sample(available, min(count, len(available)))
         self.used_indices.update(chosen)
-        return [self.image_urls[i] for i in chosen]
+        return [self.image_paths[i] for i in chosen]
 
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
@@ -170,7 +165,7 @@ class ArtGuesser(commands.Cog):
         if artist.get("medium"):
             meta_parts.append(artist["medium"].title())
         if artist.get("years_active"):
-            meta_parts.append(artist["years_active"])
+            meta_parts.append(f"Active {artist['years_active']}")
         if artist.get("main_movement"):
             meta_parts.append(artist["main_movement"])
 
@@ -191,6 +186,23 @@ class ArtGuesser(commands.Cog):
             embed.set_image(url=image_url)
         return embed
 
+    # ── Image sending helper ──────────────────────────────────────────────────
+
+    async def _send_images(self, target, game: ArtGame, paths: list, info_first: bool = False):
+        """Send up to 4 images as Discord file attachments."""
+        embeds = []
+        files = []
+        for i, path in enumerate(paths):
+            fname = f"art{i}.jpg"
+            files.append(discord.File(path, filename=fname))
+            if i == 0 and info_first:
+                e = self._build_info_embed(game, image_url=f"attachment://{fname}")
+            else:
+                e = discord.Embed(color=discord.Color.blurple())
+                e.set_image(url=f"attachment://{fname}")
+            embeds.append(e)
+        await target.send(embeds=embeds, files=files)
+
     # ── Game start (shared by $arg and Play Again) ────────────────────────────
 
     async def _start_game(self, channel: discord.TextChannel, artist_name: Optional[str] = None):
@@ -210,24 +222,16 @@ class ArtGuesser(commands.Cog):
             return
 
         answer, display_name = _get_answer_and_display(artist["name"])
-        image_urls = await _fetch_artist_images(artist["name"])
+        image_paths = _load_artist_images(artist["name"])
 
         task = asyncio.create_task(self._game_timer(channel, artist["name"]))
-        game = ArtGame(artist, image_urls, task, answer, display_name)
+        game = ArtGame(artist, image_paths, task, answer, display_name)
         self.games[channel.id] = game
 
-        if image_urls:
+        if image_paths:
             chosen = game.pick_images(4)
-            # Build embeds: first has the info text + image, rest are pure images
-            embeds = []
-            embeds.append(self._build_info_embed(game, chosen[0] if chosen else None))
-            for url in chosen[1:]:
-                e = discord.Embed(color=discord.Color.blurple())
-                e.set_image(url=url)
-                embeds.append(e)
-            await channel.send(embeds=embeds)
+            await self._send_images(channel, game, chosen, info_first=True)
         else:
-            # No images available yet — show text-only embed
             embed = self._build_info_embed(game)
             embed.set_footer(text="No images available for this artist yet.")
             await channel.send(embed=embed)
@@ -297,19 +301,14 @@ class ArtGuesser(commands.Cog):
 
         # ── n: show 4 new images ──────────────────────────────────────────────
         if lower == "n":
-            if not game.image_urls:
+            if not game.image_paths:
                 await message.channel.send("No images available for this artist.")
                 return
             chosen = game.pick_images(4)
             if not chosen:
                 await message.channel.send("No more new images available!")
                 return
-            embeds = []
-            for url in chosen:
-                e = discord.Embed(color=discord.Color.blue())
-                e.set_image(url=url)
-                embeds.append(e)
-            await message.channel.send(embeds=embeds)
+            await self._send_images(message.channel, game, chosen)
             return
 
         # ── h: hint ───────────────────────────────────────────────────────────
