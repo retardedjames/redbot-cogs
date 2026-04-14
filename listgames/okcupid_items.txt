@@ -1,0 +1,842 @@
+# OKCupid Matching Game Items
+# ~810 items — pare down to 500. One per line.
+
+## FOOD & DRINK
+1. cilantro on everything
+2. pineapple on pizza
+3. black licorice
+4. blue cheese that smells like feet
+5. oysters straight from the shell
+6. eating food past the expiration date and not caring
+7. very rare steak, still mooing
+8. cooking with obscene amounts of butter (Julia Child levels)
+9. eating the same meal every single day
+10. breakfast for dinner
+11. cereal at midnight
+12. extremely bitter coffee with absolutely nothing in it
+13. decaf coffee (why even bother)
+14. energy drinks as a personality trait
+15. kombucha
+16. green smoothies that look like pond water
+17. vegan cheese
+18. ranch dressing on everything, including pizza
+19. hot sauce on everything, including scrambled eggs
+20. very overripe bananas
+21. candy corn
+22. raisins in cookies (the great betrayal)
+23. mushrooms (the texture, mostly)
+24. mayonnaise in large quantities
+25. anchovies
+26. well-done steak, grey all the way through
+27. ketchup on scrambled eggs
+28. gas station sushi
+29. food that is either scalding hot or ice cold, nothing in between
+30. eating at chain restaurants, completely unironically
+31. ordering the exact same thing every time at a restaurant
+32. meal prepping on Sunday for the whole week
+33. eating cereal dry, like an animal
+34. dunking cookies in milk until they fall apart
+35. marmite
+36. durian fruit
+37. natto (fermented soybeans)
+38. fermented foods in general
+39. fast food as comfort food, no shame
+40. gas station hot dogs
+41. putting sugar in grits
+42. putting salt in oatmeal
+43. spicy food that makes you cry and you love it
+44. eating standing over the sink when alone
+45. trying random foods from international grocery stores
+46. cheap beer with no apologies
+47. craft beer with extensive tasting notes
+48. natural wine that tastes a little funky
+49. drinking at brunch as a form of self-care
+50. not drinking alcohol at all
+51. sweet tea from the South
+52. unsweetened iced tea (not the same thing as sweet tea)
+53. bubble tea with the tapioca pearls
+54. putting cream and sugar in tea (British-style)
+55. drinking multiple cups of coffee before 9am
+56. room temperature beverages
+57. ice in everything, even when it's cold outside
+58. sparkling water as a personality type
+59. protein shakes that taste like chalk
+60. expensive juice cleanses
+61. cold pizza for breakfast
+62. leftover Chinese food straight from the container
+63. eating with your hands whenever possible
+64. food trucks as a lifestyle
+65. deconstructed food at restaurants (just serve me the soup)
+66. tipping generously no matter what
+67. splitting the bill to the exact penny
+68. insisting on going to the same restaurant every time
+69. taking photos of every meal before eating
+70. eating in total silence and enjoying it
+71. eating very slowly, savoring every bite
+72. eating extremely fast, it's gone in four minutes
+73. leaving a completely clean plate, not a crumb in sight
+74. leaving food on the plate on principle
+75. the burnt bits at the bottom of the pan
+76. licking the bowl
+
+## SENSORY & PHYSICAL EXPERIENCES
+77. the smell of musty old books
+78. the smell of gasoline (don't judge)
+79. the smell of petrichor (rain hitting dry earth)
+80. the smell of old libraries
+81. the smell of someone else's shampoo when they walk by
+82. the feeling of sand between your toes
+83. wet socks
+84. the sound of rain at night
+85. a thunderstorm while you're inside
+86. very hot showers that are almost too hot
+87. cold showers as a discipline thing
+88. complete silence (some find it peaceful, others unsettling)
+89. white noise machines or fans to sleep
+90. sleeping with a window open even in winter
+91. weighted blankets
+92. the sound of crickets at night
+93. silence so total you can hear your own heartbeat
+94. popping bubble wrap
+95. the crack of a really good back adjustment
+96. cracking your own knuckles
+97. peeling dried glue off your hands
+98. the texture of velvet
+99. corduroy (the sound it makes when your legs rub)
+100. extra fluffy, impossibly soft towels
+101. rough, scratchy towels
+102. sleeping in a very cold room under a heavy blanket
+103. the feeling of grass under bare feet
+104. the smell of chlorine at a swimming pool
+105. the smell of a hardware store
+106. burning firewood smell
+107. scented candles in every room
+108. incense smoke
+109. patchouli oil
+110. the sound of vinyl records crackling
+111. ASMR videos
+112. the feeling of static electricity in the air before a storm
+113. the smell of sunscreen
+114. the smell of the season changing (specifically fall)
+115. the specific smell of a library
+
+## ACTIVITIES & HOBBIES
+116. going for long hikes with no destination in mind
+117. camping with absolutely zero electricity
+118. glamping (camping but make it bougie)
+119. gardening and talking to your plants
+120. staying in on Friday nights by choice
+121. going out every single weekend
+122. binge-watching entire seasons in one day
+123. rewatching the same comfort shows on a loop
+124. playing board games for four-plus hours
+125. escape rooms
+126. karaoke, completely sober
+127. thrift shopping as a competitive sport
+128. doing puzzles (1000 pieces minimum)
+129. crossword puzzles in pen
+130. Wikipedia rabbit holes at 2am
+131. journaling every single day
+132. reading multiple books at the same time
+133. buying physical books even though your shelf is already full
+134. e-readers only, never physical books
+135. going to movies alone
+136. going to restaurants alone
+137. traveling solo
+138. planning every detail of a trip months in advance
+139. winging it completely when traveling (no hotel booked)
+140. taking naps during the day without guilt
+141. waking up before 6am because you enjoy it
+142. staying up past 2am as a lifestyle
+143. meditation (the serious kind, 20 minutes daily)
+144. cold plunges and ice baths
+145. saunas
+146. going to farmers markets every weekend
+147. visiting museums alone and taking way too long
+148. birdwatching
+149. stargazing
+150. fishing
+151. hunting
+152. playing video games for entire days
+153. watching other people play video games (streamers)
+154. doomscrolling before bed
+155. doing nothing and calling it self-care
+156. pottery classes
+157. painting classes with wine
+158. taking cooking classes
+159. learning languages as a hobby
+160. playing an instrument alone in your room
+161. road trips with no particular destination
+162. taking the long way home on purpose
+163. collecting things (records, vintage stuff, etc.)
+164. going to thrift stores and buying strangers' old photographs
+165. attending Renaissance fairs
+166. comic-con and similar conventions
+167. antique shopping
+168. going to garage sales on Saturday mornings
+169. DIY everything instead of hiring someone
+170. never DIYing anything, immediately hiring someone
+171. extreme couponing
+172. skinny dipping
+173. hot tub parties
+174. running marathons
+175. doing obstacle course races (Tough Mudder, Spartan, etc.)
+176. hiking in silence, no talking allowed
+177. playing poker for money
+178. fantasy sports leagues
+179. making extremely detailed to-do lists
+180. never making lists, living in chaos
+181. tracking everything (steps, sleep, calories, water)
+182. not tracking anything and just vibing
+183. impulse buying things online at midnight
+184. researching every purchase for three weeks before buying
+185. returning things you bought
+186. never returning things (too much social anxiety)
+187. checking astrology charts seriously
+188. tarot card reading
+189. true crime podcasts as background noise
+190. self-help books (read every single one)
+191. dismissing self-help entirely ("just go to therapy")
+192. talking openly about being in therapy
+193. keeping a very clean car interior
+194. car that looks like a mobile garbage dump
+
+## MUSIC GENRES & ARTISTS
+195. country music (the twangy, authentic kind)
+196. modern country (pop country with cowboy hats)
+197. heavy metal in general
+198. death metal (guttural vocals as art form)
+199. classical music as everyday listening
+200. opera (dramatic singing or overacting, your call)
+201. jazz (either you get it or you don't)
+202. smooth jazz (elevator or genius, no in between)
+203. EDM and rave music
+204. dubstep (the bass drop era)
+205. K-pop (the entire cultural phenomenon)
+206. reggaeton
+207. bluegrass
+208. gospel music
+209. emo music (the 2003-2008 era specifically)
+210. screamo
+211. lo-fi hip hop for studying
+212. vaporwave
+213. hyperpop (100 gecs, Charli XCX, that whole world)
+214. folk music singer-songwriter stuff
+215. indie music gatekeeping ("you only like their popular stuff?")
+216. musical theater songs in regular conversation
+217. show tunes as a personality
+218. disco
+219. ska (everyone loves it then denies it)
+220. polka
+221. Nickelback (unironic appreciation)
+222. Taylor Swift (Swifties vs. everyone else)
+223. Kanye West (genius vs. spectacle vs. both)
+224. Drake (talented or very corny)
+225. Phish and jam band shows that go five hours
+226. the Grateful Dead as a way of life
+227. Bob Dylan (you have to really commit)
+228. Celine Dion (unironically)
+229. Creed (sincere appreciation)
+230. Dave Matthews Band
+231. Insane Clown Posse
+232. Billie Eilish (the whisper-singing)
+233. the Weeknd (dark, moody production)
+234. Phoebe Bridgers (will make you cry)
+235. Mitski (emotional devastation as a hobby)
+236. ambient music (Brian Eno stuff)
+237. new age music (healing frequencies, singing bowls)
+238. Gregorian chants
+239. listening to music at full, probably too loud volume
+240. listening to music at barely audible levels
+241. having extremely niche music taste and needing people to know
+242. only listening to one artist for months straight
+243. needing music playing at all times OR needing complete silence
+
+## TV & MOVIES
+244. reality TV (unironically invested)
+245. the Bachelor franchise
+246. soap operas
+247. anime (art form vs. cringe)
+248. horror movies
+249. extremely slow, arthouse films
+250. superhero movies (all of them, every one)
+251. long fantasy epics
+252. mockumentaries
+253. true crime documentaries
+254. Game of Thrones (complicated feelings about all of it)
+255. The Office (British vs. American debate)
+256. Friends (overrated or perfect)
+257. Hallmark Christmas movies (unironically)
+258. Lifetime movies (the melodrama)
+259. WWE professional wrestling
+260. infomercials at 3am
+261. watching golf on television
+262. watching movies with subtitles (even English ones)
+263. talking during movies at home
+264. complete silence during movies at home
+265. watching a movie in multiple sittings
+266. having the same movie on as background noise
+267. rewatching movies you've seen 20 times
+268. never rewatching anything, too much new content
+279. falling asleep during movies and counting it as watched
+270. pausing movies to discuss them extensively
+271. watching things at 1.5x speed
+272. buying physical DVDs and Blu-rays still
+273. pirating things unashamedly
+
+## SOCIAL BEHAVIORS & QUIRKS
+274. talking to strangers everywhere you go
+275. never making eye contact with strangers
+276. smiling at strangers on the street
+277. small talk with absolutely everyone
+278. despising small talk and going deep immediately
+279. leaving parties early without saying goodbye (the Irish exit)
+280. being the last one to leave every party
+281. hosting gatherings constantly
+282. never hosting, always attending
+283. being chronically early everywhere (15 minutes minimum)
+284. being 10 minutes late to everything, always
+285. forgetting you agreed to plans until 20 minutes before
+286. canceling plans last minute via text
+287. never canceling, always going even when you don't want to
+288. ghosting (doing it and having it done to you)
+289. sending voice messages instead of texts
+290. calling people without texting first
+291. refusing to call anyone, texts only
+292. very long, detailed text messages (essays)
+293. one-word text replies
+294. using no punctuation in texts whatsoever
+295. using full punctuation and grammar in all texts
+296. ending every casual text with a period (reads as passive-aggressive to some)
+297. LOL at the end of every single sentence
+298. replying instantly to everything, always available
+299. taking days to respond and seeing nothing wrong with it
+300. leaving people on read and considering it neutral
+301. read receipts on (transparency or anxiety-inducing)
+302. emoji-heavy texting (every sentence has three emojis)
+303. zero emoji, pure text, always
+304. double-texting when you don't hear back
+305. oversharing on social media (every life update)
+306. posting absolutely nothing on social media
+307. LinkedIn inspirational posts (the hustle culture variety)
+308. Twitter/X arguments with strangers
+309. making your bed every single morning
+310. never making your bed ("I'm just going to get back in it")
+311. organizing your fridge with labels
+312. never looking at what's in the back of the fridge
+313. keeping a very clean, minimal home
+314. organized chaos home (looks messy but you know where everything is)
+315. having plants everywhere and talking to them
+316. having zero plants (can't keep them alive)
+317. keeping the TV on even when not watching anything
+318. not owning a TV at all
+319. phones off during meals, strictly enforced
+320. phone constantly at the table
+321. checking your phone first thing in the morning
+322. starting the day without touching your phone
+323. taking extremely long showers
+324. extremely quick showers (three minutes, done)
+325. bathroom time as sacred alone time, extended edition
+
+## LIFESTYLE CHOICES
+326. being a morning person and needing everyone to know
+327. being a night owl as a permanent state
+328. working from home as a preference forever
+329. needing to be in an office with people around
+330. strict daily routines (same wake time, same breakfast, same everything)
+331. zero routine, different every day, chaos preferred
+332. living in a city (the noise, the energy)
+333. living in the suburbs (by choice, not giving up)
+334. living very rurally (intentionally isolated)
+335. living alone and never wanting roommates again
+336. having roommates as an adult (financial or social)
+337. tiny homes (minimalism or poverty chic)
+338. van life (freedom or glorified homelessness)
+339. owning lots of stuff and being fine with it
+340. minimalism (own fewer than 100 things)
+341. thrifting everything, refusing to buy new
+342. fast fashion with zero guilt
+343. only buying designer, nothing else
+344. wearing the same outfit repeatedly with no shame
+345. never wearing the same outfit twice
+346. wearing pajamas most of the day when home
+347. getting fully dressed even when staying home all day
+348. dressing up to go to the grocery store
+349. grocery store in pajamas and slippers
+350. smoking cigarettes (personal choice, everyone has opinions)
+351. vaping
+352. cannabis use as a regular thing
+353. complete sobriety (by choice, not recovery)
+354. drinking heavily on weekends, sober all week
+355. staying in a job you hate for the benefits
+356. quitting things that aren't working immediately
+357. job-hopping every one to two years
+358. staying at the same company for 15 years
+359. work-life balance as non-negotiable
+360. working constantly because you love it
+361. being completely unreachable after work hours
+362. answering emails at 11pm (just can't stop)
+363. taking mental health days with no explanation needed
+364. never taking sick days (martyrdom disguised as work ethic)
+365. gym every day, no exceptions
+366. never stepping foot in a gym
+367. Peloton as a lifestyle choice
+368. running outside in all weather conditions
+369. hot yoga (90 minutes in 105-degree heat)
+370. Pilates as your entire personality
+371. tattoos visible in all situations
+372. no tattoos, never, absolutely not
+373. multiple facial piercings
+374. face tattoos
+375. owning a gun
+
+## ROMANTIC & INTIMATE THINGS
+376. holding hands while walking everywhere
+377. unexpected forehead kisses
+378. having your hair played with while falling asleep
+379. having your back scratched slowly
+380. nose kisses
+381. being picked up and carried
+382. getting your ears nibbled
+383. long, slow kisses that don't go anywhere
+384. making out like teenagers, losing track of time completely
+385. cuddling all night even though it gets too hot
+386. being the little spoon specifically
+387. being the big spoon specifically
+388. falling asleep on someone's chest
+389. having someone fall asleep on your chest
+390. waking up to soft kisses on your face
+391. good morning texts (the first thing every morning)
+392. random "I was thinking about you" texts mid-day
+393. being cooked for (a full meal, just for you)
+394. cooking together (the mess, the chaos, the fun)
+395. hand-written love notes left in random places
+396. being remembered exactly what you said you wanted weeks ago
+397. slow dancing in the kitchen with no music
+398. forehead touches (just resting foreheads together quietly)
+399. having your face held while being kissed
+400. playful biting (shoulder, neck, nothing alarming)
+401. neck kisses specifically
+402. kissing someone's shoulder blade
+403. tracing patterns on someone's arm while watching TV
+404. having someone play with your fingers absentmindedly
+405. eye contact held just a beat too long
+406. being stared at across a crowded room
+407. things whispered directly into your ear
+408. someone's hand on the small of your back
+409. a hand on your knee when driving
+410. sleeping in someone's oversized sweatshirt
+411. stealing someone's jacket and keeping it indefinitely
+412. someone brushing hair out of your face
+413. being called by a nickname only they use for you
+414. inside jokes that no one else would understand
+415. doing absolutely nothing together but feeling completely full
+416. comfortable silences (no need to fill every moment)
+417. staying up all night just talking
+418. falling asleep on the phone together
+419. long goodbye kisses that keep restarting
+420. someone noticing when you get a haircut
+421. someone remembering your coffee order perfectly
+422. being greeted with genuine excitement when you come home
+423. the first moment of eye contact after time apart
+424. skinny dipping together
+425. taking baths together
+426. the moment right before a first kiss when you both know it's coming
+427. weeks of tension before anything happens (slow burn)
+428. being pinned against a wall (in the fun way)
+429. someone running their fingers through your hair
+430. having your temples rubbed when you have a headache
+431. foot massages given without being asked
+432. full back massages that go on longer than expected
+433. someone drawing letters on your back with their finger while you try to guess
+434. surprise dates ("get dressed, we're going somewhere, that's all I'm saying")
+435. being looked at like you're the most interesting person in the room
+436. public displays of affection (full commitment, no shame)
+437. absolutely no PDA (private people, private love)
+438. sharing a bed and waking up tangled together
+439. someone fixing your collar or adjusting your necklace without being asked
+440. fingers interlocked, not just held (woven together)
+441. being called "baby" or "honey" in a natural, unforced way
+442. being told you smell good with no agenda attached
+443. someone pressing their cold feet against you as an act of aggression
+444. playful arguing that ends in laughter
+445. being teased lovingly by someone who knows all your soft spots
+446. laughing so hard together you can't breathe
+447. the look partners exchange across a room that says everything
+448. someone defending you without being asked to
+449. being pulled back into bed when you try to get up
+450. the weight of someone's arm around you while sleeping
+451. cheek kisses as a hello
+452. kissing someone's knuckles
+453. being dipped during a dance
+454. the moment someone says your name while making eye contact
+455. being kissed in the rain
+456. having someone's full, complete, undivided attention
+457. someone reading to you out loud from a book
+458. sharing earbuds and listening to a song together
+459. being remembered in a specific detail no one else noticed
+460. someone seeing through your social face to the real one
+461. the first time someone reaches for your hand
+462. being held from behind while standing somewhere
+463. someone resting their chin on your head
+464. the feeling of someone's heartbeat under your ear
+465. falling asleep while someone strokes your hair
+466. waking up before your partner and just watching them sleep
+467. someone knowing your order before you have to say it
+468. being called beautiful when you didn't try at all
+469. surprise physical contact (hand squeeze, random hug from behind)
+470. being the one who texts first every time (the vulnerability of it)
+471. being with someone who laughs at the same things
+472. when someone's laugh makes you laugh before the joke even lands
+473. having someone trace your features with their finger
+474. very slow, intentional touch
+475. quick, casual, habitual affection (kiss on the cheek passing by)
+476. being chosen (over other things, other people)
+477. the excitement of seeing someone's name appear on your phone
+478. when someone's voice drops lower when talking only to you
+479. someone learning your preferences without being asked
+480. catching someone smiling at their phone because of you
+481. being someone's first call with news (good or bad)
+482. sleeping in and staying in bed all morning together
+483. reading in bed together in comfortable silence
+484. being pulled close in sleep without them waking up
+485. long car rides where you talk about everything
+486. being told something they've never told anyone else
+487. someone who makes you feel completely calm
+488. someone who gives you that specific nervous energy
+489. being kissed on the top of the head
+490. someone holding the back of your neck softly
+491. being carried to bed when you fell asleep on the couch
+492. being covered with a blanket when you fell asleep somewhere
+493. someone turning off your light when you fell asleep reading
+494. being held while crying, no words
+495. the intimacy of brushing your teeth at the same time
+496. sharing a mirror getting ready in the morning
+497. always kissing before sleeping, without fail
+498. the safety of being completely known by one person
+499. when they remember the name of a person in a story you told once
+500. someone who thinks your flaws are endearing
+
+## PERSONALITY TRAITS (POLARIZING)
+501. being very loud and taking up a lot of space
+502. being extremely quiet and hard to read
+503. interrupting people with excitement (not rudeness, just passion)
+504. finishing other people's sentences
+505. giving unsolicited advice constantly
+506. never giving advice unless explicitly asked
+507. being brutally honest when asked for opinions
+508. saying "it's great" about everything to avoid conflict
+509. chronic optimism (everything is going to be fine!)
+510. realistic pessimism (I just plan for the worst)
+511. sarcasm as a primary language
+512. dry humor so dry people aren't sure if you're joking
+513. dad jokes, relentlessly
+514. dark humor about heavy things
+515. self-deprecating humor
+516. people who narrate what they're doing out loud
+517. people who talk to themselves and don't hide it
+518. naming your car
+519. naming all your plants and talking to them
+520. being best friends with all your exes
+521. having zero contact with any ex
+522. going through life phases intensely (everything becomes a fixation for a month)
+523. being consistently the same, no phases
+524. needing to research absolutely everything before deciding anything
+525. making decisions purely on instinct, immediately
+526. being sentimental about everything (keeping every ticket stub, receipt, note)
+527. not attaching to objects at all, throwing things out freely
+528. being very publicly emotional (crying at commercials, dog videos)
+529. never crying in public, ever
+530. oversharing with strangers (whole life story on the plane)
+531. telling strangers nothing, classic "I'm fine, thanks"
+532. being the person who remembers everyone's birthdays
+533. never remembering birthdays, not even your own
+534. sending physical birthday cards in the mail
+535. being extremely competitive about board games
+536. playing games just for fun, winning doesn't matter at all
+537. being very structured and needing a plan
+538. being extremely flexible and going with the flow
+539. always bringing snacks to share
+540. never sharing food, not even one bite
+541. people who hum or sing to themselves quietly
+542. people who cry at dog adoption videos
+543. people who don't understand why anyone cries at dog videos
+544. defending your hometown no matter how bad it is
+545. talking badly about your hometown to anyone who'll listen
+546. people who wave thank you when you let them merge
+547. dressing up their pets in outfits
+548. people who dye their hair wild colors
+549. people who have had the same haircut since high school
+550. people who change their hair every few months
+
+## OUTDOORS & NATURE
+551. swimming in lakes and rivers (whatever is in there is probably fine)
+552. only swimming in pools (chlorine or nothing)
+553. going to the beach and sitting in the sun all day
+554. going to the beach and sitting in the shade with a book
+555. mountains over beaches, always
+556. beaches over mountains, always
+557. desert landscapes (sparse, harsh, beautiful)
+558. forests so dense you can't see the sky
+559. being caught in rain without an umbrella and deciding to commit to it
+560. extreme weather (tornadoes, blizzards) as exciting
+561. snow and winter as something to look forward to
+562. hating winter profoundly and personally
+563. walking barefoot in grass
+564. walking barefoot on hot sand and kind of liking the burn
+565. thunderstorms that shake the house
+566. quiet snowfall where the whole world goes silent
+567. the ocean at night (peaceful or terrifying)
+568. swimming in deep water where you can't see the bottom
+569. finding insects interesting and picking them up
+570. running from all insects regardless of size
+571. watching sunsets from a specific spot regularly
+572. getting up specifically for sunrises
+573. night hiking (headlamps, total darkness, questionable choices)
+574. the smell of campfire smoke in your hair the next day
+575. sleeping outside in a hammock
+576. being cold at night and loving it under a heavy blanket
+
+## SPORTS & FITNESS
+577. running just for fun with no race involved
+578. lifting weights in silence for two hours
+579. CrossFit (the community is half the point)
+580. hot yoga (Bikram, the really sweaty kind)
+581. Pilates
+582. swimming laps as a meditative practice
+583. cycling on roads with a very specific outfit
+584. mountain biking (the crashing is part of it)
+585. rock climbing (indoor or the real thing)
+586. martial arts for self-improvement
+587. boxing as therapy
+588. golf (the pace, the quiet, the outfits)
+589. tennis
+590. pickleball (everyone eventually converts)
+591. bowling unironically
+592. archery
+593. American football (watching, not playing)
+594. soccer (the rest of the world is right)
+595. baseball (the pace is meditative, not boring)
+596. hockey
+597. professional wrestling (WWE as entertainment)
+598. MMA and UFC
+599. competitive eating
+600. obstacle course races (Tough Mudder, Spartan)
+601. running a marathon for a charity
+602. tracking every athletic metric obsessively
+
+## TECHNOLOGY & MEDIA HABITS
+603. checking email first thing in the morning
+604. zero social media presence, completely offline
+605. being extremely chronically online
+606. still buying physical CDs and records
+607. streaming everything, owning nothing
+608. rotating streaming services to save money
+609. phone-free weeks with no anxiety
+610. needing your phone near you at all times
+611. smart home devices everywhere (Alexa, etc.)
+612. refusing all smart devices on principle
+613. print newspapers specifically
+614. never reading news intentionally
+615. reading everything and doom-spiraling about the world
+616. reading on your phone in bed until 2am
+617. paper books only, no exceptions
+618. audiobooks while doing other things
+619. podcasts for every activity (cooking, gym, commute)
+620. complete silence during all activities
+621. being very online about niche topics (extremely specific forums)
+622. using Reddit for years and never posting once
+623. muting all group chats immediately
+624. setting up elaborate phone notification systems
+625. no notifications from anything
+626. taking your phone to the bathroom every single time
+627. leaving your phone in another room for hours
+628. reading the comments section on purpose
+629. strict no-comments-section policy
+630. watching things at 1.5x speed and being smug about it
+
+## QUIRKY SPECIFIC THINGS
+631. very long baths with books and candles
+632. solving problems in the shower (best ideas come there)
+633. letting voicemails pile up for weeks before listening
+634. replying to voicemails with a text
+635. the specific satisfaction of finishing a pen
+636. never finishing a pen before losing it
+637. folding fitted sheets correctly (either you can or you can't)
+638. bundling fitted sheets into a ball and hiding them in the closet
+639. alphabetizing your bookshelf
+640. organizing bookshelves by color
+641. total bookshelf organization chaos
+642. rearranging furniture at random intervals
+643. never moving any furniture, ever
+644. keeping movie ticket stubs, receipts, and small papers
+645. throwing everything away immediately
+646. people who laugh at their own jokes before finishing them
+647. people who tell very long stories with no discernible point
+648. people who get to the point immediately, no preamble
+649. when someone hiccups and cannot stop
+650. when someone has a very specific, distinctive laugh
+651. when people mispronounce a word consistently and confidently
+652. correcting people's pronunciation (villain behavior or helpful?)
+653. grammar corrections in casual conversation
+654. using very obscure words casually in conversation
+655. using made-up words that just feel right
+656. the urge to fix a crooked painting on someone else's wall
+657. having to touch all the textures at a store
+658. counting things without realizing you're doing it
+659. that feeling when you use a really good pen
+660. keeping notebooks but rarely writing in them
+661. filling every page of a notebook before starting a new one
+662. loving the ritual of making coffee more than drinking it
+663. wearing socks to bed
+664. being unable to sleep with socks on
+665. sleeping with one foot outside the blanket
+666. full mummy-wrap blanket cocoon sleeping
+667. sleeping absolutely flat on your back
+668. sleeping in an absurd diagonal position taking up the whole bed
+669. napping for exactly 20 minutes and waking up refreshed
+670. napping for two hours and waking up confused about what year it is
+671. remembering dreams in detail every morning
+672. never dreaming or never remembering
+673. recurring dreams (spending real time figuring out what they mean)
+674. needing total darkness to sleep
+675. falling asleep with the light on, no problem
+676. needing all doors and closets completely closed
+677. leaving doors and closets open at night (the bravery)
+678. the satisfaction of parallel parking on the first try
+679. driving in complete silence with no music
+680. driving with music at full volume, windows down
+681. people who wave thank you when you let them merge
+682. arguing with GPS directions out loud
+683. running the gas tank until it's truly, dangerously empty
+684. filling the tank at half every time (anxiety management)
+685. finding money in an old jacket pocket
+686. the specific satisfaction of using the last of something
+687. wearing your favorite clothes until they completely fall apart
+688. getting rid of something the moment it shows any wear
+
+## BELIEFS & WORLDVIEW
+689. conspiracy theories as entertainment (Flat Earth, etc.)
+690. astrology as a real system for understanding people
+691. astrology people who judge you for not knowing your rising sign
+692. horoscopes as fun, not serious
+693. crystals for healing energy
+694. essential oils as medicine
+695. reiki and energy healing
+696. tarot as genuine guidance
+697. psychics and mediums
+698. religious faith as central to your entire life
+699. complete atheism with opinions about it
+700. agnosticism (perfectly comfortable not knowing)
+701. spiritual but not religious (a whole category unto itself)
+702. believing in ghosts because you've seen things
+703. not believing in anything supernatural, full stop
+704. the multiverse as something you think about daily
+705. the feeling that this is probably all there is, and being fine with that
+706. people who make bucket lists and actually complete them
+707. getting matching tattoos with someone
+708. the idea of matching anything with someone (terrifying)
+709. sending flowers for no reason
+710. finding flowers excessive (just say it with words)
+711. grand romantic gestures (airport scenes, boomboxes, etc.)
+712. very private, quiet love that no one else sees
+
+## MISCELLANEOUS (THE REST OF THE GREAT ONES)
+713. the specific satisfaction of a really clean house
+714. the specific satisfaction of a perfectly messy desk
+715. eating breakfast food at every meal if given the choice
+716. people who put their shopping cart back in the corral
+717. people who abandon their shopping cart in the middle of the lot
+718. people who are aggressively cheerful in the morning
+719. people who need silence until noon minimum
+720. when someone remembers how you take your coffee
+721. very meaningful gifts that required real thought
+722. practical gifts (gift cards, money, useful things)
+723. no gifts at all (experience-based)
+724. over-the-top gift wrapping
+725. a gift in a crumpled paper bag (the chaos)
+726. always being the designated driver (chosen, not coerced)
+727. always being the loudest one in the group
+728. always being the quietest one in the group
+729. people who carry snacks for other people
+730. people who make friends with every dog they encounter
+731. people who are afraid of dogs (valid but alienating)
+732. people who ask "are you okay?" when you're clearly not okay
+733. people who sense something's wrong without you saying anything
+734. people who give very long hugs
+735. people who give very brief, pat-on-the-back hugs
+736. people who are perpetually cold and always stealing warmth from others
+737. people who run hot and are basically a human radiator
+738. people who fall asleep instantly anywhere
+739. people who lie awake for hours thinking about things they said in 2011
+740. very long voicemails (the whole update)
+741. people who will stand in the rain to finish a conversation
+742. people who hate being late so much it's almost a disorder
+743. people who cry at the national anthem
+744. people who are moved by absolutely nothing
+745. people who are moved by absolutely everything
+746. the kind of person who names their houseplants
+747. being absolutely addicted to chapstick
+748. collecting one specific thing obsessively (mugs, magnets, shot glasses)
+749. never collecting anything ("clutter gives me anxiety")
+750. keeping a journal of things you're grateful for
+751. finding gratitude journaling insufferable
+752. people who bring their dog everywhere possible
+753. people who leave their dog home on every occasion
+754. people who co-sleep with their pets
+755. people who won't let animals on the furniture
+756. people who feed their dogs human food
+757. people who are very strict about what their dogs eat
+758. being very loud at live sports events
+759. sitting silently at live sports events
+760. knowing every word to every song at a concert
+761. standing the entire concert
+762. sitting through the entire concert
+763. leaving concerts before the encore
+764. staying for the entire encore plus the lights-up cleanup
+765. people who clap after airplane landings
+766. people who are horrified by airplane clappers
+767. people who make small talk with their Uber drivers
+768. people who put headphones in the moment they get in the Uber
+769. the window seat, always, non-negotiable
+770. the aisle seat (easy exit, authority)
+771. people who recline their airplane seat fully
+772. people who refuse to recline on principle
+773. people who get up multiple times on a flight
+774. sleeping through entire flights
+775. being terrified of flying but doing it anyway
+776. genuinely loving flying (the takeoff specifically)
+777. wearing noise-canceling headphones in public places
+778. never wearing headphones anywhere (absorbing ambient sound)
+779. re-reading the same books every few years
+780. never re-reading anything (too many unread books)
+781. subscribing to multiple magazine subscriptions still
+782. never reading magazines ("outdated by the time it ships")
+783. having opinions about fountain pen ink colors
+784. extremely strong feelings about the Oxford comma
+785. strong feelings about spaces after periods (one or two)
+786. putting ketchup in the refrigerator
+787. leaving ketchup in the cabinet
+788. the toilet paper over vs. under debate (strong feelings)
+789. squeezing the toothpaste from the middle
+790. squeezing from the bottom and rolling it up neatly
+791. leaving cabinet doors open
+792. needing all cabinet doors completely closed at all times
+793. the kind of person who can't start working until everything is clean
+794. the kind of person who works best surrounded by organized chaos
+795. being able to fall asleep anywhere, anytime
+796. needing very specific conditions to sleep
+797. people who apologize too much
+798. people who never apologize
+799. people who remember every song lyric perfectly
+800. people who make up their own lyrics confidently and incorrectly
+801. being the kind of person who checks in on people out of nowhere
+802. being the kind of person who needs to be checked on
+803. people who always find a way to bring it back to themselves
+804. people who deflect every compliment
+805. people who receive compliments gracefully
+806. being the friend who shows up with food when something's wrong
+807. being the friend who shows up with a plan when something's wrong
+808. the smell of someone's specific soap or deodorant
+809. the sound of someone you love breathing when they're asleep
+810. the particular silence of being with someone and not needing to say anything
