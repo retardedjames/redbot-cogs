@@ -256,9 +256,8 @@ class ArtGuesser(commands.Cog):
     # ── $arg ──────────────────────────────────────────────────────────────────
 
     @commands.command(name="arg")
-    async def arg(self, ctx: commands.Context, subcommand: Optional[str] = None):
-        """Start an art guessing game. Running during a game reveals the answer and starts a new one.
-        Use `$arg test` to start a game with Zhang Daqian for testing."""
+    async def arg(self, ctx: commands.Context):
+        """Start an art guessing game. Running during a game reveals the answer and starts a new one."""
         # If a game is already running: reveal answer, then start a new game
         if ctx.channel.id in self.games:
             old = self.games.pop(ctx.channel.id)
@@ -270,10 +269,11 @@ class ArtGuesser(commands.Cog):
             )
             await ctx.send(embed=embed)
 
-        if subcommand and subcommand.lower() == "test":
-            await self._start_game(ctx.channel, artist_name="Zhang Daqian")
-        else:
-            await self._start_game(ctx.channel)
+        # To re-enable test mode: uncomment below and add `subcommand: Optional[str] = None` to arg()
+        # if subcommand and subcommand.lower() == "test":
+        #     await self._start_game(ctx.channel, artist_name="Zhang Daqian")
+        # else:
+        await self._start_game(ctx.channel)
 
     # ── Message listener ──────────────────────────────────────────────────────
 
