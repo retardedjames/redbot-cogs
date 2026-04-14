@@ -1,177 +1,136 @@
 import asyncio
-import pathlib
 import random
 import re
 import time
 import unicodedata
 from typing import Optional
+from urllib.parse import quote
 
+import aiohttp
 import discord
 from redbot.core import commands
-
-# ── Dev mode ──────────────────────────────────────────────────────────────────
-DEV_MODE = False
-
-if DEV_MODE:
-    import subprocess as _sp, pathlib as _pl
-    try:
-        _sha = _sp.check_output(
-            ["git", "-C", str(_pl.Path(__file__).parent), "rev-parse", "--short", "HEAD"],
-            stderr=_sp.DEVNULL, text=True,
-        ).strip()
-    except Exception:
-        _sha = "dev"
-    DEV_LABEL = f"  [{_sha}]"
-else:
-    DEV_LABEL = ""
-# ─────────────────────────────────────────────────────────────────────────────
 
 try:
     from .artists import ARTISTS
 except ImportError:
-    ARTISTS = []
+    ARTISTS = {}
 
-IMAGES_DIR = pathlib.Path(__file__).parent / "images"
-_IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
-_VALID_CATEGORIES = {"modern", "1800s", "old", "ancient"}
+# Convert dict-format ARTISTS to list of dicts with 'name' key
+ARTISTS_LIST = [{"name": name, **data} for name, data in ARTISTS.items()]
+
+# VPS image server — images live at /var/www/html/artimages/{artist_name}/
+VPS_IMAGES_URL = "http://150.136.40.239:8888/artimages/"
+
+_IMAGE_EXTS = {"jpg", "jpeg", "png", "gif", "webp"}
+_USED_EXPIRY = 86400  # 24 hours in seconds
 
 # Global 24-hour usage tracker: {artist_name: unix_timestamp}
 _used_artists: dict = {}
-_USED_EXPIRY = 86400  # 24 hours in seconds
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# ── Name helpers ──────────────────────────────────────────────────────────────
 
 def _normalize(text: str) -> str:
     """Strip accents, lowercase, remove punctuation."""
     nfkd = unicodedata.normalize("NFKD", text)
     no_accents = "".join(c for c in nfkd if not unicodedata.combining(c))
-    lower = no_accents.lower()
-    return re.sub(r"[^\w\s]", "", lower).strip()
+    return re.sub(r"[^\w\s]", "", no_accents.lower()).strip()
 
 
-def _scramble(name: str) -> str:
-    """Scramble each word in the name independently."""
+def _get_answer_and_display(name: str) -> tuple:
+    """
+    Returns (answer, display_name):
+    - Multi-word artist: last word is the answer, shown as underscores.
+    - Single-word artist: last half of chars is the answer, shown as underscores.
+    """
     words = name.split()
-    scrambled = []
-    for word in words:
+    if len(words) > 1:
+        answer = words[-1]
+        prefix = " ".join(words[:-1])
+        return answer, f"{prefix} {'_' * len(answer)}"
+    else:
+        mid = len(name) // 2
+        answer = name[mid:]
+        return answer, f"{name[:mid]}{'_' * len(answer)}"
+
+
+def _scramble(text: str) -> str:
+    """Scramble each word independently, lowercase."""
+    result = []
+    for word in text.lower().split():
         letters = list(word)
         random.shuffle(letters)
-        scrambled.append("".join(letters))
-    return " ".join(scrambled)
+        result.append("".join(letters))
+    return " ".join(result)
 
 
-def _blank_name(artist: dict, bio: str) -> str:
-    """Replace artist name/surname occurrences in bio with ___."""
-    result = bio
-    name = artist["name"]
-    # Blank full name first
-    result = re.sub(re.escape(name), "___", result, flags=re.IGNORECASE)
-    # Blank each name part that's meaningfully long (skip particles like "van", "de")
-    for part in name.split():
-        if len(part) > 2:
-            result = re.sub(r"\b" + re.escape(part) + r"\b", "___", result, flags=re.IGNORECASE)
-    return result
+# ── VPS image fetching ────────────────────────────────────────────────────────
 
+async def _fetch_artist_images(artist_name: str) -> list:
+    """Fetch image URLs for an artist from the VPS nginx autoindex."""
+    folder_url = VPS_IMAGES_URL + quote(artist_name, safe="") + "/"
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(folder_url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
+                if resp.status != 200:
+                    return []
+                html = await resp.text()
+    except Exception:
+        return []
 
-def _build_hint_order(artist: dict) -> list:
-    """
-    Build hint sequence for this game.
-    Hints 1-7: metadata fields, shuffled, skipping missing/empty.
-    Hint 8: bio with name blanked (if bio exists).
-    Hint 9: scrambled name (always last).
-    """
-    meta = []
-    if artist.get("nationality"):
-        meta.append("nationality")
-    if artist.get("year_born") is not None:
-        meta.append("year_born")
-    if artist.get("year_died") is not None:
-        meta.append("year_died")
-    if artist.get("medium"):
-        meta.append("medium")
-    if artist.get("years_active"):
-        meta.append("years_active")
-    if artist.get("movement"):
-        meta.append("movement")
-    if artist.get("sub_movements"):
-        meta.append("sub_movements")
-
-    random.shuffle(meta)
-
-    order = meta[:]
-    if artist.get("bio"):
-        order.append("bio")
-    order.append("scramble")
-    return order
-
-
-def _render_hint(artist: dict, key: str, hint_num: int, total: int) -> discord.Embed:
-    """Build a hint embed for the given hint key."""
-    label_map = {
-        "nationality":   ("Nationality",    artist.get("nationality", "Unknown")),
-        "year_born":     ("Year Born",      str(artist.get("year_born", "Unknown"))),
-        "year_died":     ("Year Died",      str(artist.get("year_died", "Unknown"))),
-        "medium":        ("Medium",         artist.get("medium", "Unknown")),
-        "years_active":  ("Years Active",   artist.get("years_active", "Unknown")),
-        "movement":      ("Movement",       artist.get("movement", "Unknown")),
-        "sub_movements": ("Sub-movements",  ", ".join(artist.get("sub_movements", []))),
-        "bio":           ("About the Artist", _blank_name(artist, artist.get("bio", ""))),
-        "scramble":      ("Scrambled Name", f"**{_scramble(artist['name'])}**  *(each word scrambled)*"),
-    }
-
-    title_label, value = label_map.get(key, ("Hint", "?"))
-
-    if key == "scramble":
-        color = discord.Color.red()
-    elif key == "bio":
-        color = discord.Color.orange()
-    else:
-        color = discord.Color.gold()
-
-    embed = discord.Embed(
-        title=f"Hint {hint_num}/{total} — {title_label}",
-        description=value,
-        color=color,
+    # nginx autoindex HTML: href="filename.jpg"
+    matches = re.findall(
+        r'href="([^"?/]+\.(' + "|".join(_IMAGE_EXTS) + r'))"',
+        html, re.IGNORECASE
     )
-    if key == "scramble":
-        embed.set_footer(text="Final hint — good luck!")
-    return embed
+    return [folder_url + quote(fname, safe="") for fname, _ in matches]
+
+
+# ── Play Again button ─────────────────────────────────────────────────────────
+
+class ArtPlayAgainView(discord.ui.View):
+    def __init__(self, cog: "ArtGuesser", channel_id: int):
+        super().__init__(timeout=300)
+        self.cog = cog
+        self.channel_id = channel_id
+
+    @discord.ui.button(label="Play Again", style=discord.ButtonStyle.green, emoji="🎨")
+    async def play_again(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.channel_id in self.cog.games:
+            await interaction.response.send_message(
+                "A game is already running here!", ephemeral=True
+            )
+            return
+        await interaction.response.defer()
+        await self.cog._start_game(interaction.channel)
 
 
 # ── Game state ────────────────────────────────────────────────────────────────
 
 class ArtGame:
-    def __init__(self, artist: dict, images: list, task: asyncio.Task):
+    def __init__(self, artist: dict, image_urls: list, task: asyncio.Task,
+                 answer: str, display_name: str):
         self.artist = artist
-        self.images = images                           # list[pathlib.Path]
-        self.used_images: set = set()
+        self.image_urls = image_urls         # all available URLs
+        self.used_indices: set = set()        # indices already shown
         self.task = task
-        self.hints_given: list = []
-        self.hint_order: list = _build_hint_order(artist)
-        self.extra_images_shown: int = 0
+        self.answer = answer                  # hidden part to guess
+        self.display_name = display_name      # e.g. "Vincent van ____"
+        self.hint_count = 0                   # 0=none, 1=bio+movements, 2=scramble
         self.participants: set = set()
 
-    def pop_image(self) -> "pathlib.Path | None":
-        """Return a not-yet-shown image, cycling if all have been shown."""
-        unused = [i for i in range(len(self.images)) if i not in self.used_images]
-        if not unused:
-            self.used_images.clear()
-            unused = list(range(len(self.images)))
-        if not unused:
-            return None
-        idx = random.choice(unused)
-        self.used_images.add(idx)
-        return self.images[idx]
-
-    def next_hint(self) -> "str | None":
-        """Return the next hint key, or None if all hints exhausted."""
-        remaining = [h for h in self.hint_order if h not in self.hints_given]
-        if not remaining:
-            return None
-        key = remaining[0]
-        self.hints_given.append(key)
-        return key
+    def pick_images(self, count: int = 4) -> list:
+        """Pick `count` not-yet-shown image URLs, cycling if all exhausted."""
+        available = [i for i in range(len(self.image_urls)) if i not in self.used_indices]
+        if len(available) < count:
+            # Cycle: clear used set and pull from all
+            self.used_indices.clear()
+            available = list(range(len(self.image_urls)))
+        if not available:
+            return []
+        chosen = random.sample(available, min(count, len(available)))
+        self.used_indices.update(chosen)
+        return [self.image_urls[i] for i in chosen]
 
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
@@ -183,54 +142,95 @@ class ArtGuesser(commands.Cog):
         self.bot = bot
         self.games: dict = {}   # channel_id → ArtGame
 
-    # ── Artist/image loading ──────────────────────────────────────────────────
+    # ── Artist picking ────────────────────────────────────────────────────────
 
-    def _load_images(self, artist_name: str) -> list:
-        folder = IMAGES_DIR / artist_name
-        if not folder.is_dir():
-            return []
-        paths = [
-            p for p in folder.iterdir()
-            if p.suffix.lower() in _IMAGE_EXTS and p.is_file()
-        ]
-        random.shuffle(paths)
-        return paths
-
-    def _eligible_artists(self, category: Optional[str]) -> list:
-        eligible = []
-        for artist in ARTISTS:
-            if category and artist.get("category") != category:
-                continue
-            if self._load_images(artist["name"]):
-                eligible.append(artist)
-        return eligible
-
-    def _pick_artist(self, category: Optional[str]) -> "tuple":
-        """Return (artist_dict, images) preferring artists not used in 24h."""
-        eligible = self._eligible_artists(category)
-        if not eligible:
-            return None, None
+    def _pick_artist(self) -> dict:
+        """Return an artist dict, preferring artists not seen in the last 24h."""
+        if not ARTISTS_LIST:
+            return None
 
         now = time.time()
-        # Expire old usage entries
-        for k in [k for k, ts in _used_artists.items() if now - ts > _USED_EXPIRY]:
+        for k in [k for k, ts in list(_used_artists.items()) if now - ts > _USED_EXPIRY]:
             del _used_artists[k]
 
-        unused = [a for a in eligible if a["name"] not in _used_artists]
-        pool = unused if unused else eligible  # if all used, allow any
+        unused = [a for a in ARTISTS_LIST if a["name"] not in _used_artists]
+        pool = unused if unused else ARTISTS_LIST
 
         artist = random.choice(pool)
         _used_artists[artist["name"]] = now
+        return artist
 
-        images = self._load_images(artist["name"])
-        return artist, images
+    # ── Info embed builder ────────────────────────────────────────────────────
+
+    def _build_info_embed(self, game: ArtGame, image_url: Optional[str] = None) -> discord.Embed:
+        artist = game.artist
+        meta_parts = []
+        if artist.get("nationality"):
+            meta_parts.append(artist["nationality"])
+        if artist.get("medium"):
+            meta_parts.append(artist["medium"].title())
+        if artist.get("years_active"):
+            meta_parts.append(artist["years_active"])
+        if artist.get("main_movement"):
+            meta_parts.append(artist["main_movement"])
+
+        meta_line = " | ".join(meta_parts) if meta_parts else "Unknown"
+
+        desc = (
+            f"## {game.display_name}\n"
+            f"{meta_line}\n\n"
+            f"Type **`h`** for a hint  ·  Type **`n`** for new images"
+        )
+
+        embed = discord.Embed(
+            title="Guess the Artist!",
+            description=desc,
+            color=discord.Color.blurple(),
+        )
+        if image_url:
+            embed.set_image(url=image_url)
+        return embed
+
+    # ── Game start (shared by $arg and Play Again) ────────────────────────────
+
+    async def _start_game(self, channel: discord.TextChannel):
+        if not ARTISTS_LIST:
+            await channel.send("No artists loaded. Add entries to `artists.py` to play!")
+            return
+
+        artist = self._pick_artist()
+        if artist is None:
+            await channel.send("Could not pick an artist — please try again.")
+            return
+
+        answer, display_name = _get_answer_and_display(artist["name"])
+        image_urls = await _fetch_artist_images(artist["name"])
+
+        task = asyncio.create_task(self._game_timer(channel, artist["name"]))
+        game = ArtGame(artist, image_urls, task, answer, display_name)
+        self.games[channel.id] = game
+
+        if image_urls:
+            chosen = game.pick_images(4)
+            # Build embeds: first has the info text + image, rest are pure images
+            embeds = []
+            embeds.append(self._build_info_embed(game, chosen[0] if chosen else None))
+            for url in chosen[1:]:
+                e = discord.Embed(color=discord.Color.blurple())
+                e.set_image(url=url)
+                embeds.append(e)
+            await channel.send(embeds=embeds)
+        else:
+            # No images available yet — show text-only embed
+            embed = self._build_info_embed(game)
+            embed.set_footer(text="No images available for this artist yet.")
+            await channel.send(embed=embed)
 
     # ── Timer ─────────────────────────────────────────────────────────────────
 
     async def _game_timer(self, channel: discord.TextChannel, artist_name: str):
-        """Reveal the answer after 90 seconds if nobody guesses."""
         try:
-            await asyncio.sleep(90)
+            await asyncio.sleep(120)
         except asyncio.CancelledError:
             return
 
@@ -241,132 +241,33 @@ class ArtGuesser(commands.Cog):
         tp = self.bot.get_cog("TrackPoints")
         if tp:
             await tp.record_game_result(None, game.participants)
+
         embed = discord.Embed(
             title="Time's up!",
             description=f"Nobody guessed it. The artist was **{artist_name}**.",
             color=discord.Color(0x99aab5),
         )
-        await channel.send(embed=embed)
+        await channel.send(embed=embed, view=ArtPlayAgainView(self, channel.id))
 
-    # ── $art ──────────────────────────────────────────────────────────────────
+    # ── $arg ──────────────────────────────────────────────────────────────────
 
-    @commands.command(name="art")
-    async def art(self, ctx: commands.Context, category: Optional[str] = None):
-        """Start an art guessing game. Optional category: modern, 1800s, old, ancient."""
-        if category and category.lower() not in _VALID_CATEGORIES:
-            await ctx.send(
-                f"Unknown category **{category}**. "
-                f"Valid: {', '.join(sorted(_VALID_CATEGORIES))}"
-            )
-            return
-        if category:
-            category = category.lower()
-
-        # If a game is already running: reveal answer, then immediately start new game
+    @commands.command(name="arg")
+    async def arg(self, ctx: commands.Context):
+        """Start an art guessing game. Running during a game reveals the answer and starts a new one."""
+        # If a game is already running: reveal answer, then start a new game
         if ctx.channel.id in self.games:
             old = self.games.pop(ctx.channel.id)
             old.task.cancel()
             embed = discord.Embed(
-                title="New game starting!",
+                title="New game!",
                 description=f"The previous artist was **{old.artist['name']}**.",
                 color=discord.Color(0x99aab5),
             )
             await ctx.send(embed=embed)
 
-        if not ARTISTS:
-            await ctx.send(
-                "No artists loaded yet. Add artists to `artguesser/artists.py` to play!"
-            )
-            return
+        await self._start_game(ctx.channel)
 
-        artist, images = self._pick_artist(category)
-        if artist is None:
-            msg = "No artists with local images found"
-            if category:
-                msg += f" for category **{category}**"
-            await ctx.send(msg + ".")
-            return
-
-        task = asyncio.create_task(self._game_timer(ctx.channel, artist["name"]))
-        game = ArtGame(artist, images, task)
-        self.games[ctx.channel.id] = game
-
-        first_image = game.pop_image()
-
-        embed = discord.Embed(
-            title=f"Guess the Artist!{DEV_LABEL}",
-            description=(
-                "Who created this artwork? Type your guess in chat!\n"
-                "You have **90 seconds**.\n\n"
-                "Type **`n`** — show another artwork *(up to 5)*\n"
-                "Type **`h`** — reveal a hint about the artist"
-            ),
-            color=discord.Color.blurple(),
-        )
-        if category:
-            embed.set_footer(text=f"Category: {category}")
-        embed.set_image(url="attachment://art.jpg")
-
-        await ctx.send(
-            embed=embed,
-            file=discord.File(first_image, filename="art.jpg"),
-        )
-
-    # ── $img ──────────────────────────────────────────────────────────────────
-
-    @commands.command(name="img")
-    async def img(self, ctx: commands.Context):
-        """Show another artwork image from the current mystery artist (up to 5 extra)."""
-        game = self.games.get(ctx.channel.id)
-        if not game:
-            await ctx.send("No art game is running here. Start one with `$art`!")
-            return
-
-        MAX_EXTRA = 5
-        if game.extra_images_shown >= MAX_EXTRA:
-            await ctx.send(f"Already shown {MAX_EXTRA} extra images — no more available!")
-            return
-
-        path = game.pop_image()
-        if path is None:
-            await ctx.send("No more images available for this artist.")
-            return
-
-        game.extra_images_shown += 1
-        remaining = MAX_EXTRA - game.extra_images_shown
-
-        embed = discord.Embed(
-            title=f"Another artwork ({game.extra_images_shown}/{MAX_EXTRA})",
-            description=(
-                f"{remaining} more available with `$img`."
-                if remaining > 0 else "That's the last extra image!"
-            ),
-            color=discord.Color.blue(),
-        )
-        embed.set_image(url="attachment://art.jpg")
-        await ctx.send(embed=embed, file=discord.File(path, filename="art.jpg"))
-
-    # ── $hint ─────────────────────────────────────────────────────────────────
-
-    @commands.command(name="hint")
-    async def hint(self, ctx: commands.Context):
-        """Reveal the next hint about the mystery artist."""
-        game = self.games.get(ctx.channel.id)
-        if not game:
-            await ctx.send("No art game is running here. Start one with `$art`!")
-            return
-
-        key = game.next_hint()
-        if key is None:
-            await ctx.send("No more hints! Make your best guess.")
-            return
-
-        total = len(game.hint_order)
-        given = len(game.hints_given)
-        embed = _render_hint(game.artist, key, given, total)
-        await ctx.send(embed=embed)
-
-    # ── Guess listener ────────────────────────────────────────────────────────
+    # ── Message listener ──────────────────────────────────────────────────────
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
@@ -376,7 +277,7 @@ class ArtGuesser(commands.Cog):
         if not game:
             return
 
-        # Ignore valid bot commands
+        # Let valid bot commands pass through
         ctx = await self.bot.get_context(message)
         if ctx.valid:
             return
@@ -384,88 +285,110 @@ class ArtGuesser(commands.Cog):
         content = message.content.strip()
         lower = content.lower()
 
-        # ── n: next image ─────────────────────────────────────────────────────
+        # ── n: show 4 new images ──────────────────────────────────────────────
         if lower == "n":
-            MAX_EXTRA = 5
-            if game.extra_images_shown >= MAX_EXTRA:
-                await message.channel.send(f"Already shown {MAX_EXTRA} extra images — no more available!")
+            if not game.image_urls:
+                await message.channel.send("No images available for this artist.")
                 return
-            path = game.pop_image()
-            if path is None:
-                await message.channel.send("No more images available for this artist.")
+            chosen = game.pick_images(4)
+            if not chosen:
+                await message.channel.send("No more new images available!")
                 return
-            game.extra_images_shown += 1
-            remaining = MAX_EXTRA - game.extra_images_shown
-            embed = discord.Embed(
-                title=f"Another artwork ({game.extra_images_shown}/{MAX_EXTRA})",
-                description=(
-                    f"{remaining} more available with `n`."
-                    if remaining > 0 else "That's the last extra image!"
-                ),
-                color=discord.Color.blue(),
-            )
-            embed.set_image(url="attachment://art.jpg")
-            await message.channel.send(embed=embed, file=discord.File(path, filename="art.jpg"))
+            embeds = []
+            for url in chosen:
+                e = discord.Embed(color=discord.Color.blue())
+                e.set_image(url=url)
+                embeds.append(e)
+            await message.channel.send(embeds=embeds)
             return
 
         # ── h: hint ───────────────────────────────────────────────────────────
         if lower == "h":
-            key = game.next_hint()
-            if key is None:
+            if game.hint_count == 0:
+                # First hint: short bio + movements
+                artist = game.artist
+                bio = artist.get("short_bio", "")
+                movements = artist.get("main_movement", "")
+                subs = artist.get("sub_movements", "")
+                if subs:
+                    movements_line = f"{movements} — {subs}"
+                else:
+                    movements_line = movements
+
+                embed = discord.Embed(
+                    title="Hint — About this Artist",
+                    color=discord.Color.gold(),
+                )
+                if bio:
+                    embed.description = bio
+                if movements_line:
+                    embed.add_field(name="Movements", value=movements_line, inline=False)
+                game.hint_count = 1
+                await message.channel.send(embed=embed)
+
+            elif game.hint_count == 1:
+                # Second hint: scrambled answer (lowercase)
+                scrambled = _scramble(game.answer)
+                embed = discord.Embed(
+                    title="Hint — Scrambled Letters",
+                    description=f"**{scrambled}**\n*(these are the missing letters, scrambled)*",
+                    color=discord.Color.orange(),
+                )
+                game.hint_count = 2
+                await message.channel.send(embed=embed)
+
+            else:
                 await message.channel.send("No more hints! Make your best guess.")
-                return
-            total = len(game.hint_order)
-            given = len(game.hints_given)
-            embed = _render_hint(game.artist, key, given, total)
-            await message.channel.send(embed=embed)
             return
 
+        # ── Guess ─────────────────────────────────────────────────────────────
         guess = _normalize(content)
-        answer = game.artist["name"]
-        answer_norm = _normalize(answer)
+        answer_norm = _normalize(game.answer)
+
+        if not guess:
+            return
 
         game.participants.add(message.author)
 
-        correct = (guess == answer_norm)
-
-        # Accept partial surname match (e.g. "van Gogh" matches "Vincent van Gogh")
-        if not correct:
-            parts = answer.split()
-            for start in range(1, len(parts)):
-                partial = _normalize(" ".join(parts[start:]))
-                if partial and guess == partial:
-                    correct = True
-                    break
-
-        if not correct:
+        if guess != answer_norm:
             return
 
-        # Correct guess!
+        # Correct!
         game.task.cancel()
         del self.games[message.channel.id]
 
         tp = self.bot.get_cog("TrackPoints")
         if tp:
             await tp.record_game_result(message.author, game.participants)
+
         embed = discord.Embed(
             title="Correct!",
             description=(
                 f"**{message.author.display_name}** got it!\n\n"
-                f"The artist was **{answer}**! Congratulations!"
+                f"The artist was **{game.artist['name']}**!"
             ),
             color=discord.Color.green(),
         )
-        embed.set_footer(text="Start a new game with $art!")
-        await message.channel.send(embed=embed)
+        embed.set_footer(text="Play again below!")
+        await message.channel.send(embed=embed, view=ArtPlayAgainView(self, message.channel.id))
 
-    # ── Gamestop integration ──────────────────────────────────────────────────
+    # ── Gamestop / $end integration ───────────────────────────────────────────
 
-    async def force_stop_game(self, channel_id: int) -> "Optional[str]":
-        """Cancel any active game in this channel. Returns 'Art Guesser' if stopped."""
+    async def force_stop_game(self, channel_id: int) -> Optional[str]:
+        """Cancel any active game in this channel, revealing the answer. Returns 'Art Guesser' if stopped."""
         game = self.games.pop(channel_id, None)
         if game is None:
             return None
         game.task.cancel()
+
+        channel = self.bot.get_channel(channel_id)
+        if channel:
+            embed = discord.Embed(
+                description=f"The artist was **{game.artist['name']}**.",
+                color=discord.Color(0x99aab5),
+            )
+            await channel.send(embed=embed)
+
         return "Art Guesser"
 
     # ── Cleanup ───────────────────────────────────────────────────────────────
