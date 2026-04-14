@@ -823,15 +823,17 @@ class FamousWords(commands.Cog):
             task.cancel()
 
         tp = self.bot.get_cog("TrackPoints")
+        total_pts = None
         if tp:
             await tp.record_game_result(message.author, game["participants"])
-
+            total_pts = await tp.get_points(message.author)
+        pts_line = f"\nYou now have **{total_pts:,}** total points!\n" if total_pts is not None else "\n"
         revealed = game["quote_text"].replace("{BLANK}", f"**{game['raw_answer']}**")
         embed = discord.Embed(
             title=f"🎉  {message.author.display_name} got it!",
             description=(
-                f"The missing word was **{game['raw_answer']}**!\n\n"
-                f"*\"{revealed}\"*\n"
+                f"The missing word was **{game['raw_answer']}**!{pts_line}"
+                f"\n*\"{revealed}\"*\n"
                 f"— {game['attribution']}"
             ),
             color=discord.Color.green(),

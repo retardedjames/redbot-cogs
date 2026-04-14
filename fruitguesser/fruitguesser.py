@@ -342,12 +342,15 @@ class FruitGuesser(commands.Cog):
         del self.games[message.channel.id]
 
         tp = self.bot.get_cog("TrackPoints")
+        total_pts = None
         if tp:
             await tp.record_game_result(message.author, game.participants)
+            total_pts = await tp.get_points(message.author)
+        pts_line = f"\nYou now have **{total_pts:,}** total points!" if total_pts is not None else ""
         embed = discord.Embed(
             title="Correct!",
             description=(
-                f"**{message.author.display_name}** got it!\n\n"
+                f"**{message.author.display_name}** got it!{pts_line}\n\n"
                 f"The fruit was **{game.fruit}**! Congratulations!"
             ),
             color=discord.Color.green(),

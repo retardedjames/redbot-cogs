@@ -38,6 +38,10 @@ class TrackPoints(commands.Cog):
             except Exception:
                 pass
 
+    async def get_points(self, member: "discord.Member") -> int:
+        """Return the current point total for a guild member."""
+        return await self.config.member(member).points()
+
     # ── Commands ──────────────────────────────────────────────────────────────
 
     @commands.command(name="mypoints")

@@ -49,10 +49,11 @@ def _round_embed(definition: str) -> discord.Embed:
     ).set_footer(text="Type your guess in chat! A hint appears after 30 seconds.")
 
 
-def _winner_embed(winner: discord.Member, word: str, definition: str) -> discord.Embed:
+def _winner_embed(winner: discord.Member, word: str, definition: str, total_pts=None) -> discord.Embed:
+    pts_line = f"\nYou now have **{total_pts:,}** total points!" if total_pts is not None else ""
     return discord.Embed(
         title=f"🎉  {winner.display_name} got it!",
-        description=f"The word was **{word}**.\n\n*{definition}*",
+        description=f"The word was **{word}**.{pts_line}\n\n*{definition}*",
         color=discord.Color.gold(),
     )
 
@@ -180,9 +181,11 @@ class WordGuesser(commands.Cog):
             if game.task:
                 game.task.cancel()
             tp = self.bot.get_cog("TrackPoints")
+            total_pts = None
             if tp:
                 await tp.record_game_result(message.author, game.participants)
+                total_pts = await tp.get_points(message.author)
             await message.channel.send(
-                embed=_winner_embed(message.author, game.word, game.definition),
+                embed=_winner_embed(message.author, game.word, game.definition, total_pts),
                 view=WordPlayAgainView(self, message.channel.id),
             )

@@ -91,11 +91,12 @@ def _scramble_hint_embed(game: MovieGame) -> discord.Embed:
     ).set_footer(text="Time's almost up!  20 seconds remaining.")
 
 
-def _winner_embed(winner: discord.Member, game: MovieGame) -> discord.Embed:
+def _winner_embed(winner: discord.Member, game: MovieGame, total_pts=None) -> discord.Embed:
+    pts_line = f"\nYou now have **{total_pts:,}** total points!" if total_pts is not None else ""
     return discord.Embed(
         title=f"🎉  {winner.display_name} got it!",
         description=(
-            f"The movie was **{game.title}** ({game.year}).\n\n"
+            f"The movie was **{game.title}** ({game.year}).{pts_line}\n\n"
             f"Starring **{game.cast[0]}** and **{game.cast[1]}**."
         ),
         color=discord.Color.gold(),
@@ -232,9 +233,11 @@ class MovieGuesser(commands.Cog):
             if game.task:
                 game.task.cancel()
             tp = self.bot.get_cog("TrackPoints")
+            total_pts = None
             if tp:
                 await tp.record_game_result(message.author, game.participants)
+                total_pts = await tp.get_points(message.author)
             await message.channel.send(
-                embed=_winner_embed(message.author, game),
+                embed=_winner_embed(message.author, game, total_pts),
                 view=MoviePlayAgainView(self, message.channel.id),
             )

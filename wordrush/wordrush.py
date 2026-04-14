@@ -239,11 +239,12 @@ def _eliminated_embed(player: Player) -> discord.Embed:
     )
 
 
-def _winner_embed(winner: Player, wins: int, games: int) -> discord.Embed:
+def _winner_embed(winner: Player, wins: int, games: int, total_pts=None) -> discord.Embed:
+    pts_line = f"\nYou now have **{total_pts:,}** total points!" if total_pts is not None else ""
     return discord.Embed(
         title=f"🎉  {winner.member.display_name} wins Word Rush!",
         description=(
-            f"{winner.member.mention} is the last one standing!\n\n"
+            f"{winner.member.mention} is the last one standing!{pts_line}\n\n"
             f"They've now won **{wins}** out of **{games}** "
             f"completed game{'s' if games != 1 else ''}!"
         ),
@@ -373,10 +374,12 @@ class WordRush(commands.Cog):
                 winner = alive[0]
                 wins, games_played = await self._record_result(game.players, winner)
                 tp = self.bot.get_cog("TrackPoints")
+                total_pts = None
                 if tp:
                     participants = {p.member for p in game.players}
                     await tp.record_game_result(winner.member, participants)
-                await game.channel.send(embed=_winner_embed(winner, wins, games_played))
+                    total_pts = await tp.get_points(winner.member)
+                await game.channel.send(embed=_winner_embed(winner, wins, games_played, total_pts))
 
         except asyncio.CancelledError:
             pass
