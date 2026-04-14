@@ -7,6 +7,9 @@ Random animal is shown and the first to guess it wins
 ## $arg, Art Guesser
 Like animal guesser but with famous or influential visual artists, from a pool of 545.
 
+## $bg, Brand Guesser
+Wow james is addicted to making guessing games. These ones get blurred and shuffled and stuff
+
 ## $cc, Caption Contest
 AI generated random new yorker style cartoon. Suggest a caption and ppl vote for the best
 
