@@ -30,6 +30,7 @@ class GameStop(commands.Cog):
 
     @commands.command(name="clearmemory")
     @commands.guild_only()
+    @commands.admin_or_permissions(administrator=True)
     async def clearmemory(self, ctx: commands.Context):
         """Clear the recent-item memory for all games so nothing is excluded from the next round."""
         cleared = []
