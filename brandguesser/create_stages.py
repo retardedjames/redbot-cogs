@@ -4,37 +4,34 @@ create_stages.py — generate progressive reveal stages for BrandGuesser.
 
 Game design:
   - Round lasts 60 seconds total.
-  - 5 blur stages shown at t=0, 10, 20, 30, 40s. Image stays at stage 5 until
+  - 5 stages shown at t=0, 10, 20, 30, 40s. Image stays at stage 5 until
     someone guesses correctly or time expires.
   - The fully clear original (img-NNN.jpg) is shown by the bot ONLY on a correct
     guess or when time runs out — it is NOT pre-generated here.
 
-For each processed image images/{brand}/img-NNN.jpg, generates 5 blur stages:
-  images/{brand}/stages/img-NNN_s1.jpg   ← most blurred  (shown at t=0s)
-  images/{brand}/stages/img-NNN_s2.jpg                   (shown at t=10s)
-  images/{brand}/stages/img-NNN_s3.jpg                   (shown at t=20s)
-  images/{brand}/stages/img-NNN_s4.jpg                   (shown at t=30s)
-  images/{brand}/stages/img-NNN_s5.jpg   ← final stage   (shown at t=40s–60s)
+For each processed image images/{brand}/img-NNN.jpg, generates 5 stages:
+  images/{brand}/stages/img-NNN_s1.jpg   ← most obscured  (t=0s)
+  images/{brand}/stages/img-NNN_s2.jpg                    (t=10s)
+  images/{brand}/stages/img-NNN_s3.jpg                    (t=20s)
+  images/{brand}/stages/img-NNN_s4.jpg                    (t=30s)
+  images/{brand}/stages/img-NNN_s5.jpg   ← final stage    (t=40s–60s)
 
-Three styles, randomly assigned per image so every round feels different:
+Five styles, randomly assigned per image:
 
-  pixel — hard block pixelation (downscale + NEAREST upscale)
-           Classic retro/Minecraft look. Hard color edges.
-
-  blur  — smooth Gaussian blur
-           "Out of focus" look. Soft color gradients.
-           Starts at a moderate blur (radius 45) — not so extreme it's a black
-           smear — and winds down to radius 9 over 5 steps.
-
-  blob  — soft pixelation (downscale + LANCZOS upscale)
-           Watercolor / impressionist look. Large smooth color clouds.
+  pixel   — hard block pixelation (downscale + NEAREST upscale)
+  blur    — smooth Gaussian blur
+  blob    — soft pixelation (downscale + LANCZOS) — watercolor look
+  shuffle — image divided into 40px blocks, randomly shuffled; blocks
+            progressively snap back to correct positions (stage 5: 85% correct)
+  blackout— image divided into 20px blocks; random blocks blacked out;
+            progressively revealed (stage 5: 80% visible, 20% still black)
 
 Usage:
-    python create_stages.py                  # all brands, assign styles randomly
+    python create_stages.py                  # all brands, styles assigned randomly
     python create_stages.py "Toyota"         # single brand (substring match)
     python create_stages.py --regen          # regenerate even if stages exist
-    python create_stages.py --test           # all 3 styles on first available image
-    python create_stages.py --test "Toyota"  # all 3 styles on Toyota img-001
+    python create_stages.py --test           # all 5 styles on first available image
+    python create_stages.py --test "Target"  # all 5 styles on Target img-001
 """
 
 import os
@@ -47,46 +44,135 @@ from PIL import Image, ImageFilter
 SCRIPT_DIR = Path(__file__).parent
 IMAGES_DIR  = Path(os.environ.get("IMAGES_DIR", str(SCRIPT_DIR / "images")))
 
-DISPLAY_SIZE = (400, 400)   # all stage images standardized to this
+DISPLAY_SIZE = (400, 400)   # all stage images standardized to this — 400 divides
+                             # evenly by 20 and 40, keeping block grids clean
 IMAGE_EXTS   = {".jpg", ".jpeg", ".png", ".webp"}
-STYLES       = ["pixel", "blur", "blob"]
+STYLES       = ["pixel", "blur", "blob", "shuffle", "blackout"]
 NUM_STAGES   = 5
 
-# ── Style parameters (5 stages each) ──────────────────────────────────────────
+# ── Style parameters ───────────────────────────────────────────────────────────
 
-# Pixelation: intermediate downscale size. Geometric ~1.7× progression.
-# 8×8 on a 400×400 image = 50px hard blocks (very abstract colored squares).
-# 72×72 = ~5px blocks (logo shape clearly visible, still a little blocky).
+# pixel / blob: intermediate downscale size (geometric ~1.7× each step)
 PIXEL_SIZES = [8, 14, 24, 42, 72]
 
-# Gaussian blur radii (pixels). Geometric ~1.5× decrease: 45→30→20→13→9.
-# Radius 45 = strong blur, colors soft but not an unreadable smear.
-# Radius 9  = light blur, logo clearly identifiable.
+# blur: Gaussian radius (geometric ~1.5× decrease: 45→30→20→13→9)
 BLUR_RADII = [45, 30, 20, 13, 9]
+
+# shuffle: fraction of blocks that are back in their correct position
+# 0.0 = fully shuffled chaos; 0.85 = 15% still wrong at final stage
+SHUFFLE_FIX_FRACTIONS = [0.0, 0.30, 0.55, 0.72, 0.85]
+SHUFFLE_BLOCK_SIZE    = 40   # 400/40 = 10×10 = 100 blocks
+
+# blackout: fraction of blocks that are VISIBLE (rest are black)
+# 0.10 = 90% blacked out at start; 0.80 = 20% still black at final stage
+BLACKOUT_REVEAL_FRACTIONS = [0.10, 0.28, 0.50, 0.68, 0.80]
+BLACKOUT_BLOCK_SIZE       = 20   # 400/20 = 20×20 = 400 blocks
 
 
 # ── Stage generators ───────────────────────────────────────────────────────────
 
 def stage_pixel(img: Image.Image, small_size: int) -> Image.Image:
-    """Hard pixelation: downscale with BOX (average), upscale with NEAREST (hard edges)."""
     small = img.resize((small_size, small_size), Image.BOX)
     return small.resize(DISPLAY_SIZE, Image.NEAREST)
 
 
 def stage_blur(img: Image.Image, radius: float) -> Image.Image:
-    """Smooth Gaussian blur."""
     return img.filter(ImageFilter.GaussianBlur(radius=radius))
 
 
 def stage_blob(img: Image.Image, small_size: int) -> Image.Image:
-    """Soft pixelation: downscale with BOX, upscale with LANCZOS.
-    Produces large smooth color clouds — watercolor / impressionist look."""
     small = img.resize((small_size, small_size), Image.BOX)
     return small.resize(DISPLAY_SIZE, Image.LANCZOS)
 
 
-def _make_stage(img: Image.Image, style: str, stage_num: int) -> Image.Image:
-    """stage_num is 1-based (1 = most blurred, 7 = nearly clear)."""
+def stage_shuffle(img: Image.Image, fix_fraction: float, seed: int) -> Image.Image:
+    """
+    Divide image into SHUFFLE_BLOCK_SIZE px blocks. Randomly shuffle all blocks
+    (using `seed` for reproducibility), then fix `fix_fraction` of them back to
+    their correct positions. The same seed ensures stages are cumulative — more
+    blocks correctly placed at each step.
+    """
+    bs = SHUFFLE_BLOCK_SIZE
+    cols = DISPLAY_SIZE[0] // bs   # 10
+    rows = DISPLAY_SIZE[1] // bs   # 10
+    n    = cols * rows              # 100
+
+    # Extract all blocks
+    blocks = []
+    for r in range(rows):
+        for c in range(cols):
+            box = (c * bs, r * bs, (c + 1) * bs, (r + 1) * bs)
+            blocks.append(img.crop(box))
+
+    # Shuffled arrangement: shuffled[i] = which original block goes in slot i
+    rng_shuffle = random.Random(seed)
+    shuffled = list(range(n))
+    rng_shuffle.shuffle(shuffled)
+
+    # Determine which slots to "fix" (return to identity), using a separate
+    # seed offset so fix order is stable and independent of the shuffle order.
+    n_fix = int(n * fix_fraction)
+    rng_fix = random.Random(seed + 99991)
+    fix_order = list(range(n))
+    rng_fix.shuffle(fix_order)
+    fixed_slots = set(fix_order[:n_fix])
+
+    # Build arrangement: fixed slots use block i; unfixed use shuffled[i]
+    result = img.copy()
+    for i in range(n):
+        src = i if i in fixed_slots else shuffled[i]
+        r, c = divmod(i, cols)
+        result.paste(blocks[src], (c * bs, r * bs))
+
+    return result
+
+
+def stage_blackout(img: Image.Image, reveal_fraction: float, seed: int) -> Image.Image:
+    """
+    Divide image into BLACKOUT_BLOCK_SIZE px blocks. Using `seed`, generate a
+    fixed random reveal order. Show the first `reveal_fraction` of blocks; paint
+    the rest solid black. Consistent seed means earlier stages' revealed blocks
+    are always a subset of later stages'.
+    """
+    bs   = BLACKOUT_BLOCK_SIZE
+    cols = DISPLAY_SIZE[0] // bs   # 20
+    rows = DISPLAY_SIZE[1] // bs   # 20
+    n    = cols * rows              # 400
+
+    n_reveal = int(n * reveal_fraction)
+
+    rng = random.Random(seed)
+    reveal_order = list(range(n))
+    rng.shuffle(reveal_order)
+    visible = set(reveal_order[:n_reveal])
+
+    result  = img.copy()
+    black   = Image.new("RGB", (bs, bs), (0, 0, 0))
+
+    for i in range(n):
+        if i not in visible:
+            r, c = divmod(i, cols)
+            result.paste(black, (c * bs, r * bs))
+
+    return result
+
+
+def _image_seed(img_path: Path) -> int:
+    """Derive a stable integer seed from the image filename (e.g. img-001 → 1)."""
+    stem = img_path.stem  # "img-001"
+    try:
+        return int(stem.split("-")[1])
+    except (IndexError, ValueError):
+        return abs(hash(stem)) % 100_000
+
+
+def _make_stage(
+    img: Image.Image,
+    style: str,
+    stage_num: int,
+    seed: int = 1,
+) -> Image.Image:
+    """stage_num is 1-based (1 = most obscured, 5 = last shown in-game)."""
     idx = stage_num - 1
     if style == "pixel":
         return stage_pixel(img, PIXEL_SIZES[idx])
@@ -94,6 +180,10 @@ def _make_stage(img: Image.Image, style: str, stage_num: int) -> Image.Image:
         return stage_blur(img, BLUR_RADII[idx])
     elif style == "blob":
         return stage_blob(img, PIXEL_SIZES[idx])
+    elif style == "shuffle":
+        return stage_shuffle(img, SHUFFLE_FIX_FRACTIONS[idx], seed)
+    elif style == "blackout":
+        return stage_blackout(img, BLACKOUT_REVEAL_FRACTIONS[idx], seed)
     else:
         raise ValueError(f"Unknown style: {style!r}")
 
@@ -106,11 +196,11 @@ def generate_stages_for_image(
     regen: bool = False,
 ) -> bool:
     """
-    Generate 7 blur stages + 1 clear stage for a single processed image.
+    Generate NUM_STAGES stages for a single processed image.
     Returns True if stages were written, False if skipped (already exist).
     """
     stages_dir = img_path.parent / "stages"
-    stem = img_path.stem  # e.g. "img-001"
+    stem = img_path.stem
 
     if not regen:
         existing = list(stages_dir.glob(f"{stem}_s*.jpg"))
@@ -119,14 +209,13 @@ def generate_stages_for_image(
 
     stages_dir.mkdir(exist_ok=True)
 
-    img = Image.open(img_path).convert("RGB")
-    img = img.resize(DISPLAY_SIZE, Image.LANCZOS)
+    img  = Image.open(img_path).convert("RGB")
+    img  = img.resize(DISPLAY_SIZE, Image.LANCZOS)
+    seed = _image_seed(img_path)
 
-    # Stages 1–5: progressively clearer (most blurred → last shown stage)
-    # The fully clear original is served by the bot directly from img-NNN.jpg.
     for stage_num in range(1, NUM_STAGES + 1):
         out = stages_dir / f"{stem}_s{stage_num}.jpg"
-        _make_stage(img, style, stage_num).save(out, "JPEG", quality=90)
+        _make_stage(img, style, stage_num, seed=seed).save(out, "JPEG", quality=90)
 
     return True
 
@@ -151,7 +240,7 @@ def process_brand(brand_name: str, regen: bool = False) -> int:
     for img_path in img_files:
         style = random.choice(STYLES)
         generated = generate_stages_for_image(img_path, style, regen=regen)
-        marker = f" {img_path.name}[{style[0]}]" if generated else f" {img_path.name}[skip]"
+        marker = f" {img_path.name}[{style[:2]}]" if generated else f" {img_path.name}[skip]"
         print(marker, end="", flush=True)
         if generated:
             done += 1
@@ -160,15 +249,13 @@ def process_brand(brand_name: str, regen: bool = False) -> int:
     return done
 
 
-# ── Test mode: all 3 styles on one image side by side ─────────────────────────
+# ── Test mode: all 5 styles on one image ──────────────────────────────────────
 
 def test_mode(brand_hint: str = "") -> None:
     """
-    Generate all 3 styles × 7 stages for a single image.
+    Generate all 5 styles × 5 stages for a single image.
     Output: images/_test_comparison/{style}_s{N}.jpg + original.jpg
-    Lets you visually compare all three styles before committing.
     """
-    # Find the test image
     test_img = None
 
     if brand_hint:
@@ -197,35 +284,30 @@ def test_mode(brand_hint: str = "") -> None:
 
     if not test_img:
         print("ERROR: No images found to test with.")
-        print(f"  (looked in {IMAGES_DIR})")
         return
 
     print(f"Test image : {test_img}")
     out_dir = IMAGES_DIR / "_test_comparison"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    img = Image.open(test_img).convert("RGB")
-    img = img.resize(DISPLAY_SIZE, Image.LANCZOS)
+    img  = Image.open(test_img).convert("RGB")
+    img  = img.resize(DISPLAY_SIZE, Image.LANCZOS)
+    seed = _image_seed(test_img)
 
     for style in STYLES:
         for stage_num in range(1, NUM_STAGES + 1):
             out_path = out_dir / f"{style}_s{stage_num}.jpg"
-            _make_stage(img, style, stage_num).save(out_path, "JPEG", quality=90)
+            _make_stage(img, style, stage_num, seed=seed).save(out_path, "JPEG", quality=90)
         print(f"  {style}: s1→s{NUM_STAGES} written")
 
-    # Original (the bot serves this directly; included here just for visual reference)
-    orig_path = out_dir / "original.jpg"
-    img.save(orig_path, "JPEG", quality=93)
-    print(f"  original written (bot serves this on correct guess / timeout)")
+    img.save(out_dir / "original.jpg", "JPEG", quality=93)
+    print(f"  original written")
 
     total = len(STYLES) * NUM_STAGES + 1
-    print(f"\n{total} comparison images → {out_dir}")
-    print("\nFile naming:")
-    print(f"  pixel_s1.jpg … pixel_s{NUM_STAGES}.jpg  — hard block pixelation")
-    print(f"  blur_s1.jpg  … blur_s{NUM_STAGES}.jpg   — smooth Gaussian blur")
-    print(f"  blob_s1.jpg  … blob_s{NUM_STAGES}.jpg   — soft/watercolor pixelation")
-    print(f"  original.jpg                  — shown on correct guess or timeout")
-    print(f"\nStage 1 = most blurred (t=0s), Stage {NUM_STAGES} = final stage (t=40s–60s)")
+    print(f"\n{total} images → {out_dir}")
+    print(f"\nStyles: {', '.join(STYLES)}")
+    print(f"Stage 1 = most obscured (t=0s) │ Stage {NUM_STAGES} = final in-game stage (t=40s)")
+    print(f"original.jpg = shown by bot on correct guess or timeout")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
@@ -234,8 +316,8 @@ def main() -> None:
     args  = [a for a in sys.argv[1:] if not a.startswith("--")]
     flags = {a for a in sys.argv[1:] if a.startswith("--")}
 
-    regen     = "--regen" in flags
-    test      = "--test"  in flags
+    regen = "--regen" in flags
+    test  = "--test"  in flags
 
     if test:
         test_mode(brand_hint=args[0] if args else "")
@@ -258,7 +340,7 @@ def main() -> None:
     print(f"  Brands  : {len(targets)}")
     print(f"  Output  : {IMAGES_DIR}")
     print(f"  Stages  : {NUM_STAGES} per image (t=0s … t=40s, every 10s)")
-    print(f"  Styles  : {', '.join(STYLES)} (randomly assigned per image)")
+    print(f"  Styles  : {', '.join(STYLES)} (random per image)")
     print(f"  Regen   : {'yes' if regen else f'no (skip if {NUM_STAGES} stages exist)'}")
     print("-" * 60)
 
