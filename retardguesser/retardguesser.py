@@ -45,10 +45,14 @@ def _safe_folder(name: str) -> str:
 
 
 def _normalize(text: str) -> str:
-    """Strip accents, lowercase, strip punctuation — for guess comparison."""
+    """Lowercase, strip accents and all non-ASCII — for guess comparison.
+    Works on both the guess (typed by player) and the answer (may have accents).
+    e.g. 'Pépin' → 'pepin', player types 'pepin' → 'pepin' → match.
+    """
     nfkd = unicodedata.normalize("NFKD", text)
-    no_accent = "".join(c for c in nfkd if not unicodedata.combining(c))
-    lower = no_accent.lower()
+    # Keep only plain ASCII (strips combining accent marks and any stray chars like U+FFFD)
+    ascii_only = "".join(c for c in nfkd if ord(c) < 128)
+    lower = ascii_only.lower()
     no_punct = lower.translate(str.maketrans("", "", string.punctuation))
     return no_punct.strip()
 

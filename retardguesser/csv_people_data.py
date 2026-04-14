@@ -101,7 +101,7 @@ CSV_PEOPLE = {
         "name": "Cate Blanchett",
         "profession": "actor",
         "bio": "An Australian performer celebrated for her range and precision. Her career spans independent films, blockbusters, and stage work. She is known for commanding, layered performances.",
-        "known_for": "Blue Jasmine, Elizabeth, The Lord of the Rings, T�r",
+        "known_for": "Blue Jasmine, Elizabeth, The Lord of the Rings, Tár",
     },
     "Kate Winslet": {
         "name": "Kate Winslet",
@@ -199,8 +199,8 @@ CSV_PEOPLE = {
         "bio": "A global sports icon whose dominance reshaped professional basketball. His competitive drive and clutch performances became legendary. He remains a symbol of excellence in athletics.",
         "known_for": "Chicago Bulls championships, Space Jam, MVP awards, Olympic gold",
     },
-    "Pel�": {
-        "name": "Pel�",
+    "Pelé": {
+        "name": "Pelé",
         "profession": "athlete",
         "bio": "A Brazilian footballer celebrated for extraordinary skill and global influence. His career included record-setting achievements and international success. He is often cited as one of the greatest players in history.",
         "known_for": "World Cup titles, Santos FC, New York Cosmos, Goal-scoring records",
@@ -469,8 +469,8 @@ CSV_PEOPLE = {
         "bio": "A pioneering athlete who broke racial barriers in professional tennis. Combined elegant play with strong principles and humanitarian commitment. Used his platform to advocate for civil rights and global health issues. Remains an enduring symbol of dignity and leadership.",
         "known_for": "US Open win, Wimbledon title, Australian Open title, Civil rights activism",
     },
-    "Bj�rn Borg": {
-        "name": "Bj�rn Borg",
+    "Björn Borg": {
+        "name": "Björn Borg",
         "profession": "Tennis player",
         "bio": "A calm and composed champion known for unmatched baseline consistency. Dominated major tournaments with exceptional physical conditioning. Retired early yet left a lasting legacy on the sport. Inspired future generations with his iconic style and competitive aura.",
         "known_for": "Wimbledon titles, French Open titles, Rivalry with McEnroe, Influence on modern tennis",
@@ -793,8 +793,8 @@ CSV_PEOPLE = {
         "bio": "An ancient figure associated with moral fables. Created concise stories that conveyed ethical lessons. Influenced storytelling traditions for centuries. Remains widely read across cultures.",
         "known_for": "Fables, Moral lessons, Cultural influence, Storytelling tradition",
     },
-    "Antoine de Saint-Exup�ry": {
-        "name": "Antoine de Saint-Exup�ry",
+    "Antoine de Saint-Exupéry": {
+        "name": "Antoine de Saint-Exupéry",
         "profession": "Writer",
         "bio": "A pilot and author known for poetic and philosophical storytelling. Blended aviation experiences with reflections on humanity. Created works that resonate across generations. Became a cultural icon through a timeless tale.",
         "known_for": "The Little Prince, Aviation writings, Philosophical themes, Literary influence",
@@ -829,14 +829,14 @@ CSV_PEOPLE = {
         "bio": "This midfielder is celebrated for vision, balance, and precise passing. He became a central figure in European football through leadership and consistency. His performances have earned him recognition as one of the finest midfielders of his generation.",
         "known_for": "Ballon d'Or, Real Madrid titles, Croatia World Cup run, Champions League wins",
     },
-    "Andr�s Iniesta": {
-        "name": "Andr�s Iniesta",
+    "Andrés Iniesta": {
+        "name": "Andrés Iniesta",
         "profession": "Footballer",
         "bio": "This playmaker is admired for elegant control and decisive contributions in major matches. His calm style and intelligence made him a key figure in both club and international success. He is widely regarded as one of the greatest midfielders in modern football.",
         "known_for": "World Cup-winning goal, Barcelona dynasty, Euro titles, La Masia legacy",
     },
-    "Xavi Hern�ndez": {
-        "name": "Xavi Hern�ndez",
+    "Xavi Hernández": {
+        "name": "Xavi Hernández",
         "profession": "Footballer",
         "bio": "This midfielder is known for exceptional passing accuracy and tactical awareness. He played a central role in a dominant era of possession-based football. His influence shaped a generation of players and coaches.",
         "known_for": "Barcelona tiki-taka, World Cup win, Euro titles, midfield leadership",
@@ -853,11 +853,11 @@ CSV_PEOPLE = {
         "bio": "This midfielder gained global fame for precise crossing, free-kick ability, and cultural influence. His career spanned top clubs across multiple countries. He later became a prominent figure in sports ownership and branding.",
         "known_for": "Manchester United success, Real Madrid era, LA Galaxy impact, Inter Miami ownership",
     },
-    "Ronaldo Naz�rio": {
-        "name": "Ronaldo Naz�rio",
+    "Ronaldo Nazário": {
+        "name": "Ronaldo Nazário",
         "profession": "Footballer",
-        "bio": "This striker is known for explosive speed, dribbling, and clinical finishing. He overcame major injuries to remain one of the sport�s most iconic figures. His performances in international tournaments are especially celebrated.",
-        "known_for": "World Cup heroics, Barcelona brilliance, Inter Milan era, Real Madrid Gal�cticos",
+        "bio": "This striker is known for explosive speed, dribbling, and clinical finishing. He overcame major injuries to remain one of the sport's most iconic figures. His performances in international tournaments are especially celebrated.",
+        "known_for": "World Cup heroics, Barcelona brilliance, Inter Milan era, Real Madrid Galácticos",
     },
     "Marco van Basten": {
         "name": "Marco van Basten",
@@ -868,11 +868,11 @@ CSV_PEOPLE = {
     "Michel Platini": {
         "name": "Michel Platini",
         "profession": "Footballer",
-        "bio": "This midfielder became one of Europe�s most influential playmakers. His leadership and scoring ability defined his era. He later held major administrative roles in international football.",
+        "bio": "This midfielder became one of Europe's most influential playmakers. His leadership and scoring ability defined his era. He later held major administrative roles in international football.",
         "known_for": "Euro 1984 performance, Juventus success, Ballon d'Or wins, UEFA presidency",
     },
-    "Gerd M�ller": {
-        "name": "Gerd M�ller",
+    "Gerd Müller": {
+        "name": "Gerd Müller",
         "profession": "Footballer",
         "bio": "This striker was renowned for extraordinary goal-scoring instincts. His finishing ability set records that stood for decades. He played a crucial role in both club and international triumphs.",
         "known_for": "Bayern Munich titles, World Cup win, goal-scoring records, European Cup victories",
@@ -892,7 +892,7 @@ CSV_PEOPLE = {
     "Jeff Bezos": {
         "name": "Jeff Bezos",
         "profession": "Entrepreneur",
-        "bio": "This business leader built one of the world�s largest e-commerce and cloud computing companies. His approach to logistics and scale changed global retail. He also expanded into aerospace ventures.",
+        "bio": "This business leader built one of the world's largest e-commerce and cloud computing companies. His approach to logistics and scale changed global retail. He also expanded into aerospace ventures.",
         "known_for": "Amazon growth, AWS, Blue Origin, global retail disruption",
     },
     "Elon Musk": {
@@ -904,7 +904,7 @@ CSV_PEOPLE = {
     "Mark Zuckerberg": {
         "name": "Mark Zuckerberg",
         "profession": "Entrepreneur",
-        "bio": "This technology founder created one of the world�s largest social platforms. His work reshaped online communication and digital communities. He later expanded into virtual and augmented reality initiatives.",
+        "bio": "This technology founder created one of the world's largest social platforms. His work reshaped online communication and digital communities. He later expanded into virtual and augmented reality initiatives.",
         "known_for": "Facebook, Meta, social networking, VR/AR development",
     },
     "Larry Page": {
@@ -916,7 +916,7 @@ CSV_PEOPLE = {
     "Sergey Brin": {
         "name": "Sergey Brin",
         "profession": "Entrepreneur",
-        "bio": "This technologist helped build one of the world�s most influential search and technology companies. His interests include large-scale computing and experimental research. He has supported projects in robotics and advanced science.",
+        "bio": "This technologist helped build one of the world's most influential search and technology companies. His interests include large-scale computing and experimental research. He has supported projects in robotics and advanced science.",
         "known_for": "Google founding, PageRank, Alphabet, research initiatives",
     },
     "Tim Cook": {
@@ -928,13 +928,13 @@ CSV_PEOPLE = {
     "Satya Nadella": {
         "name": "Satya Nadella",
         "profession": "Executive",
-        "bio": "This executive led a major shift toward cloud computing and collaborative culture within a global tech company. His leadership style emphasizes empathy and innovation. He is credited with revitalizing the organization�s direction.",
+        "bio": "This executive led a major shift toward cloud computing and collaborative culture within a global tech company. His leadership style emphasizes empathy and innovation. He is credited with revitalizing the organization's direction.",
         "known_for": "Azure growth, cultural transformation, cloud strategy, enterprise expansion",
     },
     "Sundar Pichai": {
         "name": "Sundar Pichai",
         "profession": "Executive",
-        "bio": "This leader oversees one of the world�s largest technology ecosystems. His background in engineering shaped his approach to product development. He has guided major initiatives in AI and global computing.",
+        "bio": "This leader oversees one of the world's largest technology ecosystems. His background in engineering shaped his approach to product development. He has guided major initiatives in AI and global computing.",
         "known_for": "Google leadership, Chrome, Android, AI initiatives",
     },
     "Ada Lovelace": {
@@ -1015,11 +1015,11 @@ CSV_PEOPLE = {
         "bio": "This researcher introduced concepts that launched quantum physics. His work transformed understanding of energy and matter. He became a central figure in modern theoretical science.",
         "known_for": "Quantum theory, Planck constant, blackbody radiation, scientific leadership",
     },
-    "Erwin Schr�dinger": {
-        "name": "Erwin Schr�dinger",
+    "Erwin Schrödinger": {
+        "name": "Erwin Schrödinger",
         "profession": "Physicist",
         "bio": "This theorist explored the mathematical foundations of quantum mechanics. His ideas helped describe the behavior of particles at small scales. He is associated with influential thought experiments.",
-        "known_for": "Wave equation, quantum mechanics, Schr�dinger�s cat, theoretical physics",
+        "known_for": "Wave equation, quantum mechanics, Schrödinger's cat, theoretical physics",
     },
     "Werner Heisenberg": {
         "name": "Werner Heisenberg",
@@ -1043,7 +1043,7 @@ CSV_PEOPLE = {
         "name": "James Clerk Maxwell",
         "profession": "Physicist",
         "bio": "This theorist unified electricity, magnetism, and light into a single framework. His equations transformed physics and engineering. His influence extends across modern science.",
-        "known_for": "Electromagnetism, Maxwell�s equations, kinetic theory, classical physics",
+        "known_for": "Electromagnetism, Maxwell's equations, kinetic theory, classical physics",
     },
     "Michael Faraday": {
         "name": "Michael Faraday",
@@ -1073,7 +1073,7 @@ CSV_PEOPLE = {
         "name": "Edwin Hubble",
         "profession": "Astronomer",
         "bio": "This researcher provided evidence that transformed understanding of the universe. His observations revealed the expansion of cosmic structures. His work laid foundations for modern cosmology.",
-        "known_for": "Expanding universe, Hubble�s law, extragalactic astronomy, observational breakthroughs",
+        "known_for": "Expanding universe, Hubble's law, extragalactic astronomy, observational breakthroughs",
     },
     "Vera Rubin": {
         "name": "Vera Rubin",
@@ -1097,7 +1097,7 @@ CSV_PEOPLE = {
         "name": "Johannes Kepler",
         "profession": "Astronomer",
         "bio": "This mathematician uncovered precise laws governing planetary motion. His insights advanced the understanding of celestial mechanics. His work bridged observational data and theoretical physics.",
-        "known_for": "Kepler�s laws, planetary motion, astronomical tables, scientific revolution",
+        "known_for": "Kepler's laws, planetary motion, astronomical tables, scientific revolution",
     },
     "Tycho Brahe": {
         "name": "Tycho Brahe",
@@ -1295,7 +1295,7 @@ CSV_PEOPLE = {
         "name": "Claude Debussy",
         "profession": "composer",
         "bio": "A pioneering figure of musical impressionism known for atmospheric textures and innovative harmonies. His works evoke vivid imagery and subtle emotional nuance. His influence extended far beyond classical music.",
-        "known_for": "Clair de Lune, La Mer, Pr�lude � l'apr�s-midi d'un faune, Pell�as et M�lisande",
+        "known_for": "Clair de Lune, La Mer, Prélude  l'aprs-midi d'un faune, Pellas et Mélisande",
     },
     "Johannes Brahms": {
         "name": "Johannes Brahms",
@@ -1307,7 +1307,7 @@ CSV_PEOPLE = {
         "name": "Franz Liszt",
         "profession": "composer",
         "bio": "A virtuoso pianist and influential composer who transformed keyboard technique. His works pushed harmonic boundaries and expanded the expressive potential of the piano. He also pioneered the symphonic poem.",
-        "known_for": "Hungarian Rhapsodies, Faust Symphony, Liebestr�ume, Totentanz",
+        "known_for": "Hungarian Rhapsodies, Faust Symphony, Liebestrume, Totentanz",
     },
     "Sergei Rachmaninoff": {
         "name": "Sergei Rachmaninoff",
@@ -1495,8 +1495,8 @@ CSV_PEOPLE = {
         "bio": "A country music legend known for storytelling, philanthropy, and entrepreneurial spirit. Her work blends humor, heart, and vocal warmth. Her influence extends across entertainment and culture.",
         "known_for": "Jolene, 9 to 5, I Will Always Love You, Coat of Many Colors",
     },
-    "Beyonc�": {
-        "name": "Beyonc�",
+    "Beyoncé": {
+        "name": "Beyoncé",
         "profession": "singer",
         "bio": "A global superstar known for vocal excellence, visual artistry, and cultural impact. Her work spans R&B, pop, and experimental forms. Her performances set new standards for modern entertainment.",
         "known_for": "Single Ladies, Halo, Formation, Crazy in Love",
@@ -1679,7 +1679,7 @@ CSV_PEOPLE = {
         "name": "Albert Einstein",
         "profession": "physicist",
         "bio": "A theoretical scientist who transformed modern understanding of space, time, and energy. His work reshaped physics in the 20th century and influenced countless technological advances.",
-        "known_for": "theory of relativity, photoelectric effect, E=mc�, Nobel Prize",
+        "known_for": "theory of relativity, photoelectric effect, E=mc, Nobel Prize",
     },
     "Isaac Newton": {
         "name": "Isaac Newton",
@@ -1745,7 +1745,7 @@ CSV_PEOPLE = {
         "name": "Michelangelo",
         "profession": "artist",
         "bio": "A Renaissance master known for monumental works in sculpture, painting, and architecture. His creations express intense emotion and technical brilliance.",
-        "known_for": "David, Sistine Chapel ceiling, Piet�, architectural design",
+        "known_for": "David, Sistine Chapel ceiling, Piet, architectural design",
     },
     "Pablo Picasso": {
         "name": "Pablo Picasso",
@@ -1771,8 +1771,8 @@ CSV_PEOPLE = {
         "bio": "A painter known for vivid imagery exploring identity, pain, and culture. Her work blended realism with symbolic and personal themes.",
         "known_for": "self?portraits, surreal imagery, Mexican cultural motifs, modern art",
     },
-    "Salvador Dal�": {
-        "name": "Salvador Dal�",
+    "Salvador Dalí": {
+        "name": "Salvador Dalí",
         "profession": "artist",
         "bio": "A surrealist known for dreamlike imagery and technical precision. His works explored the subconscious with striking visual symbolism.",
         "known_for": "The Persistence of Memory, surrealism, symbolic imagery, avant?garde art",
@@ -1787,7 +1787,7 @@ CSV_PEOPLE = {
         "name": "Andy Warhol",
         "profession": "artist",
         "bio": "A pop?art innovator who blurred boundaries between commercial imagery and fine art. His work reflected modern consumer culture.",
-        "known_for": "Campbell�s Soup Cans, pop art, celebrity portraits, multimedia works",
+        "known_for": "Campbell's Soup Cans, pop art, celebrity portraits, multimedia works",
     },
     "Georgia O'Keeffe": {
         "name": "Georgia O'Keeffe",
@@ -1909,8 +1909,8 @@ CSV_PEOPLE = {
         "bio": "A novelist who depicted family life, ambition, and personal growth. Her stories remain beloved for their warmth and insight.",
         "known_for": "Little Women, children's literature, family narratives, moral themes",
     },
-    "Charlotte Bront�": {
-        "name": "Charlotte Bront�",
+    "Charlotte Brontë": {
+        "name": "Charlotte Brontë",
         "profession": "writer",
         "bio": "A novelist whose emotionally intense works explore independence and inner conflict. Her writing helped define Victorian literature.",
         "known_for": "Jane Eyre, Gothic elements, strong heroines, Victorian fiction",
@@ -2045,13 +2045,13 @@ CSV_PEOPLE = {
         "name": "Susan B. Anthony",
         "profession": "activist",
         "bio": "A reformer who fought for voting rights and social equality. Her efforts helped shape national movements.",
-        "known_for": "women�s suffrage, activism, social reform, advocacy",
+        "known_for": "women's suffrage, activism, social reform, advocacy",
     },
     "Emmeline Pankhurst": {
         "name": "Emmeline Pankhurst",
         "profession": "activist",
         "bio": "A leader who organized campaigns for political rights. Her efforts energized a major social movement.",
-        "known_for": "women�s suffrage, activism, political organizing, social change",
+        "known_for": "women's suffrage, activism, political organizing, social change",
     },
     "Desmond Tutu": {
         "name": "Desmond Tutu",
@@ -2063,7 +2063,7 @@ CSV_PEOPLE = {
         "name": "Malala Yousafzai",
         "profession": "activist",
         "bio": "An advocate for education and equality who survived targeted violence. Her voice inspired global support for human rights.",
-        "known_for": "girls� education, activism, global advocacy, Nobel Prize",
+        "known_for": "girls education, activism, global advocacy, Nobel Prize",
     },
     "Mother Teresa": {
         "name": "Mother Teresa",
@@ -2087,12 +2087,12 @@ CSV_PEOPLE = {
         "name": "Sojourner Truth",
         "profession": "activist",
         "bio": "A speaker and advocate who fought for equality and justice. Her words and actions influenced major social movements.",
-        "known_for": "abolition, women�s rights, speeches, activism",
+        "known_for": "abolition, women's rights, speeches, activism",
     },
     "Sitting Bull": {
         "name": "Sitting Bull",
         "profession": "leader",
-        "bio": "A tribal chief who defended his people�s land and culture. His leadership symbolized resistance and resilience.",
+        "bio": "A tribal chief who defended his people's land and culture. His leadership symbolized resistance and resilience.",
         "known_for": "Lakota leadership, Battle of the Little Bighorn, diplomacy, cultural preservation",
     },
     "Wolfgang Amadeus Mozart": {
@@ -2113,11 +2113,11 @@ CSV_PEOPLE = {
         "bio": "A Baroque musician whose intricate works influenced centuries of music. His compositions reflect mastery of harmony and structure.",
         "known_for": "Brandenburg Concertos, fugues, sacred music, keyboard works",
     },
-    "Fr�d�ric Chopin": {
-        "name": "Fr�d�ric Chopin",
+    "Frédéric Chopin": {
+        "name": "Frédéric Chopin",
         "profession": "composer",
         "bio": "A Romantic?era musician known for expressive piano works. His pieces emphasize nuance, emotion, and technical skill.",
-        "known_for": "nocturnes, preludes, �tudes, piano compositions",
+        "known_for": "nocturnes, preludes, études, piano compositions",
     },
     "Franz Schubert": {
         "name": "Franz Schubert",
@@ -2173,11 +2173,11 @@ CSV_PEOPLE = {
         "bio": "A foundational figure in algebra whose works introduced systematic methods for solving equations. His contributions shaped mathematical language and computation. His astronomical and geographic studies were widely influential.",
         "known_for": "algebra, algorithms, astronomical tables, geographic mapping",
     },
-    "Omar Khayy�m": {
-        "name": "Omar Khayy�m",
+    "Omar Khayyám": {
+        "name": "Omar Khayyám",
         "profession": "poet",
         "bio": "A polymath whose achievements spanned mathematics, astronomy, and literature. His poetic reflections became celebrated worldwide. His scientific work included influential studies of algebra and calendars.",
-        "known_for": "Rub�iy�t, algebraic equations, calendar reform, astronomy",
+        "known_for": "Rubáiyát, algebraic equations, calendar reform, astronomy",
     },
     "Ibn Battuta": {
         "name": "Ibn Battuta",
@@ -2431,11 +2431,11 @@ CSV_PEOPLE = {
         "bio": "An innovative architect whose sculptural buildings challenge traditional forms. His work uses unconventional materials and dynamic shapes. His designs attract global attention.",
         "known_for": "Guggenheim Bilbao, deconstructivism, sculptural architecture, innovative materials",
     },
-    "Antoni Gaud�": {
-        "name": "Antoni Gaud�",
+    "Antoni Gaudí": {
+        "name": "Antoni Gaudí",
         "profession": "architect",
         "bio": "A visionary figure whose organic and symbolic designs define a major cultural landmark. His work blends craftsmanship with imaginative structure. His buildings remain globally admired.",
-        "known_for": "Sagrada Fam�lia, Catalan modernism, Park G�ell, architectural innovation",
+        "known_for": "Sagrada Família, Catalan modernism, Park Güell, architectural innovation",
     },
     "Tadao Ando": {
         "name": "Tadao Ando",
@@ -2497,8 +2497,8 @@ CSV_PEOPLE = {
         "bio": "A popular culinary figure known for approachable recipes and warm presentation. Her work emphasizes comfort, quality, and hospitality. Her books and shows have wide appeal.",
         "known_for": "Barefoot Contessa, cookbooks, TV shows, home cooking",
     },
-    "Jacques P�pin": {
-        "name": "Jacques P�pin",
+    "Jacques Pépin": {
+        "name": "Jacques Pépin",
         "profession": "chef",
         "bio": "A master chef and teacher whose techniques and instruction shaped modern culinary education. His work emphasizes skill, tradition, and clarity. His books and programs influenced cooks worldwide.",
         "known_for": "French cooking, TV shows, cookbooks, culinary instruction",
@@ -2635,8 +2635,8 @@ CSV_PEOPLE = {
         "bio": "He became a leading voice for independence during a turbulent transition. His speeches emphasized national unity and sovereignty. His brief leadership left a lasting political legacy.",
         "known_for": "Congo independence, nationalist leadership, anti-colonial advocacy, political speeches",
     },
-    "Sim�n Bol�var": {
-        "name": "Sim�n Bol�var",
+    "Simón Bolívar": {
+        "name": "Simón Bolívar",
         "profession": "Revolutionary leader",
         "bio": "He led independence movements across northern South America. His vision emphasized unity among liberated nations. His campaigns reshaped the political map of the region.",
         "known_for": "South American independence, Gran Colombia, military campaigns, political writings",
@@ -2650,7 +2650,7 @@ CSV_PEOPLE = {
     "Fidel Castro": {
         "name": "Fidel Castro",
         "profession": "Cuban leader",
-        "bio": "He led a successful revolution and governed for decades. His policies reshaped the island�s political and economic systems. His international role influenced Cold War dynamics.",
+        "bio": "He led a successful revolution and governed for decades. His policies reshaped the island's political and economic systems. His international role influenced Cold War dynamics.",
         "known_for": "Cuban Revolution, socialist reforms, Cold War diplomacy, political leadership",
     },
     "Ho Chi Minh": {
@@ -2662,7 +2662,7 @@ CSV_PEOPLE = {
     "Mao Zedong": {
         "name": "Mao Zedong",
         "profession": "Chinese leader",
-        "bio": "He led a major revolution that transformed the country�s political system. His campaigns reshaped society and economy. His influence remains deeply debated.",
+        "bio": "He led a major revolution that transformed the country's political system. His campaigns reshaped society and economy. His influence remains deeply debated.",
         "known_for": "Chinese Revolution, Great Leap Forward, Cultural Revolution, political writings",
     },
     "Deng Xiaoping": {
@@ -2723,7 +2723,7 @@ CSV_PEOPLE = {
         "name": "Richard Nixon",
         "profession": "U.S. president",
         "bio": "He pursued significant diplomatic initiatives and domestic reforms. His administration faced major political controversy. His foreign policy shifted global alignments.",
-        "known_for": "Opening to China, d�tente, domestic reforms, political scandal",
+        "known_for": "Opening to China, détente, domestic reforms, political scandal",
     },
     "Lyndon B. Johnson": {
         "name": "Lyndon B. Johnson",
@@ -2845,8 +2845,8 @@ CSV_PEOPLE = {
         "bio": "He examined race, identity, and morality with searing clarity. His essays and novels influenced global conversations. His public presence shaped cultural debate.",
         "known_for": "Essays on race, major novels, activism, cultural criticism",
     },
-    "Gabriel Garc�a M�rquez": {
-        "name": "Gabriel Garc�a M�rquez",
+    "Gabriel García Márquez": {
+        "name": "Gabriel García Márquez",
         "profession": "Author",
         "bio": "He pioneered a literary style blending the ordinary and the fantastical. His novels achieved global acclaim. His influence shaped modern storytelling.",
         "known_for": "Magical realism, major novels, literary awards, cultural impact",
@@ -2923,8 +2923,8 @@ CSV_PEOPLE = {
         "bio": "He challenged traditional morality and explored themes of power and creativity. His writings influenced modern thought. His ideas remain widely debated.",
         "known_for": "Moral philosophy, existential themes, major works, cultural influence",
     },
-    "S�ren Kierkegaard": {
-        "name": "S�ren Kierkegaard",
+    "Søren Kierkegaard": {
+        "name": "Søren Kierkegaard",
         "profession": "Philosopher",
         "bio": "He explored individuality, faith, and anxiety in pioneering works. His ideas shaped existential thought. His influence spans theology and philosophy.",
         "known_for": "Existential philosophy, religious writings, psychological insights, cultural impact",
@@ -2959,8 +2959,8 @@ CSV_PEOPLE = {
         "bio": "He developed a theory of authority based on human nature and social order. His ideas shaped debates about governance. His works remain central to political philosophy.",
         "known_for": "Social contract theory, political writings, views on authority, major works",
     },
-    "Ren� Descartes": {
-        "name": "Ren� Descartes",
+    "René Descartes": {
+        "name": "René Descartes",
         "profession": "Philosopher",
         "bio": "He advanced foundational ideas in rationalism and scientific method. His writings reshaped modern thought. His influence spans mathematics and philosophy.",
         "known_for": "Rationalism, scientific method, major works, mathematical contributions",
@@ -3040,7 +3040,7 @@ CSV_PEOPLE = {
     "Lech Wa??sa": {
         "name": "Lech Wa??sa",
         "profession": "Union leader",
-        "bio": "A Polish labor organizer who led a major workers� movement challenging communist authority. He became a central figure in the push for democratic reforms. His leadership helped reshape Poland�s political landscape.",
+        "bio": "A Polish labor organizer who led a major workers movement challenging communist authority. He became a central figure in the push for democratic reforms. His leadership helped reshape Poland's political landscape.",
         "known_for": "Solidarity movement,Nobel Peace Prize,Polish presidency,Anti-communist activism",
     },
     "Corazon Aquino": {
@@ -3064,13 +3064,13 @@ CSV_PEOPLE = {
     "Golda Meir": {
         "name": "Golda Meir",
         "profession": "Prime Minister",
-        "bio": "An Israeli stateswoman who played a major role in shaping her nation�s early policies. Her leadership was tested during a major regional conflict. She became known for her direct and uncompromising style.",
+        "bio": "An Israeli stateswoman who played a major role in shaping her nation's early policies. Her leadership was tested during a major regional conflict. She became known for her direct and uncompromising style.",
         "known_for": "Israeli premiership,Yom Kippur War,State-building efforts,Diplomatic leadership",
     },
     "Jawaharlal Nehru": {
         "name": "Jawaharlal Nehru",
         "profession": "Prime Minister",
-        "bio": "A central figure in India�s independence movement who helped define the nation�s early political identity. He promoted industrialization and secular governance. His influence shaped generations of policy and thought.",
+        "bio": "A central figure in India's independence movement who helped define the nation's early political identity. He promoted industrialization and secular governance. His influence shaped generations of policy and thought.",
         "known_for": "Indian independence,First prime minister,Nonaligned movement,Modernization policies",
     },
     "David Ben-Gurion": {
@@ -3082,7 +3082,7 @@ CSV_PEOPLE = {
     "Anwar Sadat": {
         "name": "Anwar Sadat",
         "profession": "President",
-        "bio": "An Egyptian leader who shifted his country�s political direction through bold diplomatic moves. His peace efforts reshaped regional dynamics. His assassination underscored the risks of his approach.",
+        "bio": "An Egyptian leader who shifted his country's political direction through bold diplomatic moves. His peace efforts reshaped regional dynamics. His assassination underscored the risks of his approach.",
         "known_for": "Egyptian presidency,Camp David Accords,Peace with Israel,Military leadership",
     },
     "Yasser Arafat": {
@@ -3097,8 +3097,8 @@ CSV_PEOPLE = {
         "bio": "A Middle Eastern ruler who maintained stability in a turbulent region. He navigated complex alliances and conflicts over a long reign. His pragmatic diplomacy earned broad respect.",
         "known_for": "Jordanian monarchy,Peace negotiations,Regional diplomacy,Modernization efforts",
     },
-    "Mustafa Kemal Atat�rk": {
-        "name": "Mustafa Kemal Atat�rk",
+    "Mustafa Kemal Atatürk": {
+        "name": "Mustafa Kemal Atatürk",
         "profession": "Statesman",
         "bio": "A military commander who founded a modern republic from the remnants of an empire. He implemented sweeping reforms to secularize and industrialize the nation. His legacy remains central to national identity.",
         "known_for": "Turkish independence,Republic founding,Sweeping reforms,Secularization",
@@ -3121,8 +3121,8 @@ CSV_PEOPLE = {
         "bio": "A Zimbabwean leader who began as a liberation figure and later presided over economic and political decline. His long rule was marked by controversy and repression. His legacy remains sharply debated.",
         "known_for": "Zimbabwe independence,Presidency,Land reform,Authoritarian rule",
     },
-    "L�opold S�dar Senghor": {
-        "name": "L�opold S�dar Senghor",
+    "Léopold Sédar Senghor": {
+        "name": "Léopold Sédar Senghor",
         "profession": "Poet,President",
         "bio": "A Senegalese intellectual who blended political leadership with literary achievement. He promoted cultural identity and postcolonial development. His writings influenced global thought on African identity.",
         "known_for": "Negritude movement,Senegal presidency,Poetry,Literary scholarship",
@@ -3136,8 +3136,8 @@ CSV_PEOPLE = {
     "Thomas Sankara": {
         "name": "Thomas Sankara",
         "profession": "Revolutionary",
-        "bio": "A Burkinab� leader who pursued radical reforms aimed at self-sufficiency and equality. His brief rule left a lasting ideological impact. He became a symbol of anti-imperialist activism.",
-        "known_for": "Burkina Faso reforms,Anti-corruption efforts,Women�s rights,Revolutionary leadership",
+        "bio": "A Burkinab leader who pursued radical reforms aimed at self-sufficiency and equality. His brief rule left a lasting ideological impact. He became a symbol of anti-imperialist activism.",
+        "known_for": "Burkina Faso reforms,Anti-corruption efforts,Women's rights,Revolutionary leadership",
     },
     "Kofi Annan": {
         "name": "Kofi Annan",
@@ -3151,8 +3151,8 @@ CSV_PEOPLE = {
         "bio": "A South Korean diplomat who guided a global institution through environmental and humanitarian challenges. He prioritized climate action and sustainable development. His tenure strengthened international cooperation.",
         "known_for": "UN secretary-general,Climate diplomacy,Sustainable development,Global governance",
     },
-    "Dag Hammarskj�ld": {
-        "name": "Dag Hammarskj�ld",
+    "Dag Hammarskjöld": {
+        "name": "Dag Hammarskjöld",
         "profession": "Diplomat",
         "bio": "A Swedish official who expanded the role of international peacekeeping. His leadership emphasized independence and moral responsibility. His death in a plane crash elevated his legacy.",
         "known_for": "UN secretary-general,Peacekeeping development,Diplomatic leadership,Posthumous recognition",
@@ -3160,8 +3160,8 @@ CSV_PEOPLE = {
     "Boutros Boutros-Ghali": {
         "name": "Boutros Boutros-Ghali",
         "profession": "Diplomat",
-        "bio": "An Egyptian diplomat who oversaw a global organization during a turbulent post�Cold War era. He focused on peace operations and institutional reform. His tenure was marked by both innovation and controversy.",
-        "known_for": "UN secretary-general,Peacekeeping initiatives,Post�Cold War diplomacy,Institutional reform",
+        "bio": "An Egyptian diplomat who oversaw a global organization during a turbulent post-Cold War era. He focused on peace operations and institutional reform. His tenure was marked by both innovation and controversy.",
+        "known_for": "UN secretary-general,Peacekeeping initiatives,Post-Cold War diplomacy,Institutional reform",
     },
     "Jimmy Carter": {
         "name": "Jimmy Carter",
@@ -3178,7 +3178,7 @@ CSV_PEOPLE = {
     "Madeleine Albright": {
         "name": "Madeleine Albright",
         "profession": "Diplomat",
-        "bio": "A US official who became the first woman to hold her country�s top diplomatic post. She focused on international security and democratic expansion. Her career left a lasting institutional impact.",
+        "bio": "A US official who became the first woman to hold her country's top diplomatic post. She focused on international security and democratic expansion. Her career left a lasting institutional impact.",
         "known_for": "US secretary of state,NATO expansion,Human rights advocacy,Diplomatic leadership",
     },
     "Condoleezza Rice": {
@@ -3214,7 +3214,7 @@ CSV_PEOPLE = {
     "Catherine the Great": {
         "name": "Catherine the Great",
         "profession": "Empress",
-        "bio": "A Russian ruler who expanded her empire�s territory and modernized its institutions. Her reign saw major cultural and political developments. She is remembered as one of Europe�s most influential monarchs.",
+        "bio": "A Russian ruler who expanded her empire's territory and modernized its institutions. Her reign saw major cultural and political developments. She is remembered as one of Europe's most influential monarchs.",
         "known_for": "Russian expansion,Enlightenment reforms,Imperial rule,Cultural patronage",
     },
     "Peter the Great": {
@@ -3226,7 +3226,7 @@ CSV_PEOPLE = {
     "Ivan the Terrible": {
         "name": "Ivan the Terrible",
         "profession": "Tsar",
-        "bio": "A Russian ruler whose reign combined territorial expansion with intense internal repression. His rule marked a turning point in the nation�s political evolution. His legacy remains deeply controversial.",
+        "bio": "A Russian ruler whose reign combined territorial expansion with intense internal repression. His rule marked a turning point in the nation's political evolution. His legacy remains deeply controversial.",
         "known_for": "Russian centralization,Oprichnina,Territorial expansion,Autocratic rule",
     },
     "Elizabeth I": {
@@ -3257,7 +3257,7 @@ CSV_PEOPLE = {
         "name": "Frederick the Great",
         "profession": "King",
         "bio": "A Prussian ruler who strengthened his state through military and administrative reforms. His leadership made his kingdom a major European power. He also supported the arts and philosophy.",
-        "known_for": "Prussian military reforms,Seven Years� War,Enlightened absolutism,Cultural patronage",
+        "known_for": "Prussian military reforms,Seven Years War,Enlightened absolutism,Cultural patronage",
     },
     "Otto von Bismarck": {
         "name": "Otto von Bismarck",
@@ -3322,7 +3322,7 @@ CSV_PEOPLE = {
     "Raoul Wallenberg": {
         "name": "Raoul Wallenberg",
         "profession": "Diplomat",
-        "bio": "A Swedish envoy who carried out daring rescue missions during a genocide. His disappearance remains one of history�s enduring mysteries. His courage is honored worldwide.",
+        "bio": "A Swedish envoy who carried out daring rescue missions during a genocide. His disappearance remains one of history's enduring mysteries. His courage is honored worldwide.",
         "known_for": "Rescue of Jews,Protective passports,World War II,Humanitarian heroism",
     },
     "Roald Amundsen": {
@@ -3424,7 +3424,7 @@ CSV_PEOPLE = {
     "Amelia Earhart": {
         "name": "Amelia Earhart",
         "profession": "aviator",
-        "bio": "An American pilot who broke numerous aviation records. Her bold flights inspired global interest in air travel. Her disappearance remains one of history�s enduring mysteries.",
+        "bio": "An American pilot who broke numerous aviation records. Her bold flights inspired global interest in air travel. Her disappearance remains one of history's enduring mysteries.",
         "known_for": "Transatlantic flight, aviation records, pioneering female pilot",
     },
     "Charles Lindbergh": {
@@ -3439,8 +3439,8 @@ CSV_PEOPLE = {
         "bio": "An American duo who achieved the first controlled powered flight. Their engineering breakthroughs reshaped transportation. Their work laid the foundation for modern aeronautics.",
         "known_for": "First powered flight, aircraft design, aviation innovation",
     },
-    "Louis Bl�riot": {
-        "name": "Louis Bl�riot",
+    "Louis Blériot": {
+        "name": "Louis Blériot",
         "profession": "aviator",
         "bio": "A French pilot and engineer who made early advances in flight. His cross-channel journey proved the potential of aviation. His designs influenced early aircraft development.",
         "known_for": "English Channel crossing, aircraft design, aviation pioneering",
