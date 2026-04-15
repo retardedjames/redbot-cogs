@@ -49,7 +49,7 @@ EXACT_LABELS = {
 class ItemView(View):
     """Four gray buttons — open to anyone in the channel."""
 
-    def __init__(self, cog: "InCommon", channel_id: int, question_index: int):
+    def __init__(self, cog: "AreWeCompatible", channel_id: int, question_index: int):
         super().__init__(timeout=VOTING_WINDOW + 3)   # slight buffer over sleep
         self.cog = cog
         self.channel_id = channel_id
@@ -135,7 +135,7 @@ class PairSelect(discord.ui.Select):
         positives = [r for r in pair["items"] if r["match"] and r["group"] == "positive"]
 
         lines = [
-            f"**{pair['name1']} & {pair['name2']} — {pair['pct']}% In Common**",
+            f"**{pair['name1']} & {pair['name2']} — {pair['pct']}% Compatible**",
             f"*{pair['matches']} of {pair['shared']} shared questions matched*",
             "",
         ]
@@ -177,7 +177,7 @@ class PairSelectView(View):
 
 # ── Cog ───────────────────────────────────────────────────────────────────────
 
-class InCommon(commands.Cog):
+class AreWeCompatible(commands.Cog):
     """Open compatibility game. Anyone in chat votes; see who has the most in common."""
 
     def __init__(self, bot):
@@ -244,23 +244,23 @@ class InCommon(commands.Cog):
                 await game["current_message"].edit(view=None)
             except Exception:
                 pass
-        return "In Common"
+        return "Are We Compatible"
 
     async def clear_recent_memory(self, guild: discord.Guild) -> Optional[str]:
         if guild.id in self.recent_items:
             self.recent_items[guild.id] = {}
-            return "In Common"
+            return "Are We Compatible"
         return None
 
     # ── Commands ──────────────────────────────────────────────────────────────
 
     @commands.command()
     @commands.guild_only()
-    async def incommon(self, ctx, count: int = DEFAULT_COUNT):
-        """Start an In Common game — anyone in chat can vote!
+    async def fd(self, ctx, count: int = DEFAULT_COUNT):
+        """Start an Are We Compatible game — anyone in chat can vote!
 
-        $incommon          — 20 questions (default)
-        $incommon 40       — 40 questions
+        $fd          — 20 questions (default)
+        $fd 40       — 40 questions
         """
         if not self._db_ready:
             await ctx.send("Still warming up — try again in a moment!")
@@ -271,7 +271,7 @@ class InCommon(commands.Cog):
 
         count = max(5, min(count, 100))
         await ctx.send(
-            f"**In Common** — {count} questions, {VOTING_WINDOW}s each.\n"
+            f"**Are We Compatible** — {count} questions, {VOTING_WINDOW}s each.\n"
             f"Anyone can vote. Choices are secret until the end. Starting now…"
         )
         await asyncio.sleep(3)
@@ -311,7 +311,7 @@ class InCommon(commands.Cog):
         pct     = round((matches / total) * 100) if total else 0
 
         embed = discord.Embed(
-            title=f"{pct}% In Common — All Time",
+            title=f"{pct}% Compatible — All Time",
             description=f"**{ctx.author.display_name}** & **{member.display_name}**",
             color=discord.Color.blurple(),
         )
@@ -527,7 +527,7 @@ class InCommon(commands.Cog):
 
         # ── Results message ───────────────────────────────────────────────────
         medal = ["🥇", "🥈", "🥉"]
-        lines = ["## In Common — Results\n"]
+        lines = ["## Are We Compatible — Results\n"]
         for i, p in enumerate(pairs):
             prefix = medal[i] if i < 3 else "▪"
             lines.append(

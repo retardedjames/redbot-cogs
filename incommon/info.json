@@ -1,12 +1,12 @@
 {
     "author": ["jamescvermont-cyber"],
-    "description": "OKCupid-style compatibility game. Challenge someone to find out what you have In Common across 800+ topics — food, music, lifestyle, romance, and more. Tracks all-time history per pair.",
+    "description": "OKCupid-style compatibility game. Find out if you're compatible across 800+ topics — food, music, lifestyle, romance, and more. Tracks all-time history per pair.",
     "end_user_data_statement": "This cog stores Discord user IDs and game answer history permanently in a local SQLite database.",
     "hidden": false,
     "install_msg": "Requires aiosqlite: `pip install aiosqlite`. Then `[p]load incommon`.",
-    "name": "InCommon",
+    "name": "AreWeCompatible",
     "required_cogs": {},
     "requirements": ["aiosqlite"],
-    "short": "Find out what you have In Common with someone",
+    "short": "Find out if you're compatible with someone",
     "tags": ["games", "fun", "social", "compatibility"]
 }
