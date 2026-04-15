@@ -15,8 +15,8 @@ from .items import ITEMS
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-VOTING_WINDOW  = 20     # seconds each question stays open
-ROUND_GAP      = 5      # seconds between questions
+VOTING_WINDOW  = 10     # seconds each question stays open
+ROUND_GAP      = 0      # seconds between questions
 DEFAULT_COUNT  = 20
 RECENT_WINDOW  = 86400  # 24-hour item dedup (seconds)
 MIN_SHARED     = 5      # minimum shared questions for a pair to appear in results
