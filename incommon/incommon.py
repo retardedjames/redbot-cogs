@@ -76,18 +76,21 @@ class ItemView(View):
 
         await interaction.response.defer()
 
-        # Update shared message with live response count (no choices revealed)
+        # Flash embed green then revert — shows a new vote landed
         count = len(game["current_responses"])
-        index = game["current_index"]
-        item  = game["items"][index]
-        total = len(game["items"])
         noun  = "response" if count == 1 else "responses"
+        item  = game["items"][game["current_index"]]
+
+        flash_task = game.get("flash_task")
+        if flash_task and not flash_task.done():
+            flash_task.cancel()
+
         try:
-            await game["current_message"].edit(
-                content=(
-                    f"# {item['text']}\n"
-                    f"Question **{index + 1}** of **{total}** · {count} {noun}"
-                )
+            embed = discord.Embed(title=item["text"], color=discord.Color.green())
+            embed.set_footer(text=f"{count} {noun}")
+            await game["current_message"].edit(embed=embed)
+            game["flash_task"] = asyncio.ensure_future(
+                self.cog._revert_flash(game, item["text"], count, noun)
             )
         except Exception:
             pass
@@ -232,9 +235,10 @@ class AreWeCompatible(commands.Cog):
         game = self.active_games.pop(channel_id, None)
         if not game:
             return None
-        task = game.get("task")
-        if task and not task.done():
-            task.cancel()
+        for key in ("task", "flash_task"):
+            t = game.get(key)
+            if t and not t.done():
+                t.cancel()
         if game.get("current_message"):
             try:
                 await game["current_message"].edit(view=None)
@@ -372,6 +376,7 @@ class AreWeCompatible(commands.Cog):
             "channel":          channel,
             "current_message":  None,
             "task":             None,
+            "flash_task":       None,
         }
         self.active_games[channel.id] = game
 
@@ -397,6 +402,9 @@ class AreWeCompatible(commands.Cog):
                     return
 
                 # Disable buttons on the just-closed question
+                flash_task = game.get("flash_task")
+                if flash_task and not flash_task.done():
+                    flash_task.cancel()
                 if game["current_message"]:
                     try:
                         await game["current_message"].edit(view=None)
@@ -416,6 +424,17 @@ class AreWeCompatible(commands.Cog):
         except asyncio.CancelledError:
             pass   # $end was called — already cleaned up by force_stop_game
 
+    async def _revert_flash(self, game: dict, title: str, count: int, noun: str):
+        try:
+            await asyncio.sleep(1.5)
+            msg = game.get("current_message")
+            if msg:
+                embed = discord.Embed(title=title, color=discord.Color.blurple())
+                embed.set_footer(text=f"{count} {noun}")
+                await msg.edit(embed=embed)
+        except (asyncio.CancelledError, Exception):
+            pass
+
     async def _show_item(self, channel_id: int):
         game = self.active_games.get(channel_id)
         if not game:
@@ -423,16 +442,12 @@ class AreWeCompatible(commands.Cog):
 
         index = game["current_index"]
         item  = game["items"][index]
-        total = len(game["items"])
+
+        embed = discord.Embed(title=item["text"], color=discord.Color.blurple())
+        embed.set_footer(text="0 responses")
 
         view = ItemView(self, channel_id, index)
-        msg  = await game["channel"].send(
-            content=(
-                f"# {item['text']}\n"
-                f"Question **{index + 1}** of **{total}** · 0 responses"
-            ),
-            view=view,
-        )
+        msg  = await game["channel"].send(embed=embed, view=view)
         game["current_message"] = msg
 
     async def _finish_game(self, channel_id: int):
