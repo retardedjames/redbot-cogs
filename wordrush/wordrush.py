@@ -365,7 +365,6 @@ class WordRush(commands.Cog):
                         await game.channel.send("https://tenor.com/view/house-explosion-explode-boom-kaboom-gif-19506150")
                     else:
                         await game.channel.send(embed=_lost_life_embed(current))
-                        await game.channel.send("https://tenor.com/view/cat-explosion-ellie-cat-explosion-cat-explode-meme-nuclear-explosion-nuclear-ellie-gif-11491440842155618054")
 
                 game.advance_to_next_alive()
 
